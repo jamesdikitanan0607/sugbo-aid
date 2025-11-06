@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background">
+
+    <!-- Background overlay for subtle animation -->
+    <View
+        android:id="@+id/view_background_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/glass_white_10"
+        android:alpha="0.1" />
+
+    <!-- Main content container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <!-- Logo and taglines container -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <!-- SugboAid Logo -->
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/sugboaid_logo"
+                android:contentDescription="@string/cd_logo"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/logo_background"
+                android:elevation="8dp" />
+
+            <!-- Main tagline with SugboAid branding -->
+            <TextView
+                android:id="@+id/tv_tagline_main"
+                style="@style/SugboAid.Text.Brand.Tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brand_tagline_main"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/brand_spacing_sm" />
+
+            <!-- Sub tagline with SugboAid branding -->
+            <TextView
+                android:id="@+id/tv_tagline_sub"
+                style="@style/SugboAid.Text.Brand.SubTagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brand_tagline_sub"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Role Selection Container -->
+        <LinearLayout
+            android:id="@+id/ll_role_selection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:visibility="gone">
+
+            <!-- Role selection title with SugboAid branding -->
+            <TextView
+                style="@style/SugboAid.Text.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Your Role"
+                android:textColor="@color/white"
+                android:layout_marginBottom="@dimen/brand_spacing_lg"
+                android:shadowColor="@color/glass_dark_40"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2" />
+
+            <!-- Role buttons grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- First row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_donor"
+                        style="@style/RoleButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/role_donor"
+                        android:background="@drawable/role_button_donor" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_organization"
+                        style="@style/RoleButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/role_organization"
+                        android:background="@drawable/role_button_organization" />
+
+                </LinearLayout>
+
+                <!-- Second row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_volunteer"
+                        style="@style/RoleButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/role_volunteer"
+                        android:background="@drawable/role_button_volunteer" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_recipient"
+                        style="@style/RoleButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/role_recipient"
+                        android:background="@drawable/role_button_recipient" />
+
+                </LinearLayout>
+
+                <!-- Third row -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_guest"
+                    style="@style/RoleButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/role_guest"
+                    android:background="@drawable/role_button_guest" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

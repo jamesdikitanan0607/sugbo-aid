@@ -1,0 +1,288 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.sugboaid.donation.staging" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="21"
+6-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml
+7        android:targetSdkVersion="34" />
+7-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml
+8
+9    <!-- Permissions -->
+10    <uses-permission android:name="android.permission.INTERNET" />
+10-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:6:5-67
+10-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:6:22-64
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:7:5-79
+11-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:7:22-76
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:8:5-65
+12-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:8:22-62
+13    <uses-permission
+13-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:9:5-10:38
+14        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+14-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:9:22-78
+15        android:maxSdkVersion="28" />
+15-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:10:9-35
+16    <uses-permission
+16-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:11:5-12:38
+17        android:name="android.permission.READ_EXTERNAL_STORAGE"
+17-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:11:22-77
+18        android:maxSdkVersion="32" />
+18-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:12:9-35
+19
+20    <!-- Notification permissions for Android 13+ -->
+21    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+21-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:15:5-77
+21-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:15:22-74
+22    <uses-permission android:name="android.permission.VIBRATE" />
+22-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:16:5-66
+22-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:16:22-63
+23
+24    <!-- Camera feature for QR scanning -->
+25    <uses-feature
+25-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:19:5-21:36
+26        android:name="android.hardware.camera"
+26-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:20:9-47
+27        android:required="false" />
+27-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:21:9-33
+28    <uses-feature
+28-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:22:5-24:36
+29        android:name="android.hardware.camera.autofocus"
+29-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:23:9-57
+30        android:required="false" />
+30-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:24:9-33
+31
+32    <permission
+32-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+33        android:name="com.sugboaid.donation.staging.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+33-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+34        android:protectionLevel="signature" />
+34-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+35
+36    <uses-permission android:name="com.sugboaid.donation.staging.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+36-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+36-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+37
+38    <uses-feature
+38-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+39        android:name="android.hardware.camera.front"
+39-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+40        android:required="false" />
+40-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+41    <uses-feature
+41-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+42        android:name="android.hardware.camera.flash"
+42-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
+43        android:required="false" />
+43-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+44    <uses-feature
+44-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+45        android:name="android.hardware.screen.landscape"
+45-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+46        android:required="false" />
+46-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+47    <uses-feature
+47-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+48        android:name="android.hardware.wifi"
+48-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+49        android:required="false" />
+49-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
+50
+51    <application
+51-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:26:5-88:19
+52        android:allowBackup="true"
+52-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:27:9-35
+53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+53-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+54        android:dataExtractionRules="@xml/data_extraction_rules"
+54-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:28:9-65
+55        android:description="@string/brand_mission"
+55-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:33:9-52
+56        android:fullBackupContent="@xml/backup_rules"
+56-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:29:9-54
+57        android:icon="@mipmap/ic_launcher"
+57-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:30:9-43
+58        android:label="@string/app_name"
+58-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:32:9-41
+59        android:roundIcon="@mipmap/ic_launcher_round"
+59-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:31:9-54
+60        android:supportsRtl="true"
+60-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:35:9-35
+61        android:theme="@style/Theme.SugboAid" >
+61-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:34:9-46
+62
+63        <!-- Splash Activity (Launcher) -->
+64        <activity
+64-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:39:9-47:20
+65            android:name="com.sugboaid.donation.donation.activities.SimpleSplashActivity"
+65-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:40:13-69
+66            android:exported="true"
+66-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:41:13-36
+67            android:theme="@style/Theme.SugboAid.Splash" >
+67-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:42:13-57
+68            <intent-filter>
+68-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:43:13-46:29
+69                <action android:name="android.intent.action.MAIN" />
+69-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:44:17-69
+69-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:44:25-66
+70
+71                <category android:name="android.intent.category.LAUNCHER" />
+71-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:45:17-77
+71-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:45:27-74
+72            </intent-filter>
+73        </activity>
+74
+75        <!-- Main Activity -->
+76        <activity
+76-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:50:9-53:53
+77            android:name="com.sugboaid.donation.donation.activities.MainActivity"
+77-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:51:13-61
+78            android:exported="false"
+78-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:52:13-37
+79            android:theme="@style/Theme.SugboAid" />
+79-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:53:13-50
+80
+81        <!-- QR Scanner Activity -->
+82        <activity
+82-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:56:9-60:53
+83            android:name="com.sugboaid.donation.donation.activities.QRScannerActivity"
+83-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:57:13-66
+84            android:exported="false"
+84-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:58:13-37
+85            android:screenOrientation="portrait"
+85-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:59:13-49
+86            android:theme="@style/Theme.SugboAid" />
+86-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:60:13-50
+87
+88        <!-- ZXing Capture Activity -->
+89        <activity
+89-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:63:9-66:49
+90            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+90-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:64:13-74
+91            android:clearTaskOnLaunch="true"
+91-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+92            android:screenOrientation="portrait"
+92-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:65:13-49
+93            android:stateNotNeeded="true"
+93-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+94            android:theme="@style/zxing_CaptureTheme"
+94-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+95            android:windowSoftInputMode="stateAlwaysHidden" />
+95-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+96
+97        <!-- FileProvider for sharing exported files -->
+98        <provider
+98-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:69:9-77:20
+99            android:name="androidx.core.content.FileProvider"
+99-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:70:13-62
+100            android:authorities="com.sugboaid.donation.fileprovider"
+100-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:71:13-69
+101            android:exported="false"
+101-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:72:13-37
+102            android:grantUriPermissions="true" >
+102-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:73:13-47
+103            <meta-data
+103-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:74:13-76:63
+104                android:name="android.support.FILE_PROVIDER_PATHS"
+104-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:75:17-67
+105                android:resource="@xml/file_provider_paths" />
+105-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:76:17-60
+106        </provider>
+107
+108        <!-- Notification Action Receiver -->
+109        <receiver
+109-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:80:9-86:20
+110            android:name="com.sugboaid.donation.donation.utils.NotificationActionReceiver"
+110-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:81:13-70
+111            android:exported="false" >
+111-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:82:13-37
+112            <intent-filter>
+112-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:83:13-85:29
+113                <action android:name="MARK_AS_READ" />
+113-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:84:17-55
+113-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:84:25-52
+114            </intent-filter>
+115        </receiver>
+116
+117        <provider
+117-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+118            android:name="androidx.startup.InitializationProvider"
+118-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+119            android:authorities="com.sugboaid.donation.staging.androidx-startup"
+119-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+120            android:exported="false" >
+120-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+121            <meta-data
+121-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+122                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+122-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+123                android:value="androidx.startup" />
+123-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+124            <meta-data
+124-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\James\.gradle\caches\transforms-3\8239722224a1b4c504258dbd00a4f57a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+125                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+125-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\James\.gradle\caches\transforms-3\8239722224a1b4c504258dbd00a4f57a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+126                android:value="androidx.startup" />
+126-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\James\.gradle\caches\transforms-3\8239722224a1b4c504258dbd00a4f57a\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+127            <meta-data
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+128                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+129                android:value="androidx.startup" />
+129-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+130        </provider>
+131
+132        <uses-library
+132-->[androidx.window:window:1.0.0] C:\Users\James\.gradle\caches\transforms-3\bc1d85e009333755628d5c779bd9bd09\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+133            android:name="androidx.window.extensions"
+133-->[androidx.window:window:1.0.0] C:\Users\James\.gradle\caches\transforms-3\bc1d85e009333755628d5c779bd9bd09\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+134            android:required="false" />
+134-->[androidx.window:window:1.0.0] C:\Users\James\.gradle\caches\transforms-3\bc1d85e009333755628d5c779bd9bd09\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+135        <uses-library
+135-->[androidx.window:window:1.0.0] C:\Users\James\.gradle\caches\transforms-3\bc1d85e009333755628d5c779bd9bd09\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+136            android:name="androidx.window.sidecar"
+136-->[androidx.window:window:1.0.0] C:\Users\James\.gradle\caches\transforms-3\bc1d85e009333755628d5c779bd9bd09\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+137            android:required="false" />
+137-->[androidx.window:window:1.0.0] C:\Users\James\.gradle\caches\transforms-3\bc1d85e009333755628d5c779bd9bd09\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+138
+139        <receiver
+139-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+140            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+140-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+141            android:directBootAware="false"
+141-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+142            android:enabled="true"
+142-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+143            android:exported="true"
+143-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+144            android:permission="android.permission.DUMP" >
+144-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+145            <intent-filter>
+145-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+146                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+146-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+146-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+147            </intent-filter>
+148            <intent-filter>
+148-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+149                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+149-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+149-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+150            </intent-filter>
+151            <intent-filter>
+151-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+152                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+153            </intent-filter>
+154            <intent-filter>
+154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+155                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+156            </intent-filter>
+157        </receiver>
+158    </application>
+159
+160</manifest>

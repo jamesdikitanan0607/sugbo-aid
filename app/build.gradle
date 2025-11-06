@@ -1,0 +1,357 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.sugboaid.donation'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.sugboaid.donation"
+        minSdk 21
+        targetSdk 34
+        
+        // Dynamic version management
+        versionCode getVersionCode()
+        versionName getVersionName()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Performance optimizations
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        
+        // Memory optimization
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // No annotation processor arguments needed for current setup
+            }
+        }
+        
+        // Build configuration fields
+        buildConfigField "String", "BUILD_TIME", "\"${getBuildTime()}\""
+        buildConfigField "String", "GIT_COMMIT", "\"${getGitCommit()}\""
+        buildConfigField "int", "VERSION_CODE", "1"
+        buildConfigField "String", "VERSION_NAME", "\"${getVersionName()}\""
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+        release {
+            // For production, use environment variables or gradle.properties
+            storeFile file(project.hasProperty('RELEASE_STORE_FILE') ? RELEASE_STORE_FILE : 'release.keystore')
+            storePassword project.hasProperty('RELEASE_STORE_PASSWORD') ? RELEASE_STORE_PASSWORD : 'sugboaid2024'
+            keyAlias project.hasProperty('RELEASE_KEY_ALIAS') ? RELEASE_KEY_ALIAS : 'sugboaid'
+            keyPassword project.hasProperty('RELEASE_KEY_PASSWORD') ? RELEASE_KEY_PASSWORD : 'sugboaid2024'
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            // Removed applicationIdSuffix to prevent installation conflicts
+            versionNameSuffix "-debug"
+            signingConfig signingConfigs.debug
+            
+            // Skip tests for debug builds to focus on functional verification
+            testOptions {
+                unitTests.all {
+                    enabled = false
+                }
+            }
+            
+            // Debug performance monitoring
+            manifestPlaceholders = [
+                enableCrashReporting: "false",
+                appName: "SugboAid Debug"
+            ]
+            
+            // Enable strict mode for debugging
+            buildConfigField "boolean", "ENABLE_STRICT_MODE", "true"
+            buildConfigField "boolean", "ENABLE_LEAK_DETECTION", "true"
+        }
+        
+        staging {
+            initWith debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+            debuggable false
+            
+            manifestPlaceholders = [
+                enableCrashReporting: "true",
+                appName: "SugboAid Staging"
+            ]
+            
+            buildConfigField "boolean", "ENABLE_STRICT_MODE", "false"
+            buildConfigField "boolean", "ENABLE_LEAK_DETECTION", "true"
+        }
+        
+        release {
+            signingConfig signingConfigs.release
+            
+            // Performance optimizations for release
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            
+            manifestPlaceholders = [
+                enableCrashReporting: "true",
+                appName: "SugboAid"
+            ]
+            
+            buildConfigField "boolean", "ENABLE_STRICT_MODE", "false"
+            buildConfigField "boolean", "ENABLE_LEAK_DETECTION", "false"
+        }
+    }
+    
+    flavorDimensions "environment"
+    
+    productFlavors {
+        development {
+            dimension "environment"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            
+            buildConfigField "String", "API_BASE_URL", '"https://dev-api.sugboaid.com"'
+            buildConfigField "boolean", "ENABLE_LOGGING", "true"
+            
+            manifestPlaceholders = [
+                appIcon: "@mipmap/ic_launcher_dev"
+            ]
+        }
+        
+        production {
+            dimension "environment"
+            
+            buildConfigField "String", "API_BASE_URL", '"https://api.sugboaid.com"'
+            buildConfigField "boolean", "ENABLE_LOGGING", "false"
+            
+            manifestPlaceholders = [
+                appIcon: "@mipmap/ic_launcher"
+            ]
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+        
+        // Enable incremental compilation
+        incremental true
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        buildConfig true
+    }
+    
+    // Performance optimizations - dexOptions is deprecated, using default settings
+    
+    // Lint optimizations
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'InvalidPackage'
+    }
+    
+    // Packaging options for performance
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    // Core Android dependencies
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core:1.12.0'
+
+    // Lifecycle components (ViewModels, LiveData)
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.7.0'
+
+    // Navigation Component
+    implementation 'androidx.navigation:navigation-fragment:2.7.5'
+    implementation 'androidx.navigation:navigation-ui:2.7.5'
+
+    // RecyclerView with performance optimizations
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
+
+    // Charts library for transparency dashboard
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // QR Code scanning
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.google.zxing:core:3.4.1'
+
+    // JSON serialization for SharedPreferences
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+    // Fragment support
+    implementation 'androidx.fragment:fragment:1.6.2'
+
+    // CardView for glassmorphic effects
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // SwipeRefreshLayout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // PDF generation for reports
+    implementation 'com.itextpdf:itext7-core:7.2.5'
+
+    // PDF generation for reports export
+    implementation 'com.itextpdf:itext7-core:7.2.5'
+
+    // Performance monitoring and memory leak detection
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
+    implementation 'androidx.startup:startup-runtime:1.1.1'
+    
+    // Multidex support for performance
+    implementation 'androidx.multidex:multidex:2.0.1'
+    
+    // Performance profiling (debug only)
+    debugImplementation 'com.facebook.flipper:flipper:0.125.0'
+    debugImplementation 'com.facebook.soloader:soloader:0.10.1'
+    debugImplementation 'com.facebook.flipper:flipper-network-plugin:0.125.0'
+    debugImplementation 'com.facebook.flipper:flipper-leakcanary2-plugin:0.125.0'
+    
+    // Image loading optimization
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // Testing dependencies
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.7.0'
+    testImplementation 'org.robolectric:robolectric:4.11.1'
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'
+}
+
+// Version management functions
+def getVersionCode() {
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.exists()) {
+        def Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        return versionProps['VERSION_CODE'].toInteger()
+    } else {
+        return 1
+    }
+}
+
+def getVersionName() {
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.exists()) {
+        def Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        return versionProps['VERSION_NAME']
+    } else {
+        return "1.0.0"
+    }
+}
+
+def getBuildTime() {
+    return new Date().format("yyyy-MM-dd HH:mm:ss")
+}
+
+def getGitCommit() {
+    try {
+        def gitCommitFile = file("${rootDir}/.git/HEAD")
+        if (gitCommitFile.exists()) {
+            def headContent = gitCommitFile.text.trim()
+            if (headContent.startsWith("ref: ")) {
+                def refFile = file("${rootDir}/.git/${headContent.substring(5)}")
+                if (refFile.exists()) {
+                    return refFile.text.trim().substring(0, 7)
+                }
+            } else {
+                return headContent.substring(0, 7)
+            }
+        }
+        return "unknown"
+    } catch (Exception e) {
+        return "unknown"
+    }
+}
+
+// Task to increment version code
+task incrementVersionCode {
+    doLast {
+        def versionPropsFile = file('version.properties')
+        def Properties versionProps = new Properties()
+        
+        if (versionPropsFile.exists()) {
+            versionProps.load(new FileInputStream(versionPropsFile))
+        } else {
+            versionProps['VERSION_NAME'] = '1.0.0'
+            versionProps['VERSION_CODE'] = '1'
+        }
+        
+        def currentVersionCode = versionProps['VERSION_CODE'].toInteger()
+        versionProps['VERSION_CODE'] = (currentVersionCode + 1).toString()
+        
+        versionProps.store(versionPropsFile.newWriter(), null)
+        println "Version code incremented to ${versionProps['VERSION_CODE']}"
+    }
+}
+
+// Task to set version name
+task setVersionName {
+    doLast {
+        if (!project.hasProperty('versionName')) {
+            throw new GradleException('Usage: ./gradlew setVersionName -PversionName=x.y.z')
+        }
+        
+        def versionPropsFile = file('version.properties')
+        def Properties versionProps = new Properties()
+        
+        if (versionPropsFile.exists()) {
+            versionProps.load(new FileInputStream(versionPropsFile))
+        } else {
+            versionProps['VERSION_CODE'] = '1'
+        }
+        
+        versionProps['VERSION_NAME'] = project.versionName
+        versionProps.store(versionPropsFile.newWriter(), null)
+        println "Version name set to ${project.versionName}"
+    }
+}
+
+// Task to create release build
+task createReleaseBuild {
+    dependsOn 'incrementVersionCode'
+    dependsOn 'assembleProductionRelease'
+    
+    doLast {
+        println "Release build created successfully!"
+        println "Version: ${getVersionName()} (${getVersionCode()})"
+        println "Build time: ${getBuildTime()}"
+        println "Git commit: ${getGitCommit()}"
+    }
+}

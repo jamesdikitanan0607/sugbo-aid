@@ -1,0 +1,111 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for dark mode. -->
+    <style name="Theme.SugboAid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/light_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/success_green</item>
+        <item name="colorSecondaryVariant">@color/primary_green</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Background colors for dark mode -->
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorOnSurface">@color/white</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        
+        <!-- Custom theme attributes for dark mode -->
+        <item name="colorSurfacePrimary">@color/surface_primary</item>
+        <item name="colorSurfaceSecondary">@color/surface_secondary</item>
+        <item name="colorSurfaceElevated">@color/surface_elevated</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorTextPrimary">@color/text_primary</item>
+        <item name="colorTextSecondary">@color/text_secondary</item>
+        <item name="colorTextTertiary">@color/text_tertiary</item>
+        <item name="colorTextHint">@color/text_hint</item>
+        <item name="colorTextOnPrimary">@color/text_on_primary</item>
+        <item name="colorTextOnSurface">@color/text_on_surface</item>
+        <item name="colorButtonSurface">@color/button_surface</item>
+        <item name="colorButtonOutline">@color/button_outline</item>
+        <item name="colorButtonDisabled">@color/button_disabled</item>
+        <item name="colorButtonTextDisabled">@color/button_text_disabled</item>
+        <item name="colorDivider">@color/divider_color</item>
+        <item name="colorOverlayBackground">@color/overlay_background</item>
+        <item name="colorShadowLight">@color/shadow_light</item>
+        <item name="colorShadowMedium">@color/shadow_medium</item>
+        <item name="colorBorderLight">@color/border_light</item>
+        <item name="colorBorderMedium">@color/border_medium</item>
+        <item name="colorGlassBackground">@color/glass_dark_20</item>
+        <item name="colorGlassBorder">@color/glass_border</item>
+    </style>
+    
+    <!-- Dark mode glassmorphic card -->
+    <style name="GlassmorphicCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">?attr/colorGlassBackground</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="strokeColor">?attr/colorGlassBorder</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    
+    <!-- Enhanced Glassmorphic Card with Blur Effect (Dark) -->
+    <style name="GlassmorphicCardBlur" parent="GlassmorphicCard">
+        <item name="android:background">@drawable/glassmorphic_card_background</item>
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+        <item name="cardElevation">12dp</item>
+    </style>
+    
+    <!-- Glassmorphic Button Styles (Dark) -->
+    <style name="GlassmorphicButtonPrimary" parent="GradientButton">
+        <item name="android:background">@drawable/glassmorphic_button_primary</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    
+    <style name="GlassmorphicButtonSuccess" parent="GradientButton">
+        <item name="android:background">@drawable/glassmorphic_button_success</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    
+    <!-- Glassmorphic Statistics Card Style (Dark) -->
+    <style name="GlassmorphicStatisticsCard">
+        <item name="android:background">@drawable/glassmorphic_statistics_card</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    
+    <!-- Dark mode text styles -->
+    <style name="StatisticsTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    
+    <style name="StatisticsValue" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textColor">@color/light_blue</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+    
+    <!-- Authentication Theme (Dark Mode) -->
+    <style name="Theme.SugboAid.Authentication" parent="Theme.SugboAid">
+        <item name="android:windowBackground">@drawable/gradient_background</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorOnSurface">@color/white</item>
+        <!-- Ensure Material Design TextInputLayout compatibility -->
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
+        <!-- Authentication-specific styling for dark mode -->
+        <item name="android:textColorHint">@color/medium_gray</item>
+        <item name="colorControlNormal">@color/medium_gray</item>
+        <item name="colorControlActivated">@color/light_blue</item>
+        <item name="colorControlHighlight">@color/primary_blue_20</item>
+    </style>
+</resources>

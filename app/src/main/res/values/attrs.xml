@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- GlassmorphicCardView attributes -->
+    <declare-styleable name="GlassmorphicCardView">
+        <attr name="glassCornerRadius" format="dimension" />
+        <attr name="glassBorderWidth" format="dimension" />
+        <attr name="glassBackgroundAlpha" format="float" />
+        <attr name="glassBackgroundColor" format="color" />
+        <attr name="glassBorderColor" format="color" />
+    </declare-styleable>
+    
+    <!-- AnimatedGradientButton attributes -->
+    <declare-styleable name="AnimatedGradientButton">
+        <attr name="gradientStartColor" format="color" />
+        <attr name="gradientEndColor" format="color" />
+        <attr name="gradientOrientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+            <enum name="diagonal" value="2" />
+        </attr>
+        <attr name="animationDuration" format="integer" />
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
+    
+    <!-- StatisticsCard attributes -->
+    <declare-styleable name="StatisticsCard">
+        <attr name="statTitle" format="string" />
+        <attr name="statValue" format="string" />
+        <attr name="statPercentage" format="string" />
+        <attr name="statIcon" format="reference" />
+        <attr name="statGradientStart" format="color" />
+        <attr name="statGradientEnd" format="color" />
+        <attr name="animateNumbers" format="boolean" />
+    </declare-styleable>
+    
+    <!-- Theme attributes for consistent theming -->
+    <attr name="colorSurfacePrimary" format="color" />
+    <attr name="colorSurfaceSecondary" format="color" />
+    <attr name="colorSurfaceElevated" format="color" />
+    <attr name="colorSurfaceVariant" format="color" />
+    <attr name="colorTextPrimary" format="color" />
+    <attr name="colorTextSecondary" format="color" />
+    <attr name="colorTextTertiary" format="color" />
+    <attr name="colorTextHint" format="color" />
+    <attr name="colorTextOnPrimary" format="color" />
+    <attr name="colorTextOnSurface" format="color" />
+    <attr name="colorButtonSurface" format="color" />
+    <attr name="colorButtonOutline" format="color" />
+    <attr name="colorButtonDisabled" format="color" />
+    <attr name="colorButtonTextDisabled" format="color" />
+    <attr name="colorDivider" format="color" />
+    <attr name="colorOverlayBackground" format="color" />
+    <attr name="colorShadowLight" format="color" />
+    <attr name="colorShadowMedium" format="color" />
+    <attr name="colorBorderLight" format="color" />
+    <attr name="colorBorderMedium" format="color" />
+    <attr name="colorGlassBackground" format="color" />
+    <attr name="colorGlassBorder" format="color" />
+    
+    <!-- PasswordStrengthIndicator attributes -->
+    <declare-styleable name="PasswordStrengthIndicator">
+        <attr name="barHeight" format="dimension" />
+        <attr name="barSpacing" format="dimension" />
+        <attr name="barCornerRadius" format="dimension" />
+        <attr name="weakColor" format="color" />
+        <attr name="mediumColor" format="color" />
+        <attr name="strongColor" format="color" />
+        <attr name="veryStrongColor" format="color" />
+        <attr name="inactiveColor" format="color" />
+    </declare-styleable>
+    
+</resources>

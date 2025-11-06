@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Simple gradient background for confetti effect -->
+    <gradient
+        android:startColor="#33FDB813"
+        android:centerColor="#3310b981"
+        android:endColor="#332CB67D"
+        android:angle="45" />
+</shape>

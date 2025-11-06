@@ -1,0 +1,383 @@
+<resources>
+    <string name="app_name">SugboAid</string>
+    
+    <!-- Splash Screen -->
+    <string name="tagline_main">Together, We Rebuild Cebu</string>
+    <string name="tagline_sub">Transparent, Real-Time, Locally-Built Relief</string>
+    
+    <!-- Role Selection -->
+    <string name="role_donor">Donor</string>
+    <string name="role_organization">Organization</string>
+    <string name="role_volunteer">Volunteer</string>
+    <string name="role_recipient">Recipient</string>
+    <string name="role_guest">Guest</string>
+    
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_inventory">Inventory</string>
+    <string name="nav_transparency">Transparency</string>
+    <string name="nav_reports">Reports</string>
+    <string name="nav_notifications">Notifications</string>
+    
+    <!-- Dashboard -->
+    <string name="total_donations">Total Donations</string>
+    <string name="distributed_items">Distributed Items</string>
+    <string name="families_helped">Families Helped</string>
+    <string name="recent_activities">Recent Activities</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="new_donation">New Donation</string>
+    
+    <!-- POS Donation -->
+    <string name="cash_donation">Cash Donation</string>
+    <string name="goods_donation">Goods Donation</string>
+    <string name="amount">Amount</string>
+    <string name="donor_name">Donor Name</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="rice">Rice</string>
+    <string name="water">Water</string>
+    <string name="medicine">Medicine</string>
+    <string name="clothes">Clothes</string>
+    
+    <!-- Bottom Navigation -->
+    <string name="dashboard">Dashboard</string>
+    <string name="donate">Donate</string>
+    <string name="inventory">Inventory</string>
+    <string name="transparency">Transparency</string>
+    <string name="reports">Reports</string>
+    
+    <!-- Offline Banner -->
+    <string name="offline_message">You are currently offline</string>
+    <string name="offline_icon">Offline indicator</string>
+    
+    <!-- Authentication -->
+    <string name="login">Login</string>
+    <string name="logging_in">Logging in…</string>
+    <string name="create_account">Create Account</string>
+    <string name="creating_account">Creating Account…</string>
+    
+    <!-- Form Validation Messages -->
+    <string name="validation_email_required">Email is required</string>
+    <string name="validation_email_invalid">Please enter a valid email address</string>
+    <string name="validation_email_too_long">Email address is too long</string>
+    <string name="validation_email_invalid_format">Email cannot start or end with a period</string>
+    <string name="validation_email_consecutive_periods">Email cannot contain consecutive periods</string>
+    <string name="validation_password_required">Password is required</string>
+    <string name="validation_password_too_short">Password must be at least %d characters</string>
+    <string name="validation_password_too_long">Password cannot exceed %d characters</string>
+    <string name="validation_password_no_spaces">Password cannot contain spaces</string>
+    <string name="validation_passwords_no_match">Passwords do not match</string>
+    <string name="validation_name_required">Name is required</string>
+    <string name="validation_name_too_short">Name must be at least %d characters</string>
+    <string name="validation_name_too_long">Name cannot exceed %d characters</string>
+    <string name="validation_name_invalid_chars">Name can only contain letters and spaces</string>
+    <string name="validation_name_consecutive_spaces">Name cannot contain multiple consecutive spaces</string>
+    <string name="validation_confirm_password_required">Please confirm your password</string>
+    
+    <!-- Password Strength -->
+    <string name="password_strength_none">Enter a password</string>
+    <string name="password_strength_weak">Weak password</string>
+    <string name="password_strength_medium">Medium strength</string>
+    <string name="password_strength_strong">Strong password</string>
+    <string name="password_strength_very_strong">Very strong password</string>
+    
+    <!-- Accessibility -->
+    <string name="cd_password_strength">Password strength indicator</string>
+    <string name="cd_field_valid">%s field is valid</string>
+    <string name="cd_field_error" formatted="false">%s field has error: %s</string>
+    <string name="cd_field_helper" formatted="false">%s field: %s</string>
+    <string name="cd_form_validation_failed">Form validation failed</string>
+    
+    <!-- Dark Mode Toggle -->
+    <string name="toggle_dark_mode">Toggle dark mode</string>
+    
+    <!-- Common -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="loading">Loading...</string>
+    <string name="offline">You are offline</string>
+    <string name="dark_mode">Dark Mode</string>
+    
+    <!-- Dashboard Specific -->
+    <string name="dashboard_welcome">Welcome to SugboAid</string>
+    <string name="quick_donation">Quick Donation</string>
+    <string name="no_recent_activities">No recent activities</string>
+    <string name="start_by_recording_donation">Start by recording your first donation</string>
+    <string name="no_donations_yet">No donations yet</string>
+    <string name="cash_donation_description">Cash donation for relief operations</string>
+    <string name="goods_donation_description">In-kind goods donation</string>
+    <string name="just_now">Just now</string>
+    <string name="verified">Verified</string>
+    <string name="donation_type_icon">Donation type icon</string>
+    <string name="verified_donation">Verified donation</string>
+    
+    <!-- Time plurals -->
+    <plurals name="minutes_ago">
+        <item quantity="one">%d minute ago</item>
+        <item quantity="other">%d minutes ago</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="one">%d hour ago</item>
+        <item quantity="other">%d hours ago</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="one">%d day ago</item>
+        <item quantity="other">%d days ago</item>
+    </plurals>
+
+    <!-- POS Donation Specific -->
+    <string name="record_new_donation">Record New Donation</string>
+    <string name="choose_donation_type">Choose donation type and enter details</string>
+    <string name="donation_type">Donation Type</string>
+    <string name="cash_donation_amount">Cash Donation Amount</string>
+    <string name="enter_amount_hint">Enter amount (₱)</string>
+    <string name="quick_selection">Quick Selection</string>
+    <string name="goods_donation_items">Goods Donation Items</string>
+    <string name="donor_information_optional">Donor Information (Optional)</string>
+    <string name="donor_name_hint">Donor name (leave blank for Anonymous)</string>
+    <string name="record_donation">Record Donation</string>
+    <string name="recording">Recording...</string>
+    <string name="donation_recorded_successfully">Donation recorded successfully!</string>
+    <string name="failed_to_record_donation">Failed to record donation: %s</string>
+    <string name="please_enter_valid_amount">Please enter a valid amount</string>
+    <string name="amount_cannot_exceed_limit">Amount cannot exceed ₱1,000,000</string>
+    <string name="please_select_at_least_one_item">Please select at least one item to donate</string>
+    <string name="invalid_donation_data">Invalid donation data</string>
+    
+    <!-- Goods Items -->
+    <string name="rice_kg">🍚 Rice (kg)</string>
+    <string name="water_bottles">💧 Water (bottles)</string>
+    <string name="medicine_packs">💊 Medicine (packs)</string>
+    <string name="clothes_pieces">👕 Clothes (pieces)</string>
+    
+    <!-- Success Screen -->
+    <string name="donation_recorded">Donation Recorded!</string>
+    <string name="donation_success_message">Your donation has been recorded successfully!</string>
+    <string name="cash_donation_success_message">Your cash donation has been recorded successfully!</string>
+    <string name="goods_donation_success_message">Your goods donation has been recorded successfully!</string>
+    <string name="donation_details">Donation Details</string>
+    <string name="donor_label">Donor:</string>
+    <string name="type_label">Type:</string>
+    <string name="amount_label">Amount:</string>
+    <string name="date_label">Date:</string>
+    <string name="receipt_id_label">Receipt ID:</string>
+    <string name="digital_receipt">Digital Receipt</string>
+    <string name="scan_qr_code_message">Scan this QR code to view your donation receipt</string>
+    <string name="share_receipt">Share Receipt</string>
+    <string name="back_to_dashboard">Back to Dashboard</string>
+    <string name="anonymous_donor">Anonymous Donor</string>
+    <string name="unable_to_generate_qr_code">Unable to generate QR code</string>
+    <string name="unable_to_share_receipt">Unable to share receipt</string>
+    <string name="sugboaid_donation_receipt">SugboAid Donation Receipt</string>
+    <string name="thank_you_donation">Thank you for your generous donation! 💝</string>
+    <string name="together_we_rebuild">Together, We Rebuild Cebu 🏗️</string>
+    
+    <!-- Transparency -->
+    <string name="transparency_title">Transparency Dashboard</string>
+    <string name="overview_tab">Overview</string>
+    <string name="barangay_map_tab">Barangay Map</string>
+    <string name="impact_stories_tab">Impact Stories</string>
+    
+    <!-- Additional Authentication -->
+    <string name="signup">Sign Up</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    <string name="dont_have_account">Don\'t have an account? Sign up</string>
+    <string name="logout">Logout</string>
+    <string name="logout_confirmation">Are you sure you want to logout?</string>
+    
+    <!-- Content Descriptions -->
+    <string name="cd_logo">SugboAid Logo</string>
+    <string name="cd_menu">Menu</string>
+    <string name="cd_back">Back</string>
+    <string name="back_button">Back</string>
+    <string name="cd_search">Search</string>
+    <string name="cd_settings">Settings</string>
+    <string name="cd_decrease_quantity">Decrease quantity</string>
+    <string name="cd_increase_quantity">Increase quantity</string>
+    <string name="cd_success_icon">Success</string>
+    <string name="cd_qr_code_receipt">QR Code Receipt</string>
+    <string name="notifications">Notifications</string>
+    
+    <!-- Brand Identity Strings -->
+    <string name="brand_name">SugboAid</string>
+    <string name="brand_tagline_main">Together, We Rebuild Cebu</string>
+    <string name="brand_tagline_sub">Transparent, Real-Time, Locally-Built Relief</string>
+    <string name="brand_mission">Empowering communities through transparent donation management</string>
+    <string name="brand_vision">Building resilient communities through technology and transparency</string>
+    <string name="brand_values">Transparency • Community • Innovation • Impact</string>
+    
+    <!-- About Section -->
+    <string name="about_sugboaid">About SugboAid</string>
+    <string name="about_description">SugboAid is a locally-built donation management platform designed to bring transparency and efficiency to relief operations in Cebu. Our mission is to empower communities through technology-driven solutions that ensure every donation reaches those who need it most.</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_build">Build %1$s</string>
+    <string name="about_copyright">© 2024 SugboAid. All rights reserved.</string>
+    
+    <!-- Branding Guidelines -->
+    <string name="branding_primary_color">Primary Blue (#1E4C82)</string>
+    <string name="branding_secondary_color">Primary Green (#2CB67D)</string>
+    <string name="branding_accent_color">Accent Yellow (#FDB813)</string>
+    <string name="branding_typography_headline">Headlines: sans-serif-black</string>
+    <string name="branding_typography_body">Body: sans-serif</string>
+    
+    <!-- Accessibility -->
+    <string name="accessibility_announcement_donation_recorded">Donation successfully recorded</string>
+    <string name="accessibility_announcement_theme_changed">Theme changed to %1$s mode</string>
+    <string name="accessibility_announcement_navigation">Navigated to %1$s</string>
+    <string name="accessibility_hint_double_tap">Double tap to activate</string>
+    <string name="accessibility_hint_swipe">Swipe to dismiss</string>
+    
+    <!-- Accessibility Content Descriptions -->
+    <string name="accessibility_statistics_card">Statistics card showing %1$s</string>
+    <string name="accessibility_quick_action_button">Quick action button for %1$s</string>
+    <string name="accessibility_donation_type_toggle">Toggle between cash and goods donation</string>
+    <string name="accessibility_amount_input">Enter donation amount in Philippine pesos</string>
+    <string name="accessibility_quantity_selector">Select quantity for %1$s</string>
+    <string name="accessibility_increment_button">Increase %1$s quantity</string>
+    <string name="accessibility_decrement_button">Decrease %1$s quantity</string>
+    <string name="accessibility_navigation_item">Navigate to %1$s screen</string>
+    <string name="accessibility_notification_badge">%1$d unread notifications</string>
+    <string name="accessibility_progress_indicator">Progress: %1$d percent complete</string>
+    <string name="accessibility_inventory_item">%1$s: %2$d items in stock, %3$s status</string>
+    <string name="accessibility_transaction_item">Transaction: %1$s donated %2$s on %3$s</string>
+    <string name="accessibility_chart_description">Chart showing %1$s data</string>
+    <string name="accessibility_map_marker">Location marker for %1$s</string>
+    <string name="accessibility_qr_scanner">QR code scanner for inventory updates</string>
+    <string name="accessibility_export_button">Export %1$s report</string>
+    <string name="accessibility_filter_button">Filter by %1$s</string>
+    <string name="accessibility_search_input">Search %1$s</string>
+    <string name="accessibility_empty_state">No %1$s available</string>
+    <string name="accessibility_loading_state">Loading %1$s</string>
+    <string name="accessibility_error_state">Error loading %1$s</string>
+    <string name="accessibility_success_animation">Success animation playing</string>
+    <string name="accessibility_confetti_animation">Celebration animation for successful donation</string>
+    
+    <!-- Accessibility Format Strings -->
+    <string name="accessibility_currency_format">%1$.2f Philippine pesos</string>
+    <string name="accessibility_statistic_format">%1$s: %2$s, change of %3$s</string>
+    <string name="accessibility_donation_item_format">%1$d %2$s selected for donation</string>
+    <string name="accessibility_percentage_format">%1$d percent</string>
+    <string name="accessibility_time_format">%1$s ago</string>
+    
+    <!-- Accessibility Actions -->
+    <string name="accessibility_action_record_donation">Record new donation</string>
+    <string name="accessibility_action_view_inventory">View inventory details</string>
+    <string name="accessibility_action_toggle_theme">Switch between light and dark theme</string>
+    <string name="accessibility_action_open_notifications">Open notifications</string>
+    <string name="accessibility_action_scan_qr">Scan QR code</string>
+    <string name="accessibility_action_export_report">Export report</string>
+    <string name="accessibility_action_filter_results">Filter results</string>
+    <string name="accessibility_action_search">Search</string>
+    <string name="accessibility_action_dismiss">Dismiss</string>
+    <string name="accessibility_action_retry">Retry</string>
+    
+    <!-- Accessibility Headings -->
+    <string name="accessibility_heading_statistics">Statistics Overview</string>
+    <string name="accessibility_heading_quick_actions">Quick Actions</string>
+    <string name="accessibility_heading_recent_activities">Recent Activities</string>
+    <string name="accessibility_heading_donation_form">Donation Form</string>
+    <string name="accessibility_heading_inventory_list">Inventory List</string>
+    <string name="accessibility_heading_transparency_data">Transparency Data</string>
+    <string name="accessibility_heading_reports">Reports</string>
+    <string name="accessibility_heading_notifications">Notifications</string>
+    
+    <!-- Accessibility Status Messages -->
+    <string name="accessibility_status_online">Application is online</string>
+    <string name="accessibility_status_offline">Application is offline, data will sync when connection is restored</string>
+    <string name="accessibility_status_syncing">Syncing data with server</string>
+    <string name="accessibility_status_sync_complete">Data synchronization complete</string>
+    <string name="accessibility_status_sync_failed">Data synchronization failed</string>
+    <string name="accessibility_status_dark_mode_enabled">Dark mode enabled</string>
+    <string name="accessibility_status_light_mode_enabled">Light mode enabled</string>
+    
+    <!-- Accessibility Instructions -->
+    <string name="accessibility_instruction_double_tap">Double tap to activate</string>
+    <string name="accessibility_instruction_swipe_dismiss">Swipe to dismiss</string>
+    <string name="accessibility_instruction_scroll">Scroll to see more items</string>
+    <string name="accessibility_instruction_navigate">Use navigation buttons to move between screens</string>
+    
+    <!-- Additional Accessibility Strings -->
+    <string name="accessibility_navigation_container">Main navigation</string>
+    <string name="accessibility_main_content">Main content area</string>
+    <string name="accessibility_heading_dashboard_header">Dashboard header</string>
+    
+    <!-- Error Messages with Brand Voice -->
+    <string name="error_network_unavailable">SugboAid is currently offline. Your data will sync when connection is restored.</string>
+    <string name="error_generic">Something went wrong. The SugboAid team is working to fix this.</string>
+    <string name="error_data_sync">Unable to sync your data. Please check your connection and try again.</string>
+    
+    <!-- Authentication Error Messages -->
+    <string name="error_auth_network">Network error. Please check your connection and try again.</string>
+    <string name="error_auth_invalid_credentials">Invalid email or password. Please check your credentials and try again.</string>
+    <string name="error_auth_session_expired">Your session has expired. Please log in again.</string>
+    <string name="error_auth_registration_failed">Registration failed. Please check your information and try again.</string>
+    <string name="error_auth_logout_failed">Logout failed. Please try again.</string>
+    <string name="error_auth_session_save_failed">Failed to save session. Please try again.</string>
+    <string name="error_auth_unknown">An unexpected error occurred. Please try again.</string>
+    
+    <!-- Authentication Success Messages -->
+    <string name="success_auth_login">Login successful</string>
+    <string name="success_auth_registration">Account created successfully</string>
+    <string name="success_auth_logout">Logged out successfully</string>
+    <string name="success_auth_session_restored">Welcome back! Your session has been restored.</string>
+    
+    <!-- Authentication Loading Messages -->
+    <string name="loading_auth_login">Logging in…</string>
+    <string name="loading_auth_registration">Creating account…</string>
+    <string name="loading_auth_logout">Logging out…</string>
+    <string name="loading_auth_session_check">Checking session…</string>
+    
+    <!-- Authentication Retry Actions -->
+    <string name="action_retry">Retry</string>
+    <string name="action_try_again">Try Again</string>
+    <string name="action_login">Login</string>
+    <string name="action_got_it">Got it</string>
+    
+    <!-- Form Validation Error Count Messages -->
+    <string name="validation_single_error">Please fix the validation error</string>
+    <string name="validation_multiple_errors">Please fix %d validation errors</string>
+    
+    <!-- Contextual Help Messages -->
+    <string name="help_email_format">Enter a valid email address like example@domain.com</string>
+    <string name="help_password_requirements">Password must be at least 6 characters long</string>
+    <string name="help_password_strength">Use a mix of letters, numbers, and symbols for a stronger password</string>
+    <string name="help_name_format">Enter your full name (at least 2 characters)</string>
+    <string name="help_confirm_password">Re-enter your password to confirm it matches</string>
+    
+    <!-- Success Messages with Brand Voice -->
+    <string name="success_data_synced">Your SugboAid data has been successfully synced.</string>
+    <string name="success_settings_saved">Your SugboAid preferences have been saved.</string>
+    <string name="success_export_complete">Report exported successfully. Thank you for using SugboAid!</string>
+    
+    <!-- Offline and Sync Strings -->
+    <string name="offline_mode_active">Offline Mode Active</string>
+    <string name="pending_actions_count">%d actions pending sync</string>
+    <string name="syncing_data">Syncing Data...</string>
+    <string name="sync_progress">%1$d of %2$d synced</string>
+    <string name="sync_completed">Sync Completed</string>
+    <string name="sync_failed">Sync Failed</string>
+    <string name="sync_will_retry">Will retry when connection improves</string>
+    <string name="sync_error">Sync Error</string>
+    <string name="sync_now">Sync Now</string>
+    <string name="actions_synced">%d actions synced successfully</string>
+    <string name="banner_icon">Banner Icon</string>
+    <string name="network_restored">Network connection restored</string>
+    <string name="auto_sync_enabled">Auto-sync enabled</string>
+    <string name="manual_sync_required">Manual sync required</string>
+    <string name="sync_in_progress">Sync in progress...</string>
+    <string name="last_synced">Last synced: %s</string>
+    <string name="never_synced">Never synced</string>
+    <string name="sync_conflicts_detected">Sync conflicts detected</string>
+    <string name="resolve_conflicts">Resolve Conflicts</string>
+    <string name="use_local_data">Use Local Data</string>
+    <string name="use_server_data">Use Server Data</string>
+    <string name="conflict_resolution">Conflict Resolution</string>
+    <string name="data_conflict_message">There are conflicts between your local data and server data. Please choose which version to keep.</string>
+</resources>

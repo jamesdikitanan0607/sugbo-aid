@@ -1,0 +1,642 @@
+[
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_circle_unread_indicator.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/circle_unread_indicator.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_gradient_primary.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/gradient_primary.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_shimmer_gradient.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/shimmer_gradient.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_button_release.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/button_release.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_alert.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_alert.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_activity_main.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_slide_in_right.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/slide_in_right.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_fade_out.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/fade_out.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_lock.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_lock.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_scale_out.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/scale_out.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.sugboaid.donation.app-main-57:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_glassmorphic_button_success.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/glassmorphic_button_success.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_quantity_button.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_quantity_button.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_delete.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_delete.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_circular_button_small.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_circular_button_small.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_role_button_guest.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/role_button_guest.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_qr_code.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_qr_code.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_item_notification.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/item_notification.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_activity_splash.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_button_outline.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_button_outline.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_logout.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_logout.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_warning.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_warning.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/xml_file_provider_paths.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/xml/file_provider_paths.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_reports_empty.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_reports_empty.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_mark_read.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_mark_read.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_empty_donations.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_empty_donations.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_organization.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_organization.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_role_button_organization.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/role_button_organization.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_glassmorphic_bottom_nav_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/glassmorphic_bottom_nav_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_scale_in.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/scale_in.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_slide_in_left.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/slide_in_left.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_donation_success.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_donation_success.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_success_checkmark.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_success_checkmark.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_dialog_stock_adjustment.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/dialog_stock_adjustment.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_reports.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_reports.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_impact.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_impact.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_button_ripple_primary.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/button_ripple_primary.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_notifications.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_notifications.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_pdf.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_pdf.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_status_badge.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_status_badge.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_refresh.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_refresh.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_button_ripple_success.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/button_ripple_success.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_pulse.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/pulse.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_button_animated_selector.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/button_animated_selector.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_dashboard.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_notification_badge_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/notification_badge_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_remove.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_remove.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_trend_up.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_trend_up.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_pos_donation.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_pos_donation.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_confetti_animation.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/confetti_animation.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_glassmorphic_card_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/glassmorphic_card_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_share.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_share.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_overshoot_interpolator.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/overshoot_interpolator.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_donations.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_donations.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_dashboard.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_dashboard.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_add_donation.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_add_donation.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_transparency_overview.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_transparency_overview.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_percentage_badge.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_percentage_badge.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_role_button_donor.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/role_button_donor.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_guest.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_guest.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_families.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_families.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_glassmorphic_fab_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/glassmorphic_fab_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_bounce_interpolator.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/bounce_interpolator.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/xml_backup_rules.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_button_press.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/button_press.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_visibility.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_visibility.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_circular_button.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_circular_button.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_circular_icon.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_circular_icon.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_fade_in.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/fade_in.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_error.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_error.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_calendar.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_calendar.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_email.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_email.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_custom_barcode_scanner.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/custom_barcode_scanner.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_gradient_success.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/gradient_success.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_slide_up_in.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/slide_up_in.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/menu_notification_context_menu.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/menu/notification_context_menu.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_activity_qr_scanner.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/activity_qr_scanner.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_splash_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/splash_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_app_logo.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/app_logo.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_arrow_back.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_inventory_empty.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_inventory_empty.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_reports.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_reports.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_slide_out_right.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/slide_out_right.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_cash.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_cash.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/navigation_nav_graph.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_gradient_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/gradient_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_inventory.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_inventory.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_badge_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/badge_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/menu_bottom_navigation_menu.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/menu/bottom_navigation_menu.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_transparency.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_transparency.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_dialog_add_inventory_item.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/dialog_add_inventory_item.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_person.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_slide_down_out.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/slide_down_out.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_statistics.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_statistics.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_item_barangay.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/item_barangay.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_glassmorphic_statistics_card.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/glassmorphic_statistics_card.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_transparency_stories.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_transparency_stories.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_view_offline_banner.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/view_offline_banner.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_gradient_neutral.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/gradient_neutral.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_rotate_360.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/rotate_360.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_notifications.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.sugboaid.donation.app-main-57:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.sugboaid.donation.app-main-57:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_gradient_info.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/gradient_info.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_item_transaction.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/item_transaction.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_sugboaid_logo.png.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/sugboaid_logo.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_transparency_map.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_transparency_map.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_shimmer_gradient_dark.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/shimmer_gradient_dark.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_recipient.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_recipient.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_notifications_empty.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_notifications_empty.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_heart.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_heart.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_donation.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_donation.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_slide_out_left.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/slide_out_left.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.sugboaid.donation.app-main-57:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_verified.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_verified.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_circle_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/circle_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_gradient_warning.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/gradient_warning.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_money.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_money.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_item_impact_story.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/item_impact_story.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_login.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_progress_stock_level.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/progress_stock_level.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_mark_unread.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_mark_unread.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_goods.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_goods.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_add.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_gradient_danger.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/gradient_danger.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.sugboaid.donation.app-main-57:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_logo_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/logo_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_shake.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/shake.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_signup.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_signup.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_sync.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_sync.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bg_campaign_badge.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bg_campaign_badge.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_item_inventory.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/item_inventory.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/menu_transaction_context_menu.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/menu/transaction_context_menu.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_fab_ripple.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/fab_ripple.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_check_circle.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_check_circle.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_transparency.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/fragment_transparency.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/color_bottom_nav_item_color.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/color/bottom_nav_item_color.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_bottom_nav_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/bottom_nav_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_role_button_recipient.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/role_button_recipient.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_item_recent_activity.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/layout/item_recent_activity.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_csv.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_csv.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_circle_gradient_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/circle_gradient_background.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_system_update.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_system_update.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_qr_code.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_qr_code.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_glassmorphic_button_primary.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/glassmorphic_button_primary.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/xml_data_extraction_rules.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_dark_mode.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_dark_mode.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_family.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_family.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_info.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_info.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_offline.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_offline.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_location.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_location.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_role_button_volunteer.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/role_button_volunteer.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_inventory.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_inventory.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_volunteer.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_volunteer.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_light_mode.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_light_mode.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/anim_bounce_in.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/anim/bounce_in.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/drawable_ic_trend_down.xml.flat",
+        "source": "com.sugboaid.donation.app-main-57:/drawable/ic_trend_down.xml"
+    }
+]

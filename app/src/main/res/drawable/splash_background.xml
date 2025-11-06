@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="@color/primary_blue"
+                android:centerColor="#2563eb"
+                android:endColor="@color/primary_green"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Overlay for glassmorphic effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/glass_dark_20" />
+        </shape>
+    </item>
+</layer-list>

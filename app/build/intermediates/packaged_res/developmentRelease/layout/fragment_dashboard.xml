@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Header with Welcome and Notifications -->
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:contentDescription="@string/accessibility_heading_dashboard_header"
+            android:importantForAccessibility="yes"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tv_welcome"
+                style="@style/SugboAid.Text.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dashboard_welcome"
+                android:accessibilityHeading="true"
+                android:importantForAccessibility="yes" />
+
+            <!-- Notification Icon with Badge -->
+            <FrameLayout
+                android:id="@+id/fl_notification_container"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/accessibility_action_open_notifications"
+                android:importantForAccessibility="yes"
+                android:layout_marginEnd="8dp">
+
+                <ImageView
+                    android:id="@+id/iv_notifications"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_notifications"
+                    android:contentDescription="@string/notifications"
+                    android:importantForAccessibility="no"
+                    app:tint="@color/text_primary" />
+
+                <TextView
+                    android:id="@+id/tv_notification_badge"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/notification_badge_background"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="5"
+                    tools:visibility="visible" />
+
+            </FrameLayout>
+
+            <!-- Logout Button -->
+            <ImageView
+                android:id="@+id/iv_logout"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_logout"
+                android:contentDescription="@string/logout"
+                android:importantForAccessibility="yes"
+                app:tint="@color/text_primary" />
+
+        </LinearLayout>
+
+        <!-- Statistics Cards Container -->
+        <LinearLayout
+            android:id="@+id/ll_statistics_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/accessibility_heading_statistics"
+            android:importantForAccessibility="yes"
+            app:layout_constraintTop_toBottomOf="@id/ll_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Total Donations Card -->
+            <com.sugboaid.donation.views.StatisticsCard
+                android:id="@+id/card_total_donations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:statTitle="@string/total_donations"
+                app:statValue="₱0.00"
+                app:statPercentage="+0%"
+                app:statIcon="@drawable/ic_money"
+                app:statGradientStart="@color/primary_blue"
+                app:statGradientEnd="@color/light_blue" />
+
+            <!-- Distributed Items Card -->
+            <com.sugboaid.donation.views.StatisticsCard
+                android:id="@+id/card_distributed_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:statTitle="@string/distributed_items"
+                app:statValue="0"
+                app:statPercentage="+0%"
+                app:statIcon="@drawable/ic_inventory"
+                app:statGradientStart="@color/primary_green"
+                app:statGradientEnd="@color/success_green" />
+
+            <!-- Families Helped Card -->
+            <com.sugboaid.donation.views.StatisticsCard
+                android:id="@+id/card_families_helped"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:statTitle="@string/families_helped"
+                app:statValue="0"
+                app:statPercentage="+0%"
+                app:statIcon="@drawable/ic_family"
+                app:statGradientStart="@color/accent_yellow"
+                app:statGradientEnd="@color/warning_orange" />
+
+        </LinearLayout>
+
+        <!-- Quick Actions Section -->
+        <TextView
+            android:id="@+id/tv_quick_actions"
+            style="@style/SugboAid.Text.Subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/quick_actions"
+            android:layout_marginTop="@dimen/brand_spacing_lg"
+            android:layout_marginBottom="@dimen/brand_spacing_md"
+            android:accessibilityHeading="true"
+            android:importantForAccessibility="yes"
+            app:layout_constraintTop_toBottomOf="@id/ll_statistics_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Quick Action Buttons Grid -->
+        <GridLayout
+            android:id="@+id/gl_quick_actions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/accessibility_heading_quick_actions"
+            android:importantForAccessibility="yes"
+            app:layout_constraintTop_toBottomOf="@id/tv_quick_actions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- New Donation Button -->
+            <com.sugboaid.donation.views.AnimatedGradientButton
+                android:id="@+id/btn_new_donation"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:text="@string/new_donation"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:drawableTop="@drawable/ic_add_donation"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                app:gradientStartColor="@color/primary_blue"
+                app:gradientEndColor="@color/light_blue"
+                app:cornerRadius="12dp" />
+
+            <!-- Inventory Button -->
+            <com.sugboaid.donation.views.AnimatedGradientButton
+                android:id="@+id/btn_inventory"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:text="@string/inventory"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:drawableTop="@drawable/ic_inventory"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                app:gradientStartColor="@color/primary_green"
+                app:gradientEndColor="@color/success_green"
+                app:cornerRadius="12dp" />
+
+            <!-- Transparency Button -->
+            <com.sugboaid.donation.views.AnimatedGradientButton
+                android:id="@+id/btn_transparency"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:text="@string/transparency"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:drawableTop="@drawable/ic_transparency"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                app:gradientStartColor="@color/accent_yellow"
+                app:gradientEndColor="@color/warning_orange"
+                app:cornerRadius="12dp" />
+
+            <!-- Reports Button -->
+            <com.sugboaid.donation.views.AnimatedGradientButton
+                android:id="@+id/btn_reports"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:text="@string/reports"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:drawableTop="@drawable/ic_reports"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                app:gradientStartColor="@color/error_red"
+                app:gradientEndColor="@color/warning_orange"
+                app:cornerRadius="12dp" />
+
+        </GridLayout>
+
+        <!-- Recent Activities Section -->
+        <TextView
+            android:id="@+id/tv_recent_activities"
+            style="@style/SugboAid.Text.Subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/recent_activities"
+            android:layout_marginTop="@dimen/brand_spacing_xl"
+            android:layout_marginBottom="@dimen/brand_spacing_md"
+            android:accessibilityHeading="true"
+            android:importantForAccessibility="yes"
+            app:layout_constraintTop_toBottomOf="@id/gl_quick_actions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Recent Activities RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recent_activities"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="100dp"
+            android:nestedScrollingEnabled="false"
+            android:contentDescription="@string/accessibility_heading_recent_activities"
+            android:importantForAccessibility="yes"
+            app:layout_constraintTop_toBottomOf="@id/tv_recent_activities"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/item_recent_activity"
+            tools:itemCount="3" />
+
+        <!-- Empty State for Recent Activities -->
+        <LinearLayout
+            android:id="@+id/ll_empty_state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_recent_activities"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_empty_donations"
+                android:alpha="0.5"
+                android:contentDescription="@string/no_donations_yet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_recent_activities"
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="16dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_by_recording_donation"
+                android:textSize="14sp"
+                android:textColor="@color/text_tertiary"
+                android:layout_marginTop="8dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Floating Action Button for Quick Donation -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_quick_donation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_add"
+            android:contentDescription="@string/accessibility_action_record_donation"
+            android:importantForAccessibility="yes"
+            android:focusable="true"
+            android:clickable="true"
+            app:backgroundTint="@color/primary_blue"
+            app:tint="@android:color/white"
+            app:elevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

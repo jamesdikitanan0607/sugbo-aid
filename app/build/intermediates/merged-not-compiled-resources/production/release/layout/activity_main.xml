@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".activities.MainActivity">
+
+    <!-- Enhanced Offline Banner with Sync Capabilities -->
+    <com.sugboaid.views.OfflineBannerView
+        android:id="@+id/offline_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/brand_spacing_md"
+        android:gravity="center"
+        android:visibility="gone"
+        android:elevation="@dimen/shadow_elevation_medium"
+        android:contentDescription="@string/accessibility_status_offline"
+        android:importantForAccessibility="yes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Main Navigation Container -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/accessibility_main_content"
+        android:importantForAccessibility="no"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"
+        app:layout_constraintTop_toBottomOf="@id/offline_banner"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bottom Navigation with SugboAid Branding -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_nav_height"
+        android:background="@drawable/glassmorphic_bottom_nav_background"
+        android:elevation="@dimen/brand_card_elevation"
+        android:contentDescription="@string/accessibility_navigation_container"
+        android:importantForAccessibility="yes"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="@color/bottom_nav_item_color"
+        app:itemTextColor="@color/bottom_nav_item_color"
+        app:itemRippleColor="@color/primary_blue_20"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="@dimen/logo_size_small"
+        app:itemTextAppearanceActive="@style/SugboAid.Text.Caption"
+        app:itemTextAppearanceInactive="@style/SugboAid.Text.Caption"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Dark Mode Toggle with SugboAid Branding -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_dark_mode_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/brand_spacing_md"
+        android:src="@drawable/ic_dark_mode"
+        android:contentDescription="@string/toggle_dark_mode"
+        android:importantForAccessibility="yes"
+        android:focusable="true"
+        android:clickable="true"
+        app:backgroundTint="@color/primary_blue"
+        app:tint="@color/white"
+        app:elevation="@dimen/shadow_elevation_fab"
+        app:rippleColor="@color/ripple_light"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

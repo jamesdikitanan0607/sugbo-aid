@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item
+        android:id="@+id/action_view_details"
+        android:title="View Details"
+        android:icon="@drawable/ic_reports" />
+    
+    <item
+        android:id="@+id/action_view_receipt"
+        android:title="View Receipt QR"
+        android:icon="@drawable/ic_qr_code" />
+    
+    <item
+        android:id="@+id/action_share"
+        android:title="Share Transaction"
+        android:icon="@drawable/ic_share" />
+    
+</menu>

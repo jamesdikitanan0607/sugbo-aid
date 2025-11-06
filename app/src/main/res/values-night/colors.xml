@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text Colors (Dark Theme) -->
+    <color name="text_primary">@color/white</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <color name="text_tertiary">#808080</color>
+    <color name="text_hint">#666666</color>
+    <color name="text_on_primary">@color/white</color>
+    <color name="text_on_surface">@color/white</color>
+    
+    <!-- Surface Colors (Dark Theme) -->
+    <color name="surface_primary">@color/dark_surface</color>
+    <color name="surface_secondary">@color/dark_surface_variant</color>
+    <color name="surface_elevated">#2D2D2D</color>
+    <color name="surface_variant">#3A3A3A</color>
+    
+    <!-- Background Colors (Dark Theme) -->
+    <color name="background_primary">@color/dark_background</color>
+    <color name="card_background">@color/dark_surface</color>
+    <color name="divider_color">#404040</color>
+    <color name="overlay_background">#80000000</color>
+    
+    <!-- Button Colors (Dark Theme) -->
+    <color name="button_surface">@color/dark_surface_variant</color>
+    <color name="button_outline">#404040</color>
+    <color name="button_disabled">#2D2D2D</color>
+    <color name="button_text_disabled">#666666</color>
+    
+    <!-- Navigation Colors (Dark Theme) -->
+    <color name="bottom_nav_background">@color/dark_surface</color>
+    
+    <!-- Theme Colors (Dark Theme) -->
+    <color name="background_color">@color/dark_background</color>
+    <color name="fab_background_color">@color/primary_blue</color>
+    <color name="fab_icon_color">@color/white</color>
+    
+    <!-- Glassmorphism Colors (Dark Theme) -->
+    <color name="glass_white_60">#99FFFFFF</color>
+    <color name="glass_white_40">#66FFFFFF</color>
+    <color name="glass_white_20">#33FFFFFF</color>
+    <color name="glass_white_10">#1AFFFFFF</color>
+    <color name="glass_dark_60">#99000000</color>
+    <color name="glass_dark_40">#66000000</color>
+    <color name="glass_dark_20">#33000000</color>
+    <color name="glass_border">#4DFFFFFF</color>
+    
+    <!-- Shadow Colors (Dark Theme) -->
+    <color name="shadow_light">#33000000</color>
+    <color name="shadow_medium">#4D000000</color>
+    
+    <!-- Border Colors (Dark Theme) -->
+    <color name="border_light">#404040</color>
+    <color name="border_medium">#666666</color>
+</resources>

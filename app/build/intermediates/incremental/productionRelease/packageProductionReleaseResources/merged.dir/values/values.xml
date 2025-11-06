@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <array name="danger_gradient">
+        <item>@color/error_red</item>
+        <item>#dc2626</item>
+    </array>
+    <array name="info_gradient">
+        <item>@color/light_blue</item>
+        <item>@color/primary_blue</item>
+    </array>
+    <array name="primary_gradient">
+        <item>@color/primary_blue</item>
+        <item>@color/light_blue</item>
+    </array>
+    <array name="success_gradient">
+        <item>@color/primary_green</item>
+        <item>@color/success_green</item>
+    </array>
+    <array name="warning_gradient">
+        <item>@color/warning_orange</item>
+        <item>@color/accent_yellow</item>
+    </array>
+    <attr format="color" name="colorBorderLight"/>
+    <attr format="color" name="colorBorderMedium"/>
+    <attr format="color" name="colorButtonDisabled"/>
+    <attr format="color" name="colorButtonOutline"/>
+    <attr format="color" name="colorButtonSurface"/>
+    <attr format="color" name="colorButtonTextDisabled"/>
+    <attr format="color" name="colorDivider"/>
+    <attr format="color" name="colorGlassBackground"/>
+    <attr format="color" name="colorGlassBorder"/>
+    <attr format="color" name="colorOverlayBackground"/>
+    <attr format="color" name="colorShadowLight"/>
+    <attr format="color" name="colorShadowMedium"/>
+    <attr format="color" name="colorSurfaceElevated"/>
+    <attr format="color" name="colorSurfacePrimary"/>
+    <attr format="color" name="colorSurfaceSecondary"/>
+    <attr format="color" name="colorSurfaceVariant"/>
+    <attr format="color" name="colorTextHint"/>
+    <attr format="color" name="colorTextOnPrimary"/>
+    <attr format="color" name="colorTextOnSurface"/>
+    <attr format="color" name="colorTextPrimary"/>
+    <attr format="color" name="colorTextSecondary"/>
+    <attr format="color" name="colorTextTertiary"/>
+    <color name="accent_yellow">#FDB813</color>
+    <color name="background_color">@color/light_gray</color>
+    <color name="background_primary">@color/light_gray</color>
+    <color name="black">#000000</color>
+    <color name="border_light">#E0E0E0</color>
+    <color name="border_medium">#BDBDBD</color>
+    <color name="bottom_nav_background">@color/white</color>
+    <color name="button_disabled">#F5F5F5</color>
+    <color name="button_outline">#E0E0E0</color>
+    <color name="button_surface">@color/white</color>
+    <color name="button_text_disabled">#BDBDBD</color>
+    <color name="card_background">@color/white</color>
+    <color name="dark_background">#121212</color>
+    <color name="dark_gray">#424242</color>
+    <color name="dark_surface">#1E1E1E</color>
+    <color name="dark_surface_variant">#2D2D2D</color>
+    <color name="divider_color">#E0E0E0</color>
+    <color name="error_red">@color/status_critical</color>
+    <color name="fab_background_color">@color/primary_blue</color>
+    <color name="fab_icon_color">@color/white</color>
+    <color name="glass_border">#33FFFFFF</color>
+    <color name="glass_dark_20">#33000000</color>
+    <color name="glass_dark_40">#66000000</color>
+    <color name="glass_dark_60">#99000000</color>
+    <color name="glass_white_10">#1AFFFFFF</color>
+    <color name="glass_white_20">#33FFFFFF</color>
+    <color name="glass_white_40">#66FFFFFF</color>
+    <color name="glass_white_60">#99FFFFFF</color>
+    <color name="ic_launcher_background">@color/primary_blue</color>
+    <color name="item_background">@color/glass_white_40</color>
+    <color name="light_blue">#2563eb</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="loading_overlay">#80FFFFFF</color>
+    <color name="medium_gray">#9E9E9E</color>
+    <color name="overlay_background">#80FFFFFF</color>
+    <color name="password_strength_inactive">#e5e7eb</color>
+    <color name="password_strength_medium">#f59e0b</color>
+    <color name="password_strength_strong">#10b981</color>
+    <color name="password_strength_very_strong">#059669</color>
+    <color name="password_strength_weak">#ef4444</color>
+    <color name="primary_blue">#1E4C82</color>
+    <color name="primary_blue_10">#1A1E4C82</color>
+    <color name="primary_blue_20">#331E4C82</color>
+    <color name="primary_blue_light">#4A90E2</color>
+    <color name="primary_green">#2CB67D</color>
+    <color name="primary_green_20">#332CB67D</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="ripple_dark">#1A000000</color>
+    <color name="ripple_light">#1AFFFFFF</color>
+    <color name="shadow_light">#1A000000</color>
+    <color name="shadow_medium">#33000000</color>
+    <color name="status_critical">#ef4444</color>
+    <color name="status_critical_light">#f87171</color>
+    <color name="status_healthy">#10b981</color>
+    <color name="status_healthy_light">#34d399</color>
+    <color name="status_low">#f97316</color>
+    <color name="status_low_light">#fb923c</color>
+    <color name="status_moderate">#f59e0b</color>
+    <color name="status_moderate_light">#fbbf24</color>
+    <color name="success_green">@color/status_healthy</color>
+    <color name="success_green_light">#4ADE80</color>
+    <color name="surface_elevated">#FAFAFA</color>
+    <color name="surface_primary">@color/white</color>
+    <color name="surface_secondary">@color/light_gray</color>
+    <color name="surface_variant">#F5F5F5</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="text_on_primary">@color/white</color>
+    <color name="text_on_surface">@color/dark_gray</color>
+    <color name="text_primary">@color/dark_gray</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_tertiary">#BDBDBD</color>
+    <color name="transparent">#00000000</color>
+    <color name="warning_orange">@color/status_low</color>
+    <color name="warning_yellow">@color/status_moderate</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="bottom_nav_height">56dp</dimen>
+    <dimen name="brand_button_corner_radius">12dp</dimen>
+    <dimen name="brand_button_height">48dp</dimen>
+    <dimen name="brand_button_height_large">56dp</dimen>
+    <dimen name="brand_card_corner_radius">16dp</dimen>
+    <dimen name="brand_card_elevation">8dp</dimen>
+    <dimen name="brand_spacing_lg">24dp</dimen>
+    <dimen name="brand_spacing_md">16dp</dimen>
+    <dimen name="brand_spacing_sm">8dp</dimen>
+    <dimen name="brand_spacing_xl">32dp</dimen>
+    <dimen name="brand_spacing_xs">4dp</dimen>
+    <dimen name="brand_spacing_xxl">48dp</dimen>
+    <dimen name="brand_text_body">16sp</dimen>
+    <dimen name="brand_text_button">14sp</dimen>
+    <dimen name="brand_text_caption">12sp</dimen>
+    <dimen name="brand_text_headline">32sp</dimen>
+    <dimen name="brand_text_subtitle">18sp</dimen>
+    <dimen name="brand_text_title">24sp</dimen>
+    <dimen name="button_corner_radius">12dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="glass_blur_radius">20dp</dimen>
+    <dimen name="glass_border_width">1dp</dimen>
+    <dimen name="glass_corner_radius">16dp</dimen>
+    <dimen name="glass_elevation">8dp</dimen>
+    <dimen name="glass_stroke_width">1dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="logo_size_large">120dp</dimen>
+    <dimen name="logo_size_medium">48dp</dimen>
+    <dimen name="logo_size_small">24dp</dimen>
+    <dimen name="logo_size_splash">120dp</dimen>
+    <dimen name="notification_badge_margin">4dp</dimen>
+    <dimen name="notification_badge_size">20dp</dimen>
+    <dimen name="notification_badge_text_size">10sp</dimen>
+    <dimen name="quick_action_button_height">120dp</dimen>
+    <dimen name="quick_action_button_margin">6dp</dimen>
+    <dimen name="quick_action_icon_size">32dp</dimen>
+    <dimen name="quick_action_text_size">14sp</dimen>
+    <dimen name="role_button_corner_radius">16dp</dimen>
+    <dimen name="role_button_height">56dp</dimen>
+    <dimen name="role_button_margin">4dp</dimen>
+    <dimen name="role_button_text_size">14sp</dimen>
+    <dimen name="shadow_elevation_fab">6dp</dimen>
+    <dimen name="shadow_elevation_high">8dp</dimen>
+    <dimen name="shadow_elevation_low">2dp</dimen>
+    <dimen name="shadow_elevation_medium">4dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+    <dimen name="stats_card_height">120dp</dimen>
+    <dimen name="stats_card_min_height">120dp</dimen>
+    <dimen name="stats_card_padding">16dp</dimen>
+    <dimen name="stats_change_text_size">12sp</dimen>
+    <dimen name="stats_icon_size">32dp</dimen>
+    <dimen name="stats_title_text_size">14sp</dimen>
+    <dimen name="stats_value_text_size">24sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="touch_target_min_size">48dp</dimen>
+    <dimen name="touch_target_spacing">8dp</dimen>
+    <plurals name="days_ago">
+        <item quantity="one">%d day ago</item>
+        <item quantity="other">%d days ago</item>
+    </plurals>
+    <plurals name="hours_ago">
+        <item quantity="one">%d hour ago</item>
+        <item quantity="other">%d hours ago</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="one">%d minute ago</item>
+        <item quantity="other">%d minutes ago</item>
+    </plurals>
+    <string name="about_build">Build %1$s</string>
+    <string name="about_copyright">© 2024 SugboAid. All rights reserved.</string>
+    <string name="about_description">SugboAid is a locally-built donation management platform designed to bring transparency and efficiency to relief operations in Cebu. Our mission is to empower communities through technology-driven solutions that ensure every donation reaches those who need it most.</string>
+    <string name="about_sugboaid">About SugboAid</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="accessibility_action_dismiss">Dismiss</string>
+    <string name="accessibility_action_export_report">Export report</string>
+    <string name="accessibility_action_filter_results">Filter results</string>
+    <string name="accessibility_action_open_notifications">Open notifications</string>
+    <string name="accessibility_action_record_donation">Record new donation</string>
+    <string name="accessibility_action_retry">Retry</string>
+    <string name="accessibility_action_scan_qr">Scan QR code</string>
+    <string name="accessibility_action_search">Search</string>
+    <string name="accessibility_action_toggle_theme">Switch between light and dark theme</string>
+    <string name="accessibility_action_view_inventory">View inventory details</string>
+    <string name="accessibility_amount_input">Enter donation amount in Philippine pesos</string>
+    <string name="accessibility_announcement_donation_recorded">Donation successfully recorded</string>
+    <string name="accessibility_announcement_navigation">Navigated to %1$s</string>
+    <string name="accessibility_announcement_theme_changed">Theme changed to %1$s mode</string>
+    <string name="accessibility_chart_description">Chart showing %1$s data</string>
+    <string name="accessibility_confetti_animation">Celebration animation for successful donation</string>
+    <string name="accessibility_currency_format">%1$.2f Philippine pesos</string>
+    <string name="accessibility_decrement_button">Decrease %1$s quantity</string>
+    <string name="accessibility_donation_item_format">%1$d %2$s selected for donation</string>
+    <string name="accessibility_donation_type_toggle">Toggle between cash and goods donation</string>
+    <string name="accessibility_empty_state">No %1$s available</string>
+    <string name="accessibility_error_state">Error loading %1$s</string>
+    <string name="accessibility_export_button">Export %1$s report</string>
+    <string name="accessibility_filter_button">Filter by %1$s</string>
+    <string name="accessibility_heading_dashboard_header">Dashboard header</string>
+    <string name="accessibility_heading_donation_form">Donation Form</string>
+    <string name="accessibility_heading_inventory_list">Inventory List</string>
+    <string name="accessibility_heading_notifications">Notifications</string>
+    <string name="accessibility_heading_quick_actions">Quick Actions</string>
+    <string name="accessibility_heading_recent_activities">Recent Activities</string>
+    <string name="accessibility_heading_reports">Reports</string>
+    <string name="accessibility_heading_statistics">Statistics Overview</string>
+    <string name="accessibility_heading_transparency_data">Transparency Data</string>
+    <string name="accessibility_hint_double_tap">Double tap to activate</string>
+    <string name="accessibility_hint_swipe">Swipe to dismiss</string>
+    <string name="accessibility_increment_button">Increase %1$s quantity</string>
+    <string name="accessibility_instruction_double_tap">Double tap to activate</string>
+    <string name="accessibility_instruction_navigate">Use navigation buttons to move between screens</string>
+    <string name="accessibility_instruction_scroll">Scroll to see more items</string>
+    <string name="accessibility_instruction_swipe_dismiss">Swipe to dismiss</string>
+    <string name="accessibility_inventory_item">%1$s: %2$d items in stock, %3$s status</string>
+    <string name="accessibility_loading_state">Loading %1$s</string>
+    <string name="accessibility_main_content">Main content area</string>
+    <string name="accessibility_map_marker">Location marker for %1$s</string>
+    <string name="accessibility_navigation_container">Main navigation</string>
+    <string name="accessibility_navigation_item">Navigate to %1$s screen</string>
+    <string name="accessibility_notification_badge">%1$d unread notifications</string>
+    <string name="accessibility_percentage_format">%1$d percent</string>
+    <string name="accessibility_progress_indicator">Progress: %1$d percent complete</string>
+    <string name="accessibility_qr_scanner">QR code scanner for inventory updates</string>
+    <string name="accessibility_quantity_selector">Select quantity for %1$s</string>
+    <string name="accessibility_quick_action_button">Quick action button for %1$s</string>
+    <string name="accessibility_search_input">Search %1$s</string>
+    <string name="accessibility_statistic_format">%1$s: %2$s, change of %3$s</string>
+    <string name="accessibility_statistics_card">Statistics card showing %1$s</string>
+    <string name="accessibility_status_dark_mode_enabled">Dark mode enabled</string>
+    <string name="accessibility_status_light_mode_enabled">Light mode enabled</string>
+    <string name="accessibility_status_offline">Application is offline, data will sync when connection is restored</string>
+    <string name="accessibility_status_online">Application is online</string>
+    <string name="accessibility_status_sync_complete">Data synchronization complete</string>
+    <string name="accessibility_status_sync_failed">Data synchronization failed</string>
+    <string name="accessibility_status_syncing">Syncing data with server</string>
+    <string name="accessibility_success_animation">Success animation playing</string>
+    <string name="accessibility_time_format">%1$s ago</string>
+    <string name="accessibility_transaction_item">Transaction: %1$s donated %2$s on %3$s</string>
+    <string name="action_got_it">Got it</string>
+    <string name="action_login">Login</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_try_again">Try Again</string>
+    <string name="actions_synced">%d actions synced successfully</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    <string name="amount">Amount</string>
+    <string name="amount_cannot_exceed_limit">Amount cannot exceed ₱1,000,000</string>
+    <string name="amount_label">Amount:</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="anonymous_donor">Anonymous Donor</string>
+    <string name="app_name">SugboAid</string>
+    <string name="auto_sync_enabled">Auto-sync enabled</string>
+    <string name="back_button">Back</string>
+    <string name="back_to_dashboard">Back to Dashboard</string>
+    <string name="banner_icon">Banner Icon</string>
+    <string name="barangay_map_tab">Barangay Map</string>
+    <string name="brand_mission">Empowering communities through transparent donation management</string>
+    <string name="brand_name">SugboAid</string>
+    <string name="brand_tagline_main">Together, We Rebuild Cebu</string>
+    <string name="brand_tagline_sub">Transparent, Real-Time, Locally-Built Relief</string>
+    <string name="brand_validation_compliance">All components validated for brand compliance</string>
+    <string name="brand_validation_date">Updated: 2024</string>
+    <string name="brand_validation_status">SugboAid Brand Guidelines v1.0</string>
+    <string name="brand_values">Transparency • Community • Innovation • Impact</string>
+    <string name="brand_vision">Building resilient communities through technology and transparency</string>
+    <string name="branding_accent_color">Accent Yellow (#FDB813)</string>
+    <string name="branding_primary_color">Primary Blue (#1E4C82)</string>
+    <string name="branding_secondary_color">Primary Green (#2CB67D)</string>
+    <string name="branding_typography_body">Body: sans-serif</string>
+    <string name="branding_typography_headline">Headlines: sans-serif-black</string>
+    <string name="cancel">Cancel</string>
+    <string name="cash_donation">Cash Donation</string>
+    <string name="cash_donation_amount">Cash Donation Amount</string>
+    <string name="cash_donation_description">Cash donation for relief operations</string>
+    <string name="cash_donation_success_message">Your cash donation has been recorded successfully!</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_decrease_quantity">Decrease quantity</string>
+    <string formatted="false" name="cd_field_error">%s field has error: %s</string>
+    <string formatted="false" name="cd_field_helper">%s field: %s</string>
+    <string name="cd_field_valid">%s field is valid</string>
+    <string name="cd_form_validation_failed">Form validation failed</string>
+    <string name="cd_increase_quantity">Increase quantity</string>
+    <string name="cd_logo">SugboAid Logo</string>
+    <string name="cd_menu">Menu</string>
+    <string name="cd_password_strength">Password strength indicator</string>
+    <string name="cd_qr_code_receipt">QR Code Receipt</string>
+    <string name="cd_search">Search</string>
+    <string name="cd_settings">Settings</string>
+    <string name="cd_success_icon">Success</string>
+    <string name="choose_donation_type">Choose donation type and enter details</string>
+    <string name="clothes">Clothes</string>
+    <string name="clothes_pieces">👕 Clothes (pieces)</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="conflict_resolution">Conflict Resolution</string>
+    <string name="create_account">Create Account</string>
+    <string name="creating_account">Creating Account…</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="dashboard_welcome">Welcome to SugboAid</string>
+    <string name="data_conflict_message">There are conflicts between your local data and server data. Please choose which version to keep.</string>
+    <string name="date_label">Date:</string>
+    <string name="digital_receipt">Digital Receipt</string>
+    <string name="distributed_items">Distributed Items</string>
+    <string name="donate">Donate</string>
+    <string name="donation_details">Donation Details</string>
+    <string name="donation_recorded">Donation Recorded!</string>
+    <string name="donation_recorded_successfully">Donation recorded successfully!</string>
+    <string name="donation_success_message">Your donation has been recorded successfully!</string>
+    <string name="donation_type">Donation Type</string>
+    <string name="donation_type_icon">Donation type icon</string>
+    <string name="donor_information_optional">Donor Information (Optional)</string>
+    <string name="donor_label">Donor:</string>
+    <string name="donor_name">Donor Name</string>
+    <string name="donor_name_hint">Donor name (leave blank for Anonymous)</string>
+    <string name="dont_have_account">Don\'t have an account? Sign up</string>
+    <string name="email">Email</string>
+    <string name="enter_amount_hint">Enter amount (₱)</string>
+    <string name="error">Error</string>
+    <string name="error_auth_invalid_credentials">Invalid email or password. Please check your credentials and try again.</string>
+    <string name="error_auth_logout_failed">Logout failed. Please try again.</string>
+    <string name="error_auth_network">Network error. Please check your connection and try again.</string>
+    <string name="error_auth_registration_failed">Registration failed. Please check your information and try again.</string>
+    <string name="error_auth_session_expired">Your session has expired. Please log in again.</string>
+    <string name="error_auth_session_save_failed">Failed to save session. Please try again.</string>
+    <string name="error_auth_unknown">An unexpected error occurred. Please try again.</string>
+    <string name="error_data_sync">Unable to sync your data. Please check your connection and try again.</string>
+    <string name="error_generic">Something went wrong. The SugboAid team is working to fix this.</string>
+    <string name="error_network_unavailable">SugboAid is currently offline. Your data will sync when connection is restored.</string>
+    <string name="failed_to_record_donation">Failed to record donation: %s</string>
+    <string name="families_helped">Families Helped</string>
+    <string name="full_name">Full Name</string>
+    <string name="goods_donation">Goods Donation</string>
+    <string name="goods_donation_description">In-kind goods donation</string>
+    <string name="goods_donation_items">Goods Donation Items</string>
+    <string name="goods_donation_success_message">Your goods donation has been recorded successfully!</string>
+    <string name="help_confirm_password">Re-enter your password to confirm it matches</string>
+    <string name="help_email_format">Enter a valid email address like example@domain.com</string>
+    <string name="help_name_format">Enter your full name (at least 2 characters)</string>
+    <string name="help_password_requirements">Password must be at least 6 characters long</string>
+    <string name="help_password_strength">Use a mix of letters, numbers, and symbols for a stronger password</string>
+    <string name="impact_stories_tab">Impact Stories</string>
+    <string name="invalid_donation_data">Invalid donation data</string>
+    <string name="inventory">Inventory</string>
+    <string name="just_now">Just now</string>
+    <string name="last_synced">Last synced: %s</string>
+    <string name="loading">Loading...</string>
+    <string name="loading_auth_login">Logging in…</string>
+    <string name="loading_auth_logout">Logging out…</string>
+    <string name="loading_auth_registration">Creating account…</string>
+    <string name="loading_auth_session_check">Checking session…</string>
+    <string name="logging_in">Logging in…</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="logout_confirmation">Are you sure you want to logout?</string>
+    <string name="manual_sync_required">Manual sync required</string>
+    <string name="medicine">Medicine</string>
+    <string name="medicine_packs">💊 Medicine (packs)</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_inventory">Inventory</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_reports">Reports</string>
+    <string name="nav_transparency">Transparency</string>
+    <string name="network_restored">Network connection restored</string>
+    <string name="never_synced">Never synced</string>
+    <string name="new_donation">New Donation</string>
+    <string name="no_donations_yet">No donations yet</string>
+    <string name="no_recent_activities">No recent activities</string>
+    <string name="notifications">Notifications</string>
+    <string name="offline">You are offline</string>
+    <string name="offline_icon">Offline indicator</string>
+    <string name="offline_message">You are currently offline</string>
+    <string name="offline_mode_active">Offline Mode Active</string>
+    <string name="ok">OK</string>
+    <string name="overview_tab">Overview</string>
+    <string name="password">Password</string>
+    <string name="password_strength_medium">Medium strength</string>
+    <string name="password_strength_none">Enter a password</string>
+    <string name="password_strength_strong">Strong password</string>
+    <string name="password_strength_very_strong">Very strong password</string>
+    <string name="password_strength_weak">Weak password</string>
+    <string name="pending_actions_count">%d actions pending sync</string>
+    <string name="please_enter_valid_amount">Please enter a valid amount</string>
+    <string name="please_select_at_least_one_item">Please select at least one item to donate</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="quick_donation">Quick Donation</string>
+    <string name="quick_selection">Quick Selection</string>
+    <string name="receipt_id_label">Receipt ID:</string>
+    <string name="recent_activities">Recent Activities</string>
+    <string name="record_donation">Record Donation</string>
+    <string name="record_new_donation">Record New Donation</string>
+    <string name="recording">Recording...</string>
+    <string name="reports">Reports</string>
+    <string name="resolve_conflicts">Resolve Conflicts</string>
+    <string name="rice">Rice</string>
+    <string name="rice_kg">🍚 Rice (kg)</string>
+    <string name="role_donor">Donor</string>
+    <string name="role_guest">Guest</string>
+    <string name="role_organization">Organization</string>
+    <string name="role_recipient">Recipient</string>
+    <string name="role_volunteer">Volunteer</string>
+    <string name="save">Save</string>
+    <string name="scan_qr_code_message">Scan this QR code to view your donation receipt</string>
+    <string name="share_receipt">Share Receipt</string>
+    <string name="signup">Sign Up</string>
+    <string name="start_by_recording_donation">Start by recording your first donation</string>
+    <string name="success">Success</string>
+    <string name="success_auth_login">Login successful</string>
+    <string name="success_auth_logout">Logged out successfully</string>
+    <string name="success_auth_registration">Account created successfully</string>
+    <string name="success_auth_session_restored">Welcome back! Your session has been restored.</string>
+    <string name="success_data_synced">Your SugboAid data has been successfully synced.</string>
+    <string name="success_export_complete">Report exported successfully. Thank you for using SugboAid!</string>
+    <string name="success_settings_saved">Your SugboAid preferences have been saved.</string>
+    <string name="sugboaid_donation_receipt">SugboAid Donation Receipt</string>
+    <string name="sync_completed">Sync Completed</string>
+    <string name="sync_conflicts_detected">Sync conflicts detected</string>
+    <string name="sync_error">Sync Error</string>
+    <string name="sync_failed">Sync Failed</string>
+    <string name="sync_in_progress">Sync in progress...</string>
+    <string name="sync_now">Sync Now</string>
+    <string name="sync_progress">%1$d of %2$d synced</string>
+    <string name="sync_will_retry">Will retry when connection improves</string>
+    <string name="syncing_data">Syncing Data...</string>
+    <string name="tagline_main">Together, We Rebuild Cebu</string>
+    <string name="tagline_sub">Transparent, Real-Time, Locally-Built Relief</string>
+    <string name="thank_you_donation">Thank you for your generous donation! 💝</string>
+    <string name="together_we_rebuild">Together, We Rebuild Cebu 🏗️</string>
+    <string name="toggle_dark_mode">Toggle dark mode</string>
+    <string name="total_donations">Total Donations</string>
+    <string name="transparency">Transparency</string>
+    <string name="transparency_title">Transparency Dashboard</string>
+    <string name="type_label">Type:</string>
+    <string name="unable_to_generate_qr_code">Unable to generate QR code</string>
+    <string name="unable_to_share_receipt">Unable to share receipt</string>
+    <string name="use_local_data">Use Local Data</string>
+    <string name="use_server_data">Use Server Data</string>
+    <string name="validation_confirm_password_required">Please confirm your password</string>
+    <string name="validation_email_consecutive_periods">Email cannot contain consecutive periods</string>
+    <string name="validation_email_invalid">Please enter a valid email address</string>
+    <string name="validation_email_invalid_format">Email cannot start or end with a period</string>
+    <string name="validation_email_required">Email is required</string>
+    <string name="validation_email_too_long">Email address is too long</string>
+    <string name="validation_error_accessibility">Component does not meet accessibility requirements</string>
+    <string name="validation_error_color">Color does not match SugboAid brand palette</string>
+    <string name="validation_error_contrast">Color contrast ratio below 4.5:1 minimum</string>
+    <string name="validation_error_spacing">Spacing does not follow 8dp grid system</string>
+    <string name="validation_error_touch_target">Touch target smaller than 48dp minimum</string>
+    <string name="validation_error_typography">Typography does not follow SugboAid guidelines</string>
+    <string name="validation_multiple_errors">Please fix %d validation errors</string>
+    <string name="validation_name_consecutive_spaces">Name cannot contain multiple consecutive spaces</string>
+    <string name="validation_name_invalid_chars">Name can only contain letters and spaces</string>
+    <string name="validation_name_required">Name is required</string>
+    <string name="validation_name_too_long">Name cannot exceed %d characters</string>
+    <string name="validation_name_too_short">Name must be at least %d characters</string>
+    <string name="validation_password_no_spaces">Password cannot contain spaces</string>
+    <string name="validation_password_required">Password is required</string>
+    <string name="validation_password_too_long">Password cannot exceed %d characters</string>
+    <string name="validation_password_too_short">Password must be at least %d characters</string>
+    <string name="validation_passwords_no_match">Passwords do not match</string>
+    <string name="validation_single_error">Please fix the validation error</string>
+    <string name="validation_success_accessible">Component meets accessibility requirements</string>
+    <string name="validation_success_brand_compliant">Component follows SugboAid brand guidelines</string>
+    <string name="validation_success_responsive">Component supports both light and dark themes</string>
+    <string name="verified">Verified</string>
+    <string name="verified_donation">Verified donation</string>
+    <string name="water">Water</string>
+    <string name="water_bottles">💧 Water (bottles)</string>
+    <string name="welcome_back">Welcome Back</string>
+    <style name="GlassmorphicButtonPrimary" parent="GradientButton">
+        <item name="android:background">@drawable/glassmorphic_button_primary</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="GlassmorphicButtonSuccess" parent="GradientButton">
+        <item name="android:background">@drawable/glassmorphic_button_success</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="GlassmorphicCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">?attr/colorGlassBackground</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="strokeColor">?attr/colorGlassBorder</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="GlassmorphicCardBlur" parent="GlassmorphicCard">
+        <item name="android:background">@drawable/glassmorphic_card_background</item>
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+        <item name="cardElevation">12dp</item>
+    </style>
+    <style name="GlassmorphicStatisticsCard">
+        <item name="android:background">@drawable/glassmorphic_statistics_card</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="GradientButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+    <style name="RoleButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="StatisticsChange" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="StatisticsTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="StatisticsValue" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+    <style name="SugboAid.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="SugboAid.Button.Danger" parent="SugboAid.Button">
+        <item name="backgroundTint">@color/error_red</item>
+        <item name="rippleColor">@color/ripple_light</item>
+    </style>
+    <style name="SugboAid.Button.Primary" parent="SugboAid.Button">
+        <item name="backgroundTint">@color/primary_blue</item>
+        <item name="rippleColor">@color/ripple_light</item>
+    </style>
+    <style name="SugboAid.Button.Success" parent="SugboAid.Button">
+        <item name="backgroundTint">@color/primary_green</item>
+        <item name="rippleColor">@color/ripple_light</item>
+    </style>
+    <style name="SugboAid.Button.Warning" parent="SugboAid.Button">
+        <item name="backgroundTint">@color/accent_yellow</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="rippleColor">@color/ripple_dark</item>
+    </style>
+    <style name="SugboAid.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/glass_elevation</item>
+        <item name="cardBackgroundColor">?attr/colorSurfacePrimary</item>
+        <item name="strokeColor">?attr/colorBorderLight</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="SugboAid.Card.Glassmorphic" parent="SugboAid.Card">
+        <item name="cardBackgroundColor">?attr/colorGlassBackground</item>
+        <item name="strokeColor">?attr/colorGlassBorder</item>
+        <item name="strokeWidth">@dimen/glass_stroke_width</item>
+        <item name="cardElevation">@dimen/glass_elevation</item>
+    </style>
+    <style name="SugboAid.Text" parent="android:Widget.TextView">
+        <item name="android:textColor">?attr/colorTextPrimary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="SugboAid.Text.Body" parent="SugboAid.Text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="SugboAid.Text.Brand.SubTagline" parent="SugboAid.Text.Body">
+        <item name="android:textColor">@color/glass_white_60</item>
+        <item name="android:shadowColor">@color/glass_dark_40</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+    <style name="SugboAid.Text.Brand.Tagline" parent="SugboAid.Text.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/glass_dark_40</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+    <style name="SugboAid.Text.Button" parent="SugboAid.Text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="SugboAid.Text.Caption" parent="SugboAid.Text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">?attr/colorTextSecondary</item>
+    </style>
+    <style name="SugboAid.Text.Headline" parent="SugboAid.Text">
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SugboAid.Text.Subtitle" parent="SugboAid.Text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="SugboAid.Text.Title" parent="SugboAid.Text">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    <style name="Theme.SugboAid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/light_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/primary_green</item>
+        <item name="colorSecondaryVariant">@color/success_green</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+        <item name="android:windowBackground">@color/light_gray</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/dark_gray</item>
+        
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        
+        
+        <item name="colorSurfacePrimary">@color/surface_primary</item>
+        <item name="colorSurfaceSecondary">@color/surface_secondary</item>
+        <item name="colorSurfaceElevated">@color/surface_elevated</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorTextPrimary">@color/text_primary</item>
+        <item name="colorTextSecondary">@color/text_secondary</item>
+        <item name="colorTextTertiary">@color/text_tertiary</item>
+        <item name="colorTextHint">@color/text_hint</item>
+        <item name="colorTextOnPrimary">@color/text_on_primary</item>
+        <item name="colorTextOnSurface">@color/text_on_surface</item>
+        <item name="colorButtonSurface">@color/button_surface</item>
+        <item name="colorButtonOutline">@color/button_outline</item>
+        <item name="colorButtonDisabled">@color/button_disabled</item>
+        <item name="colorButtonTextDisabled">@color/button_text_disabled</item>
+        <item name="colorDivider">@color/divider_color</item>
+        <item name="colorOverlayBackground">@color/overlay_background</item>
+        <item name="colorShadowLight">@color/shadow_light</item>
+        <item name="colorShadowMedium">@color/shadow_medium</item>
+        <item name="colorBorderLight">@color/border_light</item>
+        <item name="colorBorderMedium">@color/border_medium</item>
+        <item name="colorGlassBackground">@color/glass_white_20</item>
+        <item name="colorGlassBorder">@color/glass_border</item>
+    </style>
+    <style name="Theme.SugboAid.Authentication" parent="Theme.SugboAid">
+        <item name="android:windowBackground">@drawable/gradient_background</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/dark_gray</item>
+        
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
+        
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="colorControlNormal">@color/medium_gray</item>
+        <item name="colorControlActivated">@color/primary_blue</item>
+        <item name="colorControlHighlight">@color/primary_blue_20</item>
+    </style>
+    <style name="Theme.SugboAid.NoActionBar" parent="Theme.SugboAid">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.SugboAid.Splash" parent="Theme.SugboAid">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+    <declare-styleable name="AnimatedGradientButton">
+        <attr format="color" name="gradientStartColor"/>
+        <attr format="color" name="gradientEndColor"/>
+        <attr format="enum" name="gradientOrientation">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+            <enum name="diagonal" value="2"/>
+        </attr>
+        <attr format="integer" name="animationDuration"/>
+        <attr format="dimension" name="cornerRadius"/>
+    </declare-styleable>
+    <declare-styleable name="GlassmorphicCardView">
+        <attr format="dimension" name="glassCornerRadius"/>
+        <attr format="dimension" name="glassBorderWidth"/>
+        <attr format="float" name="glassBackgroundAlpha"/>
+        <attr format="color" name="glassBackgroundColor"/>
+        <attr format="color" name="glassBorderColor"/>
+    </declare-styleable>
+    <declare-styleable name="PasswordStrengthIndicator">
+        <attr format="dimension" name="barHeight"/>
+        <attr format="dimension" name="barSpacing"/>
+        <attr format="dimension" name="barCornerRadius"/>
+        <attr format="color" name="weakColor"/>
+        <attr format="color" name="mediumColor"/>
+        <attr format="color" name="strongColor"/>
+        <attr format="color" name="veryStrongColor"/>
+        <attr format="color" name="inactiveColor"/>
+    </declare-styleable>
+    <declare-styleable name="StatisticsCard">
+        <attr format="string" name="statTitle"/>
+        <attr format="string" name="statValue"/>
+        <attr format="string" name="statPercentage"/>
+        <attr format="reference" name="statIcon"/>
+        <attr format="color" name="statGradientStart"/>
+        <attr format="color" name="statGradientEnd"/>
+        <attr format="boolean" name="animateNumbers"/>
+    </declare-styleable>
+</resources>

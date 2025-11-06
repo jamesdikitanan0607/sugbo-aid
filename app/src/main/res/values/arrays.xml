@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Gradient Color Arrays -->
+    <array name="primary_gradient">
+        <item>@color/primary_blue</item>
+        <item>@color/light_blue</item>
+    </array>
+    
+    <array name="success_gradient">
+        <item>@color/primary_green</item>
+        <item>@color/success_green</item>
+    </array>
+    
+    <array name="warning_gradient">
+        <item>@color/warning_orange</item>
+        <item>@color/accent_yellow</item>
+    </array>
+    
+    <array name="danger_gradient">
+        <item>@color/error_red</item>
+        <item>#dc2626</item>
+    </array>
+    
+    <array name="info_gradient">
+        <item>@color/light_blue</item>
+        <item>@color/primary_blue</item>
+    </array>
+</resources>

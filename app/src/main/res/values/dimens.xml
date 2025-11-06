@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- Card margins and padding -->
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    
+    <!-- Button dimensions -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_corner_radius">12dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    
+    <!-- Text sizes -->
+    <dimen name="text_size_large">24sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+    
+    <!-- Spacing -->
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+    
+    <!-- Statistics card dimensions -->
+    <dimen name="stats_card_height">120dp</dimen>
+    
+    <!-- Navigation -->
+    <dimen name="bottom_nav_height">56dp</dimen>
+    
+    <!-- Glassmorphism -->
+    <dimen name="glass_elevation">8dp</dimen>
+    <dimen name="glass_stroke_width">1dp</dimen>
+    
+    <!-- SugboAid Brand Dimensions -->
+    <!-- Logo and Branding -->
+    <dimen name="logo_size_small">24dp</dimen>
+    <dimen name="logo_size_medium">48dp</dimen>
+    <dimen name="logo_size_large">120dp</dimen>
+    <dimen name="logo_size_splash">120dp</dimen>
+    
+    <!-- Brand-specific spacing (8dp grid system) -->
+    <dimen name="brand_spacing_xs">4dp</dimen>
+    <dimen name="brand_spacing_sm">8dp</dimen>
+    <dimen name="brand_spacing_md">16dp</dimen>
+    <dimen name="brand_spacing_lg">24dp</dimen>
+    <dimen name="brand_spacing_xl">32dp</dimen>
+    <dimen name="brand_spacing_xxl">48dp</dimen>
+    
+    <!-- Brand Typography Sizes -->
+    <dimen name="brand_text_headline">32sp</dimen>
+    <dimen name="brand_text_title">24sp</dimen>
+    <dimen name="brand_text_subtitle">18sp</dimen>
+    <dimen name="brand_text_body">16sp</dimen>
+    <dimen name="brand_text_caption">12sp</dimen>
+    <dimen name="brand_text_button">14sp</dimen>
+    
+    <!-- Brand Component Dimensions -->
+    <dimen name="brand_button_height">48dp</dimen>
+    <dimen name="brand_button_height_large">56dp</dimen>
+    <dimen name="brand_button_corner_radius">12dp</dimen>
+    <dimen name="brand_card_corner_radius">16dp</dimen>
+    <dimen name="brand_card_elevation">8dp</dimen>
+    
+    <!-- Statistics Cards -->
+    <dimen name="stats_card_min_height">120dp</dimen>
+    <dimen name="stats_card_padding">16dp</dimen>
+    <dimen name="stats_icon_size">32dp</dimen>
+    <dimen name="stats_value_text_size">24sp</dimen>
+    <dimen name="stats_title_text_size">14sp</dimen>
+    <dimen name="stats_change_text_size">12sp</dimen>
+    
+    <!-- Quick Action Buttons -->
+    <dimen name="quick_action_button_height">120dp</dimen>
+    <dimen name="quick_action_button_margin">6dp</dimen>
+    <dimen name="quick_action_icon_size">32dp</dimen>
+    <dimen name="quick_action_text_size">14sp</dimen>
+    
+    <!-- Role Selection Buttons -->
+    <dimen name="role_button_height">56dp</dimen>
+    <dimen name="role_button_corner_radius">16dp</dimen>
+    <dimen name="role_button_margin">4dp</dimen>
+    <dimen name="role_button_text_size">14sp</dimen>
+    
+    <!-- Notification Badge -->
+    <dimen name="notification_badge_size">20dp</dimen>
+    <dimen name="notification_badge_text_size">10sp</dimen>
+    <dimen name="notification_badge_margin">4dp</dimen>
+    
+    <!-- Touch Targets (Accessibility) -->
+    <dimen name="touch_target_min_size">48dp</dimen>
+    <dimen name="touch_target_spacing">8dp</dimen>
+    
+    <!-- Glassmorphic Effects -->
+    <dimen name="glass_blur_radius">20dp</dimen>
+    <dimen name="glass_border_width">1dp</dimen>
+    <dimen name="glass_corner_radius">16dp</dimen>
+    
+    <!-- Shadow and Elevation -->
+    <dimen name="shadow_elevation_low">2dp</dimen>
+    <dimen name="shadow_elevation_medium">4dp</dimen>
+    <dimen name="shadow_elevation_high">8dp</dimen>
+    <dimen name="shadow_elevation_fab">6dp</dimen>
+    
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/dashboard" />
+
+    <item
+        android:id="@+id/posDonationFragment"
+        android:icon="@drawable/ic_add_donation"
+        android:title="@string/donate" />
+
+    <item
+        android:id="@+id/inventoryFragment"
+        android:icon="@drawable/ic_inventory"
+        android:title="@string/inventory" />
+
+    <item
+        android:id="@+id/transparencyFragment"
+        android:icon="@drawable/ic_transparency"
+        android:title="@string/transparency" />
+
+    <item
+        android:id="@+id/reportsFragment"
+        android:icon="@drawable/ic_reports"
+        android:title="@string/reports" />
+
+</menu>

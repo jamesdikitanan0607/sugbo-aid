@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sugboaid.donation.views.GlassmorphicCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:glassBackgroundAlpha="0.1"
+    app:glassBorderWidth="1dp"
+    app:glassBorderColor="@color/glass_border">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Transaction Type Icon -->
+        <TextView
+            android:id="@+id/tv_transaction_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:contentDescription="Transaction type icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="💝" />
+
+        <!-- Donor Name -->
+        <TextView
+            android:id="@+id/tv_donor_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-medium"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintTop_toTopOf="@id/tv_transaction_icon"
+            app:layout_constraintStart_toEndOf="@id/tv_transaction_icon"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            tools:text="John Doe" />
+
+        <!-- Transaction Type and Description -->
+        <TextView
+            android:id="@+id/tv_transaction_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/tv_donor_name"
+            app:layout_constraintStart_toEndOf="@id/tv_transaction_icon"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            tools:text="Cash Donation" />
+
+        <!-- Transaction Amount -->
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/success_green"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toTopOf="@id/tv_donor_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="₱1,500.00" />
+
+        <!-- Date and Time -->
+        <TextView
+            android:id="@+id/tv_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_tertiary"
+            app:layout_constraintTop_toBottomOf="@id/tv_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Dec 15, 2023 2:30 PM" />
+
+        <!-- Receipt ID -->
+        <TextView
+            android:id="@+id/tv_receipt_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_tertiary"
+            android:fontFamily="monospace"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/tv_transaction_type"
+            app:layout_constraintStart_toEndOf="@id/tv_transaction_icon"
+            app:layout_constraintEnd_toStartOf="@id/iv_verified_badge"
+            tools:text="RCP-1703501234-A1B2C3D4" />
+
+        <!-- Verification Badge -->
+        <ImageView
+            android:id="@+id/iv_verified_badge"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_verified"
+            android:contentDescription="Verified transaction"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/tv_receipt_id"
+            app:layout_constraintBottom_toBottomOf="@id/tv_receipt_id"
+            app:layout_constraintEnd_toStartOf="@id/tv_verified_label"
+            app:tint="@color/success_green"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_verified_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Verified"
+            android:textSize="12sp"
+            android:textColor="@color/success_green"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/iv_verified_badge"
+            app:layout_constraintBottom_toBottomOf="@id/iv_verified_badge"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible" />
+
+        <!-- Campaign Badge (optional) -->
+        <TextView
+            android:id="@+id/tv_campaign_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_campaign_badge"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:textSize="10sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_receipt_id"
+            app:layout_constraintStart_toStartOf="@id/tv_receipt_id"
+            tools:text="Relief Campaign 2023"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.sugboaid.donation.views.GlassmorphicCardView>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <!-- Authentication Fragments -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.sugboaid.auth.fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+            
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+            
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.sugboaid.auth.fragments.SignupFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_signup">
+        
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+            
+        <action
+            android:id="@+id/action_signupFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+            
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.sugboaid.donation.fragments.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        
+        <action
+            android:id="@+id/action_dashboard_to_pos"
+            app:destination="@id/posDonationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        
+        <action
+            android:id="@+id/action_dashboard_to_inventory"
+            app:destination="@id/inventoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        
+        <action
+            android:id="@+id/action_dashboard_to_transparency"
+            app:destination="@id/transparencyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        
+        <action
+            android:id="@+id/action_dashboard_to_reports"
+            app:destination="@id/reportsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        
+        <action
+            android:id="@+id/action_dashboard_to_notifications"
+            app:destination="@id/notificationsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        
+        <action
+            android:id="@+id/action_dashboard_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/posDonationFragment"
+        android:name="com.sugboaid.donation.fragments.POSDonationFragment"
+        android:label="New Donation"
+        tools:layout="@layout/fragment_pos_donation">
+        
+        <action
+            android:id="@+id/action_pos_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+        
+        <action
+            android:id="@+id/action_pos_to_success"
+            app:destination="@id/donationSuccessFragment"
+            app:enterAnim="@anim/scale_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/scale_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/donationSuccessFragment"
+        android:name="com.sugboaid.donation.fragments.DonationSuccessFragment"
+        android:label="Donation Success"
+        tools:layout="@layout/fragment_donation_success">
+        
+        <action
+            android:id="@+id/action_success_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="true" />
+        
+        <argument
+            android:name="donation"
+            app:argType="com.sugboaid.models.Donation"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.sugboaid.donation.fragments.InventoryFragment"
+        android:label="Inventory"
+        tools:layout="@layout/fragment_inventory">
+        
+        <action
+            android:id="@+id/action_inventory_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transparencyFragment"
+        android:name="com.sugboaid.donation.fragments.TransparencyFragment"
+        android:label="Transparency"
+        tools:layout="@layout/fragment_transparency">
+        
+        <action
+            android:id="@+id/action_transparency_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.sugboaid.donation.fragments.ReportsFragment"
+        android:label="Reports"
+        tools:layout="@layout/fragment_reports">
+        
+        <action
+            android:id="@+id/action_reports_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.sugboaid.donation.fragments.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications">
+        
+        <action
+            android:id="@+id/action_notifications_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+</navigation>

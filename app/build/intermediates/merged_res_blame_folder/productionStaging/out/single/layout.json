@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\dialog_stock_adjustment.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\dialog_stock_adjustment.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\item_barangay.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\item_barangay.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\custom_barcode_scanner.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\custom_barcode_scanner.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_inventory.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_inventory.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_login.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\item_notification.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\item_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\view_offline_banner.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\view_offline_banner.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_donation_success.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_donation_success.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\activity_qr_scanner.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\activity_qr_scanner.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_transparency_map.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_transparency_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\item_recent_activity.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\item_recent_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\dialog_add_inventory_item.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\dialog_add_inventory_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\item_impact_story.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\item_impact_story.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_notifications.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_transparency_overview.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_transparency_overview.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\item_inventory.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\item_inventory.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_transparency.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_transparency.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\item_transaction.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\item_transaction.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_transparency_stories.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_transparency_stories.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_signup.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_signup.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_pos_donation.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_pos_donation.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_dashboard.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeProductionStagingResources-49:\\layout\\fragment_reports.xml",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-52:\\layout\\fragment_reports.xml"
+    }
+]

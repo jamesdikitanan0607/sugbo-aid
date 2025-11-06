@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Primary background gradient with SugboAid brand colors -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="@color/primary_blue"
+                android:centerColor="@color/light_blue"
+                android:endColor="@color/primary_green"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Subtle overlay pattern for depth -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="@color/glass_white_10"
+                android:centerColor="@android:color/transparent"
+                android:endColor="@color/glass_white_10"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Glassmorphic logo background circle -->
+    <item android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/glass_white_20" />
+            <stroke 
+                android:width="2dp" 
+                android:color="@color/glass_border" />
+            <size android:width="140dp" android:height="140dp" />
+        </shape>
+    </item>
+    
+    <!-- Inner logo background for contrast -->
+    <item android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/white" />
+            <size android:width="120dp" android:height="120dp" />
+        </shape>
+    </item>
+</layer-list>

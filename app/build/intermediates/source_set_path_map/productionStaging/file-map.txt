@@ -1,0 +1,55 @@
+com.sugboaid.donation.app-jetified-customview-poolingcontainer-1.0.0-0 C:\Users\James\.gradle\caches\transforms-3\0d9727447120fadd35a5c090bebaeb6b\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.sugboaid.donation.app-drawerlayout-1.1.1-1 C:\Users\James\.gradle\caches\transforms-3\0f3876d718237e4aa54a5f967de1cea1\transformed\drawerlayout-1.1.1\res
+com.sugboaid.donation.app-jetified-annotation-experimental-1.3.0-2 C:\Users\James\.gradle\caches\transforms-3\17cba7b38a0751cd1f4e29bcbc56ae96\transformed\jetified-annotation-experimental-1.3.0\res
+com.sugboaid.donation.app-jetified-savedstate-1.2.1-3 C:\Users\James\.gradle\caches\transforms-3\1ee5d5e876f355eb900c737f6330dd8a\transformed\jetified-savedstate-1.2.1\res
+com.sugboaid.donation.app-jetified-lifecycle-viewmodel-ktx-2.7.0-4 C:\Users\James\.gradle\caches\transforms-3\267532dd9fa7ea11772647e47042f179\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.sugboaid.donation.app-constraintlayout-2.1.4-5 C:\Users\James\.gradle\caches\transforms-3\30f4c334bb9586b8299d31214a27cc88\transformed\constraintlayout-2.1.4\res
+com.sugboaid.donation.app-core-1.12.0-6 C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\res
+com.sugboaid.donation.app-jetified-lifecycle-runtime-ktx-2.7.0-7 C:\Users\James\.gradle\caches\transforms-3\48299f82adea7da0ede77549363e4207\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.sugboaid.donation.app-databinding-runtime-8.0.2-8 C:\Users\James\.gradle\caches\transforms-3\55e30cecc3eb0fc571054a9e11c47df7\transformed\databinding-runtime-8.0.2\res
+com.sugboaid.donation.app-recyclerview-1.3.2-9 C:\Users\James\.gradle\caches\transforms-3\5b9970aa0adccb424c86e24a4c722dcf\transformed\recyclerview-1.3.2\res
+com.sugboaid.donation.app-lifecycle-livedata-2.7.0-10 C:\Users\James\.gradle\caches\transforms-3\5d71a72c831312b094b819c7e3422650\transformed\lifecycle-livedata-2.7.0\res
+com.sugboaid.donation.app-transition-1.4.1-11 C:\Users\James\.gradle\caches\transforms-3\5edc14188abc370b44c8dc033e00b0c7\transformed\transition-1.4.1\res
+com.sugboaid.donation.app-lifecycle-livedata-core-2.7.0-12 C:\Users\James\.gradle\caches\transforms-3\63541dda5c0e812edfdb3804b50ce2b4\transformed\lifecycle-livedata-core-2.7.0\res
+com.sugboaid.donation.app-cardview-1.0.0-13 C:\Users\James\.gradle\caches\transforms-3\64a2d392994452577a480e11197fabd6\transformed\cardview-1.0.0\res
+com.sugboaid.donation.app-coordinatorlayout-1.1.0-14 C:\Users\James\.gradle\caches\transforms-3\671a06b1893081f2c8ad60f3958f34d7\transformed\coordinatorlayout-1.1.0\res
+com.sugboaid.donation.app-jetified-lifecycle-livedata-core-ktx-2.7.0-15 C:\Users\James\.gradle\caches\transforms-3\67adaf50eebc1a6de8dd6a1e574a8fe6\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.sugboaid.donation.app-jetified-emoji2-1.2.0-16 C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\res
+com.sugboaid.donation.app-recyclerview-selection-1.1.0-17 C:\Users\James\.gradle\caches\transforms-3\69e23e045f0223bae13cf482e1e0cd35\transformed\recyclerview-selection-1.1.0\res
+com.sugboaid.donation.app-jetified-zxing-android-embedded-4.3.0-18 C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\res
+com.sugboaid.donation.app-navigation-runtime-2.7.5-19 C:\Users\James\.gradle\caches\transforms-3\764d2001440247a0b449132b87a99c8b\transformed\navigation-runtime-2.7.5\res
+com.sugboaid.donation.app-lifecycle-runtime-2.7.0-20 C:\Users\James\.gradle\caches\transforms-3\7f69f86da49398c9b864ac67d9038a2c\transformed\lifecycle-runtime-2.7.0\res
+com.sugboaid.donation.app-material-1.10.0-21 C:\Users\James\.gradle\caches\transforms-3\81a62a99ff771d7ba2d084e51b608297\transformed\material-1.10.0\res
+com.sugboaid.donation.app-jetified-lifecycle-process-2.7.0-22 C:\Users\James\.gradle\caches\transforms-3\8239722224a1b4c504258dbd00a4f57a\transformed\jetified-lifecycle-process-2.7.0\res
+com.sugboaid.donation.app-jetified-savedstate-ktx-1.2.1-23 C:\Users\James\.gradle\caches\transforms-3\8ed15b16f1e080bacb6c307bbfc14b8a\transformed\jetified-savedstate-ktx-1.2.1\res
+com.sugboaid.donation.app-jetified-appcompat-resources-1.6.1-24 C:\Users\James\.gradle\caches\transforms-3\916d8c1d5f5914c9bddc90fc51ad2a21\transformed\jetified-appcompat-resources-1.6.1\res
+com.sugboaid.donation.app-navigation-common-2.7.5-25 C:\Users\James\.gradle\caches\transforms-3\92bc1127347af1e611ea98d0d5fe887c\transformed\navigation-common-2.7.5\res
+com.sugboaid.donation.app-jetified-startup-runtime-1.1.1-26 C:\Users\James\.gradle\caches\transforms-3\96fc5170b9579d74595c3124b0694230\transformed\jetified-startup-runtime-1.1.1\res
+com.sugboaid.donation.app-slidingpanelayout-1.2.0-27 C:\Users\James\.gradle\caches\transforms-3\99628db58b809a9cd5275891ac7d25d3\transformed\slidingpanelayout-1.2.0\res
+com.sugboaid.donation.app-fragment-1.6.2-28 C:\Users\James\.gradle\caches\transforms-3\9ea49e630d659bbe69e81c8772f52f55\transformed\fragment-1.6.2\res
+com.sugboaid.donation.app-navigation-ui-2.7.5-29 C:\Users\James\.gradle\caches\transforms-3\b06d78582c895e77bdf1cfdec2a2d3bf\transformed\navigation-ui-2.7.5\res
+com.sugboaid.donation.app-swiperefreshlayout-1.1.0-30 C:\Users\James\.gradle\caches\transforms-3\b0f8b6b759cfc323328c80f60ce321ec\transformed\swiperefreshlayout-1.1.0\res
+com.sugboaid.donation.app-jetified-window-1.0.0-31 C:\Users\James\.gradle\caches\transforms-3\bc1d85e009333755628d5c779bd9bd09\transformed\jetified-window-1.0.0\res
+com.sugboaid.donation.app-jetified-activity-1.8.0-32 C:\Users\James\.gradle\caches\transforms-3\bfe3ecf046101e52176fa35648fa146a\transformed\jetified-activity-1.8.0\res
+com.sugboaid.donation.app-core-runtime-2.2.0-33 C:\Users\James\.gradle\caches\transforms-3\c5801c85edda211ed08024efc85515c1\transformed\core-runtime-2.2.0\res
+com.sugboaid.donation.app-databinding-adapters-8.0.2-34 C:\Users\James\.gradle\caches\transforms-3\d07fe2da60611f9883f2940ace995de4\transformed\databinding-adapters-8.0.2\res
+com.sugboaid.donation.app-jetified-profileinstaller-1.3.0-35 C:\Users\James\.gradle\caches\transforms-3\d618ec08e340eb4e424ec9ea362e3c0a\transformed\jetified-profileinstaller-1.3.0\res
+com.sugboaid.donation.app-jetified-emoji2-views-helper-1.2.0-36 C:\Users\James\.gradle\caches\transforms-3\d95efe29377529392251a58c25698356\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.sugboaid.donation.app-lifecycle-viewmodel-2.7.0-37 C:\Users\James\.gradle\caches\transforms-3\d99a673f4a36d60f63652791d25157e6\transformed\lifecycle-viewmodel-2.7.0\res
+com.sugboaid.donation.app-jetified-viewpager2-1.1.0-beta02-38 C:\Users\James\.gradle\caches\transforms-3\da97ec32a46cea4e27d0ea7cc7c9805b\transformed\jetified-viewpager2-1.1.0-beta02\res
+com.sugboaid.donation.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-39 C:\Users\James\.gradle\caches\transforms-3\db7a36e8a834b9d82c0aeed6419dd661\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.sugboaid.donation.app-jetified-activity-ktx-1.8.0-40 C:\Users\James\.gradle\caches\transforms-3\dc9d518d5fa899c16b9305b1e67813f6\transformed\jetified-activity-ktx-1.8.0\res
+com.sugboaid.donation.app-navigation-fragment-2.7.5-41 C:\Users\James\.gradle\caches\transforms-3\e52ef6e4d82afe13854e7df85e4a9a1e\transformed\navigation-fragment-2.7.5\res
+com.sugboaid.donation.app-jetified-glide-4.12.0-42 C:\Users\James\.gradle\caches\transforms-3\e942d7c88c17f4a036feb0bc5b62c648\transformed\jetified-glide-4.12.0\res
+com.sugboaid.donation.app-jetified-core-ktx-1.12.0-43 C:\Users\James\.gradle\caches\transforms-3\f3330f9dfcea7563d3757710c0bde03d\transformed\jetified-core-ktx-1.12.0\res
+com.sugboaid.donation.app-appcompat-1.6.1-44 C:\Users\James\.gradle\caches\transforms-3\f519227ce83c25a4daf72bc8b7b65062\transformed\appcompat-1.6.1\res
+com.sugboaid.donation.app-jetified-fragment-ktx-1.6.2-45 C:\Users\James\.gradle\caches\transforms-3\fa42bcc05dce52090593d48a4fc95784\transformed\jetified-fragment-ktx-1.6.2\res
+com.sugboaid.donation.app-production-46 C:\Users\James\Downloads\SugboAid Donation Management App\app\build\generated\res\resValues\production\staging
+com.sugboaid.donation.app-packageProductionStagingResources-47 C:\Users\James\Downloads\SugboAid Donation Management App\app\build\intermediates\incremental\productionStaging\packageProductionStagingResources\merged.dir
+com.sugboaid.donation.app-packageProductionStagingResources-48 C:\Users\James\Downloads\SugboAid Donation Management App\app\build\intermediates\incremental\productionStaging\packageProductionStagingResources\stripped.dir
+com.sugboaid.donation.app-production-49 C:\Users\James\Downloads\SugboAid Donation Management App\app\build\intermediates\merged-not-compiled-resources\production\staging
+com.sugboaid.donation.app-merged_res-50 C:\Users\James\Downloads\SugboAid Donation Management App\app\build\intermediates\merged_res\productionStaging
+com.sugboaid.donation.app-main-51 C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\res
+com.sugboaid.donation.app-production-52 C:\Users\James\Downloads\SugboAid Donation Management App\app\src\production\res
+com.sugboaid.donation.app-productionStaging-53 C:\Users\James\Downloads\SugboAid Donation Management App\app\src\productionStaging\res
+com.sugboaid.donation.app-staging-54 C:\Users\James\Downloads\SugboAid Donation Management App\app\src\staging\res
