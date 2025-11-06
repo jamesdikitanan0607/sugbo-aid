@@ -84,6 +84,7 @@ public class DashboardFragment extends BaseFragment {
             throw e;
         }
     }
+//    please fix the first load in the dashboard
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
