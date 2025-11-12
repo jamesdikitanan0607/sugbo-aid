@@ -81,12 +81,6 @@
     <dimen name="quick_action_icon_size">32dp</dimen>
     <dimen name="quick_action_text_size">14sp</dimen>
     
-    <!-- Role Selection Buttons -->
-    <dimen name="role_button_height">56dp</dimen>
-    <dimen name="role_button_corner_radius">16dp</dimen>
-    <dimen name="role_button_margin">4dp</dimen>
-    <dimen name="role_button_text_size">14sp</dimen>
-    
     <!-- Notification Badge -->
     <dimen name="notification_badge_size">20dp</dimen>
     <dimen name="notification_badge_text_size">10sp</dimen>

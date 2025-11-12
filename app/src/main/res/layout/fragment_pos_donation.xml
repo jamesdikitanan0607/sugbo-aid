@@ -83,7 +83,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_cash_mode"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="56dp"
                         android:layout_weight="1"
@@ -95,7 +95,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_goods_mode"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="56dp"
                         android:layout_weight="1"
@@ -181,7 +181,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_amount_100"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="48dp"
                             android:layout_weight="1"
@@ -192,7 +192,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_amount_500"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="48dp"
                             android:layout_weight="1"
@@ -204,7 +204,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_amount_1000"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="48dp"
                             android:layout_weight="1"
@@ -216,7 +216,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_amount_5000"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="48dp"
                             android:layout_weight="1"
@@ -562,7 +562,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_cancel"
-                style="@style/Widget.Material3.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"
@@ -573,7 +573,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_submit_donation"
-                style="@style/Widget.Material3.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"

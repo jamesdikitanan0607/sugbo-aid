@@ -70,6 +70,10 @@ public class DashboardFragment extends BaseFragment {
     
     private RecentActivitiesAdapter recentActivitiesAdapter;
     private LoadingStateManager loadingStateManager;
+    private boolean firstLoad = true;
+    
+    // Fragment visibility state
+    private boolean isViewCreated = false;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -84,7 +88,15 @@ public class DashboardFragment extends BaseFragment {
             throw e;
         }
     }
-//    please fix the first load in the dashboard
+    // Handle first load in the dashboard
+    private void handleFirstLoad() {
+        com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "handleFirstLoad called. firstLoad=" + firstLoad + ", isAdded=" + isAdded() + ", isDetached=" + isDetached());
+        if (firstLoad && isAdded() && !isDetached()) {
+            firstLoad = false;
+            com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "First load -> calling loadData()");
+            loadData();
+        }
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -93,7 +105,9 @@ public class DashboardFragment extends BaseFragment {
             
             // Initialize ViewModels with error handling
             try {
-                viewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+                // Ensure ViewModels are ready before calling super so BaseFragment can attach observers prior to any data load
+                // Use activity-scoped ViewModel so preloaded data from MainActivity is reused
+                viewModel = new ViewModelProvider(requireActivity()).get(DashboardViewModel.class);
                 notificationViewModel = new ViewModelProvider(this).get(NotificationViewModel.class);
                 authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
                 com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "ViewModels initialized");
@@ -104,22 +118,6 @@ public class DashboardFragment extends BaseFragment {
             
             super.onViewCreated(view, savedInstanceState);
             
-            // Initialize notification manager
-            try {
-                notificationManager = new NotificationManager(requireContext());
-                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "NotificationManager initialized");
-            } catch (Exception e) {
-                com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error initializing NotificationManager", e);
-            }
-            
-            // Initialize loading state manager
-            try {
-                loadingStateManager = new LoadingStateManager(requireContext());
-                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "LoadingStateManager initialized");
-            } catch (Exception e) {
-                com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error initializing LoadingStateManager", e);
-            }
-            
             // Get NavController with error handling
             try {
                 navController = Navigation.findNavController(view);
@@ -129,48 +127,22 @@ public class DashboardFragment extends BaseFragment {
                 // Continue without NavController - some features may not work but fragment won't crash
             }
             
-            // Initialize views
-            try {
-                initViews(view);
-                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "Views initialized");
-            } catch (Exception e) {
-                com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error initializing views", e);
-                throw e;
-            }
-            
-            // Setup RecyclerView
-            try {
-                setupRecyclerView();
-                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "RecyclerView setup complete");
-            } catch (Exception e) {
-                com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error setting up RecyclerView", e);
-            }
-            
-            // Setup click listeners
-            try {
-                setupClickListeners();
-                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "Click listeners setup complete");
-            } catch (Exception e) {
-                com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error setting up click listeners", e);
-            }
-            
-            // Observe ViewModel
-            try {
-                observeViewModel();
-                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "ViewModel observers setup complete");
-            } catch (Exception e) {
-                com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error setting up ViewModel observers", e);
-            }
-            
-            // Apply entrance animations
-            try {
-                applyEntranceAnimations(view);
-                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "Entrance animations applied");
-            } catch (Exception e) {
-                com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error applying entrance animations", e);
-            }
-            
+            isViewCreated = true;
             com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "onViewCreated completed successfully");
+            handleFirstLoad();
+
+            // Unconditionally trigger a forceRefresh after observers are attached
+            view.post(() -> {
+                try {
+                    if (viewModel != null) {
+                        viewModel.forceRefresh();
+                    }
+                    if (notificationViewModel != null) {
+                        notificationViewModel.refreshNotifications();
+                    }
+                    com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "Initial forceRefresh triggered after view created");
+                } catch (Exception ignored) { }
+            });
             
         } catch (Exception e) {
             com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Critical error in onViewCreated", e);
@@ -180,6 +152,34 @@ public class DashboardFragment extends BaseFragment {
                     android.widget.Toast.LENGTH_LONG).show();
             }
             throw e;
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        try {
+            if (viewModel != null) {
+                boolean needsEmit = viewModel.getDashboardStatistics().getValue() == null || !viewModel.hasRecentActivities();
+                if (needsEmit) {
+                    viewModel.forceRefresh();
+                    if (notificationViewModel != null) {
+                        notificationViewModel.refreshNotifications();
+                    }
+                    com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "onResume trigger: forceRefresh due to missing data");
+                }
+            }
+        } catch (Exception ignored) { }
+    }
+
+    private void loadData() {
+        com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "loadData() -> triggering ViewModel.refreshData and notifications refresh");
+        if (viewModel != null) {
+            viewModel.refreshData();
+            if (notificationViewModel != null) {
+                notificationViewModel.refreshNotifications();
+            }
         }
     }
 
@@ -211,6 +211,13 @@ public class DashboardFragment extends BaseFragment {
         
         // Floating action button
         fabQuickDonation = view.findViewById(R.id.fab_quick_donation);
+
+        // Initialize managers before observing/loading
+        notificationManager = new NotificationManager(requireContext());
+        loadingStateManager = new LoadingStateManager(requireContext());
+
+        // Setup RecyclerView once
+        setupRecyclerView();
     }
 
     private void setupRecyclerView() {
@@ -311,30 +318,19 @@ public class DashboardFragment extends BaseFragment {
     }
 
     private void observeViewModel() {
-        // Observe statistics
-        viewModel.getFormattedTotalDonations().observe(getViewLifecycleOwner(), amount -> {
-            cardTotalDonations.setValue(amount);
-        });
+        com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "observeViewModel() attaching observers with viewLifecycleOwner");
+        // Observe combined dashboard statistics so UI updates atomically
+        viewModel.getDashboardStatistics().observe(getViewLifecycleOwner(), stats -> {
+            if (stats != null) {
+                cardTotalDonations.setValue(stats.getFormattedTotalDonations());
+                cardTotalDonations.setPercentage(stats.getDonationsChange());
 
-        viewModel.getFormattedDistributedItems().observe(getViewLifecycleOwner(), items -> {
-            cardDistributedItems.setValue(items);
-        });
+                cardDistributedItems.setValue(stats.getFormattedDistributedItems());
+                cardDistributedItems.setPercentage(stats.getItemsChange());
 
-        viewModel.getFormattedFamiliesHelped().observe(getViewLifecycleOwner(), families -> {
-            cardFamiliesHelped.setValue(families);
-        });
-
-        // Observe percentage changes
-        viewModel.getDonationsPercentageChange().observe(getViewLifecycleOwner(), percentage -> {
-            cardTotalDonations.setPercentage(percentage);
-        });
-
-        viewModel.getItemsPercentageChange().observe(getViewLifecycleOwner(), percentage -> {
-            cardDistributedItems.setPercentage(percentage);
-        });
-
-        viewModel.getFamiliesPercentageChange().observe(getViewLifecycleOwner(), percentage -> {
-            cardFamiliesHelped.setPercentage(percentage);
+                cardFamiliesHelped.setValue(stats.getFormattedFamiliesHelped());
+                cardFamiliesHelped.setPercentage(stats.getFamiliesChange());
+            }
         });
 
         // Observe recent activities
@@ -342,8 +338,11 @@ public class DashboardFragment extends BaseFragment {
 
         // Observe loading state
         viewModel.getIsLoading().observe(getViewLifecycleOwner(), isLoading -> {
-            // Show/hide loading indicators if needed
-            // For now, we'll handle this with the statistics cards' built-in loading states
+            if (isLoading != null && isLoading) {
+                showLoading();
+            } else {
+                hideLoading();
+            }
         });
 
         // Observe error messages
@@ -542,7 +541,13 @@ public class DashboardFragment extends BaseFragment {
             navController.navigate(R.id.action_dashboard_to_login);
         } catch (Exception e) {
             // If navigation fails, try alternative approach
-            requireActivity().finish();
+            androidx.navigation.NavController controller = null;
+            try {
+                controller = ((com.sugboaid.donation.activities.MainActivity) requireActivity()).getNavController();
+            } catch (Exception ignore) {}
+            if (controller != null) {
+                try { controller.setGraph(R.navigation.auth_nav_graph); } catch (Exception ignore) {}
+            }
         }
     }
     
@@ -572,71 +577,13 @@ public class DashboardFragment extends BaseFragment {
 
     @Override
     protected void observeData() {
-        // Observe statistics data
-        viewModel.getTotalDonations().observe(getViewLifecycleOwner(), totalDonations -> {
-            if (totalDonations != null) {
-                cardTotalDonations.setStatisticsData(
-                    "Total Donations",
-                    formatCurrency(totalDonations),
-                    "0%" // TODO: Calculate percentage change
-                );
-                // Animate card update
-                cardTotalDonations.startAnimation();
-            }
-        });
-
-        viewModel.getDistributedItems().observe(getViewLifecycleOwner(), distributedItems -> {
-            if (distributedItems != null) {
-                cardDistributedItems.setStatisticsData(
-                    "Distributed Items",
-                    String.valueOf(distributedItems),
-                    "0%" // TODO: Calculate percentage change
-                );
-                // Animate card update
-                cardDistributedItems.startAnimation();
-            }
-        });
-
-        viewModel.getFamiliesHelped().observe(getViewLifecycleOwner(), familiesHelped -> {
-            if (familiesHelped != null) {
-                cardFamiliesHelped.setStatisticsData(
-                    "Families Helped",
-                    String.valueOf(familiesHelped),
-                    "0%" // TODO: Calculate percentage change
-                );
-                // Animate card update
-                cardFamiliesHelped.startAnimation();
-            }
-        });
-
-        // Observe recent activities
-        viewModel.getRecentActivities().observe(getViewLifecycleOwner(), this::updateRecentActivities);
-
-        // Observe loading state
-        viewModel.getIsLoading().observe(getViewLifecycleOwner(), isLoading -> {
-            if (isLoading != null && isLoading) {
-                showLoading();
-            } else {
-                hideLoading();
-            }
-        });
-
-        // Observe error messages
-        viewModel.getErrorMessage().observe(getViewLifecycleOwner(), errorMessage -> {
-            if (errorMessage != null && !errorMessage.isEmpty()) {
-                showError(errorMessage);
-                viewModel.clearError();
-            }
-        });
-        
-        // Observe notification unread count
-        notificationViewModel.getUnreadCount().observe(getViewLifecycleOwner(), unreadCount -> {
-            updateNotificationBadge(unreadCount != null ? unreadCount : 0);
-        });
+        // Delegate to a single observer setup to avoid duplicates
+        observeViewModel();
     }
 
     @Override
     protected void refreshData() {
+        com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "refreshData() override -> ViewModel.refreshData and notifications refresh");
         viewModel.refreshData();
         notificationViewModel.refreshNotifications();
     }
@@ -653,13 +600,6 @@ public class DashboardFragment extends BaseFragment {
         if (rvRecentActivities != null) {
             loadingStateManager.hideLoading((ViewGroup) rvRecentActivities.getParent());
         }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        // Refresh data when returning to dashboard
-        refreshData();
     }
 
     @Override

@@ -171,10 +171,6 @@
     <dimen name="quick_action_button_margin">6dp</dimen>
     <dimen name="quick_action_icon_size">32dp</dimen>
     <dimen name="quick_action_text_size">14sp</dimen>
-    <dimen name="role_button_corner_radius">16dp</dimen>
-    <dimen name="role_button_height">56dp</dimen>
-    <dimen name="role_button_margin">4dp</dimen>
-    <dimen name="role_button_text_size">14sp</dimen>
     <dimen name="shadow_elevation_fab">6dp</dimen>
     <dimen name="shadow_elevation_high">8dp</dimen>
     <dimen name="shadow_elevation_low">2dp</dimen>
@@ -435,11 +431,6 @@
     <string name="resolve_conflicts">Resolve Conflicts</string>
     <string name="rice">Rice</string>
     <string name="rice_kg">🍚 Rice (kg)</string>
-    <string name="role_donor">Donor</string>
-    <string name="role_guest">Guest</string>
-    <string name="role_organization">Organization</string>
-    <string name="role_recipient">Recipient</string>
-    <string name="role_volunteer">Volunteer</string>
     <string name="save">Save</string>
     <string name="scan_qr_code_message">Scan this QR code to view your donation receipt</string>
     <string name="share_receipt">Share Receipt</string>

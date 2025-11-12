@@ -2,6 +2,7 @@ package com.sugboaid.utils;
 
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import com.google.android.material.textfield.TextInputLayout;
@@ -54,6 +55,32 @@ public class AccessibilityUtils {
             AccessibilityEvent event = AccessibilityEvent.obtain(eventType);
             event.getText().add(text);
             view.sendAccessibilityEventUnchecked(event);
+        }
+    }
+
+    /**
+     * Recursively marks all views as important for accessibility.
+     * This ensures that TalkBack and other assistive tools can read view content.
+     *
+     * @param root The root view to start applying accessibility importance.
+     */
+    public static void enableImportantForAccessibility(View root) {
+        if (root == null) return;
+
+        try {
+            // Mark the current view as important for accessibility
+            root.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
+
+            // If this view is a container, apply the same setting to all its children
+            if (root instanceof ViewGroup) {
+                ViewGroup group = (ViewGroup) root;
+                for (int i = 0; i < group.getChildCount(); i++) {
+                    enableImportantForAccessibility(group.getChildAt(i));
+                }
+            }
+        } catch (Exception e) {
+            // Optional: Use your DiagnosticLogger if available for consistent error logging
+            // DiagnosticLogger.logError("AccessibilityUtils", "Failed to set accessibility importance", e);
         }
     }
 

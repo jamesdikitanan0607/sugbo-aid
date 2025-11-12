@@ -19,33 +19,45 @@ import java.util.List;
  */
 public class NotificationRepository {
     private static final String NOTIFICATIONS_KEY = "notifications_list";
-    private static NotificationRepository instance;
+    private static volatile NotificationRepository instance;
+    private static final Object LOCK = new Object();
     
-    private SharedPreferencesHelper prefsHelper;
-    private MutableLiveData<List<AppNotification>> notificationsLiveData;
-    private MutableLiveData<Integer> unreadCountLiveData;
-    private Gson gson;
-    private AndroidNotificationManager androidNotificationManager;
+    private final SharedPreferencesHelper prefsHelper;
+    private final MutableLiveData<List<AppNotification>> notificationsLiveData;
+    private final MutableLiveData<Integer> unreadCountLiveData;
+    private final Gson gson;
+    private final AndroidNotificationManager androidNotificationManager;
+    private final android.content.Context appContext;
     
     private NotificationRepository(SharedPreferencesHelper prefsHelper, android.content.Context context) {
         this.prefsHelper = prefsHelper;
+        this.appContext = context.getApplicationContext();
         this.gson = new Gson();
         this.notificationsLiveData = new MutableLiveData<>();
         this.unreadCountLiveData = new MutableLiveData<>();
         
-        // Initialize Android notification manager
-        this.androidNotificationManager = new AndroidNotificationManager(context);
+        // Initialize Android notification manager with application context
+        this.androidNotificationManager = new AndroidNotificationManager(this.appContext);
         
         // Load initial data
         loadNotifications();
     }
     
-    public static synchronized NotificationRepository getInstance(SharedPreferencesHelper prefsHelper, 
-                                                                   android.content.Context context) {
-        if (instance == null) {
-            instance = new NotificationRepository(prefsHelper, context);
+    public static NotificationRepository getInstance(SharedPreferencesHelper prefsHelper, 
+                                                   android.content.Context context) {
+        NotificationRepository result = instance;
+        if (result == null) {
+            synchronized (LOCK) {
+                result = instance;
+                if (result == null) {
+                    instance = result = new NotificationRepository(
+                        prefsHelper, 
+                        context.getApplicationContext()
+                    );
+                }
+            }
         }
-        return instance;
+        return result;
     }
     
     public LiveData<List<AppNotification>> getNotifications() {

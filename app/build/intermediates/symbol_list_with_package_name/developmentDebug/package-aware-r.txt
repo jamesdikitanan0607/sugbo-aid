@@ -3185,10 +3185,6 @@ dimen quick_action_button_height
 dimen quick_action_button_margin
 dimen quick_action_icon_size
 dimen quick_action_text_size
-dimen role_button_corner_radius
-dimen role_button_height
-dimen role_button_margin
-dimen role_button_text_size
 dimen shadow_elevation_fab
 dimen shadow_elevation_high
 dimen shadow_elevation_low
@@ -3317,6 +3313,8 @@ drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
 drawable btn_checkbox_unchecked_to_checked_mtrl_animation
+drawable btn_outline
+drawable btn_primary
 drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
@@ -3595,9 +3593,9 @@ id action_dashboard_to_reports
 id action_dashboard_to_transparency
 id action_delete
 id action_divider
+id action_global_dashboard
 id action_image
 id action_inventory_to_dashboard
-id action_loginFragment_to_dashboardFragment
 id action_loginFragment_to_signupFragment
 id action_mark_unread
 id action_menu_divider
@@ -3610,7 +3608,6 @@ id action_pos_to_dashboard
 id action_pos_to_success
 id action_reports_to_dashboard
 id action_share
-id action_signupFragment_to_dashboardFragment
 id action_signupFragment_to_loginFragment
 id action_success_to_dashboard
 id action_text
@@ -3634,6 +3631,7 @@ id arc
 id asConfigured
 id assistanceText
 id async
+id auth_nav_graph
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -3670,18 +3668,14 @@ id btn_cancel
 id btn_cash_mode
 id btn_clothes_decrease
 id btn_clothes_increase
-id btn_donor
 id btn_export_csv
 id btn_export_pdf
 id btn_goods_mode
-id btn_guest
 id btn_inventory
 id btn_login
 id btn_medicine_decrease
 id btn_medicine_increase
 id btn_new_donation
-id btn_organization
-id btn_recipient
 id btn_refresh
 id btn_remove_stock
 id btn_reports
@@ -3692,7 +3686,6 @@ id btn_share_receipt
 id btn_signup
 id btn_submit_donation
 id btn_transparency
-id btn_volunteer
 id btn_water_decrease
 id btn_water_increase
 id buttonPanel
@@ -3950,9 +3943,9 @@ id line3
 id linear
 id listMode
 id list_item
+id ll_auth_buttons
 id ll_empty_state
 id ll_header
-id ll_role_selection
 id ll_statistics_container
 id locale
 id locationText
@@ -4254,6 +4247,7 @@ id tv_donation_date
 id tv_donation_description
 id tv_donation_type
 id tv_donor_name
+id tv_go_to_signup
 id tv_item_icon
 id tv_item_name
 id tv_item_unit
@@ -4266,7 +4260,6 @@ id tv_quick_actions
 id tv_receipt_id
 id tv_recent_activities
 id tv_rice_quantity
-id tv_signup_link
 id tv_status_badge
 id tv_stock_info
 id tv_stock_percentage
@@ -4444,6 +4437,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_qr_scanner
+layout activity_simple_splash
 layout activity_splash
 layout custom_barcode_scanner
 layout custom_dialog
@@ -4469,6 +4463,7 @@ layout fragment_donation_success
 layout fragment_inventory
 layout fragment_login
 layout fragment_notifications
+layout fragment_placeholder
 layout fragment_pos_donation
 layout fragment_reports
 layout fragment_signup
@@ -4569,6 +4564,7 @@ menu transaction_context_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap leak_canary_icon
+navigation auth_nav_graph
 navigation nav_graph
 plurals days_ago
 plurals hours_ago
@@ -5045,11 +5041,6 @@ string reports
 string resolve_conflicts
 string rice
 string rice_kg
-string role_donor
-string role_guest
-string role_organization
-string role_recipient
-string role_volunteer
 string save
 string scan_qr_code_message
 string search_menu_title

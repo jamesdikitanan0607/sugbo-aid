@@ -1,8 +1,14 @@
 package com.sugboaid.donation.activities;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import androidx.navigation.NavGraph;
+import androidx.navigation.NavOptions;
+import androidx.lifecycle.ViewModelProvider;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,6 +20,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sugboaid.donation.R;
+import com.sugboaid.donation.viewmodels.DashboardViewModel;
 import com.sugboaid.donation.utils.AndroidNotificationManager;
 import com.sugboaid.donation.utils.AnimationUtils;
 import com.sugboaid.donation.utils.NotificationPermissionHelper;
@@ -28,12 +35,14 @@ public class MainActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
     private NavController navController;
+    private NavController.OnDestinationChangedListener destinationChangedListener;
     private BottomNavigationView bottomNavigation;
     private OfflineBannerView offlineBanner;
     private FloatingActionButton fabDarkModeToggle;
     private AndroidNotificationManager androidNotificationManager;
     private OfflineQueueManager offlineQueueManager;
     private StartupDiagnosticManager diagnosticManager;
+    private DashboardViewModel dashboardViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,6 +206,17 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    private void setupAccessibilityFeatures() {
+        try {
+            View root = findViewById(android.R.id.content);
+            if (root != null) {
+                AccessibilityUtils.enableImportantForAccessibility(root);
+            }
+        } catch (Exception e) {
+            DiagnosticLogger.logError(TAG, "Error in setupAccessibilityFeatures", e);
+        }
+    }
+
     private void setupNavigation() {
         DiagnosticLogger.logStartup("MainActivity setupNavigation started");
         
@@ -229,44 +249,45 @@ public class MainActivity extends BaseActivity {
             // Setup bottom navigation with NavController
             NavigationUI.setupWithNavController(bottomNavigation, navController);
             DiagnosticLogger.logDebug(TAG, "Bottom navigation connected to NavController");
-            
-            // Ensure initial destination is shown to avoid white screen on cold start
-            try {
-                if (navController.getCurrentDestination() == null) {
-                    DiagnosticLogger.logDebug(TAG, "Current destination is null, forcing navigation to dashboard");
-                    bottomNavigation.setSelectedItemId(R.id.dashboardFragment);
-                    navController.navigate(R.id.dashboardFragment);
-                }
-            } catch (Exception e) {
-                DiagnosticLogger.logError(TAG, "Failed to force initial navigation to dashboard", e);
-            }
+
+            // Avoid reloading current destination when the same tab is reselected
+            bottomNavigation.setOnItemReselectedListener(item -> {
+                // no-op to preserve current fragment state
+            });
             
             // Handle fragment lifecycle properly with comprehensive logging
             navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-                String destinationName = getDestinationName(destination.getId());
-                String previousDestination = "Unknown";
-                
-                // Log navigation event
-                diagnosticManager.logNavigationEvent(
-                    "Destination changed", 
-                    previousDestination, 
-                    destinationName, 
-                    controller
-                );
-                
-                // Handle specific fragment requirements
-                try {
-                    handleFragmentChange(destination.getId());
-                    DiagnosticLogger.logDebug(TAG, "Fragment change handled for: " + destinationName);
-                } catch (Exception e) {
-                    DiagnosticLogger.logError(TAG, "Failed to handle fragment change for: " + destinationName, e);
-                }
-                
-                // Announce navigation change for accessibility
-                try {
+                if (destination != null) {
+                    DiagnosticLogger.logDebug(TAG, "Navigation: Destination changed to " + destination.getLabel());
                     announceNavigationChange(destination.getId());
-                } catch (Exception e) {
-                    DiagnosticLogger.logError(TAG, "Failed to announce navigation change", e);
+                    
+                    String destinationName = getDestinationName(destination.getId());
+                    String previousDestination = "Unknown";
+                
+                    // Log navigation event
+                    diagnosticManager.logNavigationEvent(
+                        "Destination changed", 
+                        previousDestination, 
+                        destinationName, 
+                        controller
+                    );
+                    
+                    // Handle specific fragment requirements
+                    try {
+                        handleFragmentChange(destination.getId());
+                        DiagnosticLogger.logDebug(TAG, "Fragment change handled for: " + destinationName);
+                    } catch (Exception e) {
+                        DiagnosticLogger.logError(TAG, "Failed to handle fragment change for: " + destinationName, e);
+                    }
+
+                    // BottomNavigation selection is auto-synced by NavigationUI; avoid manual updates to prevent loops
+                    
+                    // Announce navigation change for accessibility
+                    try {
+                        announceNavigationChange(destination.getId());
+                    } catch (Exception e) {
+                        DiagnosticLogger.logError(TAG, "Failed to announce navigation change", e);
+                    }
                 }
             });
             
@@ -295,6 +316,21 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    /**
+     * Preload Dashboard data so it's ready when shown.
+     */
+    private void preloadDashboard() {
+        try {
+            if (dashboardViewModel == null) {
+                dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+            }
+            dashboardViewModel.refreshData();
+            DiagnosticLogger.logDebug(TAG, "Dashboard preloading triggered");
+        } catch (Exception e) {
+            DiagnosticLogger.logError(TAG, "Failed to preload dashboard", e);
+        }
+    }
+
     private void handleFragmentChange(int destinationId) {
         // Handle specific fragment requirements like hiding/showing bottom nav
         if (bottomNavigation != null) {
@@ -305,6 +341,19 @@ public class MainActivity extends BaseActivity {
                 // Show bottom navigation for main app fragments
                 bottomNavigation.setVisibility(View.VISIBLE);
             }
+        }
+        if (destinationId == R.id.dashboardFragment) {
+            try {
+                if (dashboardViewModel == null) {
+                    dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+                }
+                dashboardViewModel.forceRefresh();
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    try {
+                        dashboardViewModel.forceRefresh();
+                    } catch (Exception ignored) { }
+                }, 100);
+            } catch (Exception ignored) { }
         }
     }
 
@@ -432,43 +481,42 @@ public class MainActivity extends BaseActivity {
     }
     
     private void requestNotificationPermission() {
-        NotificationPermissionHelper.requestNotificationPermission(this, 
+        NotificationPermissionHelper.requestNotificationPermission(this,
             new NotificationPermissionHelper.PermissionCallback() {
                 @Override
                 public void onPermissionGranted() {
                     // Permission granted, notifications will work
                 }
-                
+
                 @Override
                 public void onPermissionDenied() {
-                    // Show dialog explaining the impact
                     NotificationPermissionHelper.showPermissionDeniedDialog(MainActivity.this);
                 }
             });
     }
     
     private void handleNotificationIntent(android.content.Intent intent) {
-        if (intent != null) {
+        if (intent != null && navController != null) {
             boolean openNotifications = intent.getBooleanExtra("open_notifications", false);
             boolean openReports = intent.getBooleanExtra("open_reports", false);
             boolean openInventory = intent.getBooleanExtra("open_inventory", false);
             boolean openTransparency = intent.getBooleanExtra("open_transparency", false);
-            
-            if (openNotifications) {
-                // Navigate to notifications fragment
-                navController.navigate(R.id.notificationsFragment);
-            } else if (openReports) {
-                navController.navigate(R.id.reportsFragment);
-            } else if (openInventory) {
-                navController.navigate(R.id.inventoryFragment);
-            } else if (openTransparency) {
-                navController.navigate(R.id.transparencyFragment);
+            try {
+                if (openNotifications) {
+                    navController.navigate(R.id.notificationsFragment);
+                } else if (openReports) {
+                    navController.navigate(R.id.reportsFragment);
+                } else if (openInventory) {
+                    navController.navigate(R.id.inventoryFragment);
+                } else if (openTransparency) {
+                    navController.navigate(R.id.transparencyFragment);
+                }
+            } catch (Exception e) {
+                DiagnosticLogger.logError(TAG, "Notification intent navigation failed", e);
             }
         }
     }
-    
 
-    
     @Override
     protected void onNewIntent(android.content.Intent intent) {
         super.onNewIntent(intent);
@@ -476,141 +524,39 @@ public class MainActivity extends BaseActivity {
         handleNotificationIntent(intent);
         handleAuthenticationNavigation();
     }
-    
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        
-        NotificationPermissionHelper.handlePermissionResult(requestCode, permissions, grantResults,
-            new NotificationPermissionHelper.PermissionCallback() {
-                @Override
-                public void onPermissionGranted() {
-                    // Permission granted
-                }
-                
-                @Override
-                public void onPermissionDenied() {
-                    NotificationPermissionHelper.showPermissionDeniedDialog(MainActivity.this);
-                }
-            });
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        return navController.navigateUp() || super.onSupportNavigateUp();
-    }
-
-    // Public method to get NavController for fragments
-    public NavController getNavController() {
-        return navController;
-    }
-    
-    /**
-     * Setup comprehensive accessibility features for the main activity
-     */
-    private void setupAccessibilityFeatures() {
-        // Setup bottom navigation accessibility
-        setupBottomNavigationAccessibility();
-        
-        // Setup dark mode toggle accessibility
-        setupDarkModeToggleAccessibility();
-        
-        // Setup offline banner accessibility
-        setupOfflineBannerAccessibility();
-    }
-    
-    /**
-     * Setup accessibility for bottom navigation
-     */
-    private void setupBottomNavigationAccessibility() {
-        if (bottomNavigation != null) {
-            // Set content description for the navigation container
-            bottomNavigation.setContentDescription(getString(R.string.accessibility_navigation_container));
-            
-            // Setup individual navigation items
-            for (int i = 0; i < bottomNavigation.getMenu().size(); i++) {
-                View navItem = bottomNavigation.findViewById(bottomNavigation.getMenu().getItem(i).getItemId());
-                if (navItem != null) {
-                    String destination = bottomNavigation.getMenu().getItem(i).getTitle().toString();
-                    AccessibilityUtils.setupNavigationAccessibility(navItem, destination, false);
-                }
-            }
-        }
-    }
-    
-    /**
-     * Setup accessibility for dark mode toggle
-     */
-    private void setupDarkModeToggleAccessibility() {
-        if (fabDarkModeToggle != null) {
-            AccessibilityUtils.setupClickableAccessibility(
-                fabDarkModeToggle,
-                getString(R.string.toggle_dark_mode),
-                getString(R.string.accessibility_action_toggle_theme)
-            );
-        }
-    }
-    
-    /**
-     * Setup accessibility for offline banner
-     */
-    private void setupOfflineBannerAccessibility() {
-        if (offlineBanner != null) {
-            AccessibilityUtils.setupLiveRegion(offlineBanner, 
-                androidx.core.view.ViewCompat.ACCESSIBILITY_LIVE_REGION_POLITE);
-        }
-    }
-    
-    /**
-     * Announce navigation changes for accessibility
-     */
-    private void announceNavigationChange(int destinationId) {
-        String destination = getDestinationName(destinationId);
-        if (destination != null) {
-            AccessibilityUtils.announceNavigation(this, bottomNavigation, destination);
-        }
-    }
-    
-    /**
-     * Get destination name from navigation ID
-     */
-    private String getDestinationName(int destinationId) {
-        if (destinationId == R.id.dashboardFragment) {
-            return getString(R.string.nav_dashboard);
-        } else if (destinationId == R.id.inventoryFragment) {
-            return getString(R.string.nav_inventory);
-        } else if (destinationId == R.id.transparencyFragment) {
-            return getString(R.string.nav_transparency);
-        } else if (destinationId == R.id.reportsFragment) {
-            return getString(R.string.nav_reports);
-        } else if (destinationId == R.id.notificationsFragment) {
-            return getString(R.string.nav_notifications);
-        }
-        return null;
-    }
-
     /**
      * Handle authentication navigation based on intent extras
      */
     private void handleAuthenticationNavigation() {
-        String startDestination = getIntent().getStringExtra("start_destination");
-        String userRole = getIntent().getStringExtra("user_role");
-        DiagnosticLogger.logDebug(TAG, "Handling authentication navigation to: " + startDestination + 
-            ", user role: " + userRole);
-        
-        // Save user role if provided
-        if (userRole != null && prefsHelper != null) {
-            try {
-                prefsHelper.saveUserRole(userRole);
-                DiagnosticLogger.logDebug(TAG, "User role saved: " + userRole);
-            } catch (Exception e) {
-                DiagnosticLogger.logError(TAG, "Failed to save user role", e);
+        try {
+            String startDestination = getIntent().getStringExtra("start_destination");
+            String userRole = getIntent().getStringExtra("user_role");
+            DiagnosticLogger.logDebug(TAG, "Handling authentication navigation to: " + startDestination + 
+                ", user role: " + userRole);
+            
+            // Save user role if provided
+            if (userRole != null && prefsHelper != null) {
+                try {
+                    prefsHelper.saveUserRole(userRole);
+                    DiagnosticLogger.logDebug(TAG, "User role saved: " + userRole);
+                } catch (Exception e) {
+                    DiagnosticLogger.logError(TAG, "Failed to save user role", e);
+                }
             }
+            
+            // If no specific destination, default to login
+            if (startDestination == null || startDestination.isEmpty()) {
+                startDestination = "login";
+            }
+            
+            // Ensure navigation is done after the NavController is properly initialized
+            // Use a more robust approach with retry mechanism
+            performNavigationWithRetry(startDestination, 0);
+        } catch (Exception e) {
+            DiagnosticLogger.logError(TAG, "Error in handleAuthenticationNavigation", e);
+            // Fallback to login screen if there's an error
+            performNavigationWithRetry("login", 0);
         }
-        
-        // Ensure navigation is done after the NavController is properly initialized
-        // Use a more robust approach with retry mechanism
-        performNavigationWithRetry(startDestination, 0);
     }
     
     /**
@@ -619,67 +565,251 @@ public class MainActivity extends BaseActivity {
     private void performNavigationWithRetry(String startDestination, int retryCount) {
         final int MAX_RETRIES = 5;
         final int RETRY_DELAY = 300; // Increased delay
+        long delay = (retryCount == 0) ? RETRY_DELAY : RETRY_DELAY * (long)(retryCount + 1);
         
-        new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-            if (navController != null) {
-                try {
-                    // Verify NavController is ready by checking if it has a current destination
-                    if (navController.getCurrentDestination() == null && retryCount < MAX_RETRIES) {
-                        DiagnosticLogger.logDebug(TAG, "NavController not ready, retrying... (" + (retryCount + 1) + "/" + MAX_RETRIES + ")");
-                        performNavigationWithRetry(startDestination, retryCount + 1);
-                        return;
+        // Ensure we're on the main thread
+        if (Looper.myLooper() != Looper.getMainLooper()) {
+            new Handler(Looper.getMainLooper()).post(() -> performNavigationWithRetry(startDestination, retryCount));
+            return;
+        }
+        
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            if (navController == null) {
+                NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.nav_host_fragment);
+                if (navHostFragment != null) {
+                    try {
+                        navController = navHostFragment.getNavController();
+                    } catch (IllegalStateException e) {
+                        DiagnosticLogger.logError(TAG, "Error getting NavController", e);
                     }
-                    
-                    if ("login".equals(startDestination)) {
-                        // Navigate to login fragment
+                }
+            }
+            
+            if (navController == null) {
+                if (retryCount < MAX_RETRIES) {
+                    DiagnosticLogger.logDebug(TAG, "NavController is null, retrying... (" + (retryCount + 1) + "/" + MAX_RETRIES + ")");
+                    performNavigationWithRetry(startDestination, retryCount + 1);
+                } else {
+                    DiagnosticLogger.logError(TAG, "Failed to initialize NavController after " + MAX_RETRIES + " attempts", null);
+                }
+                return;
+            }
+        
+        // Proceed even if currentDestination is null; we'll set the graph explicitly
+        if (navController.getCurrentDestination() == null) {
+            DiagnosticLogger.logDebug(TAG, "NavController has no current destination yet; proceeding to set graph explicitly");
+        }
+        
+        try {
+            if ("login".equals(startDestination)) {
+                // Switch to the dedicated auth graph (login is its startDestination)
+                try {
+                    NavGraph authGraph = navController.getNavInflater().inflate(R.navigation.auth_nav_graph);
+                    navController.setGraph(authGraph);
+                    DiagnosticLogger.logDebug(TAG, "Set navigation graph to auth_nav_graph");
+                    if (diagnosticManager != null) {
                         diagnosticManager.logNavigationEvent(
                             "Authentication navigation", "MainActivity", "LoginFragment", navController
                         );
-                        navController.navigate(R.id.loginFragment);
-                        DiagnosticLogger.logDebug(TAG, "Navigated to login fragment");
-                    } else if ("dashboard".equals(startDestination)) {
-                        // Navigate to dashboard fragment (default behavior)
+                    }
+                } catch (Exception e) {
+                    DiagnosticLogger.logError(TAG, "Error setting up auth navigation graph", e);
+                    throw e;
+                }
+            } else if ("signup".equals(startDestination)) {
+                // Switch to auth graph, then navigate to signup explicitly
+                try {
+                    NavGraph authGraph = navController.getNavInflater().inflate(R.navigation.auth_nav_graph);
+                    navController.setGraph(authGraph);
+                    DiagnosticLogger.logDebug(TAG, "Set navigation graph to auth_nav_graph (signup)");
+                    try {
+                        navController.navigate(R.id.signupFragment);
+                    } catch (Exception navEx) {
+                        DiagnosticLogger.logError(TAG, "Explicit navigate to signupFragment failed", navEx);
+                    }
+                    if (diagnosticManager != null) {
+                        diagnosticManager.logNavigationEvent(
+                            "Authentication navigation", "MainActivity", "SignupFragment", navController
+                        );
+                    }
+                } catch (Exception e) {
+                    DiagnosticLogger.logError(TAG, "Error setting up auth navigation graph for signup", e);
+                    throw e;
+                }
+            } else if ("dashboard".equals(startDestination)) {
+                // Switch to main graph; dashboard is the startDestination
+                try {
+                    preloadDashboard();
+                    NavGraph navGraph = navController.getNavInflater().inflate(R.navigation.nav_graph);
+                    navController.setGraph(navGraph);
+                    DiagnosticLogger.logDebug(TAG, "Set navigation graph to nav_graph");
+                    // Preload dashboard data and navigate explicitly to ensure fragment creation
+                    try {
+                        NavOptions opts = new NavOptions.Builder()
+                            .setPopUpTo(R.id.nav_graph, true)
+                            .setLaunchSingleTop(true)
+                            .build();
+                        navController.navigate(R.id.dashboardFragment, null, opts);
+                        if (bottomNavigation != null) {
+                            bottomNavigation.setSelectedItemId(R.id.dashboardFragment);
+                        }
+                    } catch (Exception navEx) {
+                        DiagnosticLogger.logError(TAG, "Explicit navigate to dashboard failed (may already be current)", navEx);
+                    }
+                    if (diagnosticManager != null) {
                         diagnosticManager.logNavigationEvent(
                             "Authentication navigation", "MainActivity", "DashboardFragment", navController
                         );
-                        navController.navigate(R.id.dashboardFragment);
-                        DiagnosticLogger.logDebug(TAG, "Navigated to dashboard fragment");
-                    } else {
-                        DiagnosticLogger.logDebug(TAG, "No specific destination - using navigation graph default");
                     }
-                    // If no specific destination, let the navigation graph handle the default
-                } catch (IllegalArgumentException e) {
-                    DiagnosticLogger.logError(TAG, "Navigation destination not found", e);
-                    // Fallback: try to navigate to login as default
-                    try {
-                        navController.navigate(R.id.loginFragment);
-                        DiagnosticLogger.logDebug(TAG, "Fallback navigation to login successful");
-                    } catch (Exception fallbackException) {
-                        DiagnosticLogger.logError(TAG, "Fallback navigation failed", fallbackException);
-                    }
-                } catch (Exception e) {
-                    DiagnosticLogger.logError(TAG, "Authentication navigation error", e);
+                } catch (Exception graphEx) {
+                    DiagnosticLogger.logError(TAG, "Failed to set main graph", graphEx);
                     if (retryCount < MAX_RETRIES) {
-                        DiagnosticLogger.logDebug(TAG, "Retrying navigation due to error... (" + (retryCount + 1) + "/" + MAX_RETRIES + ")");
                         performNavigationWithRetry(startDestination, retryCount + 1);
+                        return;
                     }
                 }
             } else {
-                DiagnosticLogger.logWarning(TAG, "NavController is null during authentication navigation");
-                if (retryCount < MAX_RETRIES) {
-                    DiagnosticLogger.logDebug(TAG, "Retrying navigation setup... (" + (retryCount + 1) + "/" + MAX_RETRIES + ")");
-                    // Retry navigation setup
+                DiagnosticLogger.logDebug(TAG, "No specific destination - using navigation graph default");
+            }
+            // If no specific destination, let the navigation graph handle the default
+        } catch (IllegalArgumentException e) {
+                    DiagnosticLogger.logError(TAG, "Navigation destination not found", e);
+                    // Fallback: try to navigate to login as default
                     try {
-                        setupNavigation();
-                        performNavigationWithRetry(startDestination, retryCount + 1);
-                    } catch (Exception retryException) {
-                        DiagnosticLogger.logError(TAG, "Navigation retry failed", retryException);
-                        performNavigationWithRetry(startDestination, retryCount + 1);
+                        try {
+                            NavGraph authGraph = navController.getNavInflater().inflate(R.navigation.auth_nav_graph);
+                            navController.setGraph(authGraph);
+                            DiagnosticLogger.logDebug(TAG, "Fallback: set navigation graph to auth_nav_graph (login is startDestination)");
+                        } catch (Exception graphEx) {
+                            DiagnosticLogger.logError(TAG, "Failed to set auth graph in fallback", graphEx);
+                        }
+                    } catch (Exception fallbackException) {
+                        DiagnosticLogger.logError(TAG, "Fallback navigation failed", fallbackException);
+                        if (retryCount < MAX_RETRIES) {
+                            DiagnosticLogger.logDebug(TAG, "Retrying navigation due to error... (" + (retryCount + 1) + "/" + MAX_RETRIES + ")");
+                            performNavigationWithRetry(startDestination, retryCount + 1);
+                        }
                     }
-                } else {
-                    DiagnosticLogger.logError(TAG, "Max retries reached, navigation failed", null);
+            }
+        }, delay);
+    }
+
+    // Public helper to switch to main graph and show dashboard (used by auth fragments on success)
+    public void switchToMainGraphAndShowDashboard() {
+        switchToMainGraphAndShowDashboard(false);
+    }
+
+    public void switchToMainGraphAndShowDashboard(boolean justSignedUp) {
+        try {
+            if (navController != null) {
+                if (dashboardViewModel == null) {
+                    dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+                }
+
+                // Ensure data load begins
+                dashboardViewModel.refreshData();
+
+                final boolean[] proceeded = new boolean[]{false};
+
+                Runnable proceed = () -> {
+                    if (proceeded[0]) return;
+                    proceeded[0] = true;
+                    try {
+                        navController.setGraph(R.navigation.nav_graph);
+                    } catch (Exception graphEx) {
+                        DiagnosticLogger.logError(TAG, "Failed to set main graph", graphEx);
+                    }
+                    new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                        try {
+                            androidx.navigation.NavDestination current = navController.getCurrentDestination();
+                            if (current == null || current.getId() != R.id.dashboardFragment) {
+                                NavOptions opts = new NavOptions.Builder()
+                                    .setPopUpTo(R.id.nav_graph, true)
+                                    .setLaunchSingleTop(true)
+                                    .build();
+                                navController.navigate(R.id.dashboardFragment, null, opts);
+                            }
+                            if (bottomNavigation != null) {
+                                bottomNavigation.setSelectedItemId(R.id.dashboardFragment);
+                            }
+                        } catch (Exception navEx) {
+                            DiagnosticLogger.logError(TAG, "Navigate to dashboard after graph switch failed", navEx);
+                        }
+                    }, 150);
+                    DiagnosticLogger.logDebug(TAG, "Switched to main graph");
+                };
+
+                // Observe for first non-null combined stats emission, then proceed
+                final androidx.lifecycle.Observer<com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics> statsObserver =
+                    new androidx.lifecycle.Observer<com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics>() {
+                        @Override
+                        public void onChanged(com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics stats) {
+                            if (stats != null && !proceeded[0]) {
+                                try {
+                                    dashboardViewModel.getDashboardStatistics().removeObserver(this);
+                                } catch (Exception ignored) {}
+                                proceed.run();
+                            }
+                        }
+                    };
+
+                try {
+                    dashboardViewModel.getDashboardStatistics().observe(this, statsObserver);
+                } catch (Exception e) {
+                    // Fallback if observe fails
+                    new Handler(Looper.getMainLooper()).postDelayed(proceed, 300);
+                }
+
+                // Timeout fallback to avoid stalling in case repositories are slow
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    try {
+                        if (!proceeded[0]) {
+                            dashboardViewModel.getDashboardStatistics().removeObserver(statsObserver);
+                            proceed.run();
+                        }
+                    } catch (Exception ignored) {
+                        proceed.run();
+                    }
+                }, 700);
+            }
+        } catch (Exception e) {
+            DiagnosticLogger.logError(TAG, "switchToMainGraphAndShowDashboard failed", e);
+        }
+    }
+
+    // Public method used by BaseFragment to access the NavController
+    public androidx.navigation.NavController getNavController() {
+        return navController;
+    }
+
+    private String getDestinationName(int destinationId) {
+        try {
+            if (navController != null) {
+                androidx.navigation.NavDestination dest = navController.getGraph().findNode(destinationId);
+                if (dest != null) {
+                    CharSequence label = dest.getLabel();
+                    if (label != null) return label.toString();
+                    return dest.toString();
                 }
             }
-        }, retryCount == 0 ? RETRY_DELAY : RETRY_DELAY * (retryCount + 1));
+            return getResources().getResourceEntryName(destinationId);
+        } catch (Exception e) {
+            return "Unknown";
+        }
+    }
+
+    
+
+    private void announceNavigationChange(int destinationId) {
+        try {
+            View root = findViewById(android.R.id.content);
+            String name = getDestinationName(destinationId);
+            if (root != null && name != null) {
+                AccessibilityUtils.announceForAccessibility(root, name);
+            }
+        } catch (Exception e) {
+            DiagnosticLogger.logError(TAG, "Error announcing navigation change", e);
+        }
     }
 }

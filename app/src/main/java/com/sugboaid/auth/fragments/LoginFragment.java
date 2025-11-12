@@ -11,11 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.sugboaid.donation.R;
+import com.sugboaid.donation.activities.MainActivity;
 import com.sugboaid.donation.databinding.FragmentLoginBinding;
+import com.sugboaid.donation.viewmodels.DashboardViewModel;
 import com.sugboaid.donation.fragments.BaseFragment;
 import com.sugboaid.viewmodels.AuthViewModel;
 import com.sugboaid.utils.ValidationUtils;
@@ -35,6 +38,7 @@ public class LoginFragment extends BaseFragment {
     private NavController navController;
     private AuthLoadingStateManager loadingStateManager;
     private AuthFeedbackManager feedbackManager;
+    private boolean loginInitiated = false;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -69,24 +73,35 @@ public class LoginFragment extends BaseFragment {
         // Login button click listener
         binding.btnLogin.setOnClickListener(v -> {
             animateButtonPress(v);
+            loginInitiated = true;
             validateAndLogin();
-        });
-
-        // Signup link click listener
-        binding.tvSignupLink.setOnClickListener(v -> {
-            navigateToSignup();
         });
 
         // Real-time validation listeners
         setupRealTimeValidation();
+
+        // Text CTA: Don't have an account? Sign up
+        try {
+            if (binding.tvGoToSignup != null) {
+                binding.tvGoToSignup.setOnClickListener(v -> {
+                    try {
+                        navController.navigate(R.id.action_loginFragment_to_signupFragment);
+                    } catch (Exception e) {
+                        showToast("Navigation error occurred");
+                    }
+                });
+            }
+        } catch (Exception ignored) {
+        }
     }
+
 
     @Override
     protected void observeData() {
         // Observe authentication state
         authViewModel.authState.observe(getViewLifecycleOwner(), authState -> {
-            if (authState != null && authState.isAuthenticated()) {
-                // Login successful, navigate to dashboard
+            if (authState != null && authState.isAuthenticated() && loginInitiated) {
+                // Login successful, navigate directly to main dashboard
                 navigateToDashboard();
             }
         });
@@ -213,25 +228,44 @@ public class LoginFragment extends BaseFragment {
      * Validate form and attempt login using comprehensive validation
      */
     private void validateAndLogin() {
+        // Validate form fields
+        boolean isValid = true;
         String email = binding.etEmail.getText().toString().trim();
-        String password = binding.etPassword.getText().toString();
+        String password = binding.etPassword.getText().toString().trim();
 
-        // Clear previous errors
-        clearErrors();
+        // Validate email
+        ValidationUtils.ValidationResult emailResult = ValidationUtils.validateEmail(email);
+        applyEmailValidation(emailResult);
+        if (!emailResult.isValid()) {
+            isValid = false;
+        }
 
-        // Use comprehensive form validation
-        ValidationUtils.FormValidationResult formResult = authViewModel.validateLoginForm(email, password);
+        // Validate password
+        ValidationUtils.ValidationResult passwordResult = ValidationUtils.validatePassword(password);
+        applyPasswordValidation(passwordResult);
+        if (!passwordResult.isValid()) {
+            isValid = false;
+        }
 
-        // Apply validation results to UI
-        applyEmailValidation(formResult.getEmailResult());
-        applyPasswordValidation(formResult.getPasswordResult());
-
-        if (formResult.isValid()) {
+        if (isValid) {
             // Attempt login
             authViewModel.login(email, password);
         } else {
-            // Animate error fields and announce errors for accessibility
-            announceValidationErrors(formResult);
+            // Show validation errors using AccessibilityUtils
+            if (!emailResult.isValid()) {
+                binding.tilEmail.setError(emailResult.getMessage());
+                AccessibilityUtils.announceForAccessibility(
+                    binding.tilEmail, 
+                    "Email error: " + emailResult.getMessage()
+                );
+            }
+            if (!passwordResult.isValid()) {
+                binding.tilPassword.setError(passwordResult.getMessage());
+                AccessibilityUtils.announceForAccessibility(
+                    binding.tilPassword, 
+                    "Password error: " + passwordResult.getMessage()
+                );
+            }
         }
     }
 
@@ -270,41 +304,15 @@ public class LoginFragment extends BaseFragment {
     }
 
     /**
-     * Announce validation errors for accessibility using AccessibilityUtils
-     */
-    private void announceValidationErrors(ValidationUtils.FormValidationResult formResult) {
-        String announcement = AccessibilityUtils.createFormValidationAnnouncement(formResult);
-        
-        // Announce for screen readers
-        if (getView() != null) {
-            AccessibilityUtils.announceForAccessibility(getView(), announcement);
-        }
-    }
-
-    /**
-     * Navigate to signup fragment
-     */
-    private void navigateToSignup() {
-        try {
-            navController.navigate(R.id.action_loginFragment_to_signupFragment);
-        } catch (Exception e) {
-            showToast("Navigation error occurred");
-        }
-    }
-
-    /**
      * Navigate to dashboard after successful login
      */
     private void navigateToDashboard() {
         try {
-            navController.navigate(R.id.action_loginFragment_to_dashboardFragment);
+            // Switch to the main graph and show the dashboard using MainActivity helper
+            MainActivity activity = (MainActivity) requireActivity();
+            activity.switchToMainGraphAndShowDashboard(false);
         } catch (Exception e) {
-            try {
-                // Fallback: navigate directly to destination by ID
-                navController.navigate(R.id.dashboardFragment);
-            } catch (Exception ex) {
-                showToast("Navigation error occurred");
-            }
+            showToast("Navigation error occurred");
         }
     }
 

@@ -73,8 +73,10 @@ public class DashboardViewModel extends AndroidViewModel {
         isLoading = new MutableLiveData<>(false);
         errorMessage = new MutableLiveData<>();
         
-        // Combined statistics
+        // Combined statistics - initialize with default values to ensure immediate emission
         dashboardStatistics = new MediatorLiveData<>();
+        // Set initial default statistics so UI can render immediately
+        dashboardStatistics.setValue(new DashboardStatistics(0.0, 0, 0, "+0%", "+0%", "+0%"));
         setupDashboardStatistics();
     }
 
@@ -149,6 +151,26 @@ public class DashboardViewModel extends AndroidViewModel {
 
     public LiveData<DashboardStatistics> getDashboardStatistics() {
         return dashboardStatistics;
+    }
+
+    /**
+     * Force a refresh and re-emit current values to observers even if repositories
+     * result in unchanged underlying LiveData. Useful after flows like signup where
+     * fragment lifecycle timing might skip the initial emission.
+     */
+    public void forceRefresh() {
+        try {
+            // Attempt a regular refresh first
+            refreshData();
+        } catch (Exception ignore) {
+            // Continue to re-emit below
+        }
+        // Re-emit combined statistics to trigger observers
+        updateDashboardStatistics();
+        // Maintain consistent loading state
+        if (isLoading.getValue() != null && isLoading.getValue()) {
+            isLoading.setValue(false);
+        }
     }
 
     // Formatted values for UI display

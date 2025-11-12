@@ -12,12 +12,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\layout\\fragment_donation_success.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_confetti_animation.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\confetti_animation.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_glassmorphic_fab_background.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\glassmorphic_fab_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_confetti_animation.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\confetti_animation.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_bg_status_badge.xml.flat",
@@ -36,16 +36,16 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\anim\\fade_out.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_circle_unread_indicator.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\circle_unread_indicator.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_share.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\ic_share.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_bg_qr_code.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\bg_qr_code.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_share.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\ic_share.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_circle_unread_indicator.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\circle_unread_indicator.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\anim_shake.xml.flat",
@@ -70,6 +70,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_error.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\ic_error.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_activity_splash.xml.flat",
+        "source": "com.sugboaid.donation.app-main-59:/layout/activity_splash.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\layout_fragment_pos_donation.xml.flat",
@@ -200,12 +204,16 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\bg_campaign_badge.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_success_checkmark.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\ic_success_checkmark.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_btn_outline.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\btn_outline.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\anim_bounce_interpolator.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\anim\\bounce_interpolator.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_success_checkmark.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\ic_success_checkmark.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_organization.xml.flat",
@@ -316,8 +324,16 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\ic_dark_mode.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_activity_simple_splash.xml.flat",
+        "source": "com.sugboaid.donation.app-main-59:/layout/activity_simple_splash.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_bg_button_outline.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\bg_button_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\layout_activity_simple_splash.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\layout\\activity_simple_splash.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\anim_fade_in.xml.flat",
@@ -348,12 +364,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\anim\\slide_down_out.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_delete.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\ic_delete.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\navigation_auth_nav_graph.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\navigation\\auth_nav_graph.xml"
     },
     {
-        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_item_barangay.xml.flat",
-        "source": "com.sugboaid.donation.app-main-59:/layout/item_barangay.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_delete.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\ic_delete.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\anim_slide_in_left.xml.flat",
@@ -370,10 +386,6 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\anim_button_press.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\anim\\button_press.xml"
-    },
-    {
-        "merged": "com.sugboaid.donation.app-merged_res-55:/layout_fragment_transparency_map.xml.flat",
-        "source": "com.sugboaid.donation.app-main-59:/layout/fragment_transparency_map.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_ic_remove.xml.flat",
@@ -398,6 +410,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\anim_scale_out.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\anim\\scale_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\layout_fragment_placeholder.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\layout\\fragment_placeholder.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_role_button_volunteer.xml.flat",
@@ -610,6 +626,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\anim_slide_out_left.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_btn_primary.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\drawable\\btn_primary.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-55:\\drawable_button_animated_selector.xml.flat",

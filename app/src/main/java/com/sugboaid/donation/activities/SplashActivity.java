@@ -34,7 +34,8 @@ public class SplashActivity extends AppCompatActivity {
     private ImageView logoImageView;
     private TextView taglineMain;
     private TextView taglineSub;
-    private LinearLayout roleSelectionContainer;
+    private View btnLogin;
+    private View btnSignup;
     private View backgroundOverlay;
     
     private SharedPreferencesHelper prefsHelper;
@@ -43,6 +44,7 @@ public class SplashActivity extends AppCompatActivity {
     private boolean animationsCompleted = false;
     private boolean authCheckCompleted = false;
     private long splashStartTime;
+    private boolean userInitiatedNavigation = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,13 +78,21 @@ public class SplashActivity extends AppCompatActivity {
                 throw e;
             }
             
-            // Initialize AuthViewModel
+            // Initialize AuthViewModel with application context to ensure it survives configuration changes
             try {
-                authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
+                authViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()))
+                    .get(AuthViewModel.class);
                 DiagnosticLogger.logDebug(TAG, "AuthViewModel initialized");
+                
+                // Initialize auth state
+                if (authViewModel != null) {
+                    boolean isAuthenticated = authViewModel.checkAuthenticationStatus();
+                    DiagnosticLogger.logDebug(TAG, "Initial auth check - isAuthenticated: " + isAuthenticated);
+                }
             } catch (Exception e) {
                 DiagnosticLogger.logError(TAG, "Failed to initialize AuthViewModel", e);
-                throw e;
+                // Don't throw, continue without auth
+                authViewModel = null;
             }
             
             // Initialize views
@@ -111,7 +121,7 @@ public class SplashActivity extends AppCompatActivity {
             R.id.iv_logo,
             R.id.tv_tagline_main,
             R.id.tv_tagline_sub,
-            R.id.ll_role_selection,
+            R.id.ll_auth_buttons,
             R.id.view_background_overlay
         };
         
@@ -119,13 +129,14 @@ public class SplashActivity extends AppCompatActivity {
             logoImageView = findViewById(R.id.iv_logo);
             taglineMain = findViewById(R.id.tv_tagline_main);
             taglineSub = findViewById(R.id.tv_tagline_sub);
-            roleSelectionContainer = findViewById(R.id.ll_role_selection);
+            btnLogin = findViewById(R.id.btn_login);
+            btnSignup = findViewById(R.id.btn_signup);
             backgroundOverlay = findViewById(R.id.view_background_overlay);
             
             // Validate critical views
             boolean allViewsValid = true;
-            String[] viewNames = {"logo", "tagline_main", "tagline_sub", "role_selection", "background_overlay"};
-            View[] views = {logoImageView, taglineMain, taglineSub, roleSelectionContainer, backgroundOverlay};
+            String[] viewNames = {"logo", "tagline_main", "tagline_sub", "auth_buttons", "background_overlay"};
+            View[] views = {logoImageView, taglineMain, taglineSub, btnLogin, backgroundOverlay};
             
             for (int i = 0; i < views.length; i++) {
                 if (views[i] == null) {
@@ -146,8 +157,7 @@ public class SplashActivity extends AppCompatActivity {
                 return;
             }
             
-            // Initially hide role selection and set initial states
-            roleSelectionContainer.setVisibility(View.GONE);
+            // Set initial states
             logoImageView.setScaleX(0f);
             logoImageView.setScaleY(0f);
             logoImageView.setAlpha(0f);
@@ -155,6 +165,19 @@ public class SplashActivity extends AppCompatActivity {
             taglineSub.setAlpha(0f);
             taglineMain.setTranslationY(50f);
             taglineSub.setTranslationY(50f);
+            
+            // Set up button click listeners
+            btnLogin.setOnClickListener(v -> {
+                userInitiatedNavigation = true;
+                navigateToLogin();
+            });
+            
+            if (btnSignup != null) {
+                btnSignup.setOnClickListener(v -> {
+                    userInitiatedNavigation = true;
+                    navigateToSignup();
+                });
+            }
             
             DiagnosticLogger.logDebug(TAG, "Initial view states set successfully");
             DiagnosticLogger.logStartup("SplashActivity initViews completed successfully");
@@ -282,117 +305,39 @@ public class SplashActivity extends AppCompatActivity {
         long splashDuration = System.currentTimeMillis() - splashStartTime;
         DiagnosticLogger.logStartup("SplashActivity navigation decision made after " + splashDuration + "ms");
         
+        // If user already tapped Login/Signup, do not override their action
+        if (userInitiatedNavigation) {
+            DiagnosticLogger.logDebug(TAG, "User initiated navigation - skipping automatic navigation");
+            return;
+        }
+
         if (isAuthenticated) {
-            // User is authenticated, navigate to MainActivity with Dashboard
-            DiagnosticLogger.logDebug(TAG, "User authenticated - navigating to main activity");
-            diagnosticManager.logNavigationEvent("Authentication flow", "SplashActivity", "MainActivity", null);
-            navigateToMainActivity();
+            DiagnosticLogger.logDebug(TAG, "User authenticated - staying on splash awaiting explicit action");
+            return;
         } else {
-            // User is not authenticated, show role selection or navigate to login
-            DiagnosticLogger.logDebug(TAG, "User not authenticated - showing role selection");
-            diagnosticManager.logNavigationEvent("Authentication flow", "SplashActivity", "RoleSelection", null);
-            showRoleSelection();
+            // User is not authenticated, optionally navigate to login after splash
+            DiagnosticLogger.logDebug(TAG, "User not authenticated - navigating to login screen");
+            diagnosticManager.logNavigationEvent("Authentication flow", "SplashActivity", "LoginScreen", null);
+            navigateToMainActivity();
         }
     }
 
-    private void showRoleSelection() {
-        // Fade in role selection container
-        roleSelectionContainer.setVisibility(View.VISIBLE);
-        roleSelectionContainer.setAlpha(0f);
-        roleSelectionContainer.setTranslationY(100f);
-        
-        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(roleSelectionContainer, "alpha", 0f, 1f);
-        ObjectAnimator slideUp = ObjectAnimator.ofFloat(roleSelectionContainer, "translationY", 100f, 0f);
-        
-        AnimatorSet roleAnimSet = new AnimatorSet();
-        roleAnimSet.playTogether(fadeIn, slideUp);
-        roleAnimSet.setDuration(800);
-        roleAnimSet.setInterpolator(new DecelerateInterpolator());
-        roleAnimSet.start();
-        
-        // Setup role selection button click listeners
-        setupRoleSelectionListeners();
+    private void navigateToLogin() {
+        DiagnosticLogger.logDebug(TAG, "Navigate to login");
+        // Create an intent to navigate to the login screen
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("start_destination", "login");
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
-    private void setupRoleSelectionListeners() {
-        try {
-            // Add null checks for each button before setting listeners
-            View btnDonor = findViewById(R.id.btn_donor);
-            View btnOrganization = findViewById(R.id.btn_organization);
-            View btnVolunteer = findViewById(R.id.btn_volunteer);
-            View btnRecipient = findViewById(R.id.btn_recipient);
-            View btnGuest = findViewById(R.id.btn_guest);
-            
-            if (btnDonor != null) {
-                btnDonor.setOnClickListener(v -> selectRole("Donor", v));
-                DiagnosticLogger.logDebug(TAG, "Donor button listener set successfully");
-            } else {
-                DiagnosticLogger.logResourceError("view", "btn_donor", "Donor button not found");
-            }
-            
-            if (btnOrganization != null) {
-                btnOrganization.setOnClickListener(v -> selectRole("Organization", v));
-                DiagnosticLogger.logDebug(TAG, "Organization button listener set successfully");
-            } else {
-                DiagnosticLogger.logResourceError("view", "btn_organization", "Organization button not found");
-            }
-            
-            if (btnVolunteer != null) {
-                btnVolunteer.setOnClickListener(v -> selectRole("Volunteer", v));
-                DiagnosticLogger.logDebug(TAG, "Volunteer button listener set successfully");
-            } else {
-                DiagnosticLogger.logResourceError("view", "btn_volunteer", "Volunteer button not found");
-            }
-            
-            if (btnRecipient != null) {
-                btnRecipient.setOnClickListener(v -> selectRole("Recipient", v));
-                DiagnosticLogger.logDebug(TAG, "Recipient button listener set successfully");
-            } else {
-                DiagnosticLogger.logResourceError("view", "btn_recipient", "Recipient button not found");
-            }
-            
-            if (btnGuest != null) {
-                btnGuest.setOnClickListener(v -> selectRole("Guest", v));
-                DiagnosticLogger.logDebug(TAG, "Guest button listener set successfully");
-            } else {
-                DiagnosticLogger.logResourceError("view", "btn_guest", "Guest button not found");
-            }
-            
-        } catch (Exception e) {
-            DiagnosticLogger.logError(TAG, "Error setting up role selection listeners", e);
-        }
-    }
-
-    private void selectRole(String role, View clickedButton) {
-        try {
-            DiagnosticLogger.logDebug(TAG, "Role selected: " + role);
-            
-            // Save selected role to SharedPreferences
-            if (prefsHelper != null) {
-                prefsHelper.saveUserRole(role);
-                DiagnosticLogger.logDebug(TAG, "Role saved to preferences: " + role);
-            } else {
-                DiagnosticLogger.logWarning(TAG, "SharedPreferencesHelper is null - role not saved");
-            }
-            
-            // Log navigation event
-            diagnosticManager.logNavigationEvent("Role selection", "SplashActivity", 
-                "AuthenticationFlow (" + role + ")", null);
-            
-            // Animate button press and navigate to authentication flow
-            if (clickedButton != null) {
-                animateButtonPress(clickedButton, () -> navigateToAuthenticationFlow());
-            } else {
-                // If button is null, navigate directly
-                DiagnosticLogger.logWarning(TAG, "Clicked button is null - navigating directly");
-                navigateToAuthenticationFlow();
-            }
-            
-        } catch (Exception e) {
-            DiagnosticLogger.logError(TAG, "Error in selectRole for role: " + role, e);
-            // Fallback: navigate directly to authentication flow
-            navigateToAuthenticationFlow();
-        }
+    private void navigateToSignup() {
+        DiagnosticLogger.logDebug(TAG, "Navigate to signup");
+        // Create an intent to navigate to the signup screen
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("start_destination", "signup");
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     private void animateButtonPress(View button, Runnable onComplete) {
@@ -483,91 +428,56 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Navigate to authentication flow (LoginFragment)
-     */
-    private void navigateToAuthenticationFlow() {
-        try {
-            DiagnosticLogger.logDebug(TAG, "Starting navigation to authentication flow");
-            
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("start_destination", "login");
-            
-            // Add user role if available
-            if (prefsHelper != null) {
-                try {
-                    String userRole = prefsHelper.getUserRole();
-                    if (userRole != null && !userRole.isEmpty()) {
-                        intent.putExtra("user_role", userRole);
-                        DiagnosticLogger.logDebug(TAG, "Added user role to intent: " + userRole);
-                    }
-                } catch (Exception roleException) {
-                    DiagnosticLogger.logError(TAG, "Error getting user role", roleException);
-                }
-            }
-            
-            long totalSplashTime = System.currentTimeMillis() - splashStartTime;
-            DiagnosticLogger.logStartup("SplashActivity completed - navigating to login after " + totalSplashTime + "ms");
-            
-            startActivity(intent);
-            finish();
-            
-            // Add transition animation with error handling
-            try {
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            } catch (Exception animException) {
-                DiagnosticLogger.logError(TAG, "Error applying transition animation", animException);
-            }
-            
-            DiagnosticLogger.logDebug(TAG, "Navigation to authentication flow completed");
-            
-        } catch (android.content.ActivityNotFoundException e) {
-            DiagnosticLogger.logError(TAG, "MainActivity not found", e);
-            // Try to finish the current activity anyway
-            try {
-                finish();
-            } catch (Exception finishException) {
-                DiagnosticLogger.logError(TAG, "Failed to finish SplashActivity", finishException);
-            }
-        } catch (Exception e) {
-            DiagnosticLogger.logError(TAG, "Failed to navigate to authentication flow", e);
-            // Try to finish the current activity anyway
-            try {
-                finish();
-            } catch (Exception finishException) {
-                DiagnosticLogger.logError(TAG, "Failed to finish SplashActivity", finishException);
-            }
-        }
-    }
-
-    /**
-     * Navigate to main activity with dashboard (for authenticated users)
-     */
     private void navigateToMainActivity() {
         try {
             DiagnosticLogger.logDebug(TAG, "Starting navigation to main activity");
             
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("start_destination", "dashboard");
             
-            // Add user role if available
-            if (prefsHelper != null) {
-                try {
-                    String userRole = prefsHelper.getUserRole();
-                    if (userRole != null && !userRole.isEmpty()) {
-                        intent.putExtra("user_role", userRole);
-                        DiagnosticLogger.logDebug(TAG, "Added user role to intent: " + userRole);
-                    }
-                } catch (Exception roleException) {
-                    DiagnosticLogger.logError(TAG, "Error getting user role", roleException);
+            // Check if user is authenticated
+            boolean isAuthenticated = false;
+            try {
+                if (authViewModel != null) {
+                    isAuthenticated = authViewModel.checkAuthenticationStatus();
+                    DiagnosticLogger.logDebug(TAG, "Auth check result: " + isAuthenticated);
+                } else {
+                    DiagnosticLogger.logWarning(TAG, "AuthViewModel is null, assuming not authenticated");
                 }
+            } catch (Exception e) {
+                DiagnosticLogger.logError(TAG, "Error checking authentication status", e);
+                isAuthenticated = false;
+            }
+            
+            if (isAuthenticated) {
+                // User is authenticated, go to dashboard
+                intent.putExtra("start_destination", "dashboard");
+                
+                // Add user role if available
+                if (prefsHelper != null) {
+                    try {
+                        String userRole = prefsHelper.getUserRole();
+                        if (userRole != null && !userRole.isEmpty()) {
+                            intent.putExtra("user_role", userRole);
+                            DiagnosticLogger.logDebug(TAG, "Added user role to intent: " + userRole);
+                        }
+                    } catch (Exception roleException) {
+                        DiagnosticLogger.logError(TAG, "Error getting user role", roleException);
+                    }
+                }
+                
+                DiagnosticLogger.logDebug(TAG, "User is authenticated, navigating to dashboard");
+            } else {
+                // User is not authenticated, go to login
+                intent.putExtra("start_destination", "login");
+                DiagnosticLogger.logDebug(TAG, "User is not authenticated, navigating to login");
             }
             
             long totalSplashTime = System.currentTimeMillis() - splashStartTime;
-            DiagnosticLogger.logStartup("SplashActivity completed - navigating to dashboard after " + totalSplashTime + "ms");
+            DiagnosticLogger.logStartup("SplashActivity completed - navigating after " + totalSplashTime + "ms");
             
+            // Clear any existing task and start fresh
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
-            finish();
             
             // Add transition animation with error handling
             try {
@@ -575,6 +485,9 @@ public class SplashActivity extends AppCompatActivity {
             } catch (Exception animException) {
                 DiagnosticLogger.logError(TAG, "Error applying transition animation", animException);
             }
+            
+            // Finish the splash activity
+            finish();
             
             DiagnosticLogger.logDebug(TAG, "Navigation to main activity completed");
             
