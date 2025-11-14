@@ -54,7 +54,7 @@ public class SignupFragment extends BaseFragment {
         selectedRole = getSelectedRole();
 
         // Initialize ViewModel
-        authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
+        authViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
 
         // Initialize managers
         loadingStateManager = new AuthLoadingStateManager(requireContext());
@@ -457,9 +457,6 @@ public class SignupFragment extends BaseFragment {
      */
     private void navigateToDashboard() {
         try {
-            DashboardViewModel dashboardViewModel = new ViewModelProvider(requireActivity()).get(DashboardViewModel.class);
-            dashboardViewModel.refreshData();
-
             MainActivity activity = (MainActivity) requireActivity();
             activity.switchToMainGraphAndShowDashboard(true);
         } catch (Exception e) {

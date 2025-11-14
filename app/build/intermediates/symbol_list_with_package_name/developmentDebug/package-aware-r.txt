@@ -4074,8 +4074,10 @@ id pin
 id pooling_container_listener_holder_tag
 id posDonationFragment
 id position
+id postAuthLoadingFragment
 id postLayout
 id pressed
+id progress
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -4465,6 +4467,7 @@ layout fragment_login
 layout fragment_notifications
 layout fragment_placeholder
 layout fragment_pos_donation
+layout fragment_post_auth_loading
 layout fragment_reports
 layout fragment_signup
 layout fragment_transparency

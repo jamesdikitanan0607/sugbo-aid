@@ -8,8 +8,8 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\layout\\fragment_notifications.xml"
     },
     {
-        "merged": "com.sugboaid.donation.app-mergeDevelopmentDebugResources-54:/layout/activity_simple_splash.xml",
-        "source": "com.sugboaid.donation.app-main-59:/layout/activity_simple_splash.xml"
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentDebugResources-54:/layout/fragment_post_auth_loading.xml",
+        "source": "com.sugboaid.donation.app-main-59:/layout/fragment_post_auth_loading.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentDebugResources-54:\\layout\\fragment_login.xml",
@@ -26,10 +26,6 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentDebugResources-54:\\layout\\item_inventory.xml",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-59:\\layout\\item_inventory.xml"
-    },
-    {
-        "merged": "com.sugboaid.donation.app-mergeDevelopmentDebugResources-54:/layout/activity_splash.xml",
-        "source": "com.sugboaid.donation.app-main-59:/layout/activity_splash.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentDebugResources-54:\\layout\\item_recent_activity.xml",

@@ -53,7 +53,7 @@ public class LoginFragment extends BaseFragment {
         navController = Navigation.findNavController(view);
 
         // Initialize ViewModel
-        authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
+        authViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
 
         // Initialize managers
         loadingStateManager = new AuthLoadingStateManager(requireContext());

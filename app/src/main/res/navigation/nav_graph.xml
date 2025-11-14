@@ -66,6 +66,12 @@
     <include app:graph="@navigation/auth_nav_graph" />
 
     <fragment
+        android:id="@+id/postAuthLoadingFragment"
+        android:name="com.sugboaid.donation.fragments.PostAuthLoadingFragment"
+        android:label="Loading"
+        tools:layout="@layout/fragment_post_auth_loading" />
+
+    <fragment
         android:id="@+id/posDonationFragment"
         android:name="com.sugboaid.donation.fragments.POSDonationFragment"
         android:label="New Donation"

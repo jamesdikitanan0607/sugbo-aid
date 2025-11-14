@@ -469,6 +469,8 @@ id notificationsFragment
 id offline_banner
 id password_strength_indicator
 id posDonationFragment
+id postAuthLoadingFragment
+id progress
 id progressBar
 id progress_stock
 id recycler_inventory
@@ -569,6 +571,7 @@ layout fragment_login
 layout fragment_notifications
 layout fragment_placeholder
 layout fragment_pos_donation
+layout fragment_post_auth_loading
 layout fragment_reports
 layout fragment_signup
 layout fragment_transparency

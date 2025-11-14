@@ -334,8 +334,8 @@ public class MainActivity extends BaseActivity {
     private void handleFragmentChange(int destinationId) {
         // Handle specific fragment requirements like hiding/showing bottom nav
         if (bottomNavigation != null) {
-            // Hide bottom navigation for authentication fragments
-            if (destinationId == R.id.loginFragment || destinationId == R.id.signupFragment) {
+            // Hide bottom navigation for authentication and loading fragments
+            if (destinationId == R.id.loginFragment || destinationId == R.id.signupFragment || destinationId == R.id.postAuthLoadingFragment) {
                 bottomNavigation.setVisibility(View.GONE);
             } else {
                 // Show bottom navigation for main app fragments
@@ -347,12 +347,14 @@ public class MainActivity extends BaseActivity {
                 if (dashboardViewModel == null) {
                     dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
                 }
-                dashboardViewModel.forceRefresh();
-                new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    try {
-                        dashboardViewModel.forceRefresh();
-                    } catch (Exception ignored) { }
-                }, 100);
+                boolean needEmit = true;
+                try {
+                    needEmit = dashboardViewModel.getDashboardStatistics().getValue() == null
+                        || !dashboardViewModel.hasRecentActivities();
+                } catch (Exception ignored) { }
+                if (needEmit) {
+                    dashboardViewModel.forceRefresh();
+                }
             } catch (Exception ignored) { }
         }
     }
@@ -638,32 +640,27 @@ public class MainActivity extends BaseActivity {
                     throw e;
                 }
             } else if ("dashboard".equals(startDestination)) {
-                // Switch to main graph; dashboard is the startDestination
+                // Switch to main graph; show loading screen which will preload and then navigate to dashboard
                 try {
-                    preloadDashboard();
                     NavGraph navGraph = navController.getNavInflater().inflate(R.navigation.nav_graph);
                     navController.setGraph(navGraph);
                     DiagnosticLogger.logDebug(TAG, "Set navigation graph to nav_graph");
-                    // Preload dashboard data and navigate explicitly to ensure fragment creation
                     try {
                         NavOptions opts = new NavOptions.Builder()
                             .setPopUpTo(R.id.nav_graph, true)
                             .setLaunchSingleTop(true)
                             .build();
-                        navController.navigate(R.id.dashboardFragment, null, opts);
-                        if (bottomNavigation != null) {
-                            bottomNavigation.setSelectedItemId(R.id.dashboardFragment);
-                        }
+                        navController.navigate(R.id.postAuthLoadingFragment, null, opts);
                     } catch (Exception navEx) {
-                        DiagnosticLogger.logError(TAG, "Explicit navigate to dashboard failed (may already be current)", navEx);
+                        DiagnosticLogger.logError(TAG, "Navigate to PostAuthLoadingFragment failed", navEx);
                     }
                     if (diagnosticManager != null) {
                         diagnosticManager.logNavigationEvent(
-                            "Authentication navigation", "MainActivity", "DashboardFragment", navController
+                            "Authentication navigation", "MainActivity", "PostAuthLoadingFragment", navController
                         );
                     }
                 } catch (Exception graphEx) {
-                    DiagnosticLogger.logError(TAG, "Failed to set main graph", graphEx);
+                    DiagnosticLogger.logError(TAG, "Failed to set main graph for loading", graphEx);
                     if (retryCount < MAX_RETRIES) {
                         performNavigationWithRetry(startDestination, retryCount + 1);
                         return;
@@ -708,7 +705,6 @@ public class MainActivity extends BaseActivity {
                 }
 
                 // Ensure data load begins
-                dashboardViewModel.refreshData();
 
                 final boolean[] proceeded = new boolean[]{false};
 
@@ -722,56 +718,54 @@ public class MainActivity extends BaseActivity {
                     }
                     new Handler(Looper.getMainLooper()).postDelayed(() -> {
                         try {
-                            androidx.navigation.NavDestination current = navController.getCurrentDestination();
-                            if (current == null || current.getId() != R.id.dashboardFragment) {
-                                NavOptions opts = new NavOptions.Builder()
-                                    .setPopUpTo(R.id.nav_graph, true)
-                                    .setLaunchSingleTop(true)
-                                    .build();
-                                navController.navigate(R.id.dashboardFragment, null, opts);
-                            }
-                            if (bottomNavigation != null) {
-                                bottomNavigation.setSelectedItemId(R.id.dashboardFragment);
-                            }
+                            NavOptions opts = new NavOptions.Builder()
+                                .setPopUpTo(R.id.nav_graph, true)
+                                .setLaunchSingleTop(true)
+                                .build();
+                            navController.navigate(R.id.postAuthLoadingFragment, null, opts);
                         } catch (Exception navEx) {
-                            DiagnosticLogger.logError(TAG, "Navigate to dashboard after graph switch failed", navEx);
+                            DiagnosticLogger.logError(TAG, "Navigate to PostAuthLoadingFragment after graph switch failed", navEx);
                         }
                     }, 150);
                     DiagnosticLogger.logDebug(TAG, "Switched to main graph");
                 };
 
-                // Observe for first non-null combined stats emission, then proceed
-                final androidx.lifecycle.Observer<com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics> statsObserver =
-                    new androidx.lifecycle.Observer<com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics>() {
-                        @Override
-                        public void onChanged(com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics stats) {
-                            if (stats != null && !proceeded[0]) {
-                                try {
-                                    dashboardViewModel.getDashboardStatistics().removeObserver(this);
-                                } catch (Exception ignored) {}
+                // Proceed immediately so DashboardFragment is created and observers attach before any refresh
+                proceed.run();
+                // Observe for first non-null combined stats emission, then proceed (guarded to avoid duplicate attach)
+                if (!proceeded[0]) {
+                    final androidx.lifecycle.Observer<com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics> statsObserver =
+                        new androidx.lifecycle.Observer<com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics>() {
+                            @Override
+                            public void onChanged(com.sugboaid.donation.viewmodels.DashboardViewModel.DashboardStatistics stats) {
+                                if (stats != null && !proceeded[0]) {
+                                    try {
+                                        dashboardViewModel.getDashboardStatistics().removeObserver(this);
+                                    } catch (Exception ignored) {}
+                                    proceed.run();
+                                }
+                            }
+                        };
+
+                    try {
+                        dashboardViewModel.getDashboardStatistics().observe(this, statsObserver);
+                    } catch (Exception e) {
+                        // Fallback if observe fails
+                        new Handler(Looper.getMainLooper()).postDelayed(proceed, 300);
+                    }
+
+                    // Timeout fallback to avoid stalling in case repositories are slow
+                    new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                        try {
+                            if (!proceeded[0]) {
+                                dashboardViewModel.getDashboardStatistics().removeObserver(statsObserver);
                                 proceed.run();
                             }
-                        }
-                    };
-
-                try {
-                    dashboardViewModel.getDashboardStatistics().observe(this, statsObserver);
-                } catch (Exception e) {
-                    // Fallback if observe fails
-                    new Handler(Looper.getMainLooper()).postDelayed(proceed, 300);
-                }
-
-                // Timeout fallback to avoid stalling in case repositories are slow
-                new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    try {
-                        if (!proceeded[0]) {
-                            dashboardViewModel.getDashboardStatistics().removeObserver(statsObserver);
+                        } catch (Exception ignored) {
                             proceed.run();
                         }
-                    } catch (Exception ignored) {
-                        proceed.run();
-                    }
-                }, 700);
+                    }, 700);
+                }
             }
         } catch (Exception e) {
             DiagnosticLogger.logError(TAG, "switchToMainGraphAndShowDashboard failed", e);

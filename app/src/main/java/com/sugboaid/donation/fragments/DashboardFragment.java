@@ -93,8 +93,20 @@ public class DashboardFragment extends BaseFragment {
         com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "handleFirstLoad called. firstLoad=" + firstLoad + ", isAdded=" + isAdded() + ", isDetached=" + isDetached());
         if (firstLoad && isAdded() && !isDetached()) {
             firstLoad = false;
-            com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "First load -> calling loadData()");
-            loadData();
+            boolean needInitialLoad = true;
+            try {
+                if (viewModel != null) {
+                    boolean hasStats = viewModel.getDashboardStatistics().getValue() != null;
+                    boolean hasActivities = viewModel.hasRecentActivities();
+                    needInitialLoad = !(hasStats && hasActivities);
+                }
+            } catch (Exception ignored) { }
+            if (needInitialLoad) {
+                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "First load -> calling loadData()");
+                loadData();
+            } else {
+                com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "First load -> data already present, skipping loadData()");
+            }
         }
     }
 
@@ -109,7 +121,7 @@ public class DashboardFragment extends BaseFragment {
                 // Use activity-scoped ViewModel so preloaded data from MainActivity is reused
                 viewModel = new ViewModelProvider(requireActivity()).get(DashboardViewModel.class);
                 notificationViewModel = new ViewModelProvider(this).get(NotificationViewModel.class);
-                authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
+                authViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
                 com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "ViewModels initialized");
             } catch (Exception e) {
                 com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error initializing ViewModels", e);
@@ -131,16 +143,22 @@ public class DashboardFragment extends BaseFragment {
             com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "onViewCreated completed successfully");
             handleFirstLoad();
 
-            // Unconditionally trigger a forceRefresh after observers are attached
+            // Trigger a refresh only if data isn't already present (avoids double load after preloading)
             view.post(() -> {
                 try {
+                    boolean shouldRefresh = true;
                     if (viewModel != null) {
-                        viewModel.forceRefresh();
+                        boolean hasStats = viewModel.getDashboardStatistics().getValue() != null;
+                        boolean hasActivities = viewModel.hasRecentActivities();
+                        shouldRefresh = !(hasStats && hasActivities);
+                        if (shouldRefresh) {
+                            viewModel.forceRefresh();
+                        }
                     }
                     if (notificationViewModel != null) {
                         notificationViewModel.refreshNotifications();
                     }
-                    com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "Initial forceRefresh triggered after view created");
+                    com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "Initial refresh check complete; shouldRefresh=" + shouldRefresh);
                 } catch (Exception ignored) { }
             });
             

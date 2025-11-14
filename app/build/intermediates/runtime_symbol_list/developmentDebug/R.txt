@@ -4073,8 +4073,10 @@ int id pin 0x7f090221
 int id pooling_container_listener_holder_tag 0x7f090222
 int id posDonationFragment 0x7f090223
 int id position 0x7f090224
+int id postAuthLoadingFragment 0x7f090321
 int id postLayout 0x7f090225
 int id pressed 0x7f090226
+int id progress 0x7f090322
 int id progressBar 0x7f090227
 int id progress_circular 0x7f090228
 int id progress_horizontal 0x7f090229
@@ -4464,6 +4466,7 @@ int layout fragment_login 0x7f0c0035
 int layout fragment_notifications 0x7f0c0036
 int layout fragment_placeholder 0x7f0c0037
 int layout fragment_pos_donation 0x7f0c0038
+int layout fragment_post_auth_loading 0x7f0c0097
 int layout fragment_reports 0x7f0c0039
 int layout fragment_signup 0x7f0c003a
 int layout fragment_transparency 0x7f0c003b
