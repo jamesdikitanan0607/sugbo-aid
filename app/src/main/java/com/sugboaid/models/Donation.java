@@ -31,11 +31,15 @@ public class Donation implements java.io.Serializable {
     @SerializedName("verified")
     private boolean verified;
 
+    @SerializedName("userId")
+    private String userId;
+
     // Default constructor
     public Donation() {
         this.id = UUID.randomUUID().toString();
         this.timestamp = System.currentTimeMillis();
         this.verified = false;
+        this.userId = null;
     }
 
     // Constructor with required fields
@@ -92,6 +96,10 @@ public class Donation implements java.io.Serializable {
         return verified;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
     // Setters with validation
     public void setId(String id) {
         if (id == null || id.trim().isEmpty()) {
@@ -135,6 +143,10 @@ public class Donation implements java.io.Serializable {
 
     public void setVerified(boolean verified) {
         this.verified = verified;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     // Validation method

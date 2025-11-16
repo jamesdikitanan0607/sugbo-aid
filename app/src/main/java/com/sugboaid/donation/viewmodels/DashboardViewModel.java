@@ -214,6 +214,13 @@ public class DashboardViewModel extends AndroidViewModel {
             errorMessage.setValue("Failed to refresh data: " + e.getMessage());
         }
     }
+    
+    public void refreshRecentActivities(String userId) {
+        if (userId != null) {
+            recentActivities = donationRepository.getRecentDonations(userId);
+            updateDashboardStatistics();
+        }
+    }
 
     private void calculatePercentageChanges() {
         // Get previous values from preferences

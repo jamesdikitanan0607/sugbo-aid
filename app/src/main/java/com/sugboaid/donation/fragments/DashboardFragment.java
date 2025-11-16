@@ -31,6 +31,7 @@ import com.sugboaid.donation.utils.NotificationManager;
 import com.sugboaid.donation.utils.MicroInteractionHelper;
 import com.sugboaid.donation.utils.LoadingStateManager;
 import com.sugboaid.models.Donation;
+import com.sugboaid.models.User;
 import com.sugboaid.viewmodels.AuthViewModel;
 
 import java.util.List;
@@ -123,6 +124,19 @@ public class DashboardFragment extends BaseFragment {
                 notificationViewModel = new ViewModelProvider(this).get(NotificationViewModel.class);
                 authViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
                 com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "ViewModels initialized");
+                
+                // Filter recent activities by current user (only for non-admin users)
+                User currentUser = authViewModel.getCurrentUser();
+                if (currentUser != null) {
+                    if (currentUser.isAdmin()) {
+                        // Admin users see all activities (no filtering needed)
+                        com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "Admin user detected - showing all activities");
+                    } else {
+                        // Regular users see only their own activities
+                        com.sugboaid.utils.DiagnosticLogger.logDebug("DashboardFragment", "Regular user detected - filtering activities for user: " + currentUser.getId());
+                        viewModel.refreshRecentActivities(currentUser.getId());
+                    }
+                }
             } catch (Exception e) {
                 com.sugboaid.utils.DiagnosticLogger.logError("DashboardFragment", "Error initializing ViewModels", e);
                 throw e;

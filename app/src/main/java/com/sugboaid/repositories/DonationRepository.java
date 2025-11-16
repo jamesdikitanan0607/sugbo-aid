@@ -67,6 +67,76 @@ public class DonationRepository {
     public LiveData<List<Donation>> getRecentDonations() {
         return recentDonationsLiveData;
     }
+    
+    public LiveData<List<Donation>> getRecentDonations(String userId) {
+        MutableLiveData<List<Donation>> filteredRecentDonations = new MutableLiveData<>();
+        List<Donation> allRecent = recentDonationsLiveData.getValue();
+        
+        if (allRecent != null) {
+            List<Donation> userFiltered = new ArrayList<>();
+            for (Donation donation : allRecent) {
+                if (userId.equals(donation.getUserId())) {
+                    userFiltered.add(donation);
+                }
+            }
+            filteredRecentDonations.setValue(userFiltered);
+        } else {
+            filteredRecentDonations.setValue(new ArrayList<>());
+        }
+        
+        return filteredRecentDonations;
+    }
+
+    // Admin helpers
+    public LiveData<Integer> getPendingApprovalCount() {
+        MutableLiveData<Integer> pendingCount = new MutableLiveData<>();
+        try {
+            List<Donation> donations = prefsHelper.getDonations();
+            int count = 0;
+            for (Donation d : donations) {
+                if (!d.isVerified()) count++;
+            }
+            pendingCount.setValue(count);
+        } catch (Exception e) {
+            pendingCount.setValue(0);
+        }
+        return pendingCount;
+    }
+
+    public void approveDonation(String donationId) {
+        if (donationId == null) return;
+        try {
+            List<Donation> donations = prefsHelper.getDonations();
+            boolean changed = false;
+            for (Donation d : donations) {
+                if (donationId.equals(d.getId())) {
+                    d.setVerified(true);
+                    changed = true;
+                    break;
+                }
+            }
+            if (changed) {
+                prefsHelper.saveDonations(donations);
+                // refresh live data
+                loadDonations();
+            }
+        } catch (Exception ignored) { }
+    }
+
+    public LiveData<List<Donation>> getPendingDonations() {
+        MutableLiveData<List<Donation>> pending = new MutableLiveData<>();
+        try {
+            List<Donation> donations = prefsHelper.getDonations();
+            List<Donation> result = new ArrayList<>();
+            for (Donation d : donations) {
+                if (!d.isVerified()) result.add(d);
+            }
+            pending.setValue(result);
+        } catch (Exception e) {
+            pending.setValue(Collections.emptyList());
+        }
+        return pending;
+    }
 
     // Data operations
     public void addDonation(Donation donation) {

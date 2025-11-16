@@ -26,6 +26,8 @@ import com.sugboaid.donation.R;
 import com.sugboaid.donation.viewmodels.DonationViewModel;
 import com.sugboaid.models.Donation;
 import com.sugboaid.models.DonationType;
+import com.sugboaid.models.User;
+import com.sugboaid.viewmodels.AuthViewModel;
 
 import java.text.NumberFormat;
 import java.util.HashMap;
@@ -39,6 +41,7 @@ import java.util.Map;
 public class POSDonationFragment extends BaseFragment {
 
     private DonationViewModel viewModel;
+    private AuthViewModel authViewModel;
 
     // Toggle and Mode Views
     private MaterialButtonToggleGroup toggleGroup;
@@ -97,8 +100,9 @@ public class POSDonationFragment extends BaseFragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        // Initialize ViewModel BEFORE super to ensure observeData() has it ready
+        // Initialize ViewModels BEFORE super to ensure observeData() has them ready
         viewModel = new ViewModelProvider(this).get(DonationViewModel.class);
+        authViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
 
         super.onViewCreated(view, savedInstanceState);
         
@@ -460,6 +464,12 @@ public class POSDonationFragment extends BaseFragment {
         Donation donation = new Donation();
         donation.setDonorName(donorName);
         donation.setType(currentMode);
+        
+        // Set the current user's ID
+        User currentUser = authViewModel.getCurrentUser();
+        if (currentUser != null) {
+            donation.setUserId(currentUser.getId());
+        }
         
         if (currentMode == DonationType.CASH) {
             donation.setAmount(cashAmount);
