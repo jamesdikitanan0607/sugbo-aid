@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+    
+    <!-- Margins -->
+    <dimen name="margin_xs">4dp</dimen>
+    <dimen name="margin_sm">8dp</dimen>
+    <dimen name="margin_md">16dp</dimen>
+    <dimen name="margin_lg">24dp</dimen>
+    <dimen name="margin_xl">32dp</dimen>
+    
+    <!-- Padding -->
+    <dimen name="padding_xs">4dp</dimen>
+    <dimen name="padding_sm">8dp</dimen>
+    <dimen name="padding_md">16dp</dimen>
+    <dimen name="padding_lg">24dp</dimen>
+    <dimen name="padding_xl">32dp</dimen>
+    
+    <!-- Text Sizes -->
+    <dimen name="text_size_xs">10sp</dimen>
+    <dimen name="text_size_sm">12sp</dimen>
+    <dimen name="text_size_md">14sp</dimen>
+    <dimen name="text_size_lg">16sp</dimen>
+    <dimen name="text_size_xl">18sp</dimen>
+    <dimen name="text_size_xxl">20sp</dimen>
+    <dimen name="text_size_h3">22sp</dimen>
+    <dimen name="text_size_h2">24sp</dimen>
+    <dimen name="text_size_h1">28sp</dimen>
+    
+    <!-- Button Dimensions -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_height_small">36dp</dimen>
+    <dimen name="button_height_large">56dp</dimen>
+    <dimen name="button_corner_radius">12dp</dimen>
+    <dimen name="button_padding_horizontal">24dp</dimen>
+    <dimen name="button_padding_vertical">12dp</dimen>
+    
+    <!-- Card Dimensions -->
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    
+    <!-- Input Field Dimensions -->
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="input_corner_radius">8dp</dimen>
+    <dimen name="input_padding_horizontal">16dp</dimen>
+    <dimen name="input_padding_vertical">16dp</dimen>
+    
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_xs">16dp</dimen>
+    <dimen name="icon_size_sm">20dp</dimen>
+    <dimen name="icon_size_md">24dp</dimen>
+    <dimen name="icon_size_lg">32dp</dimen>
+    <dimen name="icon_size_xl">48dp</dimen>
+    <dimen name="icon_size_xxl">64dp</dimen>
+    
+    <!-- Touch Target -->
+    <dimen name="touch_target_size">44dp</dimen>
+    <dimen name="touch_target_size_large">48dp</dimen>
+    
+    <!-- Toolbar -->
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    
+    <!-- Bottom Navigation -->
+    <dimen name="bottom_nav_height">56dp</dimen>
+    <dimen name="bottom_nav_elevation">8dp</dimen>
+    
+    <!-- FAB -->
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    
+    <!-- List Item -->
+    <dimen name="list_item_height">72dp</dimen>
+    <dimen name="list_item_height_small">56dp</dimen>
+    <dimen name="list_item_padding">16dp</dimen>
+    
+    <!-- Avatar -->
+    <dimen name="avatar_size_small">32dp</dimen>
+    <dimen name="avatar_size_medium">48dp</dimen>
+    <dimen name="avatar_size_large">64dp</dimen>
+    
+    <!-- Divider -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin">16dp</dimen>
+    
+    <!-- Progress Indicator -->
+    <dimen name="progress_size">24dp</dimen>
+    <dimen name="progress_size_large">48dp</dimen>
+    
+    <!-- Glassmorphic Effect -->
+    <dimen name="glass_blur_radius">20dp</dimen>
+    <dimen name="glass_border_width">1dp</dimen>
+    
+    <!-- Chart Dimensions -->
+    <dimen name="chart_height">200dp</dimen>
+    <dimen name="chart_height_large">300dp</dimen>
+    
+    <!-- QR Code -->
+    <dimen name="qr_code_size">200dp</dimen>
+    <dimen name="qr_code_size_large">300dp</dimen>
+    
+    <!-- Dashboard Cards -->
+    <dimen name="dashboard_card_height">120dp</dimen>
+    <dimen name="dashboard_card_width">160dp</dimen>
+    
+    <!-- Status Bar -->
+    <dimen name="status_bar_height">24dp</dimen>
+    
+    <!-- Navigation Drawer -->
+    <dimen name="nav_drawer_width">280dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+</resources>

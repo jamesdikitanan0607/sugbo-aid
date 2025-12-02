@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text Appearances -->
+    <style name="TextAppearance.SugboAid.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">@dimen/text_size_h1</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">@dimen/text_size_h2</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:lineSpacingMultiplier">1.3</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textSize">@dimen/text_size_h3</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">@dimen/text_size_lg</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">@dimen/text_size_md</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">@dimen/text_size_sm</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Base Widget Style -->
+    <style name="Widget.SugboAid" parent="Widget.MaterialComponents" />
+
+    <!-- Button Styles -->
+    <style name="Widget.SugboAid.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:paddingLeft">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:textAppearance">@style/TextAppearance.SugboAid.Button</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.SugboAid.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:paddingLeft">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:textAppearance">@style/TextAppearance.SugboAid.Button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="backgroundTint">@color/button_primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.SugboAid.Button.Secondary" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:paddingLeft">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:textAppearance">@style/TextAppearance.SugboAid.Button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="backgroundTint">@color/button_secondary</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="strokeColor">@color/card_stroke_light</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.SugboAid.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="strokeColor">@color/cebu_blue</item>
+        <item name="android:textColor">@color/cebu_blue</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_lg</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Card Styles -->
+    <style name="Widget.SugboAid.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="contentPadding">@dimen/card_padding</item>
+    </style>
+
+    <style name="Widget.SugboAid.Card.Glassmorphic" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="contentPadding">@dimen/card_padding</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/glass_light</item>
+        <item name="strokeColor">@color/glass_border_light</item>
+        <item name="strokeWidth">@dimen/glass_border_width</item>
+    </style>
+
+    <!-- Input Field Styles -->
+    <style name="Widget.SugboAid.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/input_corner_radius</item>
+        <item name="boxStrokeColor">@color/cebu_blue</item>
+        <item name="hintTextColor">@color/text_secondary_light</item>
+    </style>
+
+    <style name="Widget.SugboAid.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">@style/TextAppearance.SugboAid.Body1</item>
+        <item name="android:paddingTop">@dimen/input_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/input_padding_vertical</item>
+        <item name="android:paddingLeft">@dimen/input_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/input_padding_horizontal</item>
+    </style>
+
+    <!-- Toolbar Styles -->
+    <style name="Widget.SugboAid.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:elevation">@dimen/toolbar_elevation</item>
+        <item name="titleTextAppearance">@style/TextAppearance.SugboAid.Toolbar.Title</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.SugboAid.Toolbar.Subtitle</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.Toolbar.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">@dimen/text_size_xl</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.Toolbar.Subtitle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">@dimen/text_size_md</item>
+    </style>
+
+    <!-- Bottom Navigation Style -->
+    <style name="Widget.SugboAid.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:elevation">@dimen/bottom_nav_elevation</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.SugboAid.BottomNav.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.SugboAid.BottomNav.Inactive</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.BottomNav.Active" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">@dimen/text_size_sm</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.SugboAid.BottomNav.Inactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">@dimen/text_size_sm</item>
+    </style>
+
+    <!-- FAB Style -->
+    <style name="Widget.SugboAid.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/cebu_blue</item>
+        <item name="tint">@color/white</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+    </style>
+
+    <!-- List Item Styles -->
+    <style name="Widget.SugboAid.ListItem">
+        <item name="android:minHeight">@dimen/list_item_height</item>
+        <item name="android:padding">@dimen/list_item_padding</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Dashboard Card Styles -->
+    <style name="Widget.SugboAid.DashboardCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="contentPadding">@dimen/card_padding</item>
+        <item name="android:layout_width">@dimen/dashboard_card_width</item>
+        <item name="android:layout_height">@dimen/dashboard_card_height</item>
+    </style>
+
+    <!-- Status Chip Styles -->
+    <style name="Widget.SugboAid.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">16dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.SugboAid.Caption</item>
+    </style>
+
+    <style name="Widget.SugboAid.Chip.Success" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">16dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.SugboAid.Caption</item>
+        <item name="chipBackgroundColor">@color/success_light</item>
+        <item name="android:textColor">@color/success</item>
+    </style>
+
+    <style name="Widget.SugboAid.Chip.Warning" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">16dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.SugboAid.Caption</item>
+        <item name="chipBackgroundColor">@color/warning_light</item>
+        <item name="android:textColor">@color/warning</item>
+    </style>
+
+    <style name="Widget.SugboAid.Chip.Error" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">16dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.SugboAid.Caption</item>
+        <item name="chipBackgroundColor">@color/error_light</item>
+        <item name="android:textColor">@color/error</item>
+    </style>
+
+    <!-- Progress Indicator Styles -->
+    <style name="Widget.SugboAid.CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">@color/cebu_blue</item>
+        <item name="trackColor">@color/divider_light</item>
+    </style>
+
+    <!-- Divider Style -->
+    <style name="Widget.SugboAid.Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:background">@color/divider_light</item>
+        <item name="android:layout_marginLeft">@dimen/divider_margin</item>
+        <item name="android:layout_marginRight">@dimen/divider_margin</item>
+    </style>
+</resources>

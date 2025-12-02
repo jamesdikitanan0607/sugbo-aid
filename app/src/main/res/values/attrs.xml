@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom attributes for theme switching -->
+    <declare-styleable name="SugboAidTheme">
+        <attr name="textColorPrimary" format="color" />
+        <attr name="textColorSecondary" format="color" />
+        <attr name="textColorHint" format="color" />
+        <attr name="dividerColor" format="color" />
+        <attr name="cardBackgroundColor" format="color" />
+        <attr name="cardStrokeColor" format="color" />
+        <attr name="glassBackgroundColor" format="color" />
+        <attr name="glassBorderColor" format="color" />
+        <attr name="rippleColor" format="color" />
+    </declare-styleable>
+</resources>

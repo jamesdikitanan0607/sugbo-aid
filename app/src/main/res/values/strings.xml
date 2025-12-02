@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SugboAid</string>
+    
+    <!-- Login Screen -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="role_hint">Select Role</string>
+    <string name="login_button">Login</string>
+    <string name="guest_button">Continue as Guest</string>
+    <string name="app_subtitle">Disaster Relief &amp; Donation Management</string>
+    <string name="app_footer">© 2024 SugboAid - Cebu Disaster Relief</string>
+    
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_donations">Donations</string>
+    <string name="nav_inventory">Inventory</string>
+    <string name="nav_transparency">Transparency</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_logout">Logout</string>
+    
+    <!-- Dashboard -->
+    <string name="welcome_user">Welcome back, %s</string>
+    <string name="user_role">Role: %s</string>
+    <string name="todays_impact">Today\'s Impact</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="donations_count">Donations</string>
+    <string name="amount_label">Amount</string>
+    <string name="helped_label">Helped</string>
+    
+    <!-- Dashboard Cards -->
+    <string name="total_donations">Total Donations</string>
+    <string name="inventory_value">Inventory Value</string>
+    <string name="low_stock_alert">Low Stock Alert</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="make_donation">Make Donation</string>
+    <string name="process_donation">Process Donation</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="transparency_reports">Transparency</string>
+    
+    <!-- User Roles -->
+    <string name="role_donor">DONOR</string>
+    <string name="role_organization">ORGANIZATION</string>
+    <string name="role_volunteer">VOLUNTEER</string>
+    <string name="role_recipient">RECIPIENT</string>
+    <string name="role_guest">GUEST</string>
+    
+    <!-- Donation Types -->
+    <string name="donation_type_cash">Cash</string>
+    <string name="donation_type_goods">Goods</string>
+    <string name="donation_type_services">Services</string>
+    
+    <!-- Donation Categories -->
+    <string name="category_food">Food</string>
+    <string name="category_clothing">Clothing</string>
+    <string name="category_medical">Medical</string>
+    <string name="category_education">Education</string>
+    <string name="category_shelter">Shelter</string>
+    <string name="category_emergency">Emergency</string>
+    <string name="category_other">Other</string>
+    
+    <!-- Status -->
+    <string name="status_pending">Pending</string>
+    <string name="status_confirmed">Confirmed</string>
+    <string name="status_distributed">Distributed</string>
+    <string name="status_cancelled">Cancelled</string>
+    
+    <!-- Common Actions -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="view">View</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
+    <string name="refresh">Refresh</string>
+    <string name="share">Share</string>
+    <string name="export">Export</string>
+    
+    <!-- Messages -->
+    <string name="login_successful">Login successful!</string>
+    <string name="login_failed">Login failed. Please try again.</string>
+    <string name="logged_in_as_guest">Logged in as Guest</string>
+    <string name="guest_login_failed">Guest login failed</string>
+    <string name="email_required">Email is required</string>
+    <string name="valid_email_required">Please enter a valid email</string>
+    <string name="password_required">Password is required</string>
+    <string name="password_min_length">Password must be at least %d characters</string>
+    <string name="role_required">Please select a role</string>
+    <string name="logging_in">Logging in…</string>
+    
+    <!-- Error Messages -->
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_server">Server error. Please try again later.</string>
+    <string name="error_unknown">An unknown error occurred.</string>
+    <string name="error_permission_denied">Permission denied.</string>
+    <string name="error_camera_permission">Camera permission is required to scan QR codes.</string>
+    <string name="error_storage_permission">Storage permission is required to save files.</string>
+    
+    <!-- Content Descriptions -->
+    <string name="cd_logo">SugboAid Logo</string>
+    <string name="cd_profile_image">Profile Image</string>
+    <string name="cd_card_icon">Card Icon</string>
+    <string name="cd_menu">Menu</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_close">Close</string>
+    
+    <!-- Placeholder Text -->
+    <string name="placeholder_user_name">User Name</string>
+    <string name="placeholder_user_email">user@example.com</string>
+    <string name="placeholder_loading">Loading…</string>
+    <string name="placeholder_no_data">No data available</string>
+    <string name="placeholder_empty_list">No items found</string>
+    
+    <!-- Currency -->
+    <string name="currency_symbol">₱</string>
+    <string name="currency_format">₱%,.2f</string>
+    
+    <!-- Units -->
+    <string name="unit_pieces">pcs</string>
+    <string name="unit_kilograms">kg</string>
+    <string name="unit_liters">L</string>
+    <string name="unit_boxes">boxes</string>
+    <string name="unit_bags">bags</string>
+</resources>

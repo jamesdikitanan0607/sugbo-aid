@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tablet-specific dimensions -->
+    
+    <!-- Base Spacing - Increased for tablets -->
+    <dimen name="spacing_xs">6dp</dimen>
+    <dimen name="spacing_sm">12dp</dimen>
+    <dimen name="spacing_md">24dp</dimen>
+    <dimen name="spacing_lg">32dp</dimen>
+    <dimen name="spacing_xl">48dp</dimen>
+    <dimen name="spacing_xxl">64dp</dimen>
+    
+    <!-- Margins - Larger for tablets -->
+    <dimen name="margin_xs">6dp</dimen>
+    <dimen name="margin_sm">12dp</dimen>
+    <dimen name="margin_md">24dp</dimen>
+    <dimen name="margin_lg">32dp</dimen>
+    <dimen name="margin_xl">48dp</dimen>
+    
+    <!-- Padding - Increased for better touch targets -->
+    <dimen name="padding_xs">6dp</dimen>
+    <dimen name="padding_sm">12dp</dimen>
+    <dimen name="padding_md">24dp</dimen>
+    <dimen name="padding_lg">32dp</dimen>
+    <dimen name="padding_xl">48dp</dimen>
+    
+    <!-- Text Sizes - Slightly larger for tablets -->
+    <dimen name="text_size_xs">12sp</dimen>
+    <dimen name="text_size_sm">14sp</dimen>
+    <dimen name="text_size_md">16sp</dimen>
+    <dimen name="text_size_lg">18sp</dimen>
+    <dimen name="text_size_xl">20sp</dimen>
+    <dimen name="text_size_xxl">22sp</dimen>
+    <dimen name="text_size_h3">26sp</dimen>
+    <dimen name="text_size_h2">30sp</dimen>
+    <dimen name="text_size_h1">34sp</dimen>
+    
+    <!-- Button Dimensions - Larger for tablets -->
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_height_small">44dp</dimen>
+    <dimen name="button_height_large">64dp</dimen>
+    <dimen name="button_corner_radius">16dp</dimen>
+    <dimen name="button_padding_horizontal">32dp</dimen>
+    <dimen name="button_padding_vertical">16dp</dimen>
+    
+    <!-- Card Dimensions - Larger for tablets -->
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">12dp</dimen>
+    <dimen name="card_padding">24dp</dimen>
+    <dimen name="card_margin">12dp</dimen>
+    
+    <!-- Input Field Dimensions -->
+    <dimen name="input_height">64dp</dimen>
+    <dimen name="input_corner_radius">12dp</dimen>
+    <dimen name="input_padding_horizontal">20dp</dimen>
+    <dimen name="input_padding_vertical">20dp</dimen>
+    
+    <!-- Icon Sizes - Larger for tablets -->
+    <dimen name="icon_size_xs">20dp</dimen>
+    <dimen name="icon_size_sm">24dp</dimen>
+    <dimen name="icon_size_md">28dp</dimen>
+    <dimen name="icon_size_lg">36dp</dimen>
+    <dimen name="icon_size_xl">56dp</dimen>
+    <dimen name="icon_size_xxl">72dp</dimen>
+    
+    <!-- Touch Target - Larger for tablets -->
+    <dimen name="touch_target_size">48dp</dimen>
+    <dimen name="touch_target_size_large">56dp</dimen>
+    
+    <!-- Toolbar -->
+    <dimen name="toolbar_height">64dp</dimen>
+    <dimen name="toolbar_elevation">6dp</dimen>
+    
+    <!-- Bottom Navigation - Not used on tablets, but keeping for consistency -->
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="bottom_nav_elevation">12dp</dimen>
+    
+    <!-- FAB -->
+    <dimen name="fab_size">64dp</dimen>
+    <dimen name="fab_size_mini">48dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
+    
+    <!-- List Item -->
+    <dimen name="list_item_height">80dp</dimen>
+    <dimen name="list_item_height_small">64dp</dimen>
+    <dimen name="list_item_padding">24dp</dimen>
+    
+    <!-- Avatar -->
+    <dimen name="avatar_size_small">40dp</dimen>
+    <dimen name="avatar_size_medium">56dp</dimen>
+    <dimen name="avatar_size_large">72dp</dimen>
+    
+    <!-- Divider -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin">24dp</dimen>
+    
+    <!-- Progress Indicator -->
+    <dimen name="progress_size">28dp</dimen>
+    <dimen name="progress_size_large">56dp</dimen>
+    
+    <!-- Chart Dimensions - Larger for tablets -->
+    <dimen name="chart_height">300dp</dimen>
+    <dimen name="chart_height_large">400dp</dimen>
+    
+    <!-- QR Code - Larger for tablets -->
+    <dimen name="qr_code_size">300dp</dimen>
+    <dimen name="qr_code_size_large">400dp</dimen>
+    
+    <!-- Dashboard Cards - Larger for tablets -->
+    <dimen name="dashboard_card_height">160dp</dimen>
+    <dimen name="dashboard_card_width">200dp</dimen>
+    
+    <!-- Navigation Drawer - Wider for tablets -->
+    <dimen name="nav_drawer_width">320dp</dimen>
+    <dimen name="nav_header_height">200dp</dimen>
+    
+    <!-- Tablet-specific dimensions -->
+    <dimen name="tablet_content_max_width">800dp</dimen>
+    <dimen name="tablet_side_margin">48dp</dimen>
+    <dimen name="tablet_two_pane_divider_width">1dp</dimen>
+    <dimen name="tablet_master_pane_width">320dp</dimen>
+    
+    <!-- Grid layout for tablets -->
+    <dimen name="grid_item_spacing">16dp</dimen>
+    <dimen name="grid_margin">24dp</dimen>
+</resources>
