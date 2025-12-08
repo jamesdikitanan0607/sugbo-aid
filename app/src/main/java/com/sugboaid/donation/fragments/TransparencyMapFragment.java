@@ -111,65 +111,87 @@ public class TransparencyMapFragment extends BaseFragment {
                 }
             });
 
-            // Set a standard User Agent to ensure Map loads deskop/compatible version behavior
+            // Set a standard User Agent
             webSettings.setUserAgentString("Mozilla/5.0 (Linux; Android 10; Mobile; rv:88.0) Gecko/88.0 Firefox/88.0");
 
-            // Google Maps JavaScript API HTML
+            // Allow mixed content (HTTP content in HTTPS WebView) to ensure CDNs load
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+            }
+
+            // Leaflet (OpenStreetMap) HTML
             String mapHtml = "<!DOCTYPE html>" +
                     "<html>" +
                     "<head>" +
                     "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
+                    "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css\" />" +
+                    "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js\"></script>" +
                     "<style>" +
-                    "  html, body { height: 100%; margin: 0; padding: 0; background: #f0f0f0; }" +
+                    "  html, body { height: 100%; margin: 0; padding: 0; background: #ffffff; }" +
                     "  #map { height: 100%; width: 100%; }" +
-                    "  #error-msg { display: none; padding: 20px; text-align: center; color: #666; font-family: sans-serif; }" +
+                    "  #status { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #333; font-family: sans-serif; }" +
                     "</style>" +
+                    "</head>" +
+                    "<body>" +
+                    "  <div id=\"status\">Initializing Map...</div>" +
+                    "  <div id=\"map\"></div>" +
                     "<script>" +
                     "  var map;" +
-                    "  var markers = [];" +
-                    "  var mapLoaded = false;" +
+                    "  var currentMarker = null;" +
                     "  " +
                     "  function initMap() {" +
-                    "    mapLoaded = true;" +
-                    "    var cebu = { lat: 10.3157, lng: 123.8854 };" +
-                    "    map = new google.maps.Map(document.getElementById('map'), {" +
-                    "      zoom: 12," +
-                    "      center: cebu," +
-                    "      disableDefaultUI: true," +
-                    "      zoomControl: false," +
-                    "      styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'off' }] }]" +
-                    "    });" +
-                    "  }" +
-                    "  " +
-                    "  function checkLoad() {" +
-                    "    setTimeout(function() {" +
-                    "      if (!mapLoaded) {" +
-                    "         document.getElementById('error-msg').style.display = 'block';" +
-                    "         document.getElementById('error-msg').innerText = 'Map failed to load. Please check internet connection or API Key.';" +
-                    "      }" +
-                    "    }, 5000);" + // 5 second timeout
+                    "    var status = document.getElementById('status');" +
+                    "    " +
+                    "    if (typeof L === 'undefined') {" +
+                    "      status.innerText = 'Leaflet failed to load. Check internet.';" +
+                    "      return;" +
+                    "    }" +
+                    "    " +
+                    "    var cebu = [10.3157, 123.8854];" +
+                    "    try {" +
+                    "        map = L.map('map', { zoomControl: false }).setView(cebu, 12);" +
+                    "        " +
+                    "        var iconUrl = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png';" +
+                    "        var iconRetinaUrl = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png';" +
+                    "        var shadowUrl = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png';" +
+                    "        " +
+                    "        var DefaultIcon = L.icon({" +
+                    "            iconUrl: iconUrl," +
+                    "            iconRetinaUrl: iconRetinaUrl," +
+                    "            shadowUrl: shadowUrl," +
+                    "            iconSize: [25, 41]," +
+                    "            iconAnchor: [12, 41]," +
+                    "            popupAnchor: [1, -34]," +
+                    "            shadowSize: [41, 41]" +
+                    "        });" +
+                    "        L.Marker.prototype.options.icon = DefaultIcon;" +
+                    "" +
+                    "        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {" +
+                    "            attribution: '&copy; OpenStreetMap &copy; CARTO'," +
+                    "            subdomains: 'abcd'," +
+                    "            maxZoom: 20" +
+                    "        }).addTo(map);" +
+                    "        " +
+                    "        status.style.display = 'none';" +
+                    "    } catch (e) {" +
+                    "        status.innerText = 'Map Error: ' + e.message;" +
+                    "    }" +
                     "  }" +
                     "  " +
                     "  function moveToLocation(lat, lng) {" +
                     "    if (!map) return;" +
-                    "    var pos = { lat: lat, lng: lng };" +
-                    "    map.panTo(pos);" +
-                    "    map.setZoom(15);" +
-                    "    for (var i = 0; i < markers.length; i++) markers[i].setMap(null);" +
-                    "    markers = [];" +
-                    "    var marker = new google.maps.Marker({ position: pos, map: map, animation: google.maps.Animation.DROP });" +
-                    "    markers.push(marker);" +
+                    "    map.flyTo([lat, lng], 15, { animate: true, duration: 1.5 });" +
+                    "    if (currentMarker) map.removeLayer(currentMarker);" +
+                    "    currentMarker = L.marker([lat, lng]).addTo(map);" +
                     "  }" +
+                    "  " +
+                    "  // Execute immediately after body load\n" +
+                    "  initMap();" +
                     "</script>" +
-                    "<script async defer src=\"https://maps.googleapis.com/maps/api/js?key=&callback=initMap\"></script>" +
-                    "</head>" +
-                    "<body onload=\"checkLoad()\">" +
-                    "  <div id=\"map\"></div>" +
-                    "  <div id=\"error-msg\"></div>" +
                     "</body>" +
                     "</html>";
             
-            mapWebView.loadDataWithBaseURL("https://www.google.com", mapHtml, "text/html", "UTF-8", null);
+            mapWebView.loadDataWithBaseURL("https://www.sugboaid.org", mapHtml, "text/html", "UTF-8", null);
 
             // Allow panning/zooming without parent scroll/viewpager intercept
             mapWebView.setOnTouchListener((v, event) -> {

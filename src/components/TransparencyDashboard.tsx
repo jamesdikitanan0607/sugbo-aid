@@ -3,6 +3,7 @@ import { ArrowLeft, MapPin, Heart, TrendingUp, Users } from "lucide-react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { useState } from "react";
 
 interface TransparencyDashboardProps {
@@ -11,6 +12,20 @@ interface TransparencyDashboardProps {
 
 export function TransparencyDashboard({ onBack }: TransparencyDashboardProps) {
   const [activeTab, setActiveTab] = useState<"overview" | "barangay" | "stories">("overview");
+  const [selectedBarangay, setSelectedBarangay] = useState<null | { lat: number, lng: number }>(null);
+
+  // Component to handle map view updates
+  function MapUpdater({ center }: { center: { lat: number, lng: number } | null }) {
+    const map = useMap();
+    if (center) {
+      map.flyTo([center.lat, center.lng], 15, {
+        animate: true,
+        duration: 1.5
+      });
+    }
+    return null;
+  }
+
 
   const donationTrend = [
     { month: "Apr", amount: 450000 },
@@ -99,8 +114,8 @@ export function TransparencyDashboard({ onBack }: TransparencyDashboardProps) {
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={`rounded-xl h-10 transition-all duration-300 ${activeTab === tab.id
-                  ? "bg-gradient-to-r from-[#1E4C82] to-[#2CB67D] text-white shadow-lg"
-                  : "bg-white/50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 hover:bg-white/70"
+                ? "bg-gradient-to-r from-[#1E4C82] to-[#2CB67D] text-white shadow-lg"
+                : "bg-white/50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 hover:bg-white/70"
                 }`}
             >
               <tab.icon className="w-4 h-4 mr-2" />
@@ -259,15 +274,29 @@ export function TransparencyDashboard({ onBack }: TransparencyDashboardProps) {
               className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-2xl p-5 shadow-lg overflow-hidden"
             >
               <h3 className="mb-4">Barangay Distribution Map</h3>
-              <div className="relative h-64 rounded-xl overflow-hidden shadow-sm">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251172.53533795313!2d123.68313498311564!3d10.376156077517377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a999258dcd2dfd%3A0x4c34030cdbd33507!2sCebu%20City%2C%20Cebu!5e0!3m2!1sen!2sph!4v1765179947338!5m2!1sen!2sph"
-                  style={{ width: "100%", height: "100%", border: 0, borderRadius: "16px" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Cebu City Map"
-                />
+              <div className="relative h-96 rounded-xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-700 z-0">
+                <MapContainer
+                  center={[10.3157, 123.8854]}
+                  zoom={12}
+                  style={{ height: "100%", width: "100%", zIndex: 0 }}
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                    url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                  />
+                  <MapUpdater center={selectedBarangay} />
+                  {barangays.map((barangay) => (
+                    <Marker key={barangay.name} position={[barangay.lat, barangay.lng]}>
+                      <Popup>
+                        <div className="p-1">
+                          <h3 className="font-semibold text-sm">{barangay.name}</h3>
+                          <p className="text-xs text-gray-600">{barangay.families} families</p>
+                          <p className="text-xs font-medium text-emerald-600">{barangay.donations}</p>
+                        </div>
+                      </Popup>
+                    </Marker>
+                  ))}
+                </MapContainer>
               </div>
             </motion.div>
 
@@ -278,7 +307,8 @@ export function TransparencyDashboard({ onBack }: TransparencyDashboardProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + index * 0.05 }}
-                className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-2xl p-4 shadow-lg"
+                className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-2xl p-4 shadow-lg cursor-pointer hover:bg-white/80 dark:hover:bg-slate-800/80 transition-colors"
+                onClick={() => setSelectedBarangay({ lat: barangay.lat, lng: barangay.lng })}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -294,8 +324,8 @@ export function TransparencyDashboard({ onBack }: TransparencyDashboardProps) {
                     <p className="mb-1">{barangay.donations}</p>
                     <Badge
                       className={`${barangay.status === "active"
-                          ? "bg-[#2CB67D]/10 text-[#2CB67D] border-[#2CB67D]/30"
-                          : "bg-[#FDB813]/10 text-[#FDB813] border-[#FDB813]/30"
+                        ? "bg-[#2CB67D]/10 text-[#2CB67D] border-[#2CB67D]/30"
+                        : "bg-[#FDB813]/10 text-[#FDB813] border-[#FDB813]/30"
                         } capitalize rounded-full border`}
                     >
                       {barangay.status}
