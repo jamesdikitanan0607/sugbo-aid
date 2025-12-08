@@ -2,13 +2,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="280dp"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_margin="8dp"
     android:foreground="?attr/selectableItemBackground"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp"
-    app:cardBackgroundColor="@color/white">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="@color/dashboardCardBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,6 +39,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_primary"
+                android:singleLine="true"
+                android:ellipsize="end"
                 tools:text="Barangay Lahug" />
 
             <TextView
@@ -57,59 +59,36 @@
 
         </LinearLayout>
 
-        <!-- Statistics -->
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_color"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Statistics Stack: Families and Donations (vertical) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/familiesHelpedText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:textSize="12sp"
+                android:textColor="@color/text_primary"
+                tools:text="Families: 25" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Families"
-                    android:textSize="10sp"
-                    android:textColor="@color/text_secondary" />
-
-                <TextView
-                    android:id="@+id/familiesHelpedText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    tools:text="25 families" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/donationAmountText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Donations"
-                    android:textSize="10sp"
-                    android:textColor="@color/text_secondary" />
-
-                <TextView
-                    android:id="@+id/donationAmountText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary_blue"
-                    tools:text="₱15,000.00" />
-
-            </LinearLayout>
+                android:layout_marginTop="4dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_blue"
+                tools:text="Donations: ₱15,000.00" />
 
         </LinearLayout>
 

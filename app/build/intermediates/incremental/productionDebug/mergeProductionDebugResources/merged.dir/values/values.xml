@@ -723,6 +723,7 @@
     <color name="dark_gray">#424242</color>
     <color name="dark_surface">#1E1E1E</color>
     <color name="dark_surface_variant">#2D2D2D</color>
+    <color name="dashboardCardBackground">@color/white</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_dark_default_color_background">#121212</color>
     <color name="design_dark_default_color_error">#CF6679</color>
@@ -780,7 +781,7 @@
     <color name="glass_white_60">#99FFFFFF</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
-    <color name="ic_launcher_background">@color/primary_blue</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
     <color name="item_background">@color/glass_white_40</color>
     <color name="leak_canary_background_color">#242424</color>
     <color name="leak_canary_class_name">#bababa</color>
@@ -1098,6 +1099,9 @@
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="shadow_light">#1A000000</color>
     <color name="shadow_medium">#33000000</color>
+    <color name="status_chip_critical">#E53935</color>
+    <color name="status_chip_moderate">#FB8C00</color>
+    <color name="status_chip_stable">#43A047</color>
     <color name="status_critical">#ef4444</color>
     <color name="status_critical_light">#f87171</color>
     <color name="status_healthy">#10b981</color>
@@ -1127,6 +1131,7 @@
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="warning_color">@color/status_moderate</color>
     <color name="warning_orange">@color/status_low</color>
     <color name="warning_yellow">@color/status_moderate</color>
     <color name="white">#FFFFFF</color>
@@ -1231,6 +1236,8 @@
     <dimen name="brand_button_height_large">56dp</dimen>
     <dimen name="brand_card_corner_radius">16dp</dimen>
     <dimen name="brand_card_elevation">8dp</dimen>
+    <dimen name="brand_corner_radius">16dp</dimen>
+    <dimen name="brand_elevation_card">8dp</dimen>
     <dimen name="brand_spacing_lg">24dp</dimen>
     <dimen name="brand_spacing_md">16dp</dimen>
     <dimen name="brand_spacing_sm">8dp</dimen>
@@ -1989,10 +1996,6 @@
     <dimen name="quick_action_button_margin">6dp</dimen>
     <dimen name="quick_action_icon_size">32dp</dimen>
     <dimen name="quick_action_text_size">14sp</dimen>
-    <dimen name="role_button_corner_radius">16dp</dimen>
-    <dimen name="role_button_height">56dp</dimen>
-    <dimen name="role_button_margin">4dp</dimen>
-    <dimen name="role_button_text_size">14sp</dimen>
     <dimen name="shadow_elevation_fab">6dp</dimen>
     <dimen name="shadow_elevation_high">8dp</dimen>
     <dimen name="shadow_elevation_low">2dp</dimen>
@@ -2365,6 +2368,10 @@
     <string name="action_retry">Retry</string>
     <string name="action_try_again">Try Again</string>
     <string name="actions_synced">%d actions synced successfully</string>
+    <string name="active_users">Active Users</string>
+    <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="admin_login_hint">Admin Access: admin / admin123</string>
+    <string name="admin_welcome">Admin Dashboard</string>
     <string name="already_have_account">Already have an account? Login</string>
     <string name="amount">Amount</string>
     <string name="amount_cannot_exceed_limit">Amount cannot exceed ₱1,000,000</string>
@@ -2375,6 +2382,7 @@
     <string name="app_name">SugboAid</string>
     <string name="app_version" translatable="false">null</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="approve_donations">Approve Donations</string>
     <string name="auto_sync_enabled">Auto-sync enabled</string>
     <string name="back_button">Back</string>
     <string name="back_to_dashboard">Back to Dashboard</string>
@@ -2426,6 +2434,7 @@
     <string name="cd_search">Search</string>
     <string name="cd_settings">Settings</string>
     <string name="cd_success_icon">Success</string>
+    <string name="change_user_role">Change Role</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
@@ -2607,6 +2616,7 @@
     <string name="m3_sys_motion_easing_standard" translatable="false">cubic-bezier(0.2, 0, 0, 1)</string>
     <string name="m3_sys_motion_easing_standard_accelerate" translatable="false">cubic-bezier(0.3, 0, 1, 1)</string>
     <string name="m3_sys_motion_easing_standard_decelerate" translatable="false">cubic-bezier(0, 0, 0, 1)</string>
+    <string name="manage_users">Manage Users</string>
     <string name="manual_sync_required">Manual sync required</string>
     <string name="material_clock_display_divider" translatable="false">:</string>
     <string description="Description for the toggle to choose between AM and PM [CHAR_LIMIT=NONE]" name="material_clock_toggle_content_description">Select AM or PM</string>
@@ -2731,6 +2741,7 @@
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="pending_actions_count">%d actions pending sync</string>
+    <string name="pending_approvals">Pending Approvals</string>
     <string name="please_enter_valid_amount">Please enter a valid amount</string>
     <string name="please_select_at_least_one_item">Please select at least one item to donate</string>
     <string name="quick_actions">Quick Actions</string>
@@ -2745,11 +2756,6 @@
     <string name="resolve_conflicts">Resolve Conflicts</string>
     <string name="rice">Rice</string>
     <string name="rice_kg">🍚 Rice (kg)</string>
-    <string name="role_donor">Donor</string>
-    <string name="role_guest">Guest</string>
-    <string name="role_organization">Organization</string>
-    <string name="role_recipient">Recipient</string>
-    <string name="role_volunteer">Volunteer</string>
     <string name="save">Save</string>
     <string name="scan_qr_code_message">Scan this QR code to view your donation receipt</string>
     <string name="search_menu_title">Search</string>
@@ -2788,6 +2794,7 @@
     <string name="together_we_rebuild">Together, We Rebuild Cebu 🏗️</string>
     <string name="toggle_dark_mode">Toggle dark mode</string>
     <string name="total_donations">Total Donations</string>
+    <string name="total_users">Total Users</string>
     <string name="transparency">Transparency</string>
     <string name="transparency_title">Transparency Dashboard</string>
     <string name="type_label">Type:</string>
@@ -2795,6 +2802,9 @@
     <string name="unable_to_share_receipt">Unable to share receipt</string>
     <string name="use_local_data">Use Local Data</string>
     <string name="use_server_data">Use Server Data</string>
+    <string name="user_management">User Management</string>
+    <string name="user_status_active">Active</string>
+    <string name="user_status_inactive">Inactive</string>
     <string name="validation_confirm_password_required">Please confirm your password</string>
     <string name="validation_email_consecutive_periods">Email cannot contain consecutive periods</string>
     <string name="validation_email_invalid">Please enter a valid email address</string>
@@ -7377,7 +7387,7 @@
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
   </style>
-    <style name="Theme.SugboAid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.SugboAid" parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge">
         
         <item name="colorPrimary">@color/primary_blue</item>
         <item name="colorPrimaryVariant">@color/light_blue</item>

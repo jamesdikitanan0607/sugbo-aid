@@ -4,6 +4,7 @@ package com.sugboaid.donation.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -12,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.sugboaid.donation.R;
-import com.sugboaid.donation.views.InteractiveMapView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -25,7 +25,7 @@ public final class FragmentTransparencyMapBinding implements ViewBinding {
   public final RecyclerView barangayListRecyclerView;
 
   @NonNull
-  public final InteractiveMapView mapView;
+  public final WebView mapWebView;
 
   @NonNull
   public final TextView totalBarangaysText;
@@ -34,11 +34,11 @@ public final class FragmentTransparencyMapBinding implements ViewBinding {
   public final TextView totalFamiliesText;
 
   private FragmentTransparencyMapBinding(@NonNull ScrollView rootView,
-      @NonNull RecyclerView barangayListRecyclerView, @NonNull InteractiveMapView mapView,
+      @NonNull RecyclerView barangayListRecyclerView, @NonNull WebView mapWebView,
       @NonNull TextView totalBarangaysText, @NonNull TextView totalFamiliesText) {
     this.rootView = rootView;
     this.barangayListRecyclerView = barangayListRecyclerView;
-    this.mapView = mapView;
+    this.mapWebView = mapWebView;
     this.totalBarangaysText = totalBarangaysText;
     this.totalFamiliesText = totalFamiliesText;
   }
@@ -76,9 +76,9 @@ public final class FragmentTransparencyMapBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.mapView;
-      InteractiveMapView mapView = ViewBindings.findChildViewById(rootView, id);
-      if (mapView == null) {
+      id = R.id.mapWebView;
+      WebView mapWebView = ViewBindings.findChildViewById(rootView, id);
+      if (mapWebView == null) {
         break missingId;
       }
 
@@ -95,7 +95,7 @@ public final class FragmentTransparencyMapBinding implements ViewBinding {
       }
 
       return new FragmentTransparencyMapBinding((ScrollView) rootView, barangayListRecyclerView,
-          mapView, totalBarangaysText, totalFamiliesText);
+          mapWebView, totalBarangaysText, totalFamiliesText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

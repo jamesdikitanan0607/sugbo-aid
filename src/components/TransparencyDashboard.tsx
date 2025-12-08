@@ -98,11 +98,10 @@ export function TransparencyDashboard({ onBack }: TransparencyDashboardProps) {
             <Button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`rounded-xl h-10 transition-all duration-300 ${
-                activeTab === tab.id
+              className={`rounded-xl h-10 transition-all duration-300 ${activeTab === tab.id
                   ? "bg-gradient-to-r from-[#1E4C82] to-[#2CB67D] text-white shadow-lg"
                   : "bg-white/50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 hover:bg-white/70"
-              }`}
+                }`}
             >
               <tab.icon className="w-4 h-4 mr-2" />
               {tab.label}
@@ -260,43 +259,15 @@ export function TransparencyDashboard({ onBack }: TransparencyDashboardProps) {
               className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-2xl p-5 shadow-lg overflow-hidden"
             >
               <h3 className="mb-4">Barangay Distribution Map</h3>
-              <div className="relative h-64 bg-gradient-to-br from-blue-100 to-emerald-100 dark:from-blue-900/20 dark:to-emerald-900/20 rounded-xl overflow-hidden">
-                {barangays.map((barangay, index) => (
-                  <motion.div
-                    key={barangay.name}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.2 + index * 0.1, type: "spring" }}
-                    className="absolute"
-                    style={{
-                      left: `${((barangay.lng - 123.85) / 0.1) * 100}%`,
-                      top: `${((10.35 - barangay.lat) / 0.1) * 100}%`,
-                    }}
-                  >
-                    <div className="relative group">
-                      <motion.div
-                        className="w-8 h-8 bg-gradient-to-br from-[#1E4C82] to-[#2CB67D] rounded-full shadow-lg cursor-pointer"
-                        whileHover={{ scale: 1.2 }}
-                        animate={{
-                          boxShadow: [
-                            "0 0 0 0 rgba(30, 76, 130, 0.4)",
-                            "0 0 0 10px rgba(30, 76, 130, 0)",
-                          ],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                        }}
-                      >
-                        <MapPin className="w-4 h-4 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                      </motion.div>
-                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white dark:bg-slate-800 px-3 py-2 rounded-lg shadow-xl whitespace-nowrap text-sm">
-                        <p>{barangay.name}</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400">{barangay.families} families</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+              <div className="relative h-64 rounded-xl overflow-hidden shadow-sm">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251172.53533795313!2d123.68313498311564!3d10.376156077517377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a999258dcd2dfd%3A0x4c34030cdbd33507!2sCebu%20City%2C%20Cebu!5e0!3m2!1sen!2sph!4v1765179947338!5m2!1sen!2sph"
+                  style={{ width: "100%", height: "100%", border: 0, borderRadius: "16px" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Cebu City Map"
+                />
               </div>
             </motion.div>
 
@@ -322,11 +293,10 @@ export function TransparencyDashboard({ onBack }: TransparencyDashboardProps) {
                   <div className="text-right">
                     <p className="mb-1">{barangay.donations}</p>
                     <Badge
-                      className={`${
-                        barangay.status === "active"
+                      className={`${barangay.status === "active"
                           ? "bg-[#2CB67D]/10 text-[#2CB67D] border-[#2CB67D]/30"
                           : "bg-[#FDB813]/10 text-[#FDB813] border-[#FDB813]/30"
-                      } capitalize rounded-full border`}
+                        } capitalize rounded-full border`}
                     >
                       {barangay.status}
                     </Badge>

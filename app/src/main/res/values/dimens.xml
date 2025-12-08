@@ -66,6 +66,8 @@
     <dimen name="brand_button_corner_radius">12dp</dimen>
     <dimen name="brand_card_corner_radius">16dp</dimen>
     <dimen name="brand_card_elevation">8dp</dimen>
+    <dimen name="brand_elevation_card">8dp</dimen>
+    <dimen name="brand_corner_radius">16dp</dimen>
     
     <!-- Statistics Cards -->
     <dimen name="stats_card_min_height">120dp</dimen>
@@ -80,12 +82,6 @@
     <dimen name="quick_action_button_margin">6dp</dimen>
     <dimen name="quick_action_icon_size">32dp</dimen>
     <dimen name="quick_action_text_size">14sp</dimen>
-    
-    <!-- Role Selection Buttons -->
-    <dimen name="role_button_height">56dp</dimen>
-    <dimen name="role_button_corner_radius">16dp</dimen>
-    <dimen name="role_button_margin">4dp</dimen>
-    <dimen name="role_button_text_size">14sp</dimen>
     
     <!-- Notification Badge -->
     <dimen name="notification_badge_size">20dp</dimen>

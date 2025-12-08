@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.sugboaid.donation.debug" >
+3    package="com.sugboaid.donation" >
 4
 5    <uses-sdk
 6        android:minSdkVersion="21"
@@ -59,12 +59,12 @@
 33
 34    <permission
 34-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
-35        android:name="com.sugboaid.donation.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35        android:name="com.sugboaid.donation.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 35-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
 36        android:protectionLevel="signature" />
 36-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
 37
-38    <uses-permission android:name="com.sugboaid.donation.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38    <uses-permission android:name="com.sugboaid.donation.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 38-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
 38-->[androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 39
@@ -120,8 +120,8 @@
 66        <!-- Splash Activity (Launcher) -->
 67        <activity
 67-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:39:9-47:20
-68            android:name="com.sugboaid.donation.donation.activities.SimpleSplashActivity"
-68-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:40:13-69
+68            android:name="com.sugboaid.donation.activities.SimpleSplashActivity"
+68-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:40:13-81
 69            android:exported="true"
 69-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:41:13-36
 70            android:theme="@style/Theme.SugboAid.Splash" >
@@ -141,8 +141,8 @@
 78        <!-- Main Activity -->
 79        <activity
 79-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:50:9-53:53
-80            android:name="com.sugboaid.donation.donation.activities.MainActivity"
-80-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:51:13-61
+80            android:name="com.sugboaid.donation.activities.MainActivity"
+80-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:51:13-73
 81            android:exported="false"
 81-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:52:13-37
 82            android:theme="@style/Theme.SugboAid" />
@@ -151,8 +151,8 @@
 84        <!-- QR Scanner Activity -->
 85        <activity
 85-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:56:9-60:53
-86            android:name="com.sugboaid.donation.donation.activities.QRScannerActivity"
-86-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:57:13-66
+86            android:name="com.sugboaid.donation.activities.QRScannerActivity"
+86-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:57:13-78
 87            android:exported="false"
 87-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:58:13-37
 88            android:screenOrientation="portrait"
@@ -214,7 +214,7 @@
 120-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 121            android:name="androidx.startup.InitializationProvider"
 121-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-122            android:authorities="com.sugboaid.donation.debug.androidx-startup"
+122            android:authorities="com.sugboaid.donation.androidx-startup"
 122-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
 123            android:exported="false" >
 123-->[androidx.emoji2:emoji2:1.2.0] C:\Users\James\.gradle\caches\transforms-3\69262e6e1ef2f549fc8371faf15c8c5f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
@@ -293,7 +293,7 @@
 162-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:32:9-40:20
 163            android:name="leakcanary.internal.LeakCanaryFileProvider"
 163-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:33:13-70
-164            android:authorities="com.squareup.leakcanary.fileprovider.com.sugboaid.donation.debug"
+164            android:authorities="com.squareup.leakcanary.fileprovider.com.sugboaid.donation"
 164-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:34:13-88
 165            android:exported="false"
 165-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:35:13-37
@@ -317,7 +317,7 @@
 175-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:45:13-52
 176            android:label="@string/leak_canary_display_activity_label"
 176-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:46:13-71
-177            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation.debug"
+177            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation"
 177-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:47:13-76
 178            android:theme="@style/leak_canary_LeakCanary.Base" >
 178-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:48:13-63
@@ -384,7 +384,7 @@
 211-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:81:13-71
 212            android:targetActivity="leakcanary.internal.activity.LeakActivity"
 212-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:82:13-79
-213            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation.debug"
+213            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation"
 213-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:83:13-76
 214            android:theme="@style/leak_canary_LeakCanary.Base" >
 214-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:84:13-63
@@ -414,7 +414,7 @@
 227-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:97:13-52
 228            android:label="@string/leak_canary_storage_permission_activity_label"
 228-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:98:13-82
-229            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation.debug"
+229            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation"
 229-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:99:13-76
 230            android:theme="@style/leak_canary_Theme.Transparent" />
 230-->[com.squareup.leakcanary:leakcanary-android-core:2.12] C:\Users\James\.gradle\caches\transforms-3\dd3f40378fc91b18d6025725fdbe17d3\transformed\jetified-leakcanary-android-core-2.12\AndroidManifest.xml:100:13-65
@@ -427,7 +427,7 @@
 234-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.12] C:\Users\James\.gradle\caches\transforms-3\759ee6b7f35673e6cae64d8ef323411f\transformed\jetified-leakcanary-object-watcher-android-2.12\AndroidManifest.xml:8:9-12:40
 235            android:name="leakcanary.internal.MainProcessAppWatcherInstaller"
 235-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.12] C:\Users\James\.gradle\caches\transforms-3\759ee6b7f35673e6cae64d8ef323411f\transformed\jetified-leakcanary-object-watcher-android-2.12\AndroidManifest.xml:9:13-78
-236            android:authorities="com.sugboaid.donation.debug.leakcanary-installer"
+236            android:authorities="com.sugboaid.donation.leakcanary-installer"
 236-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.12] C:\Users\James\.gradle\caches\transforms-3\759ee6b7f35673e6cae64d8ef323411f\transformed\jetified-leakcanary-object-watcher-android-2.12\AndroidManifest.xml:10:13-72
 237            android:enabled="@bool/leak_canary_watcher_auto_install"
 237-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.12] C:\Users\James\.gradle\caches\transforms-3\759ee6b7f35673e6cae64d8ef323411f\transformed\jetified-leakcanary-object-watcher-android-2.12\AndroidManifest.xml:11:13-69
@@ -437,7 +437,7 @@
 239-->[com.squareup.leakcanary:plumber-android:2.12] C:\Users\James\.gradle\caches\transforms-3\1d7098300b7cc6e850c385a733f4df1f\transformed\jetified-plumber-android-2.12\AndroidManifest.xml:8:9-12:40
 240            android:name="leakcanary.internal.PlumberInstaller"
 240-->[com.squareup.leakcanary:plumber-android:2.12] C:\Users\James\.gradle\caches\transforms-3\1d7098300b7cc6e850c385a733f4df1f\transformed\jetified-plumber-android-2.12\AndroidManifest.xml:9:13-64
-241            android:authorities="com.sugboaid.donation.debug.plumber-installer"
+241            android:authorities="com.sugboaid.donation.plumber-installer"
 241-->[com.squareup.leakcanary:plumber-android:2.12] C:\Users\James\.gradle\caches\transforms-3\1d7098300b7cc6e850c385a733f4df1f\transformed\jetified-plumber-android-2.12\AndroidManifest.xml:10:13-69
 242            android:enabled="@bool/leak_canary_plumber_auto_install"
 242-->[com.squareup.leakcanary:plumber-android:2.12] C:\Users\James\.gradle\caches\transforms-3\1d7098300b7cc6e850c385a733f4df1f\transformed\jetified-plumber-android-2.12\AndroidManifest.xml:11:13-69

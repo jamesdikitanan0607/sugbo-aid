@@ -31,6 +31,9 @@
             app:cardCornerRadius="16dp"
             app:cardElevation="8dp"
             app:cardBackgroundColor="@color/white"
+            android:background="@color/white"
+            android:backgroundTint="@null"
+            android:alpha="1"
             app:strokeColor="@color/glass_border"
             app:strokeWidth="1dp"
             android:layout_marginBottom="16dp">
@@ -106,21 +109,31 @@
                     android:layout_height="56dp"
                     android:text="@string/login"
                     android:textSize="16sp"
-                    android:layout_marginBottom="16dp" />
+                    android:layout_marginBottom="8dp" />
 
-                <!-- Signup Link -->
+                <!-- Admin hint -->
                 <TextView
-                    android:id="@+id/tv_signup_link"
+                    android:id="@+id/tv_admin_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/admin_login_hint"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone" />
+
+                <!-- Sign up prompt text -->
+                <TextView
+                    android:id="@+id/tv_go_to_signup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/dont_have_account"
                     android:textColor="@color/primary_blue"
-                    android:textSize="14sp"
                     android:layout_gravity="center"
+                    android:paddingTop="4dp"
                     android:clickable="true"
-                    android:focusable="true"
-                    android:background="?android:attr/selectableItemBackgroundBorderless"
-                    android:padding="8dp" />
+                    android:focusable="true" />
 
             </LinearLayout>
 

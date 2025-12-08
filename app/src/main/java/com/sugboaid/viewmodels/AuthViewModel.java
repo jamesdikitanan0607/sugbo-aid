@@ -10,6 +10,7 @@ import com.sugboaid.models.User;
 import com.sugboaid.models.UserSession;
 import com.sugboaid.repositories.UserRepository;
 import com.sugboaid.utils.AuthErrorHandler;
+import com.sugboaid.utils.SharedPreferencesHelper;
 import com.sugboaid.utils.ValidationUtils;
 
 /**
@@ -67,6 +68,65 @@ public class AuthViewModel extends AndroidViewModel {
         // Create retry action for this login attempt
         Runnable retryAction = () -> login(email, password);
         
+        // Hardcoded Admin Login (development only)
+        if (email != null && password != null &&
+                "admin@sugboaid.local".equalsIgnoreCase(email.trim()) && "admin123".equals(password)) {
+            new Thread(() -> {
+                try {
+                    // Ensure an admin user exists in local storage
+                    String adminEmail = "admin@sugboaid.local";
+                    com.sugboaid.models.User admin = userRepository.getUserByEmail(adminEmail);
+                    if (admin == null) {
+                        // Register admin with valid email and Admin role
+                        admin = userRepository.registerUser("Administrator", adminEmail, "admin123", com.sugboaid.models.User.ROLE_ADMIN);
+                    } else {
+                        // Ensure role is Admin
+                        try {
+                            admin.setRole(com.sugboaid.models.User.ROLE_ADMIN);
+                            userRepository.updateUser(admin);
+                        } catch (Exception ignored) { }
+                    }
+
+                    if (admin != null) {
+                        boolean sessionSaved = userRepository.saveSession(admin);
+                        if (sessionSaved) {
+                            com.sugboaid.models.UserSession session = userRepository.getStoredSession();
+                            try {
+                                SharedPreferencesHelper.getInstance(getApplication())
+                                        .saveUserRole(admin.getRole());
+                            } catch (Exception ignored) { }
+                            AuthState authState = AuthState.authenticated(admin, session);
+                            _authState.postValue(authState);
+                            _successMessage.postValue("Login successful");
+                        } else {
+                            AuthErrorHandler.ErrorResult error = new AuthErrorHandler.ErrorResult.Builder()
+                                    .setType(AuthErrorHandler.ErrorType.SESSION_ERROR)
+                                    .setSeverity(AuthErrorHandler.ErrorSeverity.HIGH)
+                                    .setMessage("Failed to save admin session")
+                                    .setUserMessage("Failed to save session. Please try again.")
+                                    .setCanRetry(true)
+                                    .setRetryAction(retryAction)
+                                    .setActionLabel("Try Again")
+                                    .build();
+                            _errorResult.postValue(error);
+                            _errorMessage.postValue(error.getUserMessage());
+                        }
+                    } else {
+                        AuthErrorHandler.ErrorResult error = AuthErrorHandler.createAuthenticationError(retryAction);
+                        _errorResult.postValue(error);
+                        _errorMessage.postValue(error.getUserMessage());
+                    }
+                } catch (Exception e) {
+                    AuthErrorHandler.ErrorResult error = AuthErrorHandler.fromException(e, retryAction);
+                    _errorResult.postValue(error);
+                    _errorMessage.postValue(error.getUserMessage());
+                } finally {
+                    _isLoading.postValue(false);
+                }
+            }).start();
+            return;
+        }
+
         // Validate input
         if (!validateLoginInput(email, password)) {
             _isLoading.setValue(false);
@@ -84,6 +144,10 @@ public class AuthViewModel extends AndroidViewModel {
                     
                     if (sessionSaved) {
                         UserSession session = userRepository.getStoredSession();
+                        try {
+                            SharedPreferencesHelper.getInstance(getApplication())
+                                    .saveUserRole(user.getRole());
+                        } catch (Exception ignored) { }
                         AuthState authState = AuthState.authenticated(user, session);
                         
                         _authState.postValue(authState);

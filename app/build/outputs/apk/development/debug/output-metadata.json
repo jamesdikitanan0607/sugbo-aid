@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.sugboaid.donation.dev.debug",
+  "applicationId": "com.sugboaid.donation.dev",
   "variantName": "developmentDebug",
   "elements": [
     {

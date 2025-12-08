@@ -5,13 +5,6 @@
     <string name="tagline_main">Together, We Rebuild Cebu</string>
     <string name="tagline_sub">Transparent, Real-Time, Locally-Built Relief</string>
     
-    <!-- Role Selection -->
-    <string name="role_donor">Donor</string>
-    <string name="role_organization">Organization</string>
-    <string name="role_volunteer">Volunteer</string>
-    <string name="role_recipient">Recipient</string>
-    <string name="role_guest">Guest</string>
-    
     <!-- Navigation -->
     <string name="nav_dashboard">Dashboard</string>
     <string name="nav_inventory">Inventory</string>
@@ -226,6 +219,20 @@
     <string name="branding_accent_color">Accent Yellow (#FDB813)</string>
     <string name="branding_typography_headline">Headlines: sans-serif-black</string>
     <string name="branding_typography_body">Body: sans-serif</string>
+    
+    <!-- Admin Dashboard -->
+    <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="admin_welcome">Admin Dashboard</string>
+    <string name="approve_donations">Approve Donations</string>
+    <string name="manage_users">Manage Users</string>
+    <string name="user_management">User Management</string>
+    <string name="total_users">Total Users</string>
+    <string name="active_users">Active Users</string>
+    <string name="pending_approvals">Pending Approvals</string>
+    <string name="change_user_role">Change Role</string>
+    <string name="user_status_active">Active</string>
+    <string name="user_status_inactive">Inactive</string>
+    <string name="admin_login_hint">Admin Access: admin / admin123</string>
     
     <!-- Accessibility -->
     <string name="accessibility_announcement_donation_recorded">Donation successfully recorded</string>

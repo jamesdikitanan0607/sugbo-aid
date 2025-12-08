@@ -16,7 +16,9 @@ import androidx.navigation.Navigation;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.sugboaid.donation.R;
+import com.sugboaid.donation.activities.MainActivity;
 import com.sugboaid.donation.databinding.FragmentSignupBinding;
+import com.sugboaid.donation.viewmodels.DashboardViewModel;
 import com.sugboaid.donation.fragments.BaseFragment;
 import com.sugboaid.viewmodels.AuthViewModel;
 import com.sugboaid.utils.ValidationUtils;
@@ -37,6 +39,7 @@ public class SignupFragment extends BaseFragment {
     private AuthLoadingStateManager loadingStateManager;
     private AuthFeedbackManager feedbackManager;
     private String selectedRole;
+    private boolean signupInitiated = false;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -51,7 +54,7 @@ public class SignupFragment extends BaseFragment {
         selectedRole = getSelectedRole();
 
         // Initialize ViewModel
-        authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
+        authViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
 
         // Initialize managers
         loadingStateManager = new AuthLoadingStateManager(requireContext());
@@ -78,6 +81,7 @@ public class SignupFragment extends BaseFragment {
         // Signup button click listener
         binding.btnSignup.setOnClickListener(v -> {
             animateButtonPress(v);
+            signupInitiated = true;
             validateAndSignup();
         });
 
@@ -94,8 +98,7 @@ public class SignupFragment extends BaseFragment {
     protected void observeData() {
         // Observe authentication state
         authViewModel.authState.observe(getViewLifecycleOwner(), authState -> {
-            if (authState != null && authState.isAuthenticated()) {
-                // Registration successful, navigate to dashboard
+            if (authState != null && authState.isAuthenticated() && signupInitiated) {
                 navigateToDashboard();
             }
         });
@@ -454,7 +457,8 @@ public class SignupFragment extends BaseFragment {
      */
     private void navigateToDashboard() {
         try {
-            navController.navigate(R.id.action_signupFragment_to_dashboardFragment);
+            MainActivity activity = (MainActivity) requireActivity();
+            activity.switchToMainGraphAndShowDashboard(true);
         } catch (Exception e) {
             showToast("Navigation error occurred");
         }

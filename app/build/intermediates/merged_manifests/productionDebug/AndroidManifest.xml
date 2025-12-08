@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sugboaid.donation.debug" >
+    package="com.sugboaid.donation" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -32,10 +32,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <permission
-        android:name="com.sugboaid.donation.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.sugboaid.donation.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.sugboaid.donation.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.sugboaid.donation.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <uses-feature
         android:name="android.hardware.camera.front"
@@ -65,7 +65,7 @@
 
         <!-- Splash Activity (Launcher) -->
         <activity
-            android:name="com.sugboaid.donation.donation.activities.SimpleSplashActivity"
+            android:name="com.sugboaid.donation.activities.SimpleSplashActivity"
             android:exported="true"
             android:theme="@style/Theme.SugboAid.Splash" >
             <intent-filter>
@@ -77,13 +77,13 @@
 
         <!-- Main Activity -->
         <activity
-            android:name="com.sugboaid.donation.donation.activities.MainActivity"
+            android:name="com.sugboaid.donation.activities.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.SugboAid" />
 
         <!-- QR Scanner Activity -->
         <activity
-            android:name="com.sugboaid.donation.donation.activities.QRScannerActivity"
+            android:name="com.sugboaid.donation.activities.QRScannerActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SugboAid" />
@@ -119,7 +119,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.sugboaid.donation.debug.androidx-startup"
+            android:authorities="com.sugboaid.donation.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
@@ -161,7 +161,7 @@
 
         <provider
             android:name="leakcanary.internal.LeakCanaryFileProvider"
-            android:authorities="com.squareup.leakcanary.fileprovider.com.sugboaid.donation.debug"
+            android:authorities="com.squareup.leakcanary.fileprovider.com.sugboaid.donation"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -174,7 +174,7 @@
             android:exported="true"
             android:icon="@mipmap/leak_canary_icon"
             android:label="@string/leak_canary_display_activity_label"
-            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation.debug"
+            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation"
             android:theme="@style/leak_canary_LeakCanary.Base" >
             <intent-filter android:label="@string/leak_canary_import_hprof_file" >
                 <action android:name="android.intent.action.VIEW" />
@@ -210,7 +210,7 @@
             android:icon="@mipmap/leak_canary_icon"
             android:label="@string/leak_canary_display_activity_label"
             android:targetActivity="leakcanary.internal.activity.LeakActivity"
-            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation.debug"
+            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation"
             android:theme="@style/leak_canary_LeakCanary.Base" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -226,19 +226,19 @@
             android:excludeFromRecents="true"
             android:icon="@mipmap/leak_canary_icon"
             android:label="@string/leak_canary_storage_permission_activity_label"
-            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation.debug"
+            android:taskAffinity="com.squareup.leakcanary.com.sugboaid.donation"
             android:theme="@style/leak_canary_Theme.Transparent" />
 
         <receiver android:name="leakcanary.internal.NotificationReceiver" />
 
         <provider
             android:name="leakcanary.internal.MainProcessAppWatcherInstaller"
-            android:authorities="com.sugboaid.donation.debug.leakcanary-installer"
+            android:authorities="com.sugboaid.donation.leakcanary-installer"
             android:enabled="@bool/leak_canary_watcher_auto_install"
             android:exported="false" />
         <provider
             android:name="leakcanary.internal.PlumberInstaller"
-            android:authorities="com.sugboaid.donation.debug.plumber-installer"
+            android:authorities="com.sugboaid.donation.plumber-installer"
             android:enabled="@bool/leak_canary_plumber_auto_install"
             android:exported="false" />
     </application>

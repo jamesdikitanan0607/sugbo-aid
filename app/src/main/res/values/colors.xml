@@ -45,6 +45,7 @@
     <color name="success_green">@color/status_healthy</color>
     <color name="warning_yellow">@color/status_moderate</color>
     <color name="warning_orange">@color/status_low</color>
+    <color name="warning_color">@color/status_moderate</color>
     <color name="error_red">@color/status_critical</color>
     
     <!-- Additional Status Colors for Enhanced UI -->

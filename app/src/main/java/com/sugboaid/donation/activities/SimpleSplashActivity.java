@@ -44,11 +44,18 @@ public class SimpleSplashActivity extends AppCompatActivity {
             
             // Set content view with error handling
             try {
-                setContentView(R.layout.activity_splash);
+                setContentView(R.layout.activity_simple_splash);
                 DiagnosticLogger.logStartup("SimpleSplashActivity layout set successfully");
             } catch (Exception e) {
                 DiagnosticLogger.logCrash(e, "SimpleSplashActivity setContentView failed");
-                throw e;
+                // Fallback to default layout if custom one fails
+                try {
+                    setContentView(R.layout.activity_splash);
+                    DiagnosticLogger.logWarning(TAG, "Fell back to default splash layout");
+                } catch (Exception fallbackException) {
+                    DiagnosticLogger.logCrash(fallbackException, "Failed to load fallback splash layout");
+                    throw e; // Re-throw original exception if fallback fails
+                }
             }
             
             // Initialize SharedPreferences helper
@@ -62,18 +69,26 @@ public class SimpleSplashActivity extends AppCompatActivity {
             // Initialize views with comprehensive error handling and validation
             initializeViews();
             
-            // Set up role selection buttons
-            setupRoleButtons();
-            
-            // Show role selection after delay
-            new Handler(Looper.getMainLooper()).postDelayed(this::showRoleSelection, SPLASH_DELAY);
+            // Set up authentication buttons
+            try {
+                View btnLogin = findViewById(R.id.btn_login);
+                View btnSignup = findViewById(R.id.btn_signup);
+                if (btnLogin != null) {
+                    btnLogin.setOnClickListener(v -> navigateToLogin());
+                }
+                if (btnSignup != null) {
+                    btnSignup.setOnClickListener(v -> navigateToSignup());
+                }
+            } catch (Exception e) {
+                DiagnosticLogger.logError(TAG, "Error setting up auth button listeners", e);
+            }
             
             DiagnosticLogger.logStartup("SimpleSplashActivity onCreate completed successfully");
             
         } catch (Exception e) {
             DiagnosticLogger.logCrash(e, "SimpleSplashActivity onCreate failed");
-            // Fallback: navigate directly to main activity
-            navigateToMain("Guest");
+            // Fallback: navigate directly to login
+            navigateToLogin();
         }
     }
     
@@ -88,7 +103,8 @@ public class SimpleSplashActivity extends AppCompatActivity {
             R.id.iv_logo,
             R.id.tv_tagline_main,
             R.id.tv_tagline_sub,
-            R.id.ll_role_selection
+            R.id.btn_login,
+            R.id.btn_signup
         };
         
         try {
@@ -96,12 +112,13 @@ public class SimpleSplashActivity extends AppCompatActivity {
             ImageView logo = findViewById(R.id.iv_logo);
             TextView taglineMain = findViewById(R.id.tv_tagline_main);
             TextView taglineSub = findViewById(R.id.tv_tagline_sub);
-            View roleSelection = findViewById(R.id.ll_role_selection);
+            View btnLogin = findViewById(R.id.btn_login);
+            View btnSignup = findViewById(R.id.btn_signup);
             
             // Validate critical views
             boolean allViewsValid = true;
-            String[] viewNames = {"logo", "tagline_main", "tagline_sub", "role_selection"};
-            View[] views = {logo, taglineMain, taglineSub, roleSelection};
+            String[] viewNames = {"logo", "tagline_main", "tagline_sub", "btn_login", "btn_signup"};
+            View[] views = {logo, taglineMain, taglineSub, btnLogin, btnSignup};
             
             for (int i = 0; i < views.length; i++) {
                 if (views[i] == null) {
@@ -130,127 +147,37 @@ public class SimpleSplashActivity extends AppCompatActivity {
         }
     }
     
-    private void setupRoleButtons() {
-        DiagnosticLogger.logDebug(TAG, "Setting up role selection buttons");
-        
-        try {
-            View btnDonor = findViewById(R.id.btn_donor);
-            View btnOrganization = findViewById(R.id.btn_organization);
-            View btnVolunteer = findViewById(R.id.btn_volunteer);
-            View btnRecipient = findViewById(R.id.btn_recipient);
-            View btnGuest = findViewById(R.id.btn_guest);
-            
-            // Track which buttons are found
-            String[] buttonNames = {"donor", "organization", "volunteer", "recipient", "guest"};
-            View[] buttons = {btnDonor, btnOrganization, btnVolunteer, btnRecipient, btnGuest};
-            String[] roles = {"Donor", "Organization", "Volunteer", "Recipient", "Guest"};
-            
-            int validButtons = 0;
-            for (int i = 0; i < buttons.length; i++) {
-                if (buttons[i] != null) {
-                    final String role = roles[i];
-                    // Add try-catch around click listener to prevent crashes
-                    try {
-                        buttons[i].setOnClickListener(v -> {
-                            try {
-                                DiagnosticLogger.logDebug(TAG, "Role selected: " + role);
-                                diagnosticManager.logNavigationEvent("Role selection", "SimpleSplashActivity", 
-                                    "MainActivity (" + role + ")", null);
-                                navigateToMain(role);
-                            } catch (Exception clickException) {
-                                DiagnosticLogger.logError(TAG, "Error handling role selection click for " + role, clickException);
-                                // Fallback: navigate with Guest role
-                                navigateToMain("Guest");
-                            }
-                        });
-                        validButtons++;
-                        DiagnosticLogger.logDebug(TAG, buttonNames[i] + " button setup successfully");
-                    } catch (Exception listenerException) {
-                        DiagnosticLogger.logError(TAG, "Error setting listener for " + buttonNames[i] + " button", listenerException);
-                    }
-                } else {
-                    DiagnosticLogger.logResourceError("view", "btn_" + buttonNames[i], 
-                        "Role button not found in layout");
-                }
-            }
-            
-            DiagnosticLogger.logDebug(TAG, "Role buttons setup completed - " + validButtons + " of " + 
-                buttons.length + " buttons found");
-            
-            // If no buttons were found, provide fallback navigation
-            if (validButtons == 0) {
-                DiagnosticLogger.logWarning(TAG, "No role buttons found - providing fallback navigation");
-                new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                    DiagnosticLogger.logDebug(TAG, "Fallback navigation triggered");
-                    navigateToMain("Guest");
-                }, 2000);
-            }
-            
-        } catch (Exception e) {
-            DiagnosticLogger.logError(TAG, "Error setting up role buttons", e);
-            // Fallback: navigate to main with Guest role
-            navigateToMain("Guest");
-        }
-    }
-    
-    private void showRoleSelection() {
-        long splashDuration = System.currentTimeMillis() - splashStartTime;
-        DiagnosticLogger.logStartup("SimpleSplashActivity showing role selection after " + splashDuration + "ms");
-        
-        try {
-            View roleSelection = findViewById(R.id.ll_role_selection);
-            if (roleSelection != null) {
-                roleSelection.setVisibility(View.VISIBLE);
-                DiagnosticLogger.logDebug(TAG, "Role selection view made visible");
-                diagnosticManager.logNavigationEvent("UI transition", "SplashScreen", "RoleSelection", null);
-            } else {
-                DiagnosticLogger.logResourceError("view", "ll_role_selection", 
-                    "Role selection view not found");
-                DiagnosticLogger.logWarning(TAG, "Role selection view not found - navigating to main with Guest role");
-                // Fallback: navigate directly to main activity
-                navigateToMain("Guest");
-            }
-        } catch (Exception e) {
-            DiagnosticLogger.logError(TAG, "Error showing role selection", e);
-            navigateToMain("Guest");
-        }
-    }
-    
-    private void navigateToMain(String role) {
-        // Create a final copy of the role parameter to use in the lambda
-        final String finalRole = (role == null || role.trim().isEmpty()) ? "Guest" : role.trim();
-        
+    private void navigateToLogin() {
         runOnUiThread(() -> {
             try {
                 long totalSplashTime = System.currentTimeMillis() - splashStartTime;
-                DiagnosticLogger.logStartup("SimpleSplashActivity navigating to MainActivity with role: " + 
-                    finalRole + " after " + totalSplashTime + "ms");
-                
-                // Log if we had to default the role
-                if (role == null || role.trim().isEmpty()) {
-                    DiagnosticLogger.logWarning(TAG, "Role was null or empty, defaulting to Guest");
-                }
-                
-                // Save the selected role to preferences
-                if (prefsHelper != null) {
-                    try {
-                        prefsHelper.saveUserRole(finalRole);
-                        DiagnosticLogger.logDebug(TAG, "User role saved to preferences: " + finalRole);
-                    } catch (Exception e) {
-                        DiagnosticLogger.logError(TAG, "Failed to save user role to preferences", e);
-                        finish();
-                        DiagnosticLogger.logDebug(TAG, "Splash activity finished");
-                    }
-                }
-                
+                DiagnosticLogger.logStartup("SimpleSplashActivity navigating to Login after " + totalSplashTime + "ms");
                 Intent intent = new Intent(SimpleSplashActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                intent.putExtra("user_role", finalRole);
+                intent.putExtra("start_destination", "login");
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             } catch (Exception e) {
-                DiagnosticLogger.logError(TAG, "Unexpected error in navigateToMain", e);
+                DiagnosticLogger.logError(TAG, "Unexpected error in navigateToLogin", e);
+                finish();
+            }
+        });
+    }
+    
+    private void navigateToSignup() {
+        runOnUiThread(() -> {
+            try {
+                long totalSplashTime = System.currentTimeMillis() - splashStartTime;
+                DiagnosticLogger.logStartup("SimpleSplashActivity navigating to Signup after " + totalSplashTime + "ms");
+                Intent intent = new Intent(SimpleSplashActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.putExtra("start_destination", "signup");
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                finish();
+            } catch (Exception e) {
+                DiagnosticLogger.logError(TAG, "Unexpected error in navigateToSignup", e);
                 finish();
             }
         });

@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import com.sugboaid.donation.repositories.NotificationRepository;
 import com.sugboaid.models.AppNotification;
 import com.sugboaid.models.NotificationType;
@@ -16,10 +17,13 @@ import java.util.List;
  */
 public class NotificationViewModel extends AndroidViewModel {
     
-    private NotificationRepository notificationRepository;
-    private MutableLiveData<Boolean> isLoading;
-    private MutableLiveData<String> errorMessage;
-    private MutableLiveData<Boolean> showEmptyState;
+    private final NotificationRepository notificationRepository;
+    private final MutableLiveData<Boolean> isLoading;
+    private final MutableLiveData<String> errorMessage;
+    private final MutableLiveData<Boolean> showEmptyState;
+    private final LiveData<List<AppNotification>> notifications;
+    private final LiveData<Integer> unreadCount;
+    private final Observer<List<AppNotification>> notificationsObserver;
     
     public NotificationViewModel(@NonNull Application application) {
         super(application);
@@ -31,19 +35,37 @@ public class NotificationViewModel extends AndroidViewModel {
         errorMessage = new MutableLiveData<>();
         showEmptyState = new MutableLiveData<>(false);
         
-        // Observe notifications to update empty state
-        getNotifications().observeForever(notifications -> {
-            showEmptyState.setValue(notifications == null || notifications.isEmpty());
-        });
+        // Get LiveData from repository
+        notifications = notificationRepository.getNotifications();
+        unreadCount = notificationRepository.getUnreadCount();
+        
+        // Create a single observer for notifications
+        notificationsObserver = notifications -> {
+            if (notifications != null) {
+                showEmptyState.setValue(notifications.isEmpty());
+            }
+        };
+        
+        // Observe notifications with the observer
+        notifications.observeForever(notificationsObserver);
+    }
+    
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        // Remove the observer when the ViewModel is no longer used
+        if (notifications != null && notificationsObserver != null) {
+            notifications.removeObserver(notificationsObserver);
+        }
     }
     
     // LiveData getters
     public LiveData<List<AppNotification>> getNotifications() {
-        return notificationRepository.getNotifications();
+        return notifications;
     }
     
     public LiveData<Integer> getUnreadCount() {
-        return notificationRepository.getUnreadCount();
+        return unreadCount;
     }
     
     public LiveData<Boolean> getIsLoading() {

@@ -24,6 +24,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\fragment_transparency_map.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/fragment_admin_dashboard.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_admin_dashboard.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\fragment_donation_success.xml",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\fragment_donation_success.xml"
     },
@@ -48,12 +52,28 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\dialog_add_inventory_item.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/fragment_transparency_overview.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_transparency_overview.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\view_offline_banner.xml",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\view_offline_banner.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/fragment_placeholder.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_placeholder.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/fragment_transparency_map.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_transparency_map.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\item_recent_activity.xml",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\item_recent_activity.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/item_user_management.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/item_user_management.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\fragment_transparency_stories.xml",
@@ -62,6 +82,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\activity_splash.xml",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/activity_splash.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/activity_splash.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\fragment_reports.xml",
@@ -76,8 +100,28 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\item_barangay.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/fragment_post_auth_loading.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_post_auth_loading.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/activity_main.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/fragment_pos_donation.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_pos_donation.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\fragment_dashboard.xml",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/activity_simple_splash.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/activity_simple_splash.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/item_barangay.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/item_barangay.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\fragment_login.xml",
@@ -88,8 +132,16 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\custom_barcode_scanner.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/fragment_transparency.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_transparency.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\fragment_inventory.xml",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\fragment_inventory.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:/layout/fragment_login.xml",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_login.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-mergeDevelopmentStagingResources-49:\\layout\\fragment_signup.xml",

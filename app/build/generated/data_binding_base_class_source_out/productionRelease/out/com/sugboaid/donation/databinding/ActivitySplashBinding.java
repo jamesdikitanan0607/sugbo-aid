@@ -23,25 +23,16 @@ public final class ActivitySplashBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final MaterialButton btnDonor;
+  public final MaterialButton btnLogin;
 
   @NonNull
-  public final MaterialButton btnGuest;
-
-  @NonNull
-  public final MaterialButton btnOrganization;
-
-  @NonNull
-  public final MaterialButton btnRecipient;
-
-  @NonNull
-  public final MaterialButton btnVolunteer;
+  public final MaterialButton btnSignup;
 
   @NonNull
   public final ImageView ivLogo;
 
   @NonNull
-  public final LinearLayout llRoleSelection;
+  public final LinearLayout llAuthButtons;
 
   @NonNull
   public final TextView tvTaglineMain;
@@ -52,20 +43,15 @@ public final class ActivitySplashBinding implements ViewBinding {
   @NonNull
   public final View viewBackgroundOverlay;
 
-  private ActivitySplashBinding(@NonNull RelativeLayout rootView, @NonNull MaterialButton btnDonor,
-      @NonNull MaterialButton btnGuest, @NonNull MaterialButton btnOrganization,
-      @NonNull MaterialButton btnRecipient, @NonNull MaterialButton btnVolunteer,
-      @NonNull ImageView ivLogo, @NonNull LinearLayout llRoleSelection,
-      @NonNull TextView tvTaglineMain, @NonNull TextView tvTaglineSub,
-      @NonNull View viewBackgroundOverlay) {
+  private ActivitySplashBinding(@NonNull RelativeLayout rootView, @NonNull MaterialButton btnLogin,
+      @NonNull MaterialButton btnSignup, @NonNull ImageView ivLogo,
+      @NonNull LinearLayout llAuthButtons, @NonNull TextView tvTaglineMain,
+      @NonNull TextView tvTaglineSub, @NonNull View viewBackgroundOverlay) {
     this.rootView = rootView;
-    this.btnDonor = btnDonor;
-    this.btnGuest = btnGuest;
-    this.btnOrganization = btnOrganization;
-    this.btnRecipient = btnRecipient;
-    this.btnVolunteer = btnVolunteer;
+    this.btnLogin = btnLogin;
+    this.btnSignup = btnSignup;
     this.ivLogo = ivLogo;
-    this.llRoleSelection = llRoleSelection;
+    this.llAuthButtons = llAuthButtons;
     this.tvTaglineMain = tvTaglineMain;
     this.tvTaglineSub = tvTaglineSub;
     this.viewBackgroundOverlay = viewBackgroundOverlay;
@@ -98,33 +84,15 @@ public final class ActivitySplashBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_donor;
-      MaterialButton btnDonor = ViewBindings.findChildViewById(rootView, id);
-      if (btnDonor == null) {
+      id = R.id.btn_login;
+      MaterialButton btnLogin = ViewBindings.findChildViewById(rootView, id);
+      if (btnLogin == null) {
         break missingId;
       }
 
-      id = R.id.btn_guest;
-      MaterialButton btnGuest = ViewBindings.findChildViewById(rootView, id);
-      if (btnGuest == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_organization;
-      MaterialButton btnOrganization = ViewBindings.findChildViewById(rootView, id);
-      if (btnOrganization == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_recipient;
-      MaterialButton btnRecipient = ViewBindings.findChildViewById(rootView, id);
-      if (btnRecipient == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_volunteer;
-      MaterialButton btnVolunteer = ViewBindings.findChildViewById(rootView, id);
-      if (btnVolunteer == null) {
+      id = R.id.btn_signup;
+      MaterialButton btnSignup = ViewBindings.findChildViewById(rootView, id);
+      if (btnSignup == null) {
         break missingId;
       }
 
@@ -134,9 +102,9 @@ public final class ActivitySplashBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ll_role_selection;
-      LinearLayout llRoleSelection = ViewBindings.findChildViewById(rootView, id);
-      if (llRoleSelection == null) {
+      id = R.id.ll_auth_buttons;
+      LinearLayout llAuthButtons = ViewBindings.findChildViewById(rootView, id);
+      if (llAuthButtons == null) {
         break missingId;
       }
 
@@ -158,9 +126,8 @@ public final class ActivitySplashBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySplashBinding((RelativeLayout) rootView, btnDonor, btnGuest,
-          btnOrganization, btnRecipient, btnVolunteer, ivLogo, llRoleSelection, tvTaglineMain,
-          tvTaglineSub, viewBackgroundOverlay);
+      return new ActivitySplashBinding((RelativeLayout) rootView, btnLogin, btnSignup, ivLogo,
+          llAuthButtons, tvTaglineMain, tvTaglineSub, viewBackgroundOverlay);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

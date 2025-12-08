@@ -109,11 +109,13 @@ public class ThemeUtils {
      * @param prefsHelper SharedPreferences helper
      */
     public static void initializeTheme(Context context, SharedPreferencesHelper prefsHelper) {
-        // Check if user has a saved preference
-        boolean hasSavedPreference = prefsHelper.getDarkModePreference();
-        
-        // Apply the saved theme preference
-        applyTheme(context, hasSavedPreference);
+        // Apply the saved theme preference only if it differs from current mode
+        boolean isDark = prefsHelper.getDarkModePreference();
+        int targetMode = isDark ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO;
+        int currentMode = AppCompatDelegate.getDefaultNightMode();
+        if (currentMode != targetMode) {
+            AppCompatDelegate.setDefaultNightMode(targetMode);
+        }
     }
 
     /**

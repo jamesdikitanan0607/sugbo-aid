@@ -271,9 +271,9 @@
 -keep class androidx.profileinstaller.ProfileInstallReceiver { <init>(); }
 -keep class androidx.startup.InitializationProvider { <init>(); }
 -keep class com.journeyapps.barcodescanner.CaptureActivity { <init>(); }
--keep class com.sugboaid.donation.donation.activities.MainActivity { <init>(); }
--keep class com.sugboaid.donation.donation.activities.QRScannerActivity { <init>(); }
--keep class com.sugboaid.donation.donation.activities.SimpleSplashActivity { <init>(); }
+-keep class com.sugboaid.donation.activities.MainActivity { <init>(); }
+-keep class com.sugboaid.donation.activities.QRScannerActivity { <init>(); }
+-keep class com.sugboaid.donation.activities.SimpleSplashActivity { <init>(); }
 -keep class com.sugboaid.donation.donation.utils.NotificationActionReceiver { <init>(); }
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
 
@@ -401,6 +401,8 @@
 
 -keep class com.sugboaid.auth.fragments.SignupFragment { <init>(...); }
 
+-keep class com.sugboaid.donation.fragments.AdminDashboardFragment { <init>(...); }
+
 -keep class com.sugboaid.donation.fragments.DashboardFragment { <init>(...); }
 
 -keep class com.sugboaid.donation.fragments.DonationSuccessFragment { <init>(...); }
@@ -410,6 +412,8 @@
 -keep class com.sugboaid.donation.fragments.NotificationsFragment { <init>(...); }
 
 -keep class com.sugboaid.donation.fragments.POSDonationFragment { <init>(...); }
+
+-keep class com.sugboaid.donation.fragments.PostAuthLoadingFragment { <init>(...); }
 
 -keep class com.sugboaid.donation.fragments.ReportsFragment { <init>(...); }
 
