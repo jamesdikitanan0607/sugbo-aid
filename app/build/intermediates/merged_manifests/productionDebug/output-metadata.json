@@ -4,7 +4,7 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.sugboaid.donation.debug",
+  "applicationId": "com.sugboaid.donation",
   "variantName": "productionDebug",
   "elements": [
     {

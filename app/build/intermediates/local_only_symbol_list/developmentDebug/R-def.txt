@@ -151,6 +151,7 @@ color text_primary
 color text_secondary
 color text_tertiary
 color transparent
+color warning_color
 color warning_orange
 color warning_yellow
 color white
@@ -163,6 +164,8 @@ dimen brand_button_height
 dimen brand_button_height_large
 dimen brand_card_corner_radius
 dimen brand_card_elevation
+dimen brand_corner_radius
+dimen brand_elevation_card
 dimen brand_spacing_lg
 dimen brand_spacing_md
 dimen brand_spacing_sm
@@ -259,6 +262,8 @@ drawable gradient_success
 drawable gradient_warning
 drawable ic_add
 drawable ic_add_donation
+drawable ic_admin
+drawable ic_admin_badge
 drawable ic_alert
 drawable ic_arrow_back
 drawable ic_calendar
@@ -326,6 +331,7 @@ drawable shimmer_gradient
 drawable shimmer_gradient_dark
 drawable splash_background
 drawable sugboaid_logo
+id action_admin_to_dashboard
 id action_dashboard_to_inventory
 id action_dashboard_to_login
 id action_dashboard_to_notifications
@@ -347,6 +353,7 @@ id action_success_to_dashboard
 id action_transparency_to_dashboard
 id action_view_details
 id action_view_receipt
+id adminDashboardFragment
 id assistanceText
 id auth_nav_graph
 id backButton
@@ -365,9 +372,11 @@ id btn_amount_100
 id btn_amount_1000
 id btn_amount_500
 id btn_amount_5000
+id btn_approve_donations
 id btn_back_to_dashboard
 id btn_cancel
 id btn_cash_mode
+id btn_change_role
 id btn_clothes_decrease
 id btn_clothes_increase
 id btn_export_csv
@@ -375,6 +384,7 @@ id btn_export_pdf
 id btn_goods_mode
 id btn_inventory
 id btn_login
+id btn_manage_users
 id btn_medicine_decrease
 id btn_medicine_increase
 id btn_new_donation
@@ -391,12 +401,15 @@ id btn_transparency
 id btn_water_decrease
 id btn_water_increase
 id cardNotification
+id card_active_users
 id card_clothes
 id card_distributed_items
 id card_families_helped
 id card_medicine
+id card_pending_approvals
 id card_rice
 id card_total_donations
+id card_total_users
 id card_water
 id categoryBreakdownChart
 id chip_all
@@ -441,6 +454,7 @@ id headerLayout
 id horizontal
 id iconBackground
 id inventoryFragment
+id iv_admin_badge
 id iv_app_logo
 id iv_donation_icon
 id iv_logo
@@ -456,13 +470,17 @@ id layout_empty_state
 id layout_goods_donation
 id layout_loading
 id layout_quick_amounts
+id ll_admin_header
 id ll_auth_buttons
 id ll_empty_state
 id ll_header
+id ll_quick_actions
 id ll_statistics_container
+id ll_stats_container
+id ll_user_management
 id locationText
 id loginFragment
-id mapView
+id mapWebView
 id nav_graph
 id nav_host_fragment
 id notificationsFragment
@@ -472,12 +490,14 @@ id posDonationFragment
 id postAuthLoadingFragment
 id progress
 id progressBar
+id progress_bar
 id progress_stock
 id recycler_inventory
 id recycler_transactions
 id reportsFragment
 id rvNotifications
 id rv_recent_activities
+id rv_user_list
 id search_view
 id signupFragment
 id statusIndicator
@@ -485,6 +505,7 @@ id statusText
 id storiesRecyclerView
 id storyText
 id swipeBackground
+id switch_user_status
 id tabLayout
 id til_amount
 id til_confirm_password
@@ -507,6 +528,8 @@ id tvNotificationTime
 id tvNotificationTitle
 id tvNotificationType
 id tvNotificationsTitle
+id tv_admin_hint
+id tv_admin_welcome
 id tv_amount
 id tv_campaign_badge
 id tv_categories_count
@@ -546,6 +569,9 @@ id tv_total_value
 id tv_transaction_count
 id tv_transaction_icon
 id tv_transaction_type
+id tv_user_email
+id tv_user_name
+id tv_user_role
 id tv_verified_label
 id tv_water_quantity
 id tv_welcome
@@ -564,6 +590,7 @@ layout activity_splash
 layout custom_barcode_scanner
 layout dialog_add_inventory_item
 layout dialog_stock_adjustment
+layout fragment_admin_dashboard
 layout fragment_dashboard
 layout fragment_donation_success
 layout fragment_inventory
@@ -584,6 +611,7 @@ layout item_inventory
 layout item_notification
 layout item_recent_activity
 layout item_transaction
+layout item_user_management
 layout view_offline_banner
 menu bottom_navigation_menu
 menu notification_context_menu
@@ -670,6 +698,10 @@ string action_login
 string action_retry
 string action_try_again
 string actions_synced
+string active_users
+string admin_dashboard
+string admin_login_hint
+string admin_welcome
 string already_have_account
 string amount
 string amount_cannot_exceed_limit
@@ -677,6 +709,7 @@ string amount_label
 string anonymous
 string anonymous_donor
 string app_name
+string approve_donations
 string auto_sync_enabled
 string back_button
 string back_to_dashboard
@@ -715,6 +748,7 @@ string cd_qr_code_receipt
 string cd_search
 string cd_settings
 string cd_success_icon
+string change_user_role
 string choose_donation_type
 string clothes
 string clothes_pieces
@@ -780,6 +814,7 @@ string logging_in
 string login
 string logout
 string logout_confirmation
+string manage_users
 string manual_sync_required
 string medicine
 string medicine_packs
@@ -807,6 +842,7 @@ string password_strength_strong
 string password_strength_very_strong
 string password_strength_weak
 string pending_actions_count
+string pending_approvals
 string please_enter_valid_amount
 string please_select_at_least_one_item
 string quick_actions
@@ -850,6 +886,7 @@ string thank_you_donation
 string together_we_rebuild
 string toggle_dark_mode
 string total_donations
+string total_users
 string transparency
 string transparency_title
 string type_label
@@ -857,6 +894,9 @@ string unable_to_generate_qr_code
 string unable_to_share_receipt
 string use_local_data
 string use_server_data
+string user_management
+string user_status_active
+string user_status_inactive
 string validation_confirm_password_required
 string validation_email_consecutive_periods
 string validation_email_invalid

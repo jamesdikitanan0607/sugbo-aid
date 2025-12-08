@@ -138,14 +138,14 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
           transition={{ delay: 1.5, duration: 0.8 }}
           className="w-full max-w-md space-y-3"
         >
-          {['Donor', 'Organization', 'Volunteer', 'Recipient'].map((role: UserRole, index) => {
+          {['Donor', 'Organization', 'Volunteer', 'Recipient'].map((role: UserRole, index) => (
             <motion.div
               key={role}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.7 + index * 0.1 }}
             >
-              <button 
+              <button
                 onClick={() => handleRoleSelect(role as UserRole)}
                 style={{
                   width: '100%',
@@ -178,7 +178,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
             animate={{ opacity: 1 }}
             transition={{ delay: 2.2 }}
           >
-            <button 
+            <button
               onClick={() => handleRoleSelect('Guest')}
               style={{
                 width: '100%',

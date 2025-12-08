@@ -162,4 +162,14 @@
             app:popUpToInclusive="false" />
     </fragment>
 
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="com.sugboaid.donation.fragments.AdminDashboardFragment"
+        android:label="@string/admin_dashboard"
+        tools:layout="@layout/fragment_admin_dashboard">
+        <action
+            android:id="@+id/action_admin_to_dashboard"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+
 </navigation>

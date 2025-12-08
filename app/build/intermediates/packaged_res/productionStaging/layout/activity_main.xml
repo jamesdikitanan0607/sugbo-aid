@@ -31,11 +31,14 @@
         android:contentDescription="@string/accessibility_main_content"
         android:importantForAccessibility="no"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph"
         app:layout_constraintTop_toBottomOf="@id/offline_banner"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:context=".activities.MainActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout="@layout/fragment_placeholder" />
 
     <!-- Bottom Navigation with SugboAid Branding -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

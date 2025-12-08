@@ -4,7 +4,7 @@ package com.sugboaid.donation.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class FragmentTransparencyMapBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final RecyclerView barangayListRecyclerView;
@@ -33,7 +33,7 @@ public final class FragmentTransparencyMapBinding implements ViewBinding {
   @NonNull
   public final TextView totalFamiliesText;
 
-  private FragmentTransparencyMapBinding(@NonNull LinearLayout rootView,
+  private FragmentTransparencyMapBinding(@NonNull ScrollView rootView,
       @NonNull RecyclerView barangayListRecyclerView, @NonNull InteractiveMapView mapView,
       @NonNull TextView totalBarangaysText, @NonNull TextView totalFamiliesText) {
     this.rootView = rootView;
@@ -45,7 +45,7 @@ public final class FragmentTransparencyMapBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -94,7 +94,7 @@ public final class FragmentTransparencyMapBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentTransparencyMapBinding((LinearLayout) rootView, barangayListRecyclerView,
+      return new FragmentTransparencyMapBinding((ScrollView) rootView, barangayListRecyclerView,
           mapView, totalBarangaysText, totalFamiliesText);
     }
     String missingId = rootView.getResources().getResourceName(id);

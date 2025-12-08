@@ -66,6 +66,8 @@
     <dimen name="brand_button_corner_radius">12dp</dimen>
     <dimen name="brand_card_corner_radius">16dp</dimen>
     <dimen name="brand_card_elevation">8dp</dimen>
+    <dimen name="brand_elevation_card">8dp</dimen>
+    <dimen name="brand_corner_radius">16dp</dimen>
     
     <!-- Statistics Cards -->
     <dimen name="stats_card_min_height">120dp</dimen>

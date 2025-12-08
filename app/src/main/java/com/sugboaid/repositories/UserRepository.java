@@ -2,6 +2,9 @@ package com.sugboaid.repositories;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.sugboaid.models.User;
@@ -438,5 +441,72 @@ public class UserRepository {
      */
     public boolean isFirstUser() {
         return getUserCount() == 0;
+    }
+
+    // Admin Dashboard Helpers
+    /**
+     * LiveData of total registered users
+     */
+    public LiveData<Integer> getTotalUserCount() {
+        MutableLiveData<Integer> data = new MutableLiveData<>();
+        try {
+            data.setValue(getAllUsers().size());
+        } catch (Exception e) {
+            data.setValue(0);
+        }
+        return data;
+    }
+
+    /**
+     * LiveData of active users (placeholder: users with any lastLogin are considered active)
+     */
+    public LiveData<Integer> getActiveUserCount() {
+        MutableLiveData<Integer> data = new MutableLiveData<>();
+        try {
+            int count = 0;
+            for (User u : getAllUsers()) {
+                if (u.getLastLogin() != null) count++;
+            }
+            data.setValue(count);
+        } catch (Exception e) {
+            data.setValue(0);
+        }
+        return data;
+    }
+
+    /**
+     * LiveData of all users for admin listing
+     */
+    public LiveData<List<User>> getAllUsersLive() {
+        MutableLiveData<List<User>> data = new MutableLiveData<>();
+        try {
+            data.setValue(getAllUsers());
+        } catch (Exception e) {
+            data.setValue(new ArrayList<>());
+        }
+        return data;
+    }
+
+    /**
+     * Update user role
+     */
+    public void updateUserRole(String userId, String newRole) {
+        if (userId == null || newRole == null) return;
+        List<User> users = getAllUsers();
+        for (User u : users) {
+            if (userId.equals(u.getId())) {
+                u.setRole(newRole);
+                break;
+            }
+        }
+        saveAllUsers(users);
+    }
+
+    /**
+     * Toggle user active status (placeholder - no active flag in model).
+     * This can be implemented by adjusting lastLogin or separate status persistence if needed.
+     */
+    public void toggleUserStatus(String userId, boolean active) {
+        // No-op placeholder for now
     }
 }

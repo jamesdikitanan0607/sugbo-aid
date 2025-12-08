@@ -2323,6 +2323,7 @@ color text_tertiary
 color tooltip_background_dark
 color tooltip_background_light
 color transparent
+color warning_color
 color warning_orange
 color warning_yellow
 color white
@@ -2427,6 +2428,8 @@ dimen brand_button_height
 dimen brand_button_height_large
 dimen brand_card_corner_radius
 dimen brand_card_elevation
+dimen brand_corner_radius
+dimen brand_elevation_card
 dimen brand_spacing_lg
 dimen brand_spacing_md
 dimen brand_spacing_sm
@@ -3347,6 +3350,8 @@ drawable gradient_success
 drawable gradient_warning
 drawable ic_add
 drawable ic_add_donation
+drawable ic_admin
+drawable ic_admin_badge
 drawable ic_alert
 drawable ic_arrow_back
 drawable ic_arrow_back_black_24
@@ -3576,6 +3581,7 @@ id accessibility_custom_action_9
 id actionDown
 id actionDownUp
 id actionUp
+id action_admin_to_dashboard
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -3617,6 +3623,7 @@ id action_view_receipt
 id actions
 id activity_chooser_view_content
 id add
+id adminDashboardFragment
 id alertTitle
 id aligned
 id all
@@ -3663,9 +3670,11 @@ id btn_amount_100
 id btn_amount_1000
 id btn_amount_500
 id btn_amount_5000
+id btn_approve_donations
 id btn_back_to_dashboard
 id btn_cancel
 id btn_cash_mode
+id btn_change_role
 id btn_clothes_decrease
 id btn_clothes_increase
 id btn_export_csv
@@ -3673,6 +3682,7 @@ id btn_export_pdf
 id btn_goods_mode
 id btn_inventory
 id btn_login
+id btn_manage_users
 id btn_medicine_decrease
 id btn_medicine_increase
 id btn_new_donation
@@ -3693,12 +3703,15 @@ id cache_measures
 id callMeasure
 id cancel_button
 id cardNotification
+id card_active_users
 id card_clothes
 id card_distributed_items
 id card_families_helped
 id card_medicine
+id card_pending_approvals
 id card_rice
 id card_total_donations
+id card_total_users
 id card_water
 id carryVelocity
 id categoryBreakdownChart
@@ -3874,6 +3887,7 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id iv_admin_badge
 id iv_app_logo
 id iv_donation_icon
 id iv_logo
@@ -3943,16 +3957,20 @@ id line3
 id linear
 id listMode
 id list_item
+id ll_admin_header
 id ll_auth_buttons
 id ll_empty_state
 id ll_header
+id ll_quick_actions
 id ll_statistics_container
+id ll_stats_container
+id ll_user_management
 id locale
 id locationText
 id loginFragment
 id ltr
 id m3_side_sheet
-id mapView
+id mapWebView
 id marquee
 id masked
 id match_constraint
@@ -4079,6 +4097,7 @@ id postLayout
 id pressed
 id progress
 id progressBar
+id progress_bar
 id progress_circular
 id progress_horizontal
 id progress_stock
@@ -4099,6 +4118,7 @@ id row_index_key
 id rtl
 id rvNotifications
 id rv_recent_activities
+id rv_user_list
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -4169,6 +4189,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id swipeBackground
+id switch_user_status
 id tabLayout
 id tabMode
 id tag_accessibility_actions
@@ -4238,6 +4259,8 @@ id tvNotificationTime
 id tvNotificationTitle
 id tvNotificationType
 id tvNotificationsTitle
+id tv_admin_hint
+id tv_admin_welcome
 id tv_amount
 id tv_campaign_badge
 id tv_categories_count
@@ -4277,6 +4300,9 @@ id tv_total_value
 id tv_transaction_count
 id tv_transaction_icon
 id tv_transaction_type
+id tv_user_email
+id tv_user_name
+id tv_user_role
 id tv_verified_label
 id tv_water_quantity
 id tv_welcome
@@ -4460,6 +4486,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_add_inventory_item
 layout dialog_stock_adjustment
+layout fragment_admin_dashboard
 layout fragment_dashboard
 layout fragment_donation_success
 layout fragment_inventory
@@ -4482,6 +4509,7 @@ layout item_inventory
 layout item_notification
 layout item_recent_activity
 layout item_transaction
+layout item_user_management
 layout leak_canary_about_screen
 layout leak_canary_heap_analysis_failure_screen
 layout leak_canary_heap_dump_leak_title
@@ -4679,6 +4707,10 @@ string action_login
 string action_retry
 string action_try_again
 string actions_synced
+string active_users
+string admin_dashboard
+string admin_login_hint
+string admin_welcome
 string already_have_account
 string amount
 string amount_cannot_exceed_limit
@@ -4689,6 +4721,7 @@ string anonymous_donor
 string app_name
 string app_version
 string appbar_scrolling_view_behavior
+string approve_donations
 string auto_sync_enabled
 string back_button
 string back_to_dashboard
@@ -4740,6 +4773,7 @@ string cd_qr_code_receipt
 string cd_search
 string cd_settings
 string cd_success_icon
+string change_user_role
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -4912,6 +4946,7 @@ string m3_sys_motion_easing_linear
 string m3_sys_motion_easing_standard
 string m3_sys_motion_easing_standard_accelerate
 string m3_sys_motion_easing_standard_decelerate
+string manage_users
 string manual_sync_required
 string material_clock_display_divider
 string material_clock_toggle_content_description
@@ -5030,6 +5065,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string pending_actions_count
+string pending_approvals
 string please_enter_valid_amount
 string please_select_at_least_one_item
 string quick_actions
@@ -5080,6 +5116,7 @@ string thank_you_donation
 string together_we_rebuild
 string toggle_dark_mode
 string total_donations
+string total_users
 string transparency
 string transparency_title
 string type_label
@@ -5087,6 +5124,9 @@ string unable_to_generate_qr_code
 string unable_to_share_receipt
 string use_local_data
 string use_server_data
+string user_management
+string user_status_active
+string user_status_inactive
 string validation_confirm_password_required
 string validation_email_consecutive_periods
 string validation_email_invalid

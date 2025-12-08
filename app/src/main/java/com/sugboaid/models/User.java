@@ -8,6 +8,10 @@ import java.util.UUID;
  * Represents a user account with authentication and profile information
  */
 public class User {
+    public static final String ROLE_ADMIN = "Admin";
+    public static final String ROLE_DONOR = "Donor";
+    public static final String ROLE_RECIPIENT = "Recipient";
+    public static final String ROLE_GUEST = "Guest";
     private String id;
     private String name;
     private String email;
@@ -106,6 +110,10 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public boolean isAdmin() {
+        return ROLE_ADMIN.equals(role);
     }
 
     // Update last login timestamp

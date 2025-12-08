@@ -250,6 +250,13 @@ public class MainActivity extends BaseActivity {
             NavigationUI.setupWithNavController(bottomNavigation, navController);
             DiagnosticLogger.logDebug(TAG, "Bottom navigation connected to NavController");
 
+            // Update Admin visibility based on role
+            try {
+                updateAdminMenuVisibility();
+            } catch (Exception e) {
+                DiagnosticLogger.logError(TAG, "Failed to update admin menu visibility", e);
+            }
+
             // Avoid reloading current destination when the same tab is reselected
             bottomNavigation.setOnItemReselectedListener(item -> {
                 // no-op to preserve current fragment state
@@ -525,6 +532,23 @@ public class MainActivity extends BaseActivity {
         setIntent(intent);
         handleNotificationIntent(intent);
         handleAuthenticationNavigation();
+        // Role may change across intents; refresh admin visibility
+        try { updateAdminMenuVisibility(); } catch (Exception ignored) {}
+    }
+
+    private void updateAdminMenuVisibility() {
+        if (bottomNavigation == null) return;
+        try {
+            String role = prefsHelper != null ? prefsHelper.getUserRole() : null;
+            boolean isAdmin = "Admin".equals(role);
+            android.view.Menu menu = bottomNavigation.getMenu();
+            android.view.MenuItem adminItem = menu.findItem(R.id.adminDashboardFragment);
+            if (adminItem != null) {
+                adminItem.setVisible(isAdmin);
+            }
+        } catch (Exception e) {
+            DiagnosticLogger.logError(TAG, "Error updating admin menu visibility", e);
+        }
     }
     /**
      * Handle authentication navigation based on intent extras
@@ -716,6 +740,8 @@ public class MainActivity extends BaseActivity {
                     } catch (Exception graphEx) {
                         DiagnosticLogger.logError(TAG, "Failed to set main graph", graphEx);
                     }
+                    // Update admin tab visibility after successful auth
+                    try { updateAdminMenuVisibility(); } catch (Exception ignored) {}
                     new Handler(Looper.getMainLooper()).postDelayed(() -> {
                         try {
                             NavOptions opts = new NavOptions.Builder()

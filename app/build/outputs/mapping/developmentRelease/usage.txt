@@ -6132,8 +6132,10 @@ androidx.core.app.TaskStackBuilder$Api16Impl
 androidx.core.app.TaskStackBuilder:
     private static final java.lang.String TAG
     public androidx.core.app.TaskStackBuilder addParentStack(java.lang.Class)
+    public android.content.Intent editIntentAt(int)
     public static androidx.core.app.TaskStackBuilder from(android.content.Context)
     public android.content.Intent getIntent(int)
+    public int getIntentCount()
     public android.content.Intent[] getIntents()
     public android.app.PendingIntent getPendingIntent(int,int)
     public android.app.PendingIntent getPendingIntent(int,int,android.os.Bundle)
@@ -9726,6 +9728,7 @@ androidx.navigation.NavController:
     public final boolean clearBackStack(int)
     public final boolean clearBackStack(java.lang.String)
     private final boolean clearBackStackInternal(java.lang.String)
+    public androidx.navigation.NavDeepLinkBuilder createDeepLink()
     public static final void enableDeepLinkSaveState(boolean)
     public void enableOnBackPressed(boolean)
     public final androidx.navigation.NavDestination findDestination(java.lang.String)
@@ -9750,13 +9753,15 @@ androidx.navigation.NavController:
     public final void navigate(java.lang.String,kotlin.jvm.functions.Function1)
     public static synthetic void navigate$default(androidx.navigation.NavController,java.lang.String,androidx.navigation.NavOptions,androidx.navigation.Navigator$Extras,int,java.lang.Object)
     static synthetic void navigateInternal$default(androidx.navigation.NavController,androidx.navigation.Navigator,java.util.List,androidx.navigation.NavOptions,androidx.navigation.Navigator$Extras,kotlin.jvm.functions.Function1,int,java.lang.Object)
+    public boolean navigateUp()
     public final boolean popBackStack(java.lang.String,boolean)
     static synthetic void popBackStackInternal$default(androidx.navigation.NavController,androidx.navigation.Navigator,androidx.navigation.NavBackStackEntry,boolean,kotlin.jvm.functions.Function1,int,java.lang.Object)
     private final boolean restoreStateInternal(java.lang.String)
-    public void setGraph(androidx.navigation.NavGraph)
     public final void setHostLifecycleState$navigation_runtime_release(androidx.lifecycle.Lifecycle$State)
     public void setNavigatorProvider(androidx.navigation.NavigatorProvider)
     public void setOnBackPressedDispatcher(androidx.activity.OnBackPressedDispatcher)
+    private final boolean tryRelaunchUpToExplicitStack()
+    private final boolean tryRelaunchUpToGeneratedStack()
 androidx.navigation.NavControllerKt
 androidx.navigation.NavControllerViewModel:
     public static final androidx.navigation.NavControllerViewModel getInstance(androidx.lifecycle.ViewModelStore)
@@ -9782,23 +9787,10 @@ androidx.navigation.NavDeepLink:
     public final boolean matches$navigation_common_release(android.net.Uri)
     public final boolean matches$navigation_common_release(androidx.navigation.NavDeepLinkRequest)
     public final void setExactDeepLink$navigation_common_release(boolean)
+androidx.navigation.NavDeepLinkBuilder$DeepLinkDestination
 androidx.navigation.NavDeepLinkBuilder$PermissiveNavigatorProvider$mDestNavigator$1
 androidx.navigation.NavDeepLinkBuilder$PermissiveNavigatorProvider
-androidx.navigation.NavDeepLinkBuilder:
-    public final androidx.navigation.NavDeepLinkBuilder addDestination(int)
-    public final androidx.navigation.NavDeepLinkBuilder addDestination(java.lang.String)
-    public final androidx.navigation.NavDeepLinkBuilder addDestination(java.lang.String,android.os.Bundle)
-    public static synthetic androidx.navigation.NavDeepLinkBuilder addDestination$default(androidx.navigation.NavDeepLinkBuilder,int,android.os.Bundle,int,java.lang.Object)
-    public static synthetic androidx.navigation.NavDeepLinkBuilder addDestination$default(androidx.navigation.NavDeepLinkBuilder,java.lang.String,android.os.Bundle,int,java.lang.Object)
-    public final android.app.PendingIntent createPendingIntent()
-    public final androidx.navigation.NavDeepLinkBuilder setComponentName(android.content.ComponentName)
-    public final androidx.navigation.NavDeepLinkBuilder setComponentName(java.lang.Class)
-    public final androidx.navigation.NavDeepLinkBuilder setDestination(int)
-    public final androidx.navigation.NavDeepLinkBuilder setDestination(java.lang.String)
-    public final androidx.navigation.NavDeepLinkBuilder setDestination(java.lang.String,android.os.Bundle)
-    public static synthetic androidx.navigation.NavDeepLinkBuilder setDestination$default(androidx.navigation.NavDeepLinkBuilder,java.lang.String,android.os.Bundle,int,java.lang.Object)
-    public final androidx.navigation.NavDeepLinkBuilder setGraph(int)
-    public final androidx.navigation.NavDeepLinkBuilder setGraph(androidx.navigation.NavGraph)
+androidx.navigation.NavDeepLinkBuilder
 androidx.navigation.NavDeepLinkDsl
 androidx.navigation.NavDeepLinkDslBuilder
 androidx.navigation.NavDeepLinkDslBuilderKt
@@ -9824,7 +9816,6 @@ androidx.navigation.NavDestination:
     public final java.util.Map getArguments()
     public static final java.lang.String getDisplayName(android.content.Context,int)
     public static final kotlin.sequences.Sequence getHierarchy(androidx.navigation.NavDestination)
-    public final java.lang.CharSequence getLabel()
     public boolean hasDeepLink(android.net.Uri)
     public boolean hasDeepLink(androidx.navigation.NavDeepLinkRequest)
     protected static final java.lang.Class parseClassFromName(android.content.Context,java.lang.String,java.lang.Class)
@@ -9880,7 +9871,6 @@ androidx.navigation.NavInflater:
     private static final java.lang.String TAG_DEEP_LINK
     private static final java.lang.String TAG_INCLUDE
 androidx.navigation.NavOptions$Builder:
-    public final androidx.navigation.NavOptions$Builder setPopUpTo(int,boolean)
     public final androidx.navigation.NavOptions$Builder setPopUpTo(java.lang.String,boolean)
     public static synthetic androidx.navigation.NavOptions$Builder setPopUpTo$default(androidx.navigation.NavOptions$Builder,java.lang.String,boolean,boolean,int,java.lang.Object)
 androidx.navigation.NavOptions:
@@ -9972,7 +9962,6 @@ androidx.navigation.fragment.NavHostFragment:
     public static final androidx.navigation.fragment.NavHostFragment create(int)
     public static final androidx.navigation.fragment.NavHostFragment create(int,android.os.Bundle)
     public static final androidx.navigation.NavController findNavController(androidx.fragment.app.Fragment)
-    public final androidx.navigation.NavController getNavController()
 androidx.navigation.fragment.R$attr
 androidx.navigation.fragment.R$dimen
 androidx.navigation.fragment.R$id:
@@ -10566,7 +10555,6 @@ androidx.recyclerview.widget.RecyclerView:
     public boolean dispatchNestedScroll(int,int,int,int,int[],int)
     public androidx.recyclerview.widget.RecyclerView$ViewHolder findViewHolderForLayoutPosition(int)
     public androidx.recyclerview.widget.RecyclerView$ViewHolder findViewHolderForPosition(int)
-    public int getChildAdapterPosition(android.view.View)
     public long getChildItemId(android.view.View)
     public int getChildPosition(android.view.View)
     public void getDecoratedBoundsWithMargins(android.view.View,android.graphics.Rect)
@@ -24832,7 +24820,6 @@ com.sugboaid.donation.R$attr:
 com.sugboaid.donation.R$color:
     public static int background_color
     public static int background_primary
-    public static int black
     public static int border_light
     public static int border_medium
     public static int bottom_nav_background
@@ -24845,13 +24832,13 @@ com.sugboaid.donation.R$color:
     public static int dark_gray
     public static int dark_surface
     public static int dark_surface_variant
+    public static int dashboardCardBackground
     public static int divider_color
     public static int fab_background_color
     public static int fab_icon_color
     public static int glass_dark_40
     public static int glass_dark_60
     public static int glass_white_40
-    public static int ic_launcher_background
     public static int item_background
     public static int overlay_background
     public static int primary_blue_10
@@ -24894,6 +24881,8 @@ com.sugboaid.donation.R$drawable:
     public static int bg_quantity_button
     public static int bg_status_badge
     public static int bottom_nav_background
+    public static int btn_outline
+    public static int btn_primary
     public static int button_animated_selector
     public static int button_ripple_primary
     public static int button_ripple_success
@@ -24909,6 +24898,8 @@ com.sugboaid.donation.R$drawable:
     public static int gradient_neutral
     public static int gradient_warning
     public static int ic_add_donation
+    public static int ic_admin
+    public static int ic_admin_badge
     public static int ic_arrow_back
     public static int ic_calendar
     public static int ic_cash
@@ -24923,7 +24914,6 @@ com.sugboaid.donation.R$drawable:
     public static int ic_guest
     public static int ic_heart
     public static int ic_inventory_empty
-    public static int ic_launcher_foreground
     public static int ic_location
     public static int ic_lock
     public static int ic_logout
@@ -24956,33 +24946,35 @@ com.sugboaid.donation.R$drawable:
     public static int sugboaid_logo
     private void <init>()
 com.sugboaid.donation.R$id:
+    public static int action_admin_to_dashboard
+    public static int action_global_dashboard
     public static int action_inventory_to_dashboard
     public static int action_notifications_to_dashboard
     public static int action_pos_to_dashboard
     public static int action_reports_to_dashboard
     public static int action_transparency_to_dashboard
-    public static int btn_donor
-    public static int btn_guest
-    public static int btn_organization
-    public static int btn_recipient
-    public static int btn_volunteer
+    public static int auth_nav_graph
+    public static int btn_approve_donations
+    public static int btn_manage_users
     public static int diagonal
     public static int donationSuccessFragment
     public static int headerLayout
     public static int horizontal
-    public static int iv_logo
+    public static int iv_admin_badge
     public static int iv_notifications
+    public static int ll_admin_header
+    public static int ll_auth_buttons
     public static int ll_header
-    public static int ll_role_selection
+    public static int ll_quick_actions
     public static int ll_statistics_container
-    public static int nav_graph
+    public static int ll_stats_container
+    public static int ll_user_management
     public static int posDonationFragment
+    public static int progress
     public static int toolbar
     public static int tvNotificationsTitle
     public static int tv_quick_actions
     public static int tv_recent_activities
-    public static int tv_tagline_main
-    public static int tv_tagline_sub
     public static int vertical
     public static int view_background_overlay
     public static int zxing_camera_preview
@@ -24990,8 +24982,8 @@ com.sugboaid.donation.R$id:
     public static int zxing_viewfinder_view
     private void <init>()
 com.sugboaid.donation.R$layout:
-    public static int activity_splash
     public static int custom_barcode_scanner
+    public static int fragment_placeholder
     private void <init>()
 com.sugboaid.donation.R$menu:
     public static int bottom_navigation_menu
@@ -24999,7 +24991,8 @@ com.sugboaid.donation.R$menu:
 com.sugboaid.donation.R$mipmap:
     public static int ic_launcher_round
     private void <init>()
-com.sugboaid.donation.R$navigation
+com.sugboaid.donation.R$navigation:
+    private void <init>()
 com.sugboaid.donation.R$plurals:
     private void <init>()
 com.sugboaid.donation.R$string:
@@ -25016,6 +25009,7 @@ com.sugboaid.donation.R$string:
     public static int accessibility_action_retry
     public static int accessibility_action_scan_qr
     public static int accessibility_action_search
+    public static int accessibility_action_toggle_theme
     public static int accessibility_action_view_inventory
     public static int accessibility_amount_input
     public static int accessibility_announcement_donation_recorded
@@ -25051,6 +25045,7 @@ com.sugboaid.donation.R$string:
     public static int accessibility_loading_state
     public static int accessibility_main_content
     public static int accessibility_map_marker
+    public static int accessibility_navigation_container
     public static int accessibility_navigation_item
     public static int accessibility_notification_badge
     public static int accessibility_percentage_format
@@ -25075,12 +25070,15 @@ com.sugboaid.donation.R$string:
     public static int action_login
     public static int action_retry
     public static int action_try_again
+    public static int admin_dashboard
+    public static int admin_login_hint
+    public static int admin_welcome
     public static int already_have_account
     public static int amount
     public static int amount_cannot_exceed_limit
     public static int amount_label
     public static int anonymous
-    public static int app_name
+    public static int approve_donations
     public static int auto_sync_enabled
     public static int back_button
     public static int back_to_dashboard
@@ -25116,6 +25114,7 @@ com.sugboaid.donation.R$string:
     public static int cd_search
     public static int cd_settings
     public static int cd_success_icon
+    public static int change_user_role
     public static int choose_donation_type
     public static int clothes
     public static int clothes_pieces
@@ -25128,7 +25127,6 @@ com.sugboaid.donation.R$string:
     public static int date_label
     public static int digital_receipt
     public static int distributed_items
-    public static int donate
     public static int donation_details
     public static int donation_recorded
     public static int donation_recorded_successfully
@@ -25170,9 +25168,11 @@ com.sugboaid.donation.R$string:
     public static int loading_auth_logout
     public static int loading_auth_registration
     public static int loading_auth_session_check
+    public static int manage_users
     public static int manual_sync_required
     public static int medicine
     public static int medicine_packs
+    public static int nav_notifications
     public static int network_restored
     public static int never_synced
     public static int new_donation
@@ -25203,11 +25203,6 @@ com.sugboaid.donation.R$string:
     public static int resolve_conflicts
     public static int rice
     public static int rice_kg
-    public static int role_donor
-    public static int role_guest
-    public static int role_organization
-    public static int role_recipient
-    public static int role_volunteer
     public static int save
     public static int scan_qr_code_message
     public static int signup
@@ -25223,12 +25218,16 @@ com.sugboaid.donation.R$string:
     public static int sync_now
     public static int tagline_main
     public static int tagline_sub
+    public static int toggle_dark_mode
     public static int total_donations
     public static int transparency
     public static int transparency_title
     public static int type_label
     public static int use_local_data
     public static int use_server_data
+    public static int user_management
+    public static int user_status_active
+    public static int user_status_inactive
     public static int validation_confirm_password_required
     public static int validation_email_consecutive_periods
     public static int validation_email_invalid
@@ -25262,7 +25261,38 @@ com.sugboaid.donation.R$string:
     public static int water_bottles
     public static int welcome_back
     private void <init>()
-com.sugboaid.donation.R$style
+com.sugboaid.donation.R$style:
+    public static int GlassmorphicButtonPrimary
+    public static int GlassmorphicButtonSuccess
+    public static int GlassmorphicCard
+    public static int GlassmorphicCardBlur
+    public static int GlassmorphicStatisticsCard
+    public static int GradientButton
+    public static int RoleButton
+    public static int StatisticsChange
+    public static int StatisticsTitle
+    public static int StatisticsValue
+    public static int SugboAid_Button
+    public static int SugboAid_Button_Danger
+    public static int SugboAid_Button_Primary
+    public static int SugboAid_Button_Success
+    public static int SugboAid_Button_Warning
+    public static int SugboAid_Card
+    public static int SugboAid_Card_Glassmorphic
+    public static int SugboAid_Text
+    public static int SugboAid_Text_Body
+    public static int SugboAid_Text_Brand_SubTagline
+    public static int SugboAid_Text_Brand_Tagline
+    public static int SugboAid_Text_Button
+    public static int SugboAid_Text_Caption
+    public static int SugboAid_Text_Headline
+    public static int SugboAid_Text_Subtitle
+    public static int SugboAid_Text_Title
+    public static int TabTextAppearance
+    public static int Theme_SugboAid_Authentication
+    public static int Theme_SugboAid_NoActionBar
+    public static int Theme_SugboAid_Splash
+    private void <init>()
 com.sugboaid.donation.R$styleable:
     public static int PasswordStrengthIndicator_barCornerRadius
     public static int PasswordStrengthIndicator_barHeight
@@ -25276,6 +25306,7 @@ com.sugboaid.donation.R$styleable:
 com.sugboaid.donation.R$xml
 com.sugboaid.donation.R
 com.sugboaid.donation.activities.BaseActivity:
+    private static final java.lang.String TAG
     protected void animateViewVisibility(android.view.View,boolean)
     protected int getCurrentThemeMode()
     protected java.lang.String getUserRole()
@@ -25290,22 +25321,34 @@ com.sugboaid.donation.activities.BaseActivity:
     protected void showLongToast(java.lang.String)
     protected void updateGlassmorphicTheme()
 com.sugboaid.donation.activities.MainActivity:
-    public androidx.navigation.NavController getNavController()
+    private static final java.lang.String TAG
+    private androidx.navigation.NavController$OnDestinationChangedListener destinationChangedListener
+    private void preloadDashboard()
+    public void switchToMainGraphAndShowDashboard()
 com.sugboaid.donation.activities.QRScannerActivity:
     private static final int CAMERA_PERMISSION_REQUEST_CODE
     public static final java.lang.String EXTRA_SCAN_FORMAT
     public static final java.lang.String EXTRA_SCAN_RESULT
     protected void initViews()
-com.sugboaid.donation.activities.SimpleSplashActivity
+com.sugboaid.donation.activities.SimpleSplashActivity:
+    private static final int SPLASH_DELAY
+    private static final java.lang.String TAG
+    private synthetic void lambda$showErrorAndExit$4(android.content.DialogInterface,int)
+    private synthetic void lambda$showErrorAndExit$5(android.content.DialogInterface,int)
+    private synthetic void lambda$showErrorAndExit$6()
+    private void onBackPressedDeprecated()
+    private void showErrorAndExit()
 com.sugboaid.donation.activities.SplashActivity$1
 com.sugboaid.donation.activities.SplashActivity$2
 com.sugboaid.donation.activities.SplashActivity
 com.sugboaid.donation.databinding.ActivityMainBinding
 com.sugboaid.donation.databinding.ActivityQrScannerBinding
+com.sugboaid.donation.databinding.ActivitySimpleSplashBinding
 com.sugboaid.donation.databinding.ActivitySplashBinding
 com.sugboaid.donation.databinding.CustomBarcodeScannerBinding
 com.sugboaid.donation.databinding.DialogAddInventoryItemBinding
 com.sugboaid.donation.databinding.DialogStockAdjustmentBinding
+com.sugboaid.donation.databinding.FragmentAdminDashboardBinding
 com.sugboaid.donation.databinding.FragmentDashboardBinding
 com.sugboaid.donation.databinding.FragmentDonationSuccessBinding
 com.sugboaid.donation.databinding.FragmentInventoryBinding
@@ -25313,7 +25356,9 @@ com.sugboaid.donation.databinding.FragmentLoginBinding:
     public synthetic bridge android.view.View getRoot()
     public static com.sugboaid.donation.databinding.FragmentLoginBinding inflate(android.view.LayoutInflater)
 com.sugboaid.donation.databinding.FragmentNotificationsBinding
+com.sugboaid.donation.databinding.FragmentPlaceholderBinding
 com.sugboaid.donation.databinding.FragmentPosDonationBinding
+com.sugboaid.donation.databinding.FragmentPostAuthLoadingBinding
 com.sugboaid.donation.databinding.FragmentReportsBinding
 com.sugboaid.donation.databinding.FragmentSignupBinding:
     public synthetic bridge android.view.View getRoot()
@@ -25328,6 +25373,7 @@ com.sugboaid.donation.databinding.ItemInventoryBinding
 com.sugboaid.donation.databinding.ItemNotificationBinding
 com.sugboaid.donation.databinding.ItemRecentActivityBinding
 com.sugboaid.donation.databinding.ItemTransactionBinding
+com.sugboaid.donation.databinding.ItemUserManagementBinding
 com.sugboaid.donation.databinding.ViewOfflineBannerBinding
 com.sugboaid.donation.fragments.BaseFragment:
     protected void animateSuccess(android.view.View)
@@ -25345,6 +25391,8 @@ com.sugboaid.donation.fragments.BaseFragment:
     protected void navigateTo(int,android.os.Bundle)
     protected void showLoading()
     protected void showLongToast(java.lang.String)
+com.sugboaid.donation.fragments.DashboardFragment:
+    private java.lang.String formatCurrency(double)
 com.sugboaid.donation.fragments.DonationSuccessFragment:
     private static final java.lang.String ARG_DONATION
     public static com.sugboaid.donation.fragments.DonationSuccessFragment newInstance(com.sugboaid.models.Donation)
@@ -25361,20 +25409,32 @@ com.sugboaid.donation.fragments.NotificationsFragment:
 com.sugboaid.donation.fragments.POSDonationFragment:
     private java.lang.String getGoodsSummary()
     private double parseCurrency(java.lang.String)
+com.sugboaid.donation.fragments.PostAuthLoadingFragment:
+    private static final long MAX_DURATION_MS
+    private static final long MIN_DURATION_MS
+    private static final java.lang.String TAG
+com.sugboaid.donation.viewmodels.AdminViewModel:
+    public void approveDonation(java.lang.String)
+    public androidx.lifecycle.LiveData getErrorMessage()
+    public void updateUserRole(java.lang.String,java.lang.String)
 com.sugboaid.donation.viewmodels.DashboardViewModel$DashboardStatistics:
     public int getDistributedItems()
-    public java.lang.String getDonationsChange()
-    public java.lang.String getFamiliesChange()
     public int getFamiliesHelped()
-    public java.lang.String getFormattedDistributedItems()
-    public java.lang.String getFormattedFamiliesHelped()
-    public java.lang.String getFormattedTotalDonations()
-    public java.lang.String getItemsChange()
     public double getTotalDonations()
 com.sugboaid.donation.viewmodels.DashboardViewModel:
-    public androidx.lifecycle.LiveData getDashboardStatistics()
+    public androidx.lifecycle.LiveData getDistributedItems()
+    public androidx.lifecycle.LiveData getDonationsPercentageChange()
+    public androidx.lifecycle.LiveData getFamiliesHelped()
+    public androidx.lifecycle.LiveData getFamiliesPercentageChange()
+    public androidx.lifecycle.LiveData getFormattedDistributedItems()
+    public androidx.lifecycle.LiveData getFormattedFamiliesHelped()
+    public androidx.lifecycle.LiveData getFormattedTotalDonations()
+    public androidx.lifecycle.LiveData getItemsPercentageChange()
     public int getRecentActivitiesCount()
-    public boolean hasRecentActivities()
+    public androidx.lifecycle.LiveData getTotalDonations()
+    private static synthetic java.lang.String lambda$getFormattedDistributedItems$4(java.lang.Integer)
+    private static synthetic java.lang.String lambda$getFormattedFamiliesHelped$5(java.lang.Integer)
+    private static synthetic java.lang.String lambda$getFormattedTotalDonations$3(java.lang.Double)
     public void navigateToInventory()
     public void navigateToNewDonation()
     public void navigateToReports()
@@ -25462,11 +25522,12 @@ com.sugboaid.viewmodels.AuthViewModel:
     public void clearRetryAction()
     public com.sugboaid.utils.AuthErrorHandler$ErrorResult getCurrentErrorResult()
     public com.sugboaid.models.UserSession getCurrentSession()
-    public com.sugboaid.models.User getCurrentUser()
     public com.sugboaid.repositories.UserRepository getUserRepository()
     public boolean isAuthenticated()
     public void refreshSession()
     public void retryLastAction()
+    public void signup(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    public com.sugboaid.utils.ValidationUtils$FormValidationResult validateLoginForm(java.lang.String,java.lang.String)
     public boolean validateName(java.lang.String)
 com.sugboaid.views.OfflineBannerView:
     public void hideImmediately()
@@ -27565,6 +27626,7 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.util.List toMutableList(char[])
     public static final java.util.List toMutableList(double[])
     public static final java.util.List toMutableList(float[])
+    public static final java.util.List toMutableList(int[])
     public static final java.util.List toMutableList(long[])
     public static final java.util.List toMutableList(short[])
     public static final java.util.List toMutableList(boolean[])
@@ -27750,6 +27812,7 @@ kotlin.collections.CollectionsKt__MutableCollectionsKt:
     public static final boolean removeAll(java.util.Collection,kotlin.sequences.Sequence)
     public static final boolean removeAll(java.util.Collection,java.lang.Object[])
     public static final java.lang.Object removeFirstOrNull(java.util.List)
+    public static final java.lang.Object removeLast(java.util.List)
     public static final java.lang.Object removeLastOrNull(java.util.List)
     private static final boolean retainAll(java.util.Collection,java.util.Collection)
     public static final boolean retainAll(java.util.Collection,kotlin.sequences.Sequence)
@@ -38597,24 +38660,7 @@ org.jetbrains.annotations.UnknownNullability
 org.jetbrains.annotations.Unmodifiable
 org.jetbrains.annotations.UnmodifiableView
 org.jetbrains.annotations.VisibleForTesting
-_COROUTINE.ArtificialStackFrames$$IA$1
-_COROUTINE.ArtificialStackFrames$$IA$2
-_COROUTINE.ArtificialStackFrames$$IA$3
-_COROUTINE.ArtificialStackFrames:
-    private static void $r8$constructor$androidx$emoji2$text$flatbuffer$Utf8()
-    public static int addPadding()
-    public static java.lang.StackTraceElement coroutineBoundary()
-    public final java.security.AlgorithmParameters createAlgorithmParameters(java.lang.String)
-    public final javax.crypto.Cipher createCipher(java.lang.String)
-    public final javax.crypto.KeyAgreement createKeyAgreement(java.lang.String)
-    public final java.security.KeyFactory createKeyFactory(java.lang.String)
-    public static com.itextpdf.kernel.pdf.PdfPage createPdfPage()
-    public static com.itextpdf.kernel.pdf.PdfPage createPdfPage$1()
-    public static com.itextpdf.commons.actions.processors.ITextProductEventProcessor createProcessor()
-    public static int getByteLength()
-    public static void init()
-    public static byte[] integerToBytes()
-    public static int padCount()
+_COROUTINE.ArtificialStackFrames
 _COROUTINE.CoroutineDebuggingKt
 android.support.v4.app.INotificationSideChannel$Stub$Proxy:
     public final void cancel(java.lang.String,int,java.lang.String)
@@ -38734,7 +38780,7 @@ androidx.activity.ViewTreeOnBackPressedDispatcherOwner:
     public static void checkArgumentNonnegative(int,java.lang.String)
     public static java.lang.Object checkNotNull()
     public static void checkState(java.lang.String,boolean)
-    public static kotlinx.coroutines.DebugStringsKt createDefaultCornerTreatment()
+    public static com.google.android.material.shape.CornerTreatment createDefaultCornerTreatment()
     public static com.google.android.material.shape.EdgeTreatment createDefaultEdgeTreatment()
     public static int[] fillWithValue()
     public static android.app.Activity getActivity(android.content.Context)
@@ -39772,12 +39818,17 @@ androidx.appcompat.widget.AppCompatEditText:
     public static synthetic android.view.textclassifier.TextClassifier access$001(androidx.appcompat.widget.AppCompatEditText)
     public final void initEmojiKeyListener()
 androidx.appcompat.widget.AppCompatEmojiEditTextHelper:
-    private static void $r8$constructor$org$bouncycastle$operator$GenericKey()
-    public void <init>()
-    public void <init>(java.security.Key,org.bouncycastle.asn1.x509.AlgorithmIdentifier)
+    private static void $r8$constructor$com$itextpdf$kernel$pdf$tagutils$WaitingTagsManager()
+    private static void $r8$constructor$org$bouncycastle$util$encoders$HexEncoder()
+    public void <init>(int)
+    public void <init>(org.bouncycastle.math.ec.ECCurve$AbstractFp,com.itextpdf.kernel.events.PdfDocumentEvent)
+    public void <init>(byte[])
+    public final byte[] decodeStrict(int,int,java.lang.String)
+    public static int encode()
+    public static int encode$1()
+    public static java.io.InputStream getInputStream()
     public final java.lang.Object getObjForStructDict(com.itextpdf.kernel.pdf.PdfDictionary)
-    public static java.lang.Object getRepresentation()
-    public static java.lang.Object getRepresentation$org$bouncycastle$operator$GenericKey()
+    public static void initialiseDecodingTable()
     public static boolean isEmojiCapableKeyListener()
     public static boolean isObjectAssociatedWithWaitingTag()
     public static boolean isStreamStoredAsEmbedded()
@@ -40573,11 +40624,6 @@ androidx.constraintlayout.core.ArrayRow:
 androidx.constraintlayout.core.Cache:
     private static void $r8$constructor$androidx$constraintlayout$core$Cache()
     private static void $r8$constructor$androidx$transition$TransitionValuesMaps()
-    public void <init>(org.bouncycastle.pqc.math.linearalgebra.GF2mField,org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM)
-    public static void computeSquareRootMatrix()
-    public static void computeSquaringMatrix()
-    public static org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM[] getSquareRootMatrix()
-    public static void swapColumns(org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM[],int,int)
 androidx.constraintlayout.core.LinearSystem$Row:
     public abstract void addError()
     public abstract void clear()
@@ -40608,7 +40654,14 @@ androidx.constraintlayout.core.LinearSystem:
     public static void getMetrics()
 androidx.constraintlayout.core.Metrics
 androidx.constraintlayout.core.Pools$Pool
-androidx.constraintlayout.core.Pools$SimplePool
+androidx.constraintlayout.core.Pools$SimplePool:
+    public void <init>(int,org.bouncycastle.asn1.ASN1ObjectIdentifier)
+    public static byte[] F()
+    public static byte[] H()
+    public final byte[] PRF(byte[],byte[])
+    public final java.lang.Object acquire()
+    public final byte[] coreDigest(int,byte[],byte[])
+    public static void releaseAll()
 androidx.constraintlayout.core.PriorityGoalRow$1:
     public final synthetic androidx.constraintlayout.core.PriorityGoalRow this$0
     public static int compare()
@@ -40652,47 +40705,35 @@ androidx.constraintlayout.core.motion.utils.Easing$CubicEasing:
     public static void <clinit>()
 androidx.constraintlayout.core.motion.utils.KeyCache:
     private static void $r8$constructor$androidx$constraintlayout$core$motion$utils$KeyCache()
+    private static void $r8$constructor$androidx$transition$ViewGroupOverlayApi18()
+    private static void $r8$constructor$com$itextpdf$io$util$GenericArray()
+    private static void $r8$constructor$com$itextpdf$kernel$crypto$AESCipher()
     private static void $r8$constructor$com$itextpdf$kernel$pdf$DocumentProperties()
+    private static void $r8$constructor$org$bouncycastle$pqc$crypto$lms$Composer()
     public void <init>()
-    public void <init>(org.bouncycastle.pqc.crypto.xmss.WOTSPlusParameters,byte[][])
     public void <init>(boolean,byte[],byte[])
     public final void add()
     public final void add(android.graphics.drawable.Drawable)
-    public static androidx.constraintlayout.core.motion.utils.KeyCache create(java.io.ByteArrayOutputStream)
-    public final java.security.AlgorithmParameters createAlgorithmParameters(java.lang.String)
-    public final javax.crypto.Cipher createCipher(java.lang.String)
-    public final javax.crypto.KeyAgreement createKeyAgreement(java.lang.String)
-    public final java.security.KeyFactory createKeyFactory(java.lang.String)
+    public static androidx.constraintlayout.core.motion.utils.KeyCache bool()
+    public final byte[] build()
+    public static androidx.constraintlayout.core.motion.utils.KeyCache bytes()
+    public final void bytes(org.bouncycastle.util.Encodable)
+    public final void bytes(byte[])
+    public static androidx.constraintlayout.core.motion.utils.KeyCache compose()
     public final byte[] doFinal()
-    public static void flushInternal()
     public final java.lang.Object get(int)
-    public org.bouncycastle.asn1.DEROutputStream getDERSubStream()
-    public org.bouncycastle.asn1.DLOutputStream getDLSubStream()
-    public static int getLengthOfDL(int)
-    public static int getLengthOfEncodingDL(int,boolean)
-    public static int getLengthOfIdentifier(int)
+    public static java.io.OutputStream getAADStream()
+    public final java.io.InputStream getInputStream(java.io.ByteArrayInputStream)
+    public final void padUntil(int)
     public final void remove()
     public final void remove(android.graphics.drawable.Drawable)
     public final void set(int,java.util.AbstractCollection)
     public static androidx.constraintlayout.core.motion.utils.KeyCache setEventCountingMetaInfo()
     public static void setFloatValue()
-    public static byte[][] toByteArray()
+    public static androidx.constraintlayout.core.motion.utils.KeyCache u16str()
+    public final void u32str(int)
+    public final void u64str(long)
     public final byte[] update(byte[],int,int)
-    public final void write(int)
-    public final void write(byte[],int,int)
-    public final void writeDL(int)
-    public void writeElements(org.bouncycastle.asn1.ASN1Encodable[])
-    public static void writeEncodingDL()
-    public final void writeEncodingDL(int,boolean,byte[])
-    public final void writeEncodingDL(boolean,int,byte[],int,int)
-    public static void writeEncodingDL$1()
-    public static void writeEncodingDL$2()
-    public final void writeEncodingIL(boolean,int,org.bouncycastle.asn1.ASN1Encodable[])
-    public final void writeIdentifier(int,int)
-    public final void writeIdentifier(int,boolean)
-    public static void writeObject()
-    public void writePrimitive(org.bouncycastle.asn1.ASN1Primitive)
-    public void writePrimitives(org.bouncycastle.asn1.ASN1Primitive[])
 androidx.constraintlayout.core.motion.utils.KeyCycleOscillator$1:
     public final synthetic androidx.constraintlayout.core.motion.utils.KeyCycleOscillator this$0
     public static int compare()
@@ -42335,19 +42376,24 @@ androidx.coordinatorlayout.widget.CoordinatorLayout:
 androidx.coordinatorlayout.widget.DirectedAcyclicGraph:
     private static void $r8$constructor$androidx$coordinatorlayout$widget$DirectedAcyclicGraph()
     private static void $r8$constructor$com$itextpdf$layout$renderer$RootRendererAreaStateHandler()
+    public void <init>(org.bouncycastle.pqc.math.linearalgebra.GF2mField,org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM)
     public static void addEdge()
     public final void addNode(android.view.View)
     public static boolean attemptGoBackToStoredPreviousStateAndStoreNextState()
     public static boolean attemptGoForwardToStoredNextState()
     public static void clear()
+    public static void computeSquareRootMatrix()
+    public static void computeSquaringMatrix()
     public static boolean contains()
     public static java.util.ArrayList getEmptyList()
     public final java.util.List getIncomingEdges(java.lang.Object)
     public static java.util.List getOutgoingEdges()
     public static java.util.ArrayList getSortedList()
+    public static org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM[] getSquareRootMatrix()
     public static boolean hasOutgoingEdges()
     public static void poolList()
     public static androidx.coordinatorlayout.widget.DirectedAcyclicGraph storePreviousState()
+    public static void swapColumns(org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM[],int,int)
 androidx.core.R$attr
 androidx.core.R$color
 androidx.core.R$dimen
@@ -42631,11 +42677,9 @@ androidx.core.app.SharedElementCallback:
 androidx.core.app.TaskStackBuilder$SupportParentable
 androidx.core.app.TaskStackBuilder:
     public final void addNextIntent(android.content.Intent)
-    public final void addNextIntentWithParentStack(android.content.Intent)
+    public static androidx.core.app.TaskStackBuilder addNextIntentWithParentStack()
     public static androidx.core.app.TaskStackBuilder addParentStack()
     public static androidx.core.app.TaskStackBuilder create()
-    public static android.content.Intent editIntentAt()
-    public static int getIntentCount()
     public static void startActivities$1()
 androidx.core.content.ContextCompat:
     public static final java.lang.Object sSync
@@ -42806,6 +42850,7 @@ androidx.core.os.BundleApi21ImplKt:
 androidx.core.os.CancellationSignal$Api16Impl
 androidx.core.os.CancellationSignal:
     public final java.lang.Object mCancellationSignalObj
+    public static void cancel()
     public static void waitForCancelFinishedLocked()
 androidx.core.os.ExecutorCompat
 androidx.core.os.LocaleListCompat$Api21Impl:
@@ -42938,13 +42983,7 @@ androidx.core.util.Pair:
     public static androidx.core.util.Pair create()
 androidx.core.util.Pools$Pool
 androidx.core.util.Pools$SimplePool:
-    public void <init>(int,org.bouncycastle.asn1.ASN1ObjectIdentifier)
-    public static byte[] F()
-    public static byte[] H()
-    public final byte[] PRF(byte[],byte[])
-    public final byte[] coreDigest(int,byte[],byte[])
     public static boolean isInPool()
-    public static int pos()
 androidx.core.util.Preconditions
 androidx.core.view.AccessibilityDelegateCompat:
     public static java.util.List getActionList(android.view.View)
@@ -43015,6 +43054,8 @@ androidx.core.view.NestedScrollingChildHelper:
     public static void stopNestedScroll()
 androidx.core.view.NestedScrollingParent
 androidx.core.view.NestedScrollingParentHelper:
+    public void <init>(int)
+    public static androidx.core.view.NestedScrollingParentHelper create()
     public static int getNestedScrollAxes()
     public static void onNestedScrollAccepted()
     public final void onNestedScrollAccepted(int,int)
@@ -43360,6 +43401,7 @@ androidx.core.view.inputmethod.EditorInfoCompat:
     public static boolean isCutOnSurrogate(java.lang.CharSequence,int,int)
 androidx.core.view.inputmethod.InputConnectionCompat$$InternalSyntheticLambda$1$9ca49cbbfd3efba151d118d3a92f0eaa941bc2c8d62e7c5cde2c2e096aa30913$0:
     public final boolean onNavigationItemSelected()
+    public final void onSyncRequested()
     public final void onTouchExplorationStateChanged()
     public final void run(android.graphics.Canvas)
 androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener:
@@ -43909,7 +43951,7 @@ androidx.emoji2.text.flatbuffer.MetadataList:
     public final int listLength()
     public static int version()
 androidx.emoji2.text.flatbuffer.Table:
-    public final _COROUTINE.ArtificialStackFrames utf8
+    public final kotlinx.coroutines.DebugStringsKt utf8
     public static int __indirect()
     public final int __vector(int)
     public final int __vector_len(int)
@@ -44165,7 +44207,6 @@ androidx.fragment.app.FragmentActivity$HostCallbacks:
     public static androidx.fragment.app.FragmentActivity onGetHost()
 androidx.fragment.app.FragmentActivity:
     public final android.view.View dispatchFragmentsOnCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet)
-    public final androidx.fragment.app.FragmentManagerImpl getSupportFragmentManager()
     public final void markFragmentsCreated()
     public final void onAttachFragment()
     public static void onResumeFragments()
@@ -44409,7 +44450,6 @@ androidx.fragment.app.SpecialEffectsController$Companion
 androidx.fragment.app.SpecialEffectsController$Operation$$InternalSyntheticLambda$2$94214df8a7250a7854b0b613368bb99bd82ea3ac4224bd56aaa8f3d83d0417ff$0:
     public final void onConfigureTab()
     public final void onMarkerClick()
-    public final void onSyncRequested()
 androidx.fragment.app.SpecialEffectsController$Operation:
     public final void addCompletionListener(java.lang.Runnable)
     public static void completeSpecialEffect()
@@ -44455,7 +44495,7 @@ androidx.lifecycle.AbstractSavedStateViewModelFactory:
     public static void <clinit>()
     public final androidx.lifecycle.ViewModel create(java.lang.Class,java.lang.String)
 androidx.lifecycle.AndroidViewModel:
-    public static android.app.Application getApplication()
+    public final android.app.Application getApplication()
 androidx.lifecycle.ClassesInfoCache$CallbackInfo:
     public static void invokeCallbacks()
 androidx.lifecycle.ClassesInfoCache$MethodReference:
@@ -44711,12 +44751,12 @@ androidx.navigation.NavController:
     public static final synthetic androidx.navigation.NavigatorProvider access$get_navigatorProvider$p()
     public static final synthetic kotlinx.coroutines.flow.MutableStateFlow access$get_visibleEntries$p()
     public static boolean clearBackStackInternal()
-    public static androidx.navigation.NavDeepLinkBuilder createDeepLink()
     public static boolean executeRestoreState()
+    public static androidx.navigation.NavDestination findDestination(androidx.navigation.NavDestination,int)
     public static java.lang.String findInvalidDestinationDisplayNameInDeepLink()
     public static android.content.Context getContext()
     public final androidx.navigation.NavBackStackEntry getCurrentBackStackEntry()
-    public final androidx.navigation.NavInflater getNavInflater()
+    public static int getDestinationCountOnBackStack()
     public static androidx.navigation.NavigatorProvider getNavigatorProvider()
     public static boolean handleDeepLink()
     public static java.util.List instantiateBackStack()
@@ -44725,11 +44765,11 @@ androidx.navigation.NavController:
     public static void navigate$1()
     public static void navigate$2()
     public final void navigateInternal(androidx.navigation.Navigator,java.util.List,androidx.navigation.NavOptions,kotlin.jvm.functions.Function1)
-    public static boolean navigateUp()
     public static void onGraphCreated()
+    public final void popBackStack()
+    public static boolean popBackStack()
     public final boolean popBackStack(int,boolean)
     public static boolean popBackStack$1()
-    public static boolean popBackStack$2()
     public static void popBackStackFromNavigator$navigation_runtime_release()
     public static void popBackStackInternal()
     public static synthetic boolean popBackStackInternal$default(androidx.navigation.NavController,int)
@@ -44737,11 +44777,10 @@ androidx.navigation.NavController:
     public static void restoreState()
     public static android.os.Bundle saveState()
     public static void setGraph()
-    public static void setGraph$1()
+    public final void setGraph(int)
+    public final void setGraph(androidx.navigation.NavGraph)
     public void setLifecycleOwner()
     public void setViewModelStore()
-    public static boolean tryRelaunchUpToExplicitStack()
-    public static boolean tryRelaunchUpToGeneratedStack()
 androidx.navigation.NavControllerViewModel$Companion
 androidx.navigation.NavControllerViewModel:
     public static final androidx.navigation.NavControllerViewModel$Companion Companion
@@ -44783,15 +44822,6 @@ androidx.navigation.NavDeepLink:
     public static void parseMime()
     public static void parsePath()
     public static java.util.Map parseQuery()
-androidx.navigation.NavDeepLinkBuilder$DeepLinkDestination:
-    public static android.os.Bundle getArguments()
-    public static int getDestinationId()
-androidx.navigation.NavDeepLinkBuilder:
-    public android.os.Bundle globalArgs
-    public static androidx.navigation.NavDeepLinkBuilder addDestination()
-    public static void fillInIntent()
-    public final void setArguments(android.os.Bundle)
-    public static androidx.navigation.NavDeepLinkBuilder setDestination()
 androidx.navigation.NavDeepLinkRequest$Builder$Companion
 androidx.navigation.NavDeepLinkRequest$Builder
 androidx.navigation.NavDeepLinkRequest:
@@ -44810,8 +44840,10 @@ androidx.navigation.NavDestination:
     public static final java.util.Map classes
     public static void addArgument()
     public static void addDeepLink()
+    public static int[] buildDeepLinkIds()
     public java.lang.String getDisplayName()
     public static int getId()
+    public static java.lang.CharSequence getLabel()
     public static java.lang.String getNavigatorName()
     public static androidx.navigation.NavGraph getParent()
     public static java.lang.String getRoute()
@@ -44867,6 +44899,8 @@ androidx.navigation.NavOptions$Builder:
     public static androidx.navigation.NavOptions$Builder setPopExitAnim()
     public static androidx.navigation.NavOptions$Builder setPopUpTo()
     public final void setPopUpTo(int,boolean)
+    public static androidx.navigation.NavOptions$Builder setPopUpTo$1()
+    public static synthetic androidx.navigation.NavOptions$Builder setPopUpTo$default()
     public static androidx.navigation.NavOptions$Builder setRestoreState()
 androidx.navigation.NavOptions:
     public final java.lang.String popUpToRoute
@@ -45047,7 +45081,7 @@ androidx.navigation.fragment.NavHostFragment:
     public static final synthetic int access$getGraphId$p()
     public static androidx.navigation.Navigator createFragmentNavigator()
     public final int getContainerId()
-    public final androidx.navigation.NavHostController getNavHostController$navigation_fragment_release()
+    public final androidx.navigation.NavController getNavController()
     public static void onCreateNavController()
     public static void onCreateNavHostController()
 androidx.navigation.fragment.R$id
@@ -45064,8 +45098,6 @@ androidx.navigation.ui.R$anim
 androidx.navigation.ui.R$animator
 androidx.profileinstaller.BenchmarkOperation$Api21ContextHelper
 androidx.profileinstaller.BenchmarkOperation$Api24ContextHelper
-androidx.profileinstaller.DeviceProfileWriter$$InternalSyntheticLambda$2$ff8c5bd5af23f4910bcb3842df39c45d97ff518106242665abad96f9ce8992ee$0:
-    private static synthetic void $r8$constructor$com$sugboaid$donation$viewmodels$InventoryViewModel$$InternalSyntheticLambda$2$ebe2613e90d4e7440171da5cf276fdb7e8d919093c3fbcabd4b8900a82bf3254$0()
 androidx.profileinstaller.DeviceProfileWriter:
     public final android.content.res.AssetManager mAssetManager
     public final java.lang.String mProfileMetaSourceLocation
@@ -45667,6 +45699,7 @@ androidx.recyclerview.widget.RecyclerView:
     public static androidx.recyclerview.widget.RecyclerView$ViewHolder findViewHolderForItemId()
     public static androidx.recyclerview.widget.RecyclerView$ViewHolder findViewHolderForPosition()
     public static boolean fling()
+    public static int getChildAdapterPosition()
     public static int getChildLayoutPosition()
     public static int getDeepestFocusedViewWithId()
     public static java.lang.String getFullClassName()
@@ -46121,7 +46154,7 @@ androidx.transition.Transition:
     public abstract void runAnimator()
 androidx.transition.TransitionManager$MultiListener:
     public final void removeListeners()
-androidx.transition.TransitionPropagation$$InternalSyntheticOutline$168$0a4da9c7f2abd5d60c9130c30de97297bdbff53790bfe1df45022bc89d83f331$0
+androidx.transition.TransitionPropagation$$InternalSyntheticOutline$157$0a4da9c7f2abd5d60c9130c30de97297bdbff53790bfe1df45022bc89d83f331$0
 androidx.transition.TransitionPropagation
 androidx.transition.TransitionSet$1:
     public final synthetic androidx.transition.TransitionSet this$0
@@ -47950,6 +47983,7 @@ com.google.android.material.carousel.KeylineStateList:
 com.google.android.material.carousel.MaskableFrameLayout$$InternalSyntheticLambda$1$04dcb68309f3a2a6db36d6e74708925739506d9135e1cb19a9b159924abf45a5$0
 com.google.android.material.carousel.MaskableFrameLayout$$InternalSyntheticLambda$1$cc24a4642badf8a8995c941840213f79dc0890b8b64c6e6d24a4a6be7c4da1b8$0:
     public final int countLength(android.text.Editable)
+    public final void onNavigationItemReselected()
 com.google.android.material.carousel.MaskableFrameLayout:
     public com.google.android.material.carousel.OnMaskChangedListener onMaskChangedListener
     public final void onMaskChanged()
@@ -48876,8 +48910,7 @@ com.google.android.material.navigation.NavigationBarView$SavedState$1:
 com.google.android.material.navigation.NavigationBarView$SavedState:
     public static void readFromParcel$1()
 com.google.android.material.navigation.NavigationBarView:
-    public com.google.android.material.navigation.NavigationBarView$OnItemReselectedListener reselectedListener
-    public static synthetic void access$000()
+    public static synthetic com.google.android.material.navigation.NavigationBarView$OnItemReselectedListener access$000()
     public static synthetic com.google.android.material.navigation.NavigationBarView$OnItemSelectedListener access$100()
     public abstract com.google.android.material.shape.MaterialShapeDrawable createMaterialShapeDrawableBackground()
     public abstract void inflateMenu()
@@ -49179,7 +49212,17 @@ com.google.android.material.shadow.ShadowViewDelegate:
     public abstract void setShadowPadding()
 com.google.android.material.shape.AbsoluteCornerSize:
     public static float getCornerSize()
-com.google.android.material.shape.CornerTreatment
+com.google.android.material.shape.CornerTreatment:
+    public static int addPadding()
+    public final java.security.AlgorithmParameters createAlgorithmParameters(java.lang.String)
+    public final javax.crypto.Cipher createCipher(java.lang.String)
+    public final javax.crypto.KeyAgreement createKeyAgreement(java.lang.String)
+    public final java.security.KeyFactory createKeyFactory(java.lang.String)
+    public static int getByteLength()
+    public static void getCornerPath()
+    public static void init()
+    public static byte[] integerToBytes()
+    public static int padCount()
 com.google.android.material.shape.MaterialShapeDrawable$1:
     public final void onCornerPathCreated()
     public final void onEdgePathCreated()
@@ -49241,32 +49284,32 @@ com.google.android.material.shape.ShapeAppearanceModel$Builder:
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder setAllCorners$1()
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomEdge()
     public final void setBottomLeftCorner(int,com.google.android.material.shape.CornerSize)
-    public final void setBottomLeftCorner(kotlinx.coroutines.DebugStringsKt)
+    public final void setBottomLeftCorner(com.google.android.material.shape.CornerTreatment)
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomLeftCornerSize()
     public final void setBottomRightCorner(int,com.google.android.material.shape.CornerSize)
-    public final void setBottomRightCorner(kotlinx.coroutines.DebugStringsKt)
+    public final void setBottomRightCorner(com.google.android.material.shape.CornerTreatment)
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder setBottomRightCornerSize()
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder setTopEdge()
     public final void setTopLeftCorner(int,com.google.android.material.shape.CornerSize)
-    public final void setTopLeftCorner(kotlinx.coroutines.DebugStringsKt)
+    public final void setTopLeftCorner(com.google.android.material.shape.CornerTreatment)
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder setTopLeftCornerSize()
     public final void setTopRightCorner(int,com.google.android.material.shape.CornerSize)
-    public final void setTopRightCorner(kotlinx.coroutines.DebugStringsKt)
+    public final void setTopRightCorner(com.google.android.material.shape.CornerTreatment)
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder setTopRightCornerSize()
 com.google.android.material.shape.ShapeAppearanceModel:
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder builder()
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder builder$1()
     public static com.google.android.material.shape.EdgeTreatment getBottomEdge()
-    public static kotlinx.coroutines.DebugStringsKt getBottomLeftCorner()
+    public static com.google.android.material.shape.CornerTreatment getBottomLeftCorner()
     public static com.google.android.material.shape.CornerSize getBottomLeftCornerSize()
-    public static kotlinx.coroutines.DebugStringsKt getBottomRightCorner()
+    public static com.google.android.material.shape.CornerTreatment getBottomRightCorner()
     public static com.google.android.material.shape.CornerSize getBottomRightCornerSize()
     public static com.google.android.material.shape.EdgeTreatment getLeftEdge()
     public static com.google.android.material.shape.EdgeTreatment getRightEdge()
     public static com.google.android.material.shape.EdgeTreatment getTopEdge()
-    public static kotlinx.coroutines.DebugStringsKt getTopLeftCorner()
+    public static com.google.android.material.shape.CornerTreatment getTopLeftCorner()
     public static com.google.android.material.shape.CornerSize getTopLeftCornerSize()
-    public static kotlinx.coroutines.DebugStringsKt getTopRightCorner()
+    public static com.google.android.material.shape.CornerTreatment getTopRightCorner()
     public static com.google.android.material.shape.CornerSize getTopRightCornerSize()
     public static com.google.android.material.shape.ShapeAppearanceModel$Builder toBuilder()
     public static com.google.android.material.shape.ShapeAppearanceModel withCornerSize()
@@ -49279,7 +49322,7 @@ com.google.android.material.shape.ShapeAppearancePathProvider:
     public final void calculatePath(com.google.android.material.shape.ShapeAppearanceModel,float,android.graphics.RectF,android.graphics.Path)
     public static void getCoordinatesOfCorner()
     public static com.google.android.material.shape.CornerSize getCornerSizeForIndex()
-    public static kotlinx.coroutines.DebugStringsKt getCornerTreatmentForIndex()
+    public static com.google.android.material.shape.CornerTreatment getCornerTreatmentForIndex()
     public static float getEdgeCenterForIndex()
     public static com.google.android.material.shape.EdgeTreatment getEdgeTreatmentForIndex()
     public static com.google.android.material.shape.ShapeAppearancePathProvider getInstance()
@@ -50153,26 +50196,12 @@ com.itextpdf.io.codec.brotli.dec.Dictionary:
     public static volatile java.nio.ByteBuffer data
 com.itextpdf.io.codec.brotli.dec.Huffman
 com.itextpdf.io.codec.brotli.dec.HuffmanTreeGroup:
-    public void <init>(org.bouncycastle.asn1.LimitedInputStream,int,byte[][])
-    public final org.bouncycastle.asn1.ASN1Encodable implParseObject(int)
-    public static void init(int,int,com.itextpdf.io.codec.brotli.dec.HuffmanTreeGroup)
-    public final org.bouncycastle.asn1.ASN1Primitive loadTaggedDL(int,int,boolean)
-    public final org.bouncycastle.asn1.ASN1Primitive loadTaggedIL(int,int)
-    public static org.bouncycastle.asn1.ASN1Encodable parseImplicitConstructedDL()
-    public static org.bouncycastle.asn1.ASN1Encodable parseImplicitConstructedIL()
-    public static org.bouncycastle.asn1.ASN1Encodable parseImplicitPrimitive()
-    public final org.bouncycastle.asn1.ASN1Encodable readObject()
-    public final org.bouncycastle.asn1.ASN1EncodableVector readVector()
-    public static void set00Check()
+    public static void init(com.itextpdf.io.codec.brotli.dec.HuffmanTreeGroup,int,int)
 com.itextpdf.io.codec.brotli.dec.IntReader:
-    public void <init>()
-    public void <init>(org.bouncycastle.math.ec.ECCurve$AbstractFp,com.itextpdf.kernel.pdf.tagutils.RootTagNormalizer)
-    public void <init>(byte[])
-    public final byte[] decodeStrict(int,int,java.lang.String)
-    public static int encode()
-    public static int encode$1()
-    public static java.io.InputStream getInputStream()
-    public static void initialiseDecodingTable()
+    private static void $r8$constructor$org$bouncycastle$operator$GenericKey()
+    public void <init>(java.security.Key,org.bouncycastle.asn1.x509.AlgorithmIdentifier)
+    public static java.lang.Object getRepresentation()
+    public static java.lang.Object getRepresentation$org$bouncycastle$operator$GenericKey()
 com.itextpdf.io.codec.brotli.dec.State:
     public int literalTreeIndex
 com.itextpdf.io.codec.brotli.dec.Transform:
@@ -50636,8 +50665,12 @@ com.itextpdf.io.font.otf.OpenTypeFontTableReader:
     public abstract int getUnitsPerEm()
     public abstract void readLookupTable()
 com.itextpdf.io.font.otf.OpenTypeGdefTableReader:
-    public com.itextpdf.io.font.otf.OtfClass glyphClass
-    public com.itextpdf.io.font.otf.OtfClass markAttachmentClass
+    public void <init>(org.bouncycastle.pqc.crypto.lms.LMOtsParameters,byte[],int,byte[])
+    public final org.bouncycastle.pqc.crypto.lms.SeedDerive getDerivationFunction()
+    public static byte[] getI()
+    public static org.bouncycastle.pqc.crypto.lms.LMOtsParameters getParameter()
+    public static int getQ()
+    public static org.bouncycastle.pqc.crypto.lms.LMSContext getSignatureContext()
     public static void readTable()
 com.itextpdf.io.font.otf.OpenTypeScript
 com.itextpdf.io.font.otf.OtfClass:
@@ -50649,46 +50682,55 @@ com.itextpdf.io.font.otf.OtfClass:
     private static void $r8$constructor$com$itextpdf$kernel$crypto$StandardDecryptor()
     private static void $r8$constructor$com$itextpdf$kernel$pdf$FingerPrint()
     private static void $r8$constructor$com$itextpdf$kernel$xmp$impl$xpath$XMPPath()
-    private static void $r8$constructor$org$bouncycastle$pqc$crypto$lms$Composer()
+    private static void $r8$constructor$org$bouncycastle$pqc$crypto$xmss$WOTSPlusPublicKeyParameters()
     public void <init>(java.lang.Object)
+    public void <init>(org.bouncycastle.pqc.crypto.xmss.WOTSPlusParameters,byte[][])
     public void <init>(byte[],int)
-    public static com.itextpdf.io.font.otf.OtfClass bool()
-    public final byte[] build()
-    public static com.itextpdf.io.font.otf.OtfClass bytes()
-    public final void bytes(org.bouncycastle.util.Encodable)
-    public final void bytes(byte[])
     public static void cancelCurrent()
     public static void clear()
-    public static com.itextpdf.io.font.otf.OtfClass compose()
+    public static com.itextpdf.io.font.otf.OtfClass create(java.io.ByteArrayOutputStream)
+    public final java.security.AlgorithmParameters createAlgorithmParameters(java.lang.String)
+    public final javax.crypto.Cipher createCipher(java.lang.String)
+    public final javax.crypto.KeyAgreement createKeyAgreement(java.lang.String)
+    public final java.security.KeyFactory createKeyFactory(java.lang.String)
     public static boolean detect()
     public final byte[] finish()
-    public static java.io.OutputStream getAADStream()
-    public final java.io.InputStream getInputStream(java.io.ByteArrayInputStream)
+    public static void flushInternal()
+    public org.bouncycastle.asn1.DEROutputStream getDERSubStream()
+    public org.bouncycastle.asn1.DLOutputStream getDLSubStream()
+    public static int getLengthOfDL(int)
+    public static int getLengthOfEncodingDL(int,boolean)
+    public static int getLengthOfIdentifier(int)
     public static java.util.Collection getProducts()
     public static void onNextAnimationStart()
-    public final void padUntil(int)
     public static byte[] processBlock()
     public static boolean registerProduct()
     public final int size()
-    public static com.itextpdf.io.font.otf.OtfClass u16str()
-    public final void u32str(int)
-    public final void u64str(long)
+    public static byte[][] toByteArray()
     public final byte[] update(byte[],int)
+    public final void write(int)
+    public final void write(byte[],int,int)
+    public final void writeDL(int)
+    public void writeElements(org.bouncycastle.asn1.ASN1Encodable[])
+    public static void writeEncodingDL()
+    public final void writeEncodingDL(int,boolean,byte[])
+    public final void writeEncodingDL(boolean,int,byte[],int,int)
+    public static void writeEncodingDL$1()
+    public static void writeEncodingDL$2()
+    public final void writeEncodingIL(boolean,int,org.bouncycastle.asn1.ASN1Encodable[])
+    public final void writeIdentifier(int,int)
+    public final void writeIdentifier(int,boolean)
+    public static void writeObject()
+    public void writePrimitive(org.bouncycastle.asn1.ASN1Primitive)
+    public void writePrimitives(org.bouncycastle.asn1.ASN1Primitive[])
 com.itextpdf.io.font.otf.OtfMarkRecord
 com.itextpdf.io.font.otf.OtfReadCommon
 com.itextpdf.io.font.otf.PosLookupRecord:
     public int lookupListIndex
     public int sequenceIndex
-    public void <init>(int)
-    public static com.itextpdf.io.font.otf.PosLookupRecord create()
 com.itextpdf.io.font.otf.ScriptRecord
 com.itextpdf.io.font.otf.SubstLookupRecord
-com.itextpdf.io.font.otf.TagAndLocation:
-    public void <init>(java.lang.String)
-    public final java.lang.Object acquire()
-    public final boolean hasMoreTokens()
-    public final java.lang.String nextToken()
-    public static void releaseAll()
+com.itextpdf.io.font.otf.TagAndLocation
 com.itextpdf.io.font.otf.lookuptype5.SubTableLookup5Format1$SubstRuleFormat1:
     public final int[] inputGlyphIds
     public final com.itextpdf.io.font.otf.PosLookupRecord[] substLookupRecords
@@ -50976,8 +51018,10 @@ com.itextpdf.kernel.events.PdfDocumentEvent:
     private static void $r8$constructor$com$itextpdf$kernel$events$Event()
     public void <init>(com.itextpdf.kernel.pdf.PdfCatalog,com.itextpdf.kernel.pdf.PdfName)
     public void <init>(java.lang.String,com.itextpdf.kernel.pdf.PdfPage)
+    public void <init>(java.math.BigInteger,java.math.BigInteger,org.bouncycastle.math.ec.endo.ScalarSplitParameters)
     public final void addEntry(int,com.itextpdf.kernel.pdf.PdfObject)
     public final com.itextpdf.kernel.pdf.PdfDictionary buildTree()
+    public static java.math.BigInteger getBeta()
     public static java.util.Map getNumbers()
     public static java.lang.String getType()
     public static java.lang.String getType$com$itextpdf$kernel$events$Event()
@@ -51141,29 +51185,33 @@ com.itextpdf.kernel.pdf.EncryptionProperties:
 com.itextpdf.kernel.pdf.FingerPrint
 com.itextpdf.kernel.pdf.IPdfPageFactory
 com.itextpdf.kernel.pdf.IndirectFilterUtils:
-    public static final kotlin.text.MatcherMatchResult access$findNext(java.util.regex.Matcher,int,java.lang.CharSequence)
-    public static final java.lang.Boolean boxBoolean()
-    public static final void cancel(kotlin.coroutines.CoroutineContext,java.util.concurrent.CancellationException)
-    public static final void closeFinally(java.io.BufferedReader,java.lang.Throwable)
+    public static void appendTypeAndValue(java.lang.StringBuffer,org.bouncycastle.asn1.x500.AttributeTypeAndValue,java.util.Hashtable)
+    public static final kotlinx.coroutines.flow.ReadonlyStateFlow asStateFlow(kotlinx.coroutines.flow.StateFlowImpl)
+    public static java.lang.String canonicalString(org.bouncycastle.asn1.ASN1Encodable)
+    public static final int coerceAtLeast()
+    public static final int coerceAtMost()
     public static java.lang.Object constructor-impl()
-    public static final java.util.Set emptySet()
-    public static final void ensureActive(kotlinx.coroutines.Job)
+    public static java.lang.Object constructor-impl$default()
+    public static final int differenceModulo(int,int,int)
+    public static final kotlin.ranges.IntProgression downTo(int,int)
+    public static final int fastLog2(int)
+    public static final java.lang.Object getCOROUTINE_SUSPENDED()
     public static float getEps()
     public static float getInfHeight()
     public static float getInfWidth()
+    public static final java.lang.Class getJavaClass(kotlin.jvm.internal.ClassReference)
     public static java.lang.String getPostHyphenText()
     public static java.lang.String getPreHyphenText()
     public static boolean isNoRepeatOnXAxis()
     public static boolean isNoRepeatOnYAxis()
+    public static final kotlin.jvm.internal.ArrayIterator iterator(java.lang.Object[])
     public static int length()
-    public static final varargs java.util.List listOf(java.lang.Object[])
+    public static final int mod()
     public static short normalizeFontWeight(short)
     public static com.itextpdf.kernel.geom.Point prepareRectangleToDrawingAndGetWhitespace()
-    public static final kotlin.coroutines.Continuation probeCoroutineCreated()
-    public static final void probeCoroutineSuspended()
-    public static final kotlin.sequences.SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1 sequence(kotlin.jvm.functions.Function2)
-    public static final java.util.Set setOf(java.lang.Object)
     public static void throwFlushedFilterException(com.itextpdf.kernel.pdf.PdfStream)
+    public static final kotlin.Pair to()
+    public static java.lang.String valueToString(org.bouncycastle.asn1.ASN1Encodable)
 com.itextpdf.kernel.pdf.IsoKey
 com.itextpdf.kernel.pdf.MemoryLimitsAwareHandler:
     public long allMemoryUsedForDecompression
@@ -51239,7 +51287,7 @@ com.itextpdf.kernel.pdf.PdfDocument:
     public final boolean flushUnusedObjects
     public boolean isClosing
     public com.itextpdf.kernel.pdf.MemoryLimitsAwareHandler memoryLimitsAwareHandler
-    public static final _COROUTINE.ArtificialStackFrames pdfPageFactory
+    public static final kotlinx.coroutines.DebugStringsKt pdfPageFactory
     public final java.util.List pendingDestinationMutations
     public final com.itextpdf.kernel.pdf.PdfReader reader
     public final java.util.HashMap serializedObjectsCache
@@ -51269,7 +51317,7 @@ com.itextpdf.kernel.pdf.PdfDocument:
     public final int getNextStructParentIndex()
     public static int getNumberOfPdfObjects()
     public static com.itextpdf.kernel.pdf.PdfString getOriginalDocumentId()
-    public static _COROUTINE.ArtificialStackFrames getPageFactory()
+    public static kotlinx.coroutines.DebugStringsKt getPageFactory()
     public final int getPageNumber(com.itextpdf.kernel.pdf.PdfPage)
     public static com.itextpdf.kernel.pdf.PdfObject getPdfObject()
     public static com.itextpdf.kernel.pdf.PdfVersion getPdfVersion()
@@ -51307,7 +51355,7 @@ com.itextpdf.kernel.pdf.PdfDocumentInfo:
     public static com.itextpdf.kernel.pdf.PdfDocumentInfo setSubject()
     public static com.itextpdf.kernel.pdf.PdfDocumentInfo setTitle()
     public static com.itextpdf.kernel.pdf.PdfDocumentInfo setTrapped()
-com.itextpdf.kernel.pdf.PdfEncryption$$InternalSynthetic$IA$166$9121ef5d324896f7457fa2ef58cb573cf52f4992c5a770698e71abc869943d5a$0
+com.itextpdf.kernel.pdf.PdfEncryption$$InternalSynthetic$IA$155$9121ef5d324896f7457fa2ef58cb573cf52f4992c5a770698e71abc869943d5a$0
 com.itextpdf.kernel.pdf.PdfEncryption:
     public int cryptoMode
     public final byte[] documentId
@@ -51317,7 +51365,7 @@ com.itextpdf.kernel.pdf.PdfEncryption:
     public final com.itextpdf.kernel.crypto.securityhandler.SecurityHandler securityHandler
     public void <init>()
     public void <init>(int)
-    public void <init>(com.itextpdf.kernel.pdf.PdfEncryption$$InternalSynthetic$IA$166$9121ef5d324896f7457fa2ef58cb573cf52f4992c5a770698e71abc869943d5a$0)
+    public void <init>(com.itextpdf.kernel.pdf.PdfEncryption$$InternalSynthetic$IA$155$9121ef5d324896f7457fa2ef58cb573cf52f4992c5a770698e71abc869943d5a$0)
     public void <init>(java.lang.Object)
     public final byte[] decryptByteArray(byte[])
     public static byte[] encryptByteArray()
@@ -52598,7 +52646,6 @@ com.itextpdf.kernel.pdf.tagutils.RootTagNormalizer:
     public static void addStructTreeRootKidsToTheRootTag()
     public static void createNewRootTag()
     public static void ensureExistingRootTagIsDocument()
-    public static java.math.BigInteger getBeta()
     public static boolean isFakeDragging()
     public static void logCreatedRootTagHasMappingIssue(com.itextpdf.kernel.pdf.tagging.PdfNamespace,com.itextpdf.kernel.pdf.tagutils.IRoleMappingResolver)
     public static com.itextpdf.kernel.pdf.tagging.PdfStructElem makeSingleStandardRootTag()
@@ -52704,12 +52751,22 @@ com.itextpdf.kernel.xmp.XMPVersionInfo
 com.itextpdf.kernel.xmp.impl.Base64:
     public static final byte[] decode(byte[])
 com.itextpdf.kernel.xmp.impl.ByteBuffer:
+    public void <init>(org.bouncycastle.asn1.LimitedInputStream,int,byte[][])
     public static void append()
     public final void append(byte[])
     public final void append(byte[],int)
     public static int charAt()
     public final java.io.ByteArrayInputStream getByteStream()
+    public final org.bouncycastle.asn1.ASN1Encodable implParseObject(int)
     public static int length()
+    public final org.bouncycastle.asn1.ASN1Primitive loadTaggedDL(int,int,boolean)
+    public final org.bouncycastle.asn1.ASN1Primitive loadTaggedIL(int,int)
+    public static org.bouncycastle.asn1.ASN1Encodable parseImplicitConstructedDL()
+    public static org.bouncycastle.asn1.ASN1Encodable parseImplicitConstructedIL()
+    public static org.bouncycastle.asn1.ASN1Encodable parseImplicitPrimitive()
+    public final org.bouncycastle.asn1.ASN1Encodable readObject()
+    public final org.bouncycastle.asn1.ASN1EncodableVector readVector()
+    public static void set00Check()
 com.itextpdf.kernel.xmp.impl.CountOutputStream:
     public static int getBytesWritten()
 com.itextpdf.kernel.xmp.impl.FixASCIIControlsReader:
@@ -52721,7 +52778,10 @@ com.itextpdf.kernel.xmp.impl.ParseRDF:
     public static final synthetic boolean $assertionsDisabled
     public static void <clinit>()
     public void <init>()
-com.itextpdf.kernel.xmp.impl.ParseState
+com.itextpdf.kernel.xmp.impl.ParseState:
+    public final boolean hasMoreTokens()
+    public final java.lang.String nextToken()
+    public static int pos()
 com.itextpdf.kernel.xmp.impl.QName
 com.itextpdf.kernel.xmp.impl.XMPDateTimeImpl:
     public static java.lang.String getISO8601String()
@@ -53180,60 +53240,47 @@ com.itextpdf.layout.properties.BackgroundImage:
     public static void getRepeat()
     public static boolean isBackgroundSpecified()
 com.itextpdf.layout.properties.BackgroundPosition:
+    public static final kotlin.text.MatcherMatchResult access$findNext(java.util.regex.Matcher,int,java.lang.CharSequence)
     public static void addExt(long[],long[],long[])
     public static void addExt$1(long[],long[],long[])
-    public static void addExt$2(long[],long[],long[])
-    public static void appendTypeAndValue(java.lang.StringBuffer,org.bouncycastle.asn1.x500.AttributeTypeAndValue,java.util.Hashtable)
-    public static final kotlinx.coroutines.flow.ReadonlyStateFlow asStateFlow(kotlinx.coroutines.flow.StateFlowImpl)
-    public static void byteArray(byte[],org.bouncycastle.crypto.Digest)
+    public static final java.lang.Boolean boxBoolean()
     public static void calculatePositionValues()
-    public static java.lang.String canonicalString(org.bouncycastle.asn1.ASN1Encodable)
-    public static final int coerceAtLeast()
-    public static final int coerceAtMost()
+    public static final void cancel(kotlin.coroutines.CoroutineContext,java.util.concurrent.CancellationException)
+    public static final void closeFinally(java.io.BufferedReader,java.lang.Throwable)
     public static java.lang.Object constructor-impl()
-    public static java.lang.Object constructor-impl$default()
-    public static org.bouncycastle.asn1.x509.SubjectPublicKeyInfo createSubjectPublicKeyInfo(org.bouncycastle.crypto.params.AsymmetricKeyParameter)
-    public static final int differenceModulo(int,int,int)
-    public static final kotlin.ranges.IntProgression downTo(int,int)
-    public static long expand32to64(int)
-    public static void expand64To128(int,long[],long[])
-    public static final int fastLog2(int)
+    public static final java.util.Set emptySet()
+    public static final void ensureActive(kotlinx.coroutines.Job)
+    public static org.bouncycastle.pqc.crypto.lms.LMSPrivateKeyParameters generateKeys(org.bouncycastle.pqc.crypto.lms.LMSigParameters,org.bouncycastle.pqc.crypto.lms.LMOtsParameters,int,byte[],byte[])
+    public static org.bouncycastle.pqc.crypto.lms.LMSSignature generateSign(org.bouncycastle.pqc.crypto.lms.LMSPrivateKeyParameters,byte[])
+    public static final int getAVAILABLE_PROCESSORS()
     public static float[] getActualAscenderDescender(com.itextpdf.layout.renderer.AbstractRenderer)
-    public static final java.lang.Object getCOROUTINE_SUSPENDED()
-    public static final java.lang.Class getJavaClass(kotlin.jvm.internal.ClassReference)
     public static void implExpand(long[],long[])
     public static void implExpand$1(long[],long[])
     public static void implMultiply(long[],long[],long[])
     public static void implMultiply$1(long[],long[],long[])
-    public static void implMultiply$2(long[],long[],long[])
-    public static void implMulw(long[],long,long,long[],int)
     public static void implMulwAcc(long[],long,long,long[],int)
     public static void implMulwAcc$1(long[],long,long,long[],int)
     public static void implSquare(long[],long[])
     public static void implSquare$1(long[],long[])
-    public static void implSquare$2(long[],long[])
-    public static final kotlin.jvm.internal.ArrayIterator iterator(java.lang.Object[])
-    public static final int mod()
+    public static final varargs java.util.List listOf(java.lang.Object[])
     public static void multiply(long[],long[],long[])
     public static void multiply$1(long[],long[],long[])
-    public static void multiply$2(long[],long[],long[])
     public static void multiplyAddToExt(long[],long[],long[])
     public static void multiplyAddToExt$1(long[],long[],long[])
-    public static void multiplyAddToExt$2(long[],long[],long[])
+    public static final kotlin.coroutines.Continuation probeCoroutineCreated()
+    public static final void probeCoroutineSuspended()
     public static void reduce(long[],long[])
     public static void reduce$1(long[],long[])
-    public static void reduce$2(long[],long[])
+    public static final kotlin.sequences.SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1 sequence(kotlin.jvm.functions.Function2)
+    public static final java.util.Set setOf(java.lang.Object)
     public static void square(long[],long[])
     public static void square$1(long[],long[])
-    public static void square$2(long[],long[])
     public static void squareN(long[],int,long[])
     public static void squareN$1(long[],int,long[])
-    public static void squareN$2(long[],int,long[])
-    public static final kotlin.Pair to()
-    public static void u16str(short,org.bouncycastle.crypto.Digest)
-    public static void u32str(int,org.bouncycastle.crypto.Digest)
-    public static long unshuffle(long)
-    public static java.lang.String valueToString(org.bouncycastle.asn1.ASN1Encodable)
+    public static final int systemProp(int,int,int,java.lang.String)
+    public static final java.lang.String systemProp(java.lang.String)
+    public static final boolean systemProp(java.lang.String,boolean)
+    public static synthetic long systemProp$default(java.lang.String,long)
 com.itextpdf.layout.properties.BackgroundRepeat
 com.itextpdf.layout.properties.BackgroundSize
 com.itextpdf.layout.properties.BorderRadius:
@@ -53729,14 +53776,12 @@ com.sugboaid.auth.fragments.LoginFragment$$InternalSyntheticLambda$1$42fb917f6ae
 com.sugboaid.auth.fragments.LoginFragment$$InternalSyntheticLambda$1$42fb917f6ae08d9da8d71ff2e30d98d436c9030af9f2bdff7e2b7fb1fa0ceeb2$3
 com.sugboaid.auth.fragments.LoginFragment$$InternalSyntheticLambda$1$42fb917f6ae08d9da8d71ff2e30d98d436c9030af9f2bdff7e2b7fb1fa0ceeb2$4
 com.sugboaid.auth.fragments.LoginFragment:
-    public final void announceValidationErrors()
     public final void applyEmailValidation()
     public final void applyPasswordValidation()
     public final void clearErrors()
     public final void clearForm()
     public final void handleErrorResult()
     public final void navigateToDashboard()
-    public static void navigateToSignup()
     public final void setupRealTimeValidation()
     public final void showError(java.lang.String)
     public final void showLoading()
@@ -53750,12 +53795,14 @@ com.sugboaid.auth.fragments.SignupFragment$$InternalSyntheticLambda$1$3d80ef37d0
 com.sugboaid.auth.fragments.SignupFragment$$InternalSyntheticLambda$1$5d45160d257079564d7455f63cb964765cff3fb0a94db53c5c5b45931932ac66$0
 com.sugboaid.auth.fragments.SignupFragment$$InternalSyntheticLambda$1$5d45160d257079564d7455f63cb964765cff3fb0a94db53c5c5b45931932ac66$1
 com.sugboaid.auth.fragments.SignupFragment:
-    public final void announceValidationErrors()
+    public static void announceValidationErrors()
     public static void applyConfirmPasswordValidation()
     public final void applyEmailValidation()
     public static void applyNameValidation()
     public final void applyPasswordValidation()
     public final void clearForm()
+    public static void displaySelectedRole()
+    public static java.lang.String getSelectedRole()
     public final void handleErrorResult()
     public final void navigateToDashboard()
     public final void navigateToLogin()
@@ -53778,8 +53825,10 @@ com.sugboaid.donation.R$id
 com.sugboaid.donation.R$layout
 com.sugboaid.donation.R$menu
 com.sugboaid.donation.R$mipmap
+com.sugboaid.donation.R$navigation
 com.sugboaid.donation.R$plurals
 com.sugboaid.donation.R$string
+com.sugboaid.donation.R$style
 com.sugboaid.donation.R$styleable:
     public static final int AnimatedGradientButton_animationDuration
     public static final int AnimatedGradientButton_cornerRadius
@@ -53806,52 +53855,60 @@ com.sugboaid.donation.activities.BaseActivity:
     public static synthetic bridge void -$$Nest$fputisNetworkAvailable()
     public abstract void applyGlassmorphicEffects()
     public abstract void checkInitialNetworkState()
-    public abstract void setupNetworkMonitoring()
     public void showToast(java.lang.String)
     public abstract void toggleDarkMode()
 com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$1$03b48c7710c8c608000b0bfbda3ac9923431c01bcfa48c04d680466e375a9a58$0
-com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$1$20bcf76d682c651b757180bae137fb82391b6fe7945c78cb792510db27b334c6$0
 com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$1$5c18005825acbfd97d21d29b2fb7b2688cbb92a22cd69fba908a63578c8444bf$0
-com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$1$9d01a1108d2ef0b70d32ec29c4dad3647dc6b7323446431b5edfb6406ec05f13$1
-com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$2$b235bdb34f529aea3999bc9774b9dfd09d509d35ad83ee1935c6bcde4c53d7d4$0
+com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$1$9d01a1108d2ef0b70d32ec29c4dad3647dc6b7323446431b5edfb6406ec05f13$0
+com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$1$a869c1a667bb896ccf148355caef35360a8bf4aba2a7c81d56264b012799fe75$0
+com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$1$a869c1a667bb896ccf148355caef35360a8bf4aba2a7c81d56264b012799fe75$1:
+    private static synthetic void $r8$constructor$com$sugboaid$donation$activities$MainActivity$$InternalSyntheticLambda$1$a869c1a667bb896ccf148355caef35360a8bf4aba2a7c81d56264b012799fe75$1()
+    private static synthetic void $r8$constructor$com$sugboaid$donation$viewmodels$InventoryViewModel$$InternalSyntheticLambda$2$ebe2613e90d4e7440171da5cf276fdb7e8d919093c3fbcabd4b8900a82bf3254$0()
+com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$2$f9cd01aa0face55a5879bab16ef09822dd59571c3cbe2858438399112bc37051$0
+com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$2$fbadf4457db8ecdf9f26eeba1116dffa5690a3dd131ea89b3c08c85fa61f4d9e$0
+com.sugboaid.donation.activities.MainActivity$$InternalSyntheticLambda$3$cf06a81cd2e192cc82802e85395bbbb4c341d670680d59614a3721907f87bbb0$0
 com.sugboaid.donation.activities.MainActivity$1$$InternalSyntheticLambda$2$43e09dd9ab140baed41ee105d09c073390eb390034b7c49202d2a72d3336b667$0
 com.sugboaid.donation.activities.MainActivity$1$$InternalSyntheticLambda$2$c4354b07c250746eacdf200f10eae5a1f5a7e30d93d2f01ed525e92c62b964e9$0
+com.sugboaid.donation.activities.MainActivity$3:
+    public static void onChanged$1()
 com.sugboaid.donation.activities.MainActivity:
     public com.sugboaid.donation.utils.AndroidNotificationManager androidNotificationManager
+    public static synthetic void $r8$lambda$NUYe-2Ke3YiWTlDAQr7jFXJl6Ok()
     public static synthetic bridge com.sugboaid.views.OfflineBannerView -$$Nest$fgetofflineBanner()
     public static synthetic bridge com.sugboaid.utils.OfflineQueueManager -$$Nest$fgetofflineQueueManager()
-    public static void announceNavigationChange()
-    public static java.lang.String getDestinationName()
-    public static void handleFragmentChange()
+    public final void announceNavigationChange(int)
+    public final androidx.navigation.NavController getNavController()
     public static void handleNetworkLost()
     public static void handleNetworkRestored()
-    public static void initViews()
+    public static synthetic void lambda$setupNavigation$0()
     public static void requestNotificationPermission()
-    public static void setupBottomNavigationAccessibility()
+    public static void setupAccessibilityFeatures()
     public static void setupDarkModeToggle()
-    public static void setupDarkModeToggleAccessibility()
-    public final void setupListeners()
-    public static void setupNavigation()
     public static void setupOfflineBanner()
-    public static void setupOfflineBannerAccessibility()
     public static void updateDarkModeToggleIcon()
-com.sugboaid.donation.activities.QRScannerActivity$$InternalSyntheticLambda$3$5d2efa74c97453889abdccfaaa0d8cef54ff84e559ef795f408ff027c35d168b$0
-com.sugboaid.donation.activities.QRScannerActivity$$InternalSyntheticLambda$4$7d913bea0e796f3fc4c41f35eaf14f4a93737908635de69d1c2dc421c69325d9$0
-com.sugboaid.donation.activities.QRScannerActivity$$InternalSyntheticLambda$4$7d913bea0e796f3fc4c41f35eaf14f4a93737908635de69d1c2dc421c69325d9$1
+com.sugboaid.donation.activities.QRScannerActivity$$InternalSyntheticLambda$2$5d2efa74c97453889abdccfaaa0d8cef54ff84e559ef795f408ff027c35d168b$0
+com.sugboaid.donation.activities.QRScannerActivity$$InternalSyntheticLambda$3$7d913bea0e796f3fc4c41f35eaf14f4a93737908635de69d1c2dc421c69325d9$0
+com.sugboaid.donation.activities.QRScannerActivity$$InternalSyntheticLambda$3$7d913bea0e796f3fc4c41f35eaf14f4a93737908635de69d1c2dc421c69325d9$1
 com.sugboaid.donation.activities.QRScannerActivity:
     public static void checkCameraPermission()
     public static void handleCameraPermissionDenied()
     public static void handleScanError()
     public static void handleScanResult()
-    public static void initializeViews()
+    public final void initializeViews()
     public final void setupListeners()
     public static void setupToolbar()
     public final void stopScanning()
+com.sugboaid.donation.activities.SimpleSplashActivity$$InternalSyntheticLambda$1$c31473ea8b0fe2ff80a9e9e2abb5c83d12431392ced328ab2f9207e6b4a7b52c$0
+com.sugboaid.donation.activities.SimpleSplashActivity$$InternalSyntheticLambda$1$c31473ea8b0fe2ff80a9e9e2abb5c83d12431392ced328ab2f9207e6b4a7b52c$1
+com.sugboaid.donation.activities.SimpleSplashActivity$$InternalSyntheticLambda$2$48360df4c7db3c6f981fb12d6f60d869ca5db9c1dd12272e61a04b5fa44eb80e$0
+com.sugboaid.donation.activities.SimpleSplashActivity$$InternalSyntheticLambda$2$c5cc652fc75555a14717b57f3d5ee7cee49c0fcf247211f4ec3d241083888846$0
+com.sugboaid.donation.activities.SimpleSplashActivity:
+    public com.sugboaid.utils.SharedPreferencesHelper prefsHelper
+    public final void navigateToLogin()
+    public static void navigateToSignup()
 com.sugboaid.donation.adapters.InventoryAdapter$InventoryViewHolder$$InternalSyntheticLambda$1$2c9f20a2410c734fcff150bf9be3aebe523c6ebdb3521057081c4e4be3ede83b$2
 com.sugboaid.donation.adapters.InventoryAdapter$InventoryViewHolder$$InternalSyntheticLambda$1$2c9f20a2410c734fcff150bf9be3aebe523c6ebdb3521057081c4e4be3ede83b$3
 com.sugboaid.donation.adapters.InventoryAdapter$InventoryViewHolder$$InternalSyntheticLambda$1$2c9f20a2410c734fcff150bf9be3aebe523c6ebdb3521057081c4e4be3ede83b$4
-com.sugboaid.donation.adapters.InventoryAdapter$InventoryViewHolder$$InternalSyntheticLambda$1$a0c887f724e71c709c45517abceea91ca9f7808851ff5afc16d5a5904b88ebc1$0
-com.sugboaid.donation.adapters.InventoryAdapter$InventoryViewHolder$$InternalSyntheticLambda$1$c2a1d82c24f48f6e0ab87b256c1fe98a933e4c9eebbd0384a7102615ead47136$0
 com.sugboaid.donation.adapters.RecentActivitiesAdapter$RecentActivityViewHolder$$InternalSyntheticLambda$1$7bf221b9718a0fd58c2e1141879090a373ecaeaa03da72334e9d6c9df7339fc8$0
 com.sugboaid.donation.adapters.TransactionAdapter$TransactionViewHolder$$InternalSyntheticLambda$1$218ad92d6a2955dd275108c295639411fd93e588f8bf5d852b33ab3cfb5ff845$0
 com.sugboaid.donation.adapters.TransactionAdapter$TransactionViewHolder$$InternalSyntheticLambda$1$218ad92d6a2955dd275108c295639411fd93e588f8bf5d852b33ab3cfb5ff845$1
@@ -53859,11 +53916,22 @@ com.sugboaid.donation.adapters.TransactionAdapter$TransactionViewHolder$$Interna
 com.sugboaid.donation.databinding.FragmentLoginBinding:
     public final android.widget.ImageView ivAppLogo
     public final android.widget.ScrollView rootView
+    public final android.widget.TextView tvAdminHint
     public static android.widget.ScrollView getRoot()
 com.sugboaid.donation.databinding.FragmentSignupBinding:
     public final android.widget.ImageView ivAppLogo
     public final android.widget.ScrollView rootView
     public static android.widget.ScrollView getRoot()
+com.sugboaid.donation.fragments.AdminDashboardFragment$$InternalSyntheticLambda$1$948f4cbbb7eec5d1f37e288660a4a6316f2d9a32f4a0e9dc2138cb835fc20b0d$2
+com.sugboaid.donation.fragments.AdminDashboardFragment$$InternalSyntheticLambda$1$948f4cbbb7eec5d1f37e288660a4a6316f2d9a32f4a0e9dc2138cb835fc20b0d$3
+com.sugboaid.donation.fragments.AdminDashboardFragment$$InternalSyntheticLambda$1$948f4cbbb7eec5d1f37e288660a4a6316f2d9a32f4a0e9dc2138cb835fc20b0d$4
+com.sugboaid.donation.fragments.AdminDashboardFragment$$InternalSyntheticLambda$1$948f4cbbb7eec5d1f37e288660a4a6316f2d9a32f4a0e9dc2138cb835fc20b0d$5
+com.sugboaid.donation.fragments.AdminDashboardFragment$1:
+    public final synthetic com.sugboaid.donation.fragments.AdminDashboardFragment this$0
+com.sugboaid.donation.fragments.AdminDashboardFragment:
+    public android.widget.ProgressBar progressBar
+    public android.widget.TextView tvWelcome
+    public static void setupUserListAdapter()
 com.sugboaid.donation.fragments.BaseFragment:
     public com.sugboaid.donation.activities.MainActivity mainActivity
     public com.sugboaid.utils.SharedPreferencesHelper prefsHelper
@@ -53871,11 +53939,6 @@ com.sugboaid.donation.fragments.BaseFragment:
     public abstract void animateCardEntrance()
     public abstract void animateError()
     public abstract void animateFabEntrance()
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$1d012e2f8a0e58dc3f3a35171b32be13941dc81b947d63dd16907c8d057fb3dc$2
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$1d012e2f8a0e58dc3f3a35171b32be13941dc81b947d63dd16907c8d057fb3dc$3
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$1d012e2f8a0e58dc3f3a35171b32be13941dc81b947d63dd16907c8d057fb3dc$4
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$1d012e2f8a0e58dc3f3a35171b32be13941dc81b947d63dd16907c8d057fb3dc$5
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$1d012e2f8a0e58dc3f3a35171b32be13941dc81b947d63dd16907c8d057fb3dc$6
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$22dabbc086735a9a4f641c3c6526d679c60828939534bb8909a861235f8f61a3$2
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$22dabbc086735a9a4f641c3c6526d679c60828939534bb8909a861235f8f61a3$3
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$22dabbc086735a9a4f641c3c6526d679c60828939534bb8909a861235f8f61a3$4
@@ -53884,28 +53947,21 @@ com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$22d
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$22dabbc086735a9a4f641c3c6526d679c60828939534bb8909a861235f8f61a3$7
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$22dabbc086735a9a4f641c3c6526d679c60828939534bb8909a861235f8f61a3$8
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$22dabbc086735a9a4f641c3c6526d679c60828939534bb8909a861235f8f61a3$9
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$0
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$10
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$11
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$12
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$1
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$2
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$3
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$4
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$5
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$6
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$8
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$9
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$2$057c75feb6a8a3faa13a5d8ffd26a4fb0974c9cdf58449703d34645ccd59f227$0
+com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$1$7d22cd7b1d65dd490db7a1cf296314c2539ce4e274d8c166414c86a435becd12$7
+com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$2$31aa2155558226b1670d35ad77095c9169d70b88f2130808c0b706d228445a1a$0
 com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$2$6deb3ca9c2aac2bf14801e9e844bc29bab3eee8c26921dd0c451ff537c988e6b$0
-com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$3$baf585adaee7f336c344809374f2b89b3a93c842a789aa31c9b609c68bf5835c$0
+com.sugboaid.donation.fragments.DashboardFragment$$InternalSyntheticLambda$2$95cebf824cbd6e37acac7a378e21347b0690acc1fa684a0dbd45ee56de1660ed$0
 com.sugboaid.donation.fragments.DashboardFragment:
+    public boolean isViewCreated
     public android.widget.TextView tvWelcome
-    public static synthetic void $r8$lambda$fX9idVss0PFPGW85A2M02EwE_WI()
     public static void confirmDeleteDonation()
-    public final java.lang.String formatCurrency(double)
     public static void hideLoading()
-    public static synthetic void lambda$observeViewModel$16()
+    public static void loadData()
     public final void navigateToInventory()
     public final void navigateToLogin()
     public final void navigateToNewDonation()
@@ -53914,12 +53970,13 @@ com.sugboaid.donation.fragments.DashboardFragment:
     public final void navigateToTransparency()
     public final void observeViewModel()
     public static void performLogout()
+    public final void setupClickListeners()
     public final void setupRecyclerView()
     public static void showDonationContextMenu()
     public static void showLoading$1()
     public static void showLogoutConfirmation()
     public static void showMessage()
-    public final void updateNotificationBadge(int)
+    public static void updateNotificationBadge()
     public static void updateRecentActivities()
 com.sugboaid.donation.fragments.DonationSuccessFragment$$InternalSyntheticLambda$1$ee32ec9a5ae12cdbd60450242d85ff9cfced23bc243cd5e2c9e4f413d16e6344$0
 com.sugboaid.donation.fragments.DonationSuccessFragment$$InternalSyntheticLambda$1$ee32ec9a5ae12cdbd60450242d85ff9cfced23bc243cd5e2c9e4f413d16e6344$1
@@ -53936,13 +53993,12 @@ com.sugboaid.donation.fragments.DonationSuccessFragment:
     public static void startSuccessAnimations()
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$27b65d9abf306b2bd3b508ccd15ec64caa03fe0e37f2e0b570a1404ed20b1991$2
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$27b65d9abf306b2bd3b508ccd15ec64caa03fe0e37f2e0b570a1404ed20b1991$3
-com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$27b65d9abf306b2bd3b508ccd15ec64caa03fe0e37f2e0b570a1404ed20b1991$4
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$27b65d9abf306b2bd3b508ccd15ec64caa03fe0e37f2e0b570a1404ed20b1991$5
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$3af8410facbbbe489dcc65e40774ec6015d2df2c204efe98cff3cf3dfabc7771$1
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$3af8410facbbbe489dcc65e40774ec6015d2df2c204efe98cff3cf3dfabc7771$2
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$c54c6e93b992b3a9ef5332c5d584357ba52f10b4ad34a26907f2327867a8593d$0
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$cd7fc273b9cc6057ff1862ff92652898ae52b4e9fbfb359e28153dbb0a57ca04$0
-com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$1$f104a648d1e884220d134250ba5143b53f3ccf714403c9ba53eb5328c011ad24$0
+com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$2$53b1b901d6f6e65406634c360757696cd81af8570eab74909957a1f3f7a664c7$0
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$2$d49621e398f65fc94aa4e03b590e94baa517bc943c00102df4104b85301d1c12$0
 com.sugboaid.donation.fragments.InventoryFragment$$InternalSyntheticLambda$2$e553eb34387265a7ec743ebdbc95de72ed90920aa7577f872112bab2ef14f6df$0
 com.sugboaid.donation.fragments.InventoryFragment:
@@ -54010,7 +54066,7 @@ com.sugboaid.donation.fragments.POSDonationFragment:
     public static void animateLayoutChange()
     public static void animateQuantityChange()
     public static java.lang.String buildGoodsDescription()
-    public final java.lang.String formatCurrency(double)
+    public static java.lang.String formatCurrency(double)
     public static int getMaxQuantityPerItem()
     public static double getMaximumDonationAmount()
     public static double getMinimumDonationAmount()
@@ -54025,6 +54081,13 @@ com.sugboaid.donation.fragments.POSDonationFragment:
     public static boolean validateCashAmount()
     public static boolean validateDonationData()
     public static boolean validateGoodsQuantities()
+com.sugboaid.donation.fragments.PostAuthLoadingFragment$$InternalSyntheticLambda$1$aa87ad1bfb4be49ac18d600d549c2a6aee58e1a46e8d23462489d6f486572549$0
+com.sugboaid.donation.fragments.PostAuthLoadingFragment$$InternalSyntheticLambda$1$aa87ad1bfb4be49ac18d600d549c2a6aee58e1a46e8d23462489d6f486572549$1
+com.sugboaid.donation.fragments.PostAuthLoadingFragment$$InternalSyntheticLambda$1$aa87ad1bfb4be49ac18d600d549c2a6aee58e1a46e8d23462489d6f486572549$2
+com.sugboaid.donation.fragments.PostAuthLoadingFragment$$InternalSyntheticLambda$1$aa87ad1bfb4be49ac18d600d549c2a6aee58e1a46e8d23462489d6f486572549$3
+com.sugboaid.donation.fragments.PostAuthLoadingFragment:
+    public static void preloadDashboardData()
+    public static void scheduleProceedGuards()
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$1$1ef15bd94a89498fddec70edf82daec1002f3c8e90154844c0419dd5cfc0cdcd$1
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$1$1ef15bd94a89498fddec70edf82daec1002f3c8e90154844c0419dd5cfc0cdcd$2
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$1$4fbc219f057c5b1b68a25a00dd8c9182b56f71e2fb9a7bc7ad448e9571106100$0
@@ -54035,8 +54098,7 @@ com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$1$bd433
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$1$bd4335897be72eb4cd3ad2d7a6937e573c57392880bb5997ecf77f2da7428f3c$4
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$2$b5bbdaa258fbff49f1af2b1e3056645e1cb88affe61194315fe595b960214f96$0
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$2$d9922d46eeb287df66a3baf2332f6ebf1248d16b2a4ab78b560cdac9fc4c4ba8$0
-com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$3$81f4b7fab7a54257c1a8b65c6bbbe3e74502e769fe466c858db1b0c88fdbfeb5$0:
-    private static synthetic void $r8$constructor$com$sugboaid$viewmodels$AuthViewModel$$InternalSyntheticLambda$2$53d62ff3c659083a022e38659c320435ebe33218539c3909f938719784d36bbc$1()
+com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$2$f2ab03611b5294476e23d5d5a61cf7bc98663d5ee9b29fdb70f16e5a6145acb7$0
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$3$b3d0d771fc0a9ab86504a5da9598f640cfad4889761a5fc8b0248a5cfab4d91e$0
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$3$b3d0d771fc0a9ab86504a5da9598f640cfad4889761a5fc8b0248a5cfab4d91e$1
 com.sugboaid.donation.fragments.ReportsFragment$$InternalSyntheticLambda$4$d2b9fcb64378b79e5cd28c6bfe7b31d27b27ad93f058dc0957e94569fb745bfa$0
@@ -54069,6 +54131,9 @@ com.sugboaid.donation.fragments.TransparencyMapFragment$$InternalSyntheticLambda
 com.sugboaid.donation.fragments.TransparencyMapFragment$$InternalSyntheticLambda$2$144583eabcd21b4df33a7c584726faee697d338482af45ddbeac0f5fc4cdcb34$2
 com.sugboaid.donation.fragments.TransparencyMapFragment$$InternalSyntheticLambda$2$7be63254fe7bc90d30d5baf11a6b541ae37ba43bad4ae1badf54fb3dfe0921ec$0
 com.sugboaid.donation.fragments.TransparencyMapFragment$$InternalSyntheticLambda$2$7be63254fe7bc90d30d5baf11a6b541ae37ba43bad4ae1badf54fb3dfe0921ec$1
+com.sugboaid.donation.fragments.TransparencyMapFragment$$InternalSyntheticLambda$2$b0d3d621b7de13eb3b4d6ae525bf7c4253a719b76b1d2189e2438cc41cc0a5fd$0
+com.sugboaid.donation.fragments.TransparencyMapFragment$1:
+    public final synthetic com.sugboaid.donation.fragments.TransparencyMapFragment this$0
 com.sugboaid.donation.fragments.TransparencyMapFragment:
     public static void updateBarangayData()
 com.sugboaid.donation.fragments.TransparencyOverviewFragment$$InternalSyntheticLambda$2$959786fb77e050dd497c71e0f3ae147bb2084b8b245790b584193a9470a248eb$2
@@ -54102,32 +54167,33 @@ com.sugboaid.donation.utils.NotificationPermissionHelper$$InternalSyntheticLambd
 com.sugboaid.donation.utils.NotificationPermissionHelper$$InternalSyntheticLambda$1$51825edf46e5d19a0a6112665a949f4117145d0d13c918d28a357fb4f2dc9d2e$0
 com.sugboaid.donation.utils.NotificationPermissionHelper$$InternalSyntheticLambda$1$b1cd12b529703f3dbff464d2fd30fdbf1eb5c667bde6f0019eee77b57e2e55bb$0
 com.sugboaid.donation.utils.NotificationPermissionHelper$$InternalSyntheticLambda$1$bd47e929da6fbac2d460086d4e7c444a7750535b2cf33f32a722c54484858087$0
+com.sugboaid.donation.viewmodels.AdminViewModel:
+    public final androidx.lifecycle.MutableLiveData errorMessage
+    public static androidx.lifecycle.LiveData getActiveUsers()
+    public static androidx.lifecycle.LiveData getPendingApprovals()
+    public static androidx.lifecycle.LiveData getSystemTotalDonations()
+    public static androidx.lifecycle.LiveData getTotalUsers()
+    public static androidx.lifecycle.LiveData getUserList()
+    public static androidx.lifecycle.LiveData isAdmin()
+    public final void refreshData()
 com.sugboaid.donation.viewmodels.DashboardViewModel$$InternalSyntheticLambda$1$621366df0e0898980e5fc2d218e476e3907847f05ab867e522a7373178949de7$1
 com.sugboaid.donation.viewmodels.DashboardViewModel$$InternalSyntheticLambda$1$621366df0e0898980e5fc2d218e476e3907847f05ab867e522a7373178949de7$2
-com.sugboaid.donation.viewmodels.DashboardViewModel$$InternalSyntheticLambda$2$7e68b734a87c391ad1d91c8d7681f2701cf6600aa175830040ffe245d0ef0376$0
 com.sugboaid.donation.viewmodels.DashboardViewModel$DashboardStatistics:
-    public final int distributedItems
-    public final java.lang.String donationsChange
-    public final java.lang.String familiesChange
-    public final int familiesHelped
-    public final java.lang.String itemsChange
-    public final double totalDonations
+    public static java.lang.String getDonationsChange()
+    public static java.lang.String getFamiliesChange()
+    public static java.lang.String getFormattedDistributedItems()
+    public static java.lang.String getFormattedFamiliesHelped()
+    public static java.lang.String getFormattedTotalDonations()
+    public static java.lang.String getItemsChange()
 com.sugboaid.donation.viewmodels.DashboardViewModel:
     public static java.lang.String calculatePercentageChange(int,int)
     public final void clearError()
-    public static androidx.lifecycle.LiveData getDistributedItems()
-    public static androidx.lifecycle.LiveData getDonationsPercentageChange()
+    public static androidx.lifecycle.LiveData getDashboardStatistics()
     public final androidx.lifecycle.LiveData getErrorMessage()
-    public static androidx.lifecycle.LiveData getFamiliesHelped()
-    public static androidx.lifecycle.LiveData getFamiliesPercentageChange()
-    public static androidx.lifecycle.LiveData getFormattedDistributedItems()
-    public static androidx.lifecycle.LiveData getFormattedFamiliesHelped()
-    public static androidx.lifecycle.LiveData getFormattedTotalDonations()
     public final androidx.lifecycle.LiveData getIsLoading()
-    public static androidx.lifecycle.LiveData getItemsPercentageChange()
     public static androidx.lifecycle.LiveData getRecentActivities()
-    public final androidx.lifecycle.LiveData getTotalDonations()
     public static void initializeLiveData()
+    public static void refreshRecentActivities()
     public static void setupDashboardStatistics()
 com.sugboaid.donation.viewmodels.DonationViewModel$$InternalSyntheticLambda$3$9e6cd48c137134ec602e74ce8ebd729afd07dbe6d17d0383dc7cd3fc572ee985$0
 com.sugboaid.donation.viewmodels.DonationViewModel$DonationSubmissionResult:
@@ -54142,6 +54208,7 @@ com.sugboaid.donation.viewmodels.DonationViewModel:
     public static void submitDonation()
     public static boolean validateDonation()
 com.sugboaid.donation.viewmodels.InventoryViewModel$$InternalSyntheticLambda$1$1f1292af6e6268c1e8b8bb2a025a8b280b0931f2eaa58f5d135c1fd8a0393042$0
+com.sugboaid.donation.viewmodels.InventoryViewModel$$InternalSyntheticLambda$2$b99d13d0a427392b08344bd0e75540afd93b784b46cd87280d2d651955f38985$0
 com.sugboaid.donation.viewmodels.InventoryViewModel$$InternalSyntheticLambda$2$ebe2613e90d4e7440171da5cf276fdb7e8d919093c3fbcabd4b8900a82bf3254$0
 com.sugboaid.donation.viewmodels.InventoryViewModel$$InternalSyntheticLambda$3$5c34accd6ebf22d636a5d05465d1530187359c1d0043217d4cf7babf64a88e4f$0
 com.sugboaid.donation.viewmodels.InventoryViewModel$$InternalSyntheticLambda$3$f9622869be696e93c120d0d1d6c4653b0083ab517b169b5122f3dc05e2fff0cb$0
@@ -54167,9 +54234,9 @@ com.sugboaid.donation.viewmodels.NotificationViewModel:
     public static void generateSampleNotifications()
     public final androidx.lifecycle.LiveData getErrorMessage()
     public final androidx.lifecycle.LiveData getIsLoading()
-    public final androidx.lifecycle.LiveData getNotifications()
+    public static androidx.lifecycle.LiveData getNotifications()
     public static androidx.lifecycle.LiveData getShowEmptyState()
-    public final androidx.lifecycle.LiveData getUnreadCount()
+    public static androidx.lifecycle.LiveData getUnreadCount()
     public static void handleNotificationClick()
     public static void handleNotificationLongClick()
     public static void handleNotificationSwipe()
@@ -54208,7 +54275,7 @@ com.sugboaid.donation.viewmodels.TransparencyViewModel:
     public static androidx.lifecycle.LiveData getImpactStories()
     public static androidx.lifecycle.LiveData getTotalBarangays()
     public static androidx.lifecycle.LiveData getTotalDistributed()
-    public final androidx.lifecycle.LiveData getTotalDonations()
+    public static androidx.lifecycle.LiveData getTotalDonations()
     public static androidx.lifecycle.LiveData getTotalFamiliesHelped()
     public static androidx.lifecycle.LiveData getTotalStories()
     public static void refreshBarangayData()
@@ -54266,6 +54333,7 @@ com.sugboaid.donation.views.StatisticsCard:
     public static java.lang.String formatAnimatedValue()
     public static void setupPaints()
     public static void updateContentDescription()
+com.sugboaid.repositories.PreferencesRepository$$InternalSyntheticLambda$1$e683bacb28110a00f3b24f5235b5ed5fdbbbce2c84b732f1cd17e5f0fe502542$0
 com.sugboaid.utils.AuthErrorHandler$$InternalSyntheticLambda$1$c20b830d823ccc51b0aab6e28c185125745a67c4ab4b5396021339701368b05c$0
 com.sugboaid.utils.AuthErrorHandler$$InternalSyntheticLambda$1$e480b8fa5392e8397191f4ea7bc86da1a8ae21c199eeccd2a6e029bf0211e7ed$2
 com.sugboaid.utils.AuthErrorHandler$ErrorResult-IA
@@ -54273,6 +54341,7 @@ com.sugboaid.utils.AuthErrorRecovery$$InternalSyntheticLambda$1$c6693ce0122a53ad
 com.sugboaid.utils.AuthFeedbackManager$$InternalSyntheticLambda$1$9ea3028cbfb8adc3a53f1eff8bd4ac47c4c6432463ea4627ab8c120cf0546a38$2
 com.sugboaid.utils.AuthFeedbackManager$$InternalSyntheticLambda$1$c13882934af979a910c6a0431bbfab095c95fe6c1770c2bb3093f4b940bcfea6$0
 com.sugboaid.utils.GlassmorphismUtils$$InternalSyntheticLambda$1$8c2d1a7d69f48c523e04cea800bd50cae1095246fd56993695c62bb01ce3a241$0
+com.sugboaid.utils.GlassmorphismUtils$$InternalSyntheticLambda$1$a5ef4efbb6e76bc82019d692970cf5c750bd88c3edee651d9e3c03046697fea1$0
 com.sugboaid.utils.ImageCacheManager$$InternalSyntheticLambda$1$a48050327277e40bcbbafe07d6723987b187a88a1328f83c6be4d928de336949$0
 com.sugboaid.utils.MemoryLeakDetector$$InternalSyntheticLambda$1$e6a4524d43818d545098c38bcd5add7faa3e5ef986c85b2f7744f6a1b7e94169$0
 com.sugboaid.utils.MemoryLeakDetector$ActivityLifecycleCallbacks-IA
@@ -54289,6 +54358,7 @@ com.sugboaid.utils.SharedPreferencesHelper$$InternalSyntheticLambda$1$eedbc9b116
 com.sugboaid.utils.SyncStatusManager$$InternalSyntheticLambda$1$f8fe4d27eb264cab3a82785ac2af09a966e0a3da005e7e6aa63abfd601c81f72$0
 com.sugboaid.viewmodels.AuthViewModel$$InternalSyntheticLambda$2$53d62ff3c659083a022e38659c320435ebe33218539c3909f938719784d36bbc$0
 com.sugboaid.viewmodels.AuthViewModel$$InternalSyntheticLambda$2$53d62ff3c659083a022e38659c320435ebe33218539c3909f938719784d36bbc$1
+com.sugboaid.viewmodels.AuthViewModel$$InternalSyntheticLambda$2$53d62ff3c659083a022e38659c320435ebe33218539c3909f938719784d36bbc$2
 com.sugboaid.viewmodels.AuthViewModel$$InternalSyntheticLambda$3$a12b5df8eeea39c3369fd12f00ca05020c63fe541986aa9e57949c7d450534e7$0
 com.sugboaid.viewmodels.AuthViewModel$$InternalSyntheticLambda$3$a12b5df8eeea39c3369fd12f00ca05020c63fe541986aa9e57949c7d450534e7$1
 com.sugboaid.viewmodels.AuthViewModel:
@@ -54298,10 +54368,10 @@ com.sugboaid.viewmodels.AuthViewModel:
     public final void clearErrorMessage()
     public final void clearErrorResult()
     public final void clearSuccessMessage()
+    public final com.sugboaid.models.User getCurrentUser()
     public static com.sugboaid.utils.ValidationUtils$PasswordStrength getPasswordStrength()
     public static boolean validateEmail(java.lang.String)
     public static com.sugboaid.utils.ValidationUtils$ValidationResult validateEmailDetailed()
-    public static com.sugboaid.utils.ValidationUtils$FormValidationResult validateLoginForm()
     public static boolean validateLoginInput()
     public static com.sugboaid.utils.ValidationUtils$ValidationResult validateNameDetailed()
     public static boolean validatePassword()
@@ -54369,7 +54439,6 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final char single(char[])
     public static final java.lang.Object singleOrNull()
     public static final java.util.List toMutableList()
-    public static final java.util.List toMutableList$1()
 kotlin.collections.ArraysUtilJVM
 kotlin.collections.CollectionsKt
 kotlin.collections.CollectionsKt__CollectionsJVMKt
@@ -54380,7 +54449,6 @@ kotlin.collections.CollectionsKt__MutableCollectionsKt
 kotlin.collections.CollectionsKt__ReversedViewsKt:
     public static final java.util.List asReversed()
     public static final java.lang.Object removeFirst(java.util.ArrayList)
-    public static final java.lang.Object removeLast(java.util.ArrayList)
     public static final void retainAll(java.util.Set,kotlin.jvm.functions.Function1)
     public static final int reverseElementIndex$CollectionsKt__ReversedViewsKt()
 kotlin.collections.CollectionsKt___CollectionsJvmKt
@@ -54394,6 +54462,7 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.lang.Object single()
     public static final java.lang.Object single$1()
     public static final java.util.List take()
+    public static final int[] toIntArray()
     public static final java.util.List toMutableList(java.lang.Iterable)
     public static final java.util.Set toMutableSet(java.util.Collection)
     public static final java.util.List zip()
@@ -54541,7 +54610,7 @@ kotlin.sequences.SequencesKt___SequencesKt:
     public static final kotlin.sequences.Sequence mapNotNull()
     public static final kotlin.sequences.TakeWhileSequence takeWhile(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.util.Collection toCollection()
-    public static final java.util.List toMutableList$2()
+    public static final java.util.List toMutableList$1()
 kotlin.text.CharsKt
 kotlin.text.CharsKt__CharJVMKt
 kotlin.text.CharsKt__CharKt
@@ -54620,7 +54689,7 @@ kotlinx.coroutines.CancellableContinuationImpl:
     public static boolean resetStateReusable()
     public final void resume(java.lang.Boolean,kotlin.jvm.functions.Function1)
     public final boolean tryResume()
-    public static com.itextpdf.io.font.otf.OtfClass tryResumeImpl()
+    public static androidx.constraintlayout.core.motion.utils.KeyCache tryResumeImpl()
     public static boolean trySuspend()
 kotlinx.coroutines.CancellableContinuationKt
 kotlinx.coroutines.CancelledContinuation:
@@ -54656,9 +54725,16 @@ kotlinx.coroutines.CoroutineScope:
     public abstract kotlin.coroutines.CoroutineContext getCoroutineContext()
 kotlinx.coroutines.CoroutineScopeKt
 kotlinx.coroutines.DebugKt
+kotlinx.coroutines.DebugStringsKt$$IA$1
+kotlinx.coroutines.DebugStringsKt$$IA$2
+kotlinx.coroutines.DebugStringsKt$$IA$3
 kotlinx.coroutines.DebugStringsKt:
+    private static void $r8$constructor$androidx$emoji2$text$flatbuffer$Utf8()
+    public static java.lang.StackTraceElement coroutineBoundary()
+    public static com.itextpdf.kernel.pdf.PdfPage createPdfPage()
+    public static com.itextpdf.kernel.pdf.PdfPage createPdfPage$1()
+    public static com.itextpdf.commons.actions.processors.ITextProductEventProcessor createProcessor()
     public static final java.lang.String getClassSimpleName(java.lang.Object)
-    public static void getCornerPath()
 kotlinx.coroutines.DefaultExecutor:
     public final synchronized java.lang.Thread createThreadSync()
     public static boolean isShutDown()
@@ -54713,8 +54789,8 @@ kotlinx.coroutines.EventLoopImplPlatform:
     public final void unpark()
 kotlinx.coroutines.EventLoopKt
 kotlinx.coroutines.EventLoop_commonKt:
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getCLOSED_EMPTY$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getDISPOSED_TASK$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getCLOSED_EMPTY$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getDISPOSED_TASK$p()
 kotlinx.coroutines.ExceptionsKt
 kotlinx.coroutines.ExecutorCoroutineDispatcher$Key
 kotlinx.coroutines.ExecutorCoroutineDispatcher:
@@ -54786,12 +54862,12 @@ kotlinx.coroutines.JobSupport:
     public static boolean tryMakeCancelling()
     public static java.lang.Object tryMakeCompletingSlowPath()
 kotlinx.coroutines.JobSupportKt:
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getCOMPLETING_ALREADY$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getCOMPLETING_RETRY$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getCOMPLETING_ALREADY$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getCOMPLETING_RETRY$p()
     public static final synthetic kotlinx.coroutines.Empty access$getEMPTY_ACTIVE$p()
     public static final synthetic kotlinx.coroutines.Empty access$getEMPTY_NEW$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getSEALED$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getTOO_LATE_TO_CANCEL$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getSEALED$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getTOO_LATE_TO_CANCEL$p()
     public static final java.lang.Object boxIncomplete(java.lang.Object)
 kotlinx.coroutines.MainCoroutineDispatcher:
     public final java.lang.String toStringInternalImpl()
@@ -54875,25 +54951,25 @@ kotlinx.coroutines.channels.BufferedChannel:
     public static void updateSendersCounterIfLower()
     public static void waitExpandBufferCompletion$kotlinx_coroutines_core()
 kotlinx.coroutines.channels.BufferedChannelKt:
-    public static final com.itextpdf.io.font.otf.OtfClass CLOSE_HANDLER_CLOSED
-    public static final com.itextpdf.io.font.otf.OtfClass CLOSE_HANDLER_INVOKED
+    public static final androidx.constraintlayout.core.motion.utils.KeyCache CLOSE_HANDLER_CLOSED
+    public static final androidx.constraintlayout.core.motion.utils.KeyCache CLOSE_HANDLER_INVOKED
     public static final long access$constructEBCompletedAndPauseFlag(long,boolean)
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getDONE_RCV$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getFAILED$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getINTERRUPTED_RCV$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getINTERRUPTED_SEND$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getIN_BUFFER$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getNO_RECEIVE_RESULT$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getDONE_RCV$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getFAILED$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getINTERRUPTED_RCV$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getINTERRUPTED_SEND$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getIN_BUFFER$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getNO_RECEIVE_RESULT$p()
     public static final synthetic kotlinx.coroutines.channels.ChannelSegment access$getNULL_SEGMENT$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getPOISONED$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getRESUMING_BY_EB$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getRESUMING_BY_RCV$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getSUSPEND$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getSUSPEND_NO_WAITER$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getPOISONED$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getRESUMING_BY_EB$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getRESUMING_BY_RCV$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getSUSPEND$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getSUSPEND_NO_WAITER$p()
     public static final synthetic boolean access$tryResume0()
     public static final kotlinx.coroutines.channels.ChannelSegment createSegment()
     public static final kotlin.reflect.KFunction createSegmentFunction()
-    public static final com.itextpdf.io.font.otf.OtfClass getCHANNEL_CLOSED()
+    public static final androidx.constraintlayout.core.motion.utils.KeyCache getCHANNEL_CLOSED()
     public static synthetic void tryResume0$default(java.lang.Boolean)
 kotlinx.coroutines.channels.Channel$Factory
 kotlinx.coroutines.channels.Channel:
@@ -54910,7 +54986,7 @@ kotlinx.coroutines.channels.ChannelResult:
 kotlinx.coroutines.channels.ChannelSegment$$InternalSyntheticBackportWithForwarding$4$6f7cae9946c5b86424e4e5c7a6884a900669cd56eb800ecaba91e55e82091194$0
 kotlinx.coroutines.channels.ChannelSegment:
     public static void cleanElement$kotlinx_coroutines_core()
-    public final java.lang.Object getAndSetState$kotlinx_coroutines_core(int,com.itextpdf.io.font.otf.OtfClass)
+    public final java.lang.Object getAndSetState$kotlinx_coroutines_core(int,androidx.constraintlayout.core.motion.utils.KeyCache)
     public static kotlinx.coroutines.channels.BufferedChannel getChannel()
     public final java.lang.Object getElement$kotlinx_coroutines_core(int)
     public final java.lang.Object retrieveElement$kotlinx_coroutines_core(int)
@@ -54969,8 +55045,8 @@ kotlinx.coroutines.flow.StateFlowImpl:
     public static boolean updateState()
 kotlinx.coroutines.flow.StateFlowKt:
     public static final kotlinx.coroutines.flow.StateFlowImpl MutableStateFlow(java.io.Serializable)
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getNONE$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getPENDING$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getNONE$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getPENDING$p()
 kotlinx.coroutines.flow.StateFlowSlot$$InternalSyntheticBackportWithForwarding$1$00e283133301a383e27fa4e7fdd86cb31b10130a1eba01a050b186f52cb717ba$0
 kotlinx.coroutines.flow.StateFlowSlot$$InternalSyntheticBackportWithForwarding$1$00e283133301a383e27fa4e7fdd86cb31b10130a1eba01a050b186f52cb717ba$1
 kotlinx.coroutines.flow.StateFlowSlot$$InternalSyntheticBackportWithForwarding$2$c628036b02d1374e5fc36032fdc1de7a283ea2cf3b3a3101e414ddb73ac4ce26$0
@@ -54991,8 +55067,8 @@ kotlinx.coroutines.flow.internal.AbstractSharedFlow:
     public abstract int getNCollectors()
     public abstract kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot[] getSlots()
 kotlinx.coroutines.flow.internal.NullSurrogateKt:
-    public static final com.itextpdf.io.font.otf.OtfClass DONE
-    public static final com.itextpdf.io.font.otf.OtfClass UNINITIALIZED
+    public static final androidx.constraintlayout.core.motion.utils.KeyCache DONE
+    public static final androidx.constraintlayout.core.motion.utils.KeyCache UNINITIALIZED
 kotlinx.coroutines.flow.internal.SafeCollector:
     public static void checkContext()
     public static void exceptionTransparencyViolated()
@@ -55004,7 +55080,7 @@ kotlinx.coroutines.internal.AtomicOp:
 kotlinx.coroutines.internal.ClassValueCtorCache$cache$1
 kotlinx.coroutines.internal.ClassValueCtorCache
 kotlinx.coroutines.internal.ConcurrentLinkedListKt:
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getCLOSED$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getCLOSED$p()
     public static final kotlinx.coroutines.internal.ConcurrentLinkedListNode close()
 kotlinx.coroutines.internal.ConcurrentLinkedListNode$$InternalSyntheticBackportWithForwarding$4$5078c47261047ce3233d194b821a1a206197fd0cd4382e86c48bee83a79570ea$0
 kotlinx.coroutines.internal.ConcurrentLinkedListNode$$InternalSyntheticBackportWithForwarding$4$9d0975a597367a7fcec34b57396aed90ec2c745fcbd2913401de90a12ff0178d$0
@@ -55040,7 +55116,7 @@ kotlinx.coroutines.internal.DispatchedContinuation:
     public static void release()
     public static java.lang.Throwable tryReleaseClaimedContinuation()
 kotlinx.coroutines.internal.DispatchedContinuationKt:
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getUNDEFINED$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getUNDEFINED$p()
     public static synthetic void resumeCancellableWith$default(kotlin.coroutines.Continuation,java.lang.Object)
 kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$1
 kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$2
@@ -55118,58 +55194,7 @@ kotlinx.coroutines.internal.StackTraceRecoveryKt:
     public static final java.lang.Throwable sanitizeStackTrace()
     public static final java.lang.Throwable unwrapImpl()
 kotlinx.coroutines.internal.Symbol
-kotlinx.coroutines.internal.SystemPropsKt:
-    public static void addExt(long[],long[],long[])
-    public static void addExt$1(long[],long[],long[])
-    public static int[] clone(int[])
-    public static int coef(byte[],int,int)
-    public static byte[] convertArray(short[])
-    public static short[] convertArray(byte[])
-    public static byte[][] convertArray(short[][])
-    public static short[][] convertArray(byte[][])
-    public static byte[][][] convertArray(short[][][])
-    public static short[][][] convertArray(byte[][][])
-    public static org.bouncycastle.asn1.pkcs.PrivateKeyInfo createPrivateKeyInfo(org.bouncycastle.crypto.params.AsymmetricKeyParameter,org.bouncycastle.asn1.ASN1Set)
-    public static int degree(int)
-    public static boolean equals(int[],int[])
-    public static boolean equals(short[],short[])
-    public static boolean equals(short[][],short[][])
-    public static boolean equals(short[][][],short[][][])
-    public static org.bouncycastle.pqc.crypto.lms.LMSPrivateKeyParameters generateKeys(org.bouncycastle.pqc.crypto.lms.LMSigParameters,org.bouncycastle.pqc.crypto.lms.LMOtsParameters,int,byte[],byte[])
-    public static org.bouncycastle.pqc.crypto.lms.LMSSignature generateSign(org.bouncycastle.pqc.crypto.lms.LMSPrivateKeyParameters,byte[])
-    public static final int getAVAILABLE_PROCESSORS()
-    public static org.bouncycastle.asn1.x509.AlgorithmIdentifier getDigAlgId(java.lang.String)
-    public static org.bouncycastle.crypto.Digest getDigest(org.bouncycastle.asn1.x509.AlgorithmIdentifier)
-    public static org.bouncycastle.asn1.ASN1ObjectIdentifier getDigestOID(java.lang.String)
-    public static java.lang.String getName(int)
-    public static java.lang.String getXMSSDigestName(org.bouncycastle.asn1.ASN1ObjectIdentifier)
-    public static void implExpand(long[],long[])
-    public static void implExpand$1(long[],long[])
-    public static void implMultiply(long[],long[],long[])
-    public static void implMultiply$1(long[],long[],long[])
-    public static void implMulwAcc(long[],long,long,long[],int)
-    public static void implMulwAcc$1(long[],long,long,long[],int)
-    public static void implSquare(long[],long[])
-    public static void implSquare$1(long[],long[])
-    public static int modMultiply(int,int,int)
-    public static void multiply(long[],long[],long[])
-    public static void multiply$1(long[],long[],long[])
-    public static void multiplyAddToExt(long[],long[],long[])
-    public static void multiplyAddToExt$1(long[],long[],long[])
-    public static int numberOfLeadingZeros()
-    public static void reduce(long[],long[])
-    public static void reduce$1(long[],long[])
-    public static int remainder(int,int)
-    public static int rotateLeft()
-    public static void square(long[],long[])
-    public static void square$1(long[],long[])
-    public static void squareN(long[],int,long[])
-    public static void squareN$1(long[],int,long[])
-    public static final int systemProp(int,int,int,java.lang.String)
-    public static final java.lang.String systemProp(java.lang.String)
-    public static final boolean systemProp(java.lang.String,boolean)
-    public static synthetic long systemProp$default(java.lang.String,long)
-    public static java.lang.Integer valueOf()
+kotlinx.coroutines.internal.SystemPropsKt
 kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt
 kotlinx.coroutines.internal.ThreadContextKt:
     public static final java.lang.Object threadContextElements(kotlin.coroutines.CoroutineContext)
@@ -55269,12 +55294,12 @@ kotlinx.coroutines.selects.SelectImplementation:
 kotlinx.coroutines.selects.SelectKt$DUMMY_PROCESS_RESULT_FUNCTION$1
 kotlinx.coroutines.selects.SelectKt:
     public static final kotlin.jvm.functions.Function3 DUMMY_PROCESS_RESULT_FUNCTION
-    public static final com.itextpdf.io.font.otf.OtfClass NO_RESULT
-    public static final com.itextpdf.io.font.otf.OtfClass PARAM_CLAUSE_0
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getNO_RESULT$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getSTATE_CANCELLED$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getSTATE_COMPLETED$p()
-    public static final synthetic com.itextpdf.io.font.otf.OtfClass access$getSTATE_REG$p()
+    public static final androidx.constraintlayout.core.motion.utils.KeyCache NO_RESULT
+    public static final androidx.constraintlayout.core.motion.utils.KeyCache PARAM_CLAUSE_0
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getNO_RESULT$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getSTATE_CANCELLED$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getSTATE_COMPLETED$p()
+    public static final synthetic androidx.constraintlayout.core.motion.utils.KeyCache access$getSTATE_REG$p()
     public static final boolean tryResume()
 org.bouncycastle.asn1.ASN1ApplicationSpecific
 org.bouncycastle.asn1.ASN1BMPString$1
@@ -55410,7 +55435,7 @@ org.bouncycastle.asn1.StreamUtil
 org.bouncycastle.asn1.anssi.ANSSINamedCurves$1
 org.bouncycastle.asn1.anssi.ANSSINamedCurves
 org.bouncycastle.asn1.anssi.ANSSIObjectIdentifiers
-org.bouncycastle.asn1.bc.BCObjectIdentifiers$$InternalSyntheticOutline$168$94747f8afbd04b7dd7c73e1153edac79cfbb1f02092910ff43f780a3b4704949$0
+org.bouncycastle.asn1.bc.BCObjectIdentifiers$$InternalSyntheticOutline$157$94747f8afbd04b7dd7c73e1153edac79cfbb1f02092910ff43f780a3b4704949$0
 org.bouncycastle.asn1.bc.BCObjectIdentifiers
 org.bouncycastle.asn1.bsi.BSIObjectIdentifiers
 org.bouncycastle.asn1.cms.CMSObjectIdentifiers
@@ -55451,7 +55476,7 @@ org.bouncycastle.asn1.nist.NISTNamedCurves
 org.bouncycastle.asn1.nist.NISTObjectIdentifiers
 org.bouncycastle.asn1.ntt.NTTObjectIdentifiers
 org.bouncycastle.asn1.oiw.OIWObjectIdentifiers
-org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers$$InternalSyntheticOutline$168$2b3c0ee26fbfa77e26b84b30a3dd5beb7d0090d7b288041dc73f31ec9930f00c$0
+org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers$$InternalSyntheticOutline$157$2b3c0ee26fbfa77e26b84b30a3dd5beb7d0090d7b288041dc73f31ec9930f00c$0
 org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers
 org.bouncycastle.asn1.pkcs.PrivateKeyInfo
 org.bouncycastle.asn1.rosstandart.RosstandartObjectIdentifiers
@@ -55631,7 +55656,7 @@ org.bouncycastle.crypto.Xof
 org.bouncycastle.crypto.digests.GeneralDigest
 org.bouncycastle.crypto.digests.KeccakDigest
 org.bouncycastle.crypto.digests.LongDigest
-org.bouncycastle.crypto.digests.MD5Digest$$InternalSyntheticOutline$168$f7f4132e4ddb085086d269fa7a99e53a005d723aac585bb1890027ca7343acc7$0
+org.bouncycastle.crypto.digests.MD5Digest$$InternalSyntheticOutline$157$f7f4132e4ddb085086d269fa7a99e53a005d723aac585bb1890027ca7343acc7$0
 org.bouncycastle.crypto.digests.MD5Digest
 org.bouncycastle.crypto.digests.SHA1Digest
 org.bouncycastle.crypto.digests.SHA224Digest
@@ -55749,7 +55774,7 @@ org.bouncycastle.math.ec.ECFieldElement$Fp
 org.bouncycastle.math.ec.ECFieldElement
 org.bouncycastle.math.ec.ECMultiplier
 org.bouncycastle.math.ec.ECPoint$1
-org.bouncycastle.math.ec.ECPoint$AbstractF2m$$InternalSyntheticOutline$168$4563167433728e4cddf6d1f0a8fd6e73d932148fcba37e5a6bddb8f35ffe9792$0
+org.bouncycastle.math.ec.ECPoint$AbstractF2m$$InternalSyntheticOutline$157$4563167433728e4cddf6d1f0a8fd6e73d932148fcba37e5a6bddb8f35ffe9792$0
 org.bouncycastle.math.ec.ECPoint$AbstractF2m
 org.bouncycastle.math.ec.ECPoint$AbstractFp
 org.bouncycastle.math.ec.ECPoint$F2m
@@ -55987,7 +56012,7 @@ org.bouncycastle.pqc.crypto.util.Utils
 org.bouncycastle.pqc.crypto.xmss.BDS
 org.bouncycastle.pqc.crypto.xmss.BDSStateMap
 org.bouncycastle.pqc.crypto.xmss.BDSTreeHash
-org.bouncycastle.pqc.crypto.xmss.DefaultXMSSMTOid$$InternalSyntheticOutline$168$f25638093586aac42480dd2a717935ddeea0b388baac6e5b58ea663368089b41$0
+org.bouncycastle.pqc.crypto.xmss.DefaultXMSSMTOid$$InternalSyntheticOutline$157$f25638093586aac42480dd2a717935ddeea0b388baac6e5b58ea663368089b41$0
 org.bouncycastle.pqc.crypto.xmss.DefaultXMSSMTOid
 org.bouncycastle.pqc.crypto.xmss.DefaultXMSSOid
 org.bouncycastle.pqc.crypto.xmss.DigestUtil
@@ -56009,7 +56034,7 @@ org.bouncycastle.pqc.crypto.xmss.XMSSAddress$Builder
 org.bouncycastle.pqc.crypto.xmss.XMSSAddress
 org.bouncycastle.pqc.crypto.xmss.XMSSKeyParameters
 org.bouncycastle.pqc.crypto.xmss.XMSSMTKeyParameters
-org.bouncycastle.pqc.crypto.xmss.XMSSMTParameters$$InternalSyntheticOutline$168$34f2e150fa50b57461d3b5bc483a383360555c954e7ad2e15c743d55a886cbed$0
+org.bouncycastle.pqc.crypto.xmss.XMSSMTParameters$$InternalSyntheticOutline$157$34f2e150fa50b57461d3b5bc483a383360555c954e7ad2e15c743d55a886cbed$0
 org.bouncycastle.pqc.crypto.xmss.XMSSMTParameters
 org.bouncycastle.pqc.crypto.xmss.XMSSMTPrivateKeyParameters$1
 org.bouncycastle.pqc.crypto.xmss.XMSSMTPrivateKeyParameters$Builder

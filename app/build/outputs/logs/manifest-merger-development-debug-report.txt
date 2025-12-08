@@ -1,7 +1,7 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:2:1-90:12
-INJECTED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:2:1-90:12
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:2:1-92:12
 MERGED from [androidx.databinding:databinding-adapters:8.0.2] C:\Users\James\.gradle\caches\transforms-3\d07fe2da60611f9883f2940ace995de4\transformed\databinding-adapters-8.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:8.0.2] C:\Users\James\.gradle\caches\transforms-3\55e30cecc3eb0fc571054a9e11c47df7\transformed\databinding-runtime-8.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:viewbinding:8.0.2] C:\Users\James\.gradle\caches\transforms-3\1c26aed49eefb035d23587dee5b27cbf\transformed\jetified-viewbinding-8.0.2\AndroidManifest.xml:2:1-7:12
@@ -84,10 +84,10 @@ MERGED from [com.squareup.leakcanary:plumber-android-core:2.12] C:\Users\James\.
 MERGED from [com.squareup.leakcanary:leakcanary-android-utils:2.12] C:\Users\James\.gradle\caches\transforms-3\5bfdfaaf4903ac683cb85f5a5adc9ab9\transformed\jetified-leakcanary-android-utils-2.12\AndroidManifest.xml:2:1-7:12
 MERGED from [com.squareup.curtains:curtains:1.2.4] C:\Users\James\.gradle\caches\transforms-3\581f0ed3a299c95d82d40033011ff3ff\transformed\jetified-curtains-1.2.4\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fbjni:fbjni:0.3.0] C:\Users\James\.gradle\caches\transforms-3\0121c3f5f4948e2faf56b0e4d5a8666e\transformed\jetified-fbjni-0.3.0\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:2:1-90:12
+INJECTED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:2:1-92:12
 	package
 		INJECTED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:2:1-90:12
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:2:1-92:12
 		INJECTED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:3:5-51
@@ -152,7 +152,7 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradl
 	android:name
 		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:23:9-57
 application
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:26:5-88:19
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:26:5-90:19
 MERGED from [com.facebook.soloader:soloader:0.10.3] C:\Users\James\.gradle\caches\transforms-3\ca2ef3e51e8b65cb4804f2ad873bdaca\transformed\jetified-soloader-0.10.3\AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.3] C:\Users\James\.gradle\caches\transforms-3\ca2ef3e51e8b65cb4804f2ad873bdaca\transformed\jetified-soloader-0.10.3\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\James\.gradle\caches\transforms-3\81a62a99ff771d7ba2d084e51b608297\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
@@ -188,69 +188,73 @@ MERGED from [com.squareup.leakcanary:plumber-android:2.12] C:\Users\James\.gradl
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\James\.gradle\caches\transforms-3\381375a31a935f72cd0c2053ea24f668\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:35:9-35
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:37:9-35
 	android:label
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:32:9-41
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:34:9-41
+	android:hardwareAccelerated
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:29:9-43
 	android:fullBackupContent
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:29:9-54
-	android:roundIcon
 		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:31:9-54
+	android:roundIcon
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:33:9-54
 	tools:targetApi
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:36:9-29
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:38:9-29
 	android:icon
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:30:9-43
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:32:9-43
 	android:allowBackup
 		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:27:9-35
 	android:description
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:33:9-52
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:35:9-52
 	android:theme
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:34:9-46
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:36:9-46
 	android:dataExtractionRules
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:28:9-65
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:30:9-65
+	android:usesCleartextTraffic
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:28:9-44
 activity#com.sugboaid.donation.activities.SimpleSplashActivity
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:39:9-47:20
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:41:9-49:20
 	android:exported
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:41:13-36
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:43:13-36
 	android:theme
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:42:13-57
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:44:13-57
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:40:13-81
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:42:13-81
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:43:13-46:29
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:45:13-48:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:44:17-69
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:46:17-69
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:44:25-66
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:46:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:45:17-77
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:47:17-77
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:45:27-74
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:47:27-74
 activity#com.sugboaid.donation.activities.MainActivity
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:50:9-53:53
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:52:9-55:53
 	android:exported
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:52:13-37
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:54:13-37
 	android:theme
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:53:13-50
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:55:13-50
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:51:13-73
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:53:13-73
 activity#com.sugboaid.donation.activities.QRScannerActivity
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:56:9-60:53
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:58:9-62:53
 	android:screenOrientation
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:59:13-49
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:61:13-49
 	android:exported
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:58:13-37
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:60:13-37
 	android:theme
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:60:13-50
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:62:13-50
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:57:13-78
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:59:13-78
 activity#com.journeyapps.barcodescanner.CaptureActivity
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:63:9-66:49
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:65:9-68:49
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
 	android:clearTaskOnLaunch
 		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
 	android:screenOrientation
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:65:13-49
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:67:13-49
 		REJECTED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
 	android:stateNotNeeded
 		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
@@ -259,37 +263,37 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradl
 	android:theme
 		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\James\.gradle\caches\transforms-3\6a25257c10c31b484b56a9d5df60435c\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
 	tools:replace
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:66:13-46
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:68:13-46
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:64:13-74
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:66:13-74
 provider#androidx.core.content.FileProvider
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:69:9-77:20
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:71:9-79:20
 	android:grantUriPermissions
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:73:13-47
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:75:13-47
 	android:authorities
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:71:13-69
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:73:13-69
 	android:exported
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:72:13-37
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:74:13-37
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:70:13-62
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:72:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:74:13-76:63
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:76:13-78:63
 	android:resource
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:76:17-60
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:78:17-60
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:75:17-67
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:77:17-67
 receiver#com.sugboaid.donation.donation.utils.NotificationActionReceiver
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:80:9-86:20
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:82:9-88:20
 	android:exported
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:82:13-37
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:84:13-37
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:81:13-70
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:83:13-70
 intent-filter#action:name:MARK_AS_READ
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:83:13-85:29
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:85:13-87:29
 action#MARK_AS_READ
-ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:84:17-55
+ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:86:17-55
 	android:name
-		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:84:25-52
+		ADDED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:86:25-52
 uses-sdk
 INJECTED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml

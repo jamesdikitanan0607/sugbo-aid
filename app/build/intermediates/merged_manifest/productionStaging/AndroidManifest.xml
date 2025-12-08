@@ -62,7 +62,7 @@
 
         <!-- Splash Activity (Launcher) -->
         <activity
-            android:name="com.sugboaid.donation.donation.activities.SimpleSplashActivity"
+            android:name="com.sugboaid.donation.activities.SimpleSplashActivity"
             android:exported="true"
             android:theme="@style/Theme.SugboAid.Splash" >
             <intent-filter>
@@ -74,13 +74,13 @@
 
         <!-- Main Activity -->
         <activity
-            android:name="com.sugboaid.donation.donation.activities.MainActivity"
+            android:name="com.sugboaid.donation.activities.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.SugboAid" />
 
         <!-- QR Scanner Activity -->
         <activity
-            android:name="com.sugboaid.donation.donation.activities.QRScannerActivity"
+            android:name="com.sugboaid.donation.activities.QRScannerActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SugboAid" />

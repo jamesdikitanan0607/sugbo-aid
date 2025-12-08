@@ -115,8 +115,8 @@
 63        <!-- Splash Activity (Launcher) -->
 64        <activity
 64-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:39:9-47:20
-65            android:name="com.sugboaid.donation.donation.activities.SimpleSplashActivity"
-65-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:40:13-69
+65            android:name="com.sugboaid.donation.activities.SimpleSplashActivity"
+65-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:40:13-81
 66            android:exported="true"
 66-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:41:13-36
 67            android:theme="@style/Theme.SugboAid.Splash" >
@@ -136,8 +136,8 @@
 75        <!-- Main Activity -->
 76        <activity
 76-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:50:9-53:53
-77            android:name="com.sugboaid.donation.donation.activities.MainActivity"
-77-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:51:13-61
+77            android:name="com.sugboaid.donation.activities.MainActivity"
+77-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:51:13-73
 78            android:exported="false"
 78-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:52:13-37
 79            android:theme="@style/Theme.SugboAid" />
@@ -146,8 +146,8 @@
 81        <!-- QR Scanner Activity -->
 82        <activity
 82-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:56:9-60:53
-83            android:name="com.sugboaid.donation.donation.activities.QRScannerActivity"
-83-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:57:13-66
+83            android:name="com.sugboaid.donation.activities.QRScannerActivity"
+83-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:57:13-78
 84            android:exported="false"
 84-->C:\Users\James\Downloads\SugboAid Donation Management App\app\src\main\AndroidManifest.xml:58:13-37
 85            android:screenOrientation="portrait"

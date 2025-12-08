@@ -272,12 +272,12 @@ public class TransparencyViewModel extends AndroidViewModel {
         List<com.sugboaid.donation.models.BarangayLocation> barangays = new ArrayList<>();
         
         // Sample barangay data for Cebu City
-        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Lahug", 10.3167, 123.8833, 45, 25000.0, "active", 12));
-        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Capitol Site", 10.3000, 123.8900, 32, 18500.0, "moderate", 8));
-        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Guadalupe", 10.2833, 123.8667, 28, 15200.0, "low", 6));
-        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Banilad", 10.3333, 123.9000, 38, 22800.0, "active", 10));
+        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Lahug", 10.32424, 123.89835, 45, 25000.0, "active", 12));
+        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Capitol Site", 10.32458, 123.89033, 32, 18500.0, "moderate", 8));
+        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Guadalupe", 10.3194, 123.8842, 28, 15200.0, "low", 6));
+        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Banilad", 10.3479, 123.9132, 38, 22800.0, "active", 10));
         barangays.add(new com.sugboaid.donation.models.BarangayLocation("Talamban", 10.3500, 123.9167, 15, 8900.0, "critical", 3));
-        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Mabolo", 10.3167, 123.9000, 41, 24600.0, "active", 11));
+        barangays.add(new com.sugboaid.donation.models.BarangayLocation("Mabolo", 10.3136, 123.9136, 41, 24600.0, "active", 11));
         
         barangayLocations.setValue(barangays);
         totalBarangays.setValue(barangays.size());

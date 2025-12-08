@@ -42,12 +42,16 @@ public final class FragmentLoginBinding implements ViewBinding {
   public final TextInputLayout tilPassword;
 
   @NonNull
+  public final TextView tvAdminHint;
+
+  @NonNull
   public final TextView tvGoToSignup;
 
   private FragmentLoginBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnLogin,
       @NonNull TextInputEditText etEmail, @NonNull TextInputEditText etPassword,
       @NonNull ImageView ivAppLogo, @NonNull TextInputLayout tilEmail,
-      @NonNull TextInputLayout tilPassword, @NonNull TextView tvGoToSignup) {
+      @NonNull TextInputLayout tilPassword, @NonNull TextView tvAdminHint,
+      @NonNull TextView tvGoToSignup) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
     this.etEmail = etEmail;
@@ -55,6 +59,7 @@ public final class FragmentLoginBinding implements ViewBinding {
     this.ivAppLogo = ivAppLogo;
     this.tilEmail = tilEmail;
     this.tilPassword = tilPassword;
+    this.tvAdminHint = tvAdminHint;
     this.tvGoToSignup = tvGoToSignup;
   }
 
@@ -121,6 +126,12 @@ public final class FragmentLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_admin_hint;
+      TextView tvAdminHint = ViewBindings.findChildViewById(rootView, id);
+      if (tvAdminHint == null) {
+        break missingId;
+      }
+
       id = R.id.tv_go_to_signup;
       TextView tvGoToSignup = ViewBindings.findChildViewById(rootView, id);
       if (tvGoToSignup == null) {
@@ -128,7 +139,7 @@ public final class FragmentLoginBinding implements ViewBinding {
       }
 
       return new FragmentLoginBinding((ScrollView) rootView, btnLogin, etEmail, etPassword,
-          ivAppLogo, tilEmail, tilPassword, tvGoToSignup);
+          ivAppLogo, tilEmail, tilPassword, tvAdminHint, tvGoToSignup);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

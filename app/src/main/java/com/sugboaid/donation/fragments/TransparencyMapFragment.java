@@ -18,7 +18,12 @@ import com.sugboaid.donation.R;
 import com.sugboaid.donation.adapters.BarangayAdapter;
 import com.sugboaid.donation.models.BarangayLocation;
 import com.sugboaid.donation.viewmodels.TransparencyViewModel;
-import com.sugboaid.donation.views.InteractiveMapView;
+import com.sugboaid.donation.viewmodels.TransparencyViewModel;
+import android.webkit.WebView;
+import android.webkit.WebSettings;
+import android.net.http.SslError;
+import android.webkit.SslErrorHandler;
+
 
 import java.util.List;
 
@@ -28,7 +33,7 @@ import java.util.List;
  */
 public class TransparencyMapFragment extends BaseFragment {
 
-    private InteractiveMapView mapView;
+    private WebView mapWebView;
     private RecyclerView barangayListRecyclerView;
     private TextView totalBarangaysText;
     private TextView totalFamiliesText;
@@ -49,7 +54,7 @@ public class TransparencyMapFragment extends BaseFragment {
 
     @Override
     protected void initViews(View view) {
-        mapView = view.findViewById(R.id.mapView);
+        mapWebView = view.findViewById(R.id.mapWebView);
         barangayListRecyclerView = view.findViewById(R.id.barangayListRecyclerView);
         totalBarangaysText = view.findViewById(R.id.totalBarangaysText);
         totalFamiliesText = view.findViewById(R.id.totalFamiliesText);
@@ -89,10 +94,85 @@ public class TransparencyMapFragment extends BaseFragment {
         });
 
         // Initialize map
-        if (mapView != null) {
-            mapView.initialize();
+        if (mapWebView != null) {
+            WebSettings webSettings = mapWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setDomStorageEnabled(true);
+            webSettings.setDatabaseEnabled(true);
+            
+            // Helpful for debugging - allows seeing console logs in Logcat
+            mapWebView.setWebChromeClient(new android.webkit.WebChromeClient());
+            
+            // Handle SSL errors and page loading
+            mapWebView.setWebViewClient(new android.webkit.WebViewClient() {
+                @Override
+                public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                    handler.proceed(); // Ignore SSL errors for development
+                }
+            });
+
+            // Set a standard User Agent to ensure Map loads deskop/compatible version behavior
+            webSettings.setUserAgentString("Mozilla/5.0 (Linux; Android 10; Mobile; rv:88.0) Gecko/88.0 Firefox/88.0");
+
+            // Google Maps JavaScript API HTML
+            String mapHtml = "<!DOCTYPE html>" +
+                    "<html>" +
+                    "<head>" +
+                    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
+                    "<style>" +
+                    "  html, body { height: 100%; margin: 0; padding: 0; background: #f0f0f0; }" +
+                    "  #map { height: 100%; width: 100%; }" +
+                    "  #error-msg { display: none; padding: 20px; text-align: center; color: #666; font-family: sans-serif; }" +
+                    "</style>" +
+                    "<script>" +
+                    "  var map;" +
+                    "  var markers = [];" +
+                    "  var mapLoaded = false;" +
+                    "  " +
+                    "  function initMap() {" +
+                    "    mapLoaded = true;" +
+                    "    var cebu = { lat: 10.3157, lng: 123.8854 };" +
+                    "    map = new google.maps.Map(document.getElementById('map'), {" +
+                    "      zoom: 12," +
+                    "      center: cebu," +
+                    "      disableDefaultUI: true," +
+                    "      zoomControl: false," +
+                    "      styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'off' }] }]" +
+                    "    });" +
+                    "  }" +
+                    "  " +
+                    "  function checkLoad() {" +
+                    "    setTimeout(function() {" +
+                    "      if (!mapLoaded) {" +
+                    "         document.getElementById('error-msg').style.display = 'block';" +
+                    "         document.getElementById('error-msg').innerText = 'Map failed to load. Please check internet connection or API Key.';" +
+                    "      }" +
+                    "    }, 5000);" + // 5 second timeout
+                    "  }" +
+                    "  " +
+                    "  function moveToLocation(lat, lng) {" +
+                    "    if (!map) return;" +
+                    "    var pos = { lat: lat, lng: lng };" +
+                    "    map.panTo(pos);" +
+                    "    map.setZoom(15);" +
+                    "    for (var i = 0; i < markers.length; i++) markers[i].setMap(null);" +
+                    "    markers = [];" +
+                    "    var marker = new google.maps.Marker({ position: pos, map: map, animation: google.maps.Animation.DROP });" +
+                    "    markers.push(marker);" +
+                    "  }" +
+                    "</script>" +
+                    "<script async defer src=\"https://maps.googleapis.com/maps/api/js?key=&callback=initMap\"></script>" +
+                    "</head>" +
+                    "<body onload=\"checkLoad()\">" +
+                    "  <div id=\"map\"></div>" +
+                    "  <div id=\"error-msg\"></div>" +
+                    "</body>" +
+                    "</html>";
+            
+            mapWebView.loadDataWithBaseURL("https://www.google.com", mapHtml, "text/html", "UTF-8", null);
+
             // Allow panning/zooming without parent scroll/viewpager intercept
-            mapView.setOnTouchListener((v, event) -> {
+            mapWebView.setOnTouchListener((v, event) -> {
                 switch (event.getActionMasked()) {
                     case MotionEvent.ACTION_DOWN:
                     case MotionEvent.ACTION_MOVE:
@@ -112,21 +192,18 @@ public class TransparencyMapFragment extends BaseFragment {
     protected void setupListeners() {
         // Set up barangay item click listener
         barangayAdapter.setOnBarangayClickListener(barangay -> {
-            if (mapView != null) {
-                mapView.focusOnBarangay(barangay);
+            if (mapWebView != null) {
+                // Bridge Native -> JS
+                // Call the JavaScript function defined in the HTML above
+                String jsCommand = String.format(java.util.Locale.US, "moveToLocation(%f, %f)", 
+                        barangay.getLatitude(), barangay.getLongitude());
+                
+                mapWebView.evaluateJavascript(jsCommand, null);
             }
         });
 
-        // Set up map marker click listener
-        if (mapView != null) {
-            mapView.setOnMarkerClickListener(barangay -> {
-                // Scroll to the barangay in the list
-                int position = barangayAdapter.getBarangayPosition(barangay);
-                if (position >= 0) {
-                    barangayListRecyclerView.smoothScrollToPosition(position);
-                }
-            });
-        }
+        // Map marker click listener removed
+
     }
 
     @Override
@@ -160,36 +237,35 @@ public class TransparencyMapFragment extends BaseFragment {
             barangayAdapter.updateBarangays(barangays);
         }
         
-        if (mapView != null) {
-            mapView.updateMarkers(barangays);
-        }
+        // Marker updates removed
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if (mapView != null) {
-            mapView.onResume();
+        if (mapWebView != null) {
+            mapWebView.onResume();
         }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (mapView != null) {
-            mapView.onPause();
+        if (mapWebView != null) {
+            mapWebView.onPause();
         }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (mapView != null) {
-            mapView.onDestroy();
+        if (mapWebView != null) {
+            mapWebView.destroy();
         }
         
         // Clean up references
-        mapView = null;
+        mapWebView = null;
         barangayListRecyclerView = null;
         totalBarangaysText = null;
         totalFamiliesText = null;

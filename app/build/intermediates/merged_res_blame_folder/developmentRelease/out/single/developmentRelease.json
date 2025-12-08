@@ -64,6 +64,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\mtrl_on_primary_text_btn_text_color_selector.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/navigation_nav_graph.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/navigation/nav_graph.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_logo_background.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\logo_background.xml"
     },
@@ -124,6 +128,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_fragment_transparency_overview.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_transparency_overview.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_slider_halo_color.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_slider_halo_color.xml"
     },
@@ -144,12 +152,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_ic_remove.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\ic_remove.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\animator_m3_btn_elevated_btn_state_list_anim.xml.flat",
@@ -164,12 +172,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\dialog_add_inventory_item.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_mtrl_bottomsheet_drag_handle.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable\\mtrl_bottomsheet_drag_handle.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xxhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_mtrl_bottomsheet_drag_handle.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable\\mtrl_bottomsheet_drag_handle.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -196,24 +204,28 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable-v23\\mtrl_popupmenu_background_overlay.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_button_ripple_success.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\button_ripple_success.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_material_on_surface_emphasis_medium.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\material_on_surface_emphasis_medium.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout_material_clock_period_toggle.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\layout\\material_clock_period_toggle.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_button_ripple_success.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\button_ripple_success.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_ic_mtrl_checked_circle.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable\\ic_mtrl_checked_circle.xml"
     },
     {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout_material_clock_period_toggle.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\layout\\material_clock_period_toggle.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout_abc_screen_toolbar.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/drawable/ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout_dialog_stock_adjustment.xml.flat",
@@ -252,6 +264,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_dark_default_color_primary_text.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/drawable_splash_background.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/drawable/splash_background.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
     },
@@ -264,20 +280,20 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\layout\\design_bottom_navigation_item.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_material_personalized_primary_text_disable_only.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\material_personalized_primary_text_disable_only.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_ic_family.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\ic_family.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_switch_thumb_tint.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\mtrl_switch_thumb_tint.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_material_personalized_primary_text_disable_only.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\material_personalized_primary_text_disable_only.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_tabs_icon_color_secondary.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_tabs_icon_color_secondary.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_switch_thumb_tint.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\mtrl_switch_thumb_tint.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\interpolator_btn_checkbox_checked_mtrl_animation_interpolator_1.xml.flat",
@@ -384,12 +400,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_text_button_background_color_selector.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color-v23_abc_tint_default.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\color-v23\\abc_tint_default.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_navigation_item_text_color.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\mtrl_navigation_item_text_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color-v23_abc_tint_default.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\color-v23\\abc_tint_default.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_navigation_bar_item_tint.xml.flat",
@@ -410,6 +426,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_abc_ic_menu_share_mtrl_alpha.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable\\abc_ic_menu_share_mtrl_alpha.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/drawable_ic_admin.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/drawable/ic_admin.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_chip_text_color.xml.flat",
@@ -552,20 +572,20 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_card_ripple_color.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim-v21_mtrl_bottom_sheet_slide_in.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\anim-v21\\mtrl_bottom_sheet_slide_in.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\animator_mtrl_extended_fab_hide_motion_spec.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\animator\\mtrl_extended_fab_hide_motion_spec.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_ic_arrow_back.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\ic_arrow_back.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim-v21_mtrl_bottom_sheet_slide_in.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\anim-v21\\mtrl_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-core-1.12.0-6:\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\ic_arrow_back.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_navigation_item_background_color.xml.flat",
@@ -632,12 +652,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\material_slider_inactive_track_color.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\animator_nav_default_pop_enter_anim.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-navigation-ui-2.7.5-29:\\animator\\nav_default_pop_enter_anim.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_error.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\mtrl_error.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\animator_nav_default_pop_enter_anim.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-navigation-ui-2.7.5-29:\\animator\\nav_default_pop_enter_anim.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout_abc_search_view.xml.flat",
@@ -654,6 +674,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_chip_background_color.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\mtrl_chip_background_color.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_fragment_transparency.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_transparency.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -728,6 +752,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\ic_info.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_item_barangay.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/item_barangay.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
@@ -792,12 +820,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_abc_cab_background_top_material.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-ldpi-v4_ic_call_decline.png.flat",
@@ -868,12 +896,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_filled_icon_button_container_color_selector.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_btn_checkbox_to_unchecked_check_path_merged_animation.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\anim\\btn_checkbox_to_unchecked_check_path_merged_animation.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_card_foreground_color.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_card_foreground_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_btn_checkbox_to_unchecked_check_path_merged_animation.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\anim\\btn_checkbox_to_unchecked_check_path_merged_animation.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\interpolator-v21_mtrl_linear_out_slow_in.xml.flat",
@@ -908,20 +936,20 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_button_foreground_color_selector.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_button_foreground_color_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_button_foreground_color_selector.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_button_foreground_color_selector.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_mtrl_switch_thumb.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable\\mtrl_switch_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_design_ic_visibility.xml.flat",
@@ -932,20 +960,20 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\anim\\shake.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_circle_gradient_background.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\circle_gradient_background.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_abc_tooltip_exit.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\anim\\abc_tooltip_exit.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_timepicker_button_text_color.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_timepicker_button_text_color.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_circle_gradient_background.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\circle_gradient_background.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_checkbox_button_tint.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_checkbox_button_tint.xml"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_timepicker_button_text_color.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_timepicker_button_text_color.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color-v31_m3_dynamic_primary_text_disable_only.xml.flat",
@@ -980,16 +1008,16 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable\\avd_show_password.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-v23_m3_popupmenu_background_overlay.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable-v23\\m3_popupmenu_background_overlay.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_design_snackbar_out.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\anim\\design_snackbar_out.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_material_slider_thumb_color.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\material_slider_thumb_color.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_design_snackbar_out.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-v23_m3_popupmenu_background_overlay.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable-v23\\m3_popupmenu_background_overlay.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_overshoot_interpolator.xml.flat",
@@ -998,6 +1026,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_abc_popup_exit.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/drawable_ic_admin_badge.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/drawable/ic_admin_badge.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_ic_verified.xml.flat",
@@ -1052,12 +1084,12 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_efab_ripple_color_selector.xml"
     },
     {
-        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color-v31_m3_ref_palette_dynamic_neutral96.xml.flat",
-        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color-v31\\m3_ref_palette_dynamic_neutral96.xml"
-    },
-    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color-v31_m3_ref_palette_dynamic_neutral96.xml.flat",
+        "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color-v31\\m3_ref_palette_dynamic_neutral96.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -1152,6 +1184,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\sugboaid_logo.png"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/drawable_btn_outline.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/drawable/btn_outline.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_timepicker_secondary_text_button_text_color.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_timepicker_secondary_text_button_text_color.xml"
     },
@@ -1212,6 +1248,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\drawable\\bg_status_badge.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.sugboaid.donation.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-v21_abc_btn_colored_material.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-v21\\abc_btn_colored_material.xml"
     },
@@ -1260,6 +1300,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-main-54:\\layout\\item_notification.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_activity_main.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_mtrl_checkbox_button_icon_checked_unchecked.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable\\mtrl_checkbox_button_icon_checked_unchecked.xml"
     },
@@ -1304,12 +1348,20 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_dark_highlighted_text.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout_mtrl_calendar_vertical.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\layout\\mtrl_calendar_vertical.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color-v31_m3_ref_palette_dynamic_neutral98.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color-v31\\m3_ref_palette_dynamic_neutral98.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_fragment_pos_donation.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_pos_donation.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout_material_timepicker_textinput_display.xml.flat",
@@ -1338,6 +1390,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.sugboaid.donation.app-main-54:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -1484,6 +1540,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-core-1.12.0-6:\\drawable-ldpi-v4\\ic_call_answer.png"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.sugboaid.donation.app-main-54:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -1600,6 +1660,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable\\mtrl_switch_thumb_pressed_unchecked.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.sugboaid.donation.app-main-54:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_abc_list_selector_background_transition_holo_dark.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
@@ -1660,6 +1724,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\drawable\\mtrl_switch_thumb_checked_pressed.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_fragment_login.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_login.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_btn_text_btn_ripple_color.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\mtrl_btn_text_btn_ripple_color.xml"
     },
@@ -1710,6 +1778,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_fragment_admin_dashboard.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_admin_dashboard.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_material_on_background_disabled.xml.flat",
@@ -1882,6 +1954,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_fragment_placeholder.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_placeholder.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\xml_data_extraction_rules.xml.flat",
@@ -2126,6 +2202,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim-v21_fragment_fast_out_extra_slow_in.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-fragment-1.6.2-28:\\anim-v21\\fragment_fast_out_extra_slow_in.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_activity_simple_splash.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/activity_simple_splash.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
@@ -2584,6 +2664,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\anim\\abc_popup_enter.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color-v31_m3_dynamic_dark_default_color_secondary_text.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color-v31\\m3_dynamic_dark_default_color_secondary_text.xml"
     },
@@ -2746,6 +2830,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.sugboaid.donation.app-main-54:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_mtrl_indicator_text_color.xml.flat",
@@ -2916,6 +3004,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\color-v23\\abc_tint_spinner.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/drawable_btn_primary.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/drawable/btn_primary.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
@@ -2942,6 +3034,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_linear_indeterminate_line1_tail_interpolator.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\anim\\linear_indeterminate_line1_tail_interpolator.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_fragment_post_auth_loading.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_post_auth_loading.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -2986,6 +3082,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/navigation_auth_nav_graph.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/navigation/auth_nav_graph.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\anim_btn_radio_to_on_mtrl_ring_outer_animation.xml.flat",
@@ -3204,6 +3304,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-core-1.12.0-6:\\drawable-xhdpi-v4\\ic_call_answer_low.png"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_activity_splash.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/activity_splash.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\drawable_abc_switch_thumb_material.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\drawable\\abc_switch_thumb_material.xml"
     },
@@ -3388,6 +3492,10 @@
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-navigation-ui-2.7.5-29:\\animator\\nav_default_exit_anim.xml"
     },
     {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_fragment_transparency_map.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/fragment_transparency_map.xml"
+    },
+    {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\layout_abc_list_menu_item_checkbox.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-appcompat-1.6.1-44:\\layout\\abc_list_menu_item_checkbox.xml"
     },
@@ -3562,6 +3670,10 @@
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color_m3_highlighted_text.xml.flat",
         "source": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-material-1.10.0-21:\\color\\m3_highlighted_text.xml"
+    },
+    {
+        "merged": "com.sugboaid.donation.app-merged_res-51:/layout_item_user_management.xml.flat",
+        "source": "com.sugboaid.donation.app-main-54:/layout/item_user_management.xml"
     },
     {
         "merged": "C:\\Users\\James\\.gradle\\daemon\\8.0\\com.sugboaid.donation.app-merged_res-51:\\color-v23_abc_tint_edittext.xml.flat",
