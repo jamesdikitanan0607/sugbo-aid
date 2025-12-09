@@ -1,3 +1,0 @@
-﻿src/components/SplashScreen.tsx(174,11): error TS1128: Declaration or statement expected.
-src/components/SplashScreen.tsx(174,12): error TS1005: '}' expected.
-src/components/SplashScreen.tsx(174,13): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
