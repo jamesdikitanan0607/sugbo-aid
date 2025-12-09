@@ -11,7 +11,7 @@ public final class BuildConfig {
   // Field from product flavor: development
   public static final String API_BASE_URL = "https://dev-api.sugboaid.com";
   // Field from default config.
-  public static final String BUILD_TIME = "2025-12-08 21:03:18";
+  public static final String BUILD_TIME = "2025-12-09 11:40:52";
   // Field from build type: debug
   public static final boolean ENABLE_LEAK_DETECTION = true;
   // Field from product flavor: development
@@ -19,7 +19,7 @@ public final class BuildConfig {
   // Field from build type: debug
   public static final boolean ENABLE_STRICT_MODE = true;
   // Field from default config.
-  public static final String GIT_COMMIT = "ef2d9f7";
+  public static final String GIT_COMMIT = "f3ee099";
   // Field from default config.
   public static final int VERSION_CODE = 1;
   // Field from default config.
